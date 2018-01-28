@@ -2,7 +2,7 @@
 """
 Created on Wed Jan  3 21:50:56 2018
 
-@author: Jason
+@author: Jason R
 """
 
 from selenium import webdriver
@@ -27,7 +27,7 @@ def parseWebSite(daterun):
     for row in rows:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
-        data.append([ele for ele in cols if ele]) # Get rid of empty values
+        data.append([ele for ele in cols if ele]) 
         
     print(data[1][0])
     
@@ -35,18 +35,18 @@ def parseWebSite(daterun):
 
     watchitems = len(data)    
     
-    juno = []
+    watchlist = []
     
-    if len(data)>0:
+    if watchitems>0:
         
         for x in range(1, watchitems):
-            juno.append(data[x][0])        
+            watchlist.append(data[x][0])        
 
     else:
-        juno = ['error']
-    print(juno)    
+        watchlist = ['error']
+    print(watchlist)    
     
     browser.close()
     
-    return juno
+    return watchlist
     
