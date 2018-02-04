@@ -2,10 +2,12 @@
 """
 Created on Wed Jan  3 21:50:56 2018
 
-@author: Jason R
+@author: Jason
 """
 
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
 from bs4 import BeautifulSoup
 import time
 
@@ -13,9 +15,16 @@ import time
 def parseWebSite(daterun):
 
     browser=webdriver.Firefox()
-    browser.get('https://maxalpha.co')
+    browser.get('https://maxalpha.co/login')
     
-    time.sleep(5)
+    username = browser.find_element_by_id("email_address")
+    password = browser.find_element_by_id("password")
+    
+    username.send_keys("jrathgeber@yahoo.com")
+    password.send_keys("put yrs here")
+    password.send_keys(Keys.RETURN);
+
+    time.sleep(30)
     
     soup=BeautifulSoup(browser.page_source, "lxml")
     
@@ -27,7 +36,7 @@ def parseWebSite(daterun):
     for row in rows:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
-        data.append([ele for ele in cols if ele]) 
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
         
     print(data[1][0])
     
@@ -35,18 +44,19 @@ def parseWebSite(daterun):
 
     watchitems = len(data)    
     
-    watchlist = []
+    juno = []
     
-    if watchitems>0:
+    if len(data)>0:
         
         for x in range(1, watchitems):
-            watchlist.append(data[x][0])        
+            if(data[x][0] not in ['USAU', 'NA']):
+                juno.append(data[x][0])        
 
     else:
-        watchlist = ['error']
-    print(watchlist)    
+        juno = ['error']
+    print(juno)    
     
     browser.close()
     
-    return watchlist
+    return juno
     
