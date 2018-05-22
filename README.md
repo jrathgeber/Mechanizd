@@ -1,4 +1,4 @@
-# Jason
+# MaxAlpha
 
 This MaxAlpha python script downloads data from the MaxAlpha.co website. 
 
