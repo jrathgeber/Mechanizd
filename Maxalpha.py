@@ -11,20 +11,30 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import time
 
+import configparser
+
 
 def parseWebSite(daterun):
+        
+    config = configparser.ConfigParser()
+    config.read('C:\etc\properties.ini') 
+    
+    maurl = config['maxalpha']['url']
+    mauser = config['maxalpha']['user']
+    mapass = config['maxalpha']['pass']
 
     browser=webdriver.Firefox()
-    browser.get('https://maxalpha.co/login')
-    
+    browser.get(maurl)
+ 
+    browser.get(maurl+'/login')    
     username = browser.find_element_by_id("email_address")
     password = browser.find_element_by_id("password")
     
-    username.send_keys("jrathgeber@yahoo.com")
-    password.send_keys("put yrs here")
+    username.send_keys(mauser)
+    password.send_keys(mapass)
     password.send_keys(Keys.RETURN);
 
-    time.sleep(30)
+    time.sleep(120)
     
     soup=BeautifulSoup(browser.page_source, "lxml")
     
