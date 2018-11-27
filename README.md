@@ -1,4 +1,4 @@
-# MaxAlpha
+# mechanizd
 
 This project is the source code behind Mechanizd.com
 
