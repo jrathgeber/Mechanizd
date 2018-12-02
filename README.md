@@ -1,5 +1,7 @@
-# MaxAlpha
+# mechanizd
 
-This MaxAlpha python script downloads data from the MaxAlpha.co website. 
+This project is the source code behind Mechanizd.com
 
-It uses the selenium package to parse a page that is javascript rendered by the server. 
+The python code is responsible for automating the running the Zorro and Right Edge Algo tools.
+
+Also handled is batch scheduling and web site scraping.
