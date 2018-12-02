@@ -37,7 +37,7 @@ mode = '/L'
 maxdata='hello'
 
 def MyThread1():
-    RE.runRightEdge('MaxAlphaMinShort', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
+    RE.runRightEdge('MaxAlphaOne', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
     
     
 tickerList = MA.parseWebSite(daterun);

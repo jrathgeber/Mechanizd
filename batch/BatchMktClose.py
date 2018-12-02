@@ -14,9 +14,9 @@ os.chdir('c:\\dep\\rightedge\\')
 cc_list = ('jrathgeber@yahoo.com')   
 
 #send live MaxAlpha Output
-with open('C:\dec\RightEdge\Systems\MaxAlphaMinShort\output.html', 'r') as f:
+with open('C:\dec\RightEdge\Systems\MaxAlphaOne\output.html', 'r') as f:
     data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha MA1 Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaMinShort\output.txt'])
+    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha MA1 Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaOne\output.txt'])
     
 # Send Back Test    
 exec(open('C:\\dep\\rightedge\\RightEdgeIB.py').read())
