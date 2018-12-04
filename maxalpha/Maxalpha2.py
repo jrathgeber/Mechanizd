@@ -52,7 +52,7 @@ def parseWebSite(daterun):
     
     print (len(data))    
 
-    Pg.pgInsert(data)
+    #Pg.pgInsert(data)
 
     watchitems = len(data)    
     
@@ -79,7 +79,7 @@ def parseWebSite(daterun):
             if(float(num.replace("$", "")) <= 12.0):
                 price_ok=True    
 
-            if(float(num.replace("$", "")) <= 1.25):
+            if(float(num.replace("$", "")) <= 1.00):
                 price_ok=False
 
 
