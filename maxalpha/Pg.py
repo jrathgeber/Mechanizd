@@ -65,7 +65,7 @@ def pgInsert(data):
             if len(data[x])>7:        
                 related = data[x][7]
             
-            s = """INSERT INTO maxalpha.max("Date_Added", "Symbol", "Time_Added", "Last_Price", "Percent_Change", "Net_Change", "Volume", "Recent_Events", "Related_Data") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+            s = """UPSERT INTO maxalpha.max("Date_Added", "Symbol", "Time_Added", "Last_Price", "Percent_Change", "Net_Change", "Volume", "Recent_Events", "Related_Data") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
             cur.execute(s,('now()', symbol , 'now()', price , change, net, volume, recent, related))
             conn.commit() # <- We MUST commit to reflect the inserted data
     
