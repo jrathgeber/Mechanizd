@@ -9,9 +9,9 @@ def optimise(system):
     getprices = ''
     closeup = ''
     
-    mode = '/O:C:\dep\maxalpha\zParams_20180227.txt'
+    mode = '/O:C:\dep\Mechanizd\maxalpha\zParams_20180227.txt'
     
-    opy = open("C:\dep\maxalpha\zParams_20180227.txt", "w")
+    opy = open("C:\dep\Mechanizd\maxalpha\zParams_20180227.txt", "w")
     
     #opy.write("ADXPeriods, 1000,2000,1000\n")
     opy.write("BreakOutBuyDays,50,500,10\n")

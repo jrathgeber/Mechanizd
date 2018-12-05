@@ -23,7 +23,7 @@ server = config['yahoo']['server']
 port = config['yahoo']['port']
 username = config['yahoo']['username']
 
-os.chdir('C:\dep\maxalpha\\')
+os.chdir('C:\dep\Mechanizd\maxalpha\\')
 
 daterun = time.strftime("%Y%m%d")
 

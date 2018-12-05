@@ -15,7 +15,7 @@ import time;
 import SymbolConfig as SC;
 
 
-os.chdir('C:\dep\\maxalpha\\')
+os.chdir('C:\dep\\Mechanizd\\maxalpha\\')
 
 daterun = time.strftime("%Y%m%d")
 
