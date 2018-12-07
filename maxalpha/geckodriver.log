@@ -1,0 +1,42 @@
+1544105773600	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.V21TaMWyeYoO"
+1544105780139	Marionette	INFO	Listening on port 62747
+1544105780424	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/, line 1: ReferenceError: presets is not defined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+[Parent 289980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 289980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 289980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1544141983082	Marionette	INFO	Stopped listening on port 62747
+[GPU 290896, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/i
