@@ -39,4 +39,118 @@ console.error: BroadcastService:
 
 [Parent 289980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 1544141983082	Marionette	INFO	Stopped listening on port 62747
-[GPU 290896, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/i
+[GPU 290896, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/i1544192174990	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.kvk1HKphIkDA"
+1544192186278	Marionette	INFO	Listening on port 53014
+1544192186575	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/, line 1: ReferenceError: presets is not defined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:721:13
+
+[Parent 326760, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 326760, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 337716, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child [Parent 326760, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 339860, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 339860, Ch[Parent 326760, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+1544233003708	Marionette	INFO	Stopped listening on port 53014
+1544233064992	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.ujwSLHSsihkZ"
+1544233074640	Marionette	INFO	Listening on port 61830
+1544233075503	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/, line 1: ReferenceError: presets is not defined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 363684, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 363684, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1544233121307	Marionette	INFO	Stopped listening on port 61830
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 3638
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1544233291511	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.cjlfFofJhtye"
+1544233337043	Marionette	INFO	Listening on port 62088
+1544233337503	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/, line 1: ReferenceError: presets is not defined
+[Parent 333580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 333580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 364016, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 364016, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1544233394168	Marionette	INFO	Stopped listening on port 62088
+[GPU 312
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1544233409541	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.vmPYqJH8BJUs"
+1544233414148	Marionette	INFO	Listening on port 62258
+1544233414607	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/login/, line 68: TypeError: document.getElementById(...) is null
+JavaScript error: https://maxalpha.co/, line 1: ReferenceError: presets is not defined
+1544233425364	Marionette	INFO	Stopped listening on port 62258
+[Child 363020, Chrome_Chil[Parent 365104, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[GPU 335340, Chrome_ChildThrea
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+d] WARNING: pipe er
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

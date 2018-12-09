@@ -7,17 +7,46 @@ Created on Mon Jul 24 06:52:28 2017
 
 import sendMail;
 import os;
+import time
+import ftplib
+import FileReadingRE as FR
+import configparser
+from shutil import copyfile
+
+config = configparser.ConfigParser()
+config.read('C:\etc\properties.ini') 
+
+gdurl = config['godaddy']['url']
+gduser = config['godaddy']['user']
+gdpass = config['godaddy']['pass']
 
 os.chdir('c:\\dep\\Mechanizd\\rightedge\\')
 
 #cc_list = ('jrathgeber@yahoo.com','rathgeber.webster@gmail.com')
 cc_list = ('jrathgeber@yahoo.com')   
 
+model = 'MaxAlphaOne'
+timestr = time.strftime("%d%m%y")
+session = ftplib.FTP(gdurl,gduser,gdpass)
+
 #send live MaxAlpha Output
 with open('C:\dec\RightEdge\Systems\MaxAlphaOne\output.html', 'r') as f:
     data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha MA1 Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaOne\output.txt'])
+    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaOne\output.txt'])
+    copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Live\\' + model + '_' + timestr + '.htm')  
+
+
+    session.storbinary('STOR /mech/output/RightEdge/Live/' + model + '_' + timestr + '.htm', f)     # send the file
+    f.close()
     
+FR.fileReading("C:\dev\godaddy\\mech\output\RightEdge\\Live\\*.htm", 'C:\dev\godaddy\\mech\output\RightEdge\Live\RightEdgeResults.htm', 'Rightedge Live - Today')
+
+fileSummary = open('C:\dev\godaddy\\mech\output\RightEdge\Live\RightEdgeResults.htm','rb')
+session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', fileSummary)     # send the file
+fileSummary.close()   
+    
+session.quit()
+        
 # Send Back Test    
 exec(open('C:\\dep\\Mechanizd\\rightedge\\RightEdgeIB.py').read())
     

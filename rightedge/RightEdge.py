@@ -21,8 +21,8 @@ gdpass = config['godaddy']['pass']
 #   "C:\Program Files (x86)\Yye Software\RightEdge 2010\RightEdge.exe" /W:"Nasdaq100" /P:"C:\dec\RightEdge\Systems\BarCheckerEQ\BarChecker.rep" /S /U /E
 #   and send an email output
 
-models = ('/W:Jason',)
-#models = ('/W:Jason','/W:TSX','/W:Nasdaq100')
+#models = ('/W:Jason',)
+models = ('/W:Jason','/W:TSX','/W:Nasdaq100')
 #models = ('/W:Jason','/W:TSX','/W:Nasdaq100','/W:Fonsie','/W:HF')
 #models = ('/W:TSX',)
 

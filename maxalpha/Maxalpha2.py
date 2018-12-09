@@ -52,13 +52,13 @@ def parseWebSite(daterun):
     print(data[1][0])
     
     # Adda a stock here
-    juno = ['CARA']    
+    juno = []    
     
     if data[1][0]!='No Stocks On WatchThe Max Alpha Watch List is only active on weekdays starting at 4AM EST': 
         
         print (len(data))    
     
-        Pg.pgInsert(data)
+        #Pg.pgInsert(data)
     
         watchitems = len(data)    
 

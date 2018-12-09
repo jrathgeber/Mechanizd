@@ -4477,7 +4477,7 @@
                <IsFolder>true</IsFolder>
                <BarConstruction>Default</BarConstruction>
                <Folder>
-                <FolderName>20181205</FolderName>
+                <FolderName>20181207</FolderName>
                 <Contents>
                  <WatchListItem>
                   <IsFolder>false</IsFolder>
@@ -4485,14 +4485,104 @@
                   <Symbol>
                    <StrikePrice>0</StrikePrice>
                    <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
-                   <Name>CARA</Name>
+                   <Name>OZM</Name>
                    <SymbolInformation>
                     <Margin>0</Margin>
                     <TickSize>0</TickSize>
                     <ContractSize>0</ContractSize>
                     <DecimalPlaces>2</DecimalPlaces>
                     <ShortMargin>0</ShortMargin>
-                    <CustomHistoricalData>20181205</CustomHistoricalData>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
+                    <CustomLiveData>hello</CustomLiveData>
+                    </SymbolInformation>
+                   </Symbol>
+                  </WatchListItem>
+                 <WatchListItem>
+                  <IsFolder>false</IsFolder>
+                  <BarConstruction>Default</BarConstruction>
+                  <Symbol>
+                   <StrikePrice>0</StrikePrice>
+                   <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                   <Name>UXIN</Name>
+                   <SymbolInformation>
+                    <Margin>0</Margin>
+                    <TickSize>0</TickSize>
+                    <ContractSize>0</ContractSize>
+                    <DecimalPlaces>2</DecimalPlaces>
+                    <ShortMargin>0</ShortMargin>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
+                    <CustomLiveData>hello</CustomLiveData>
+                    </SymbolInformation>
+                   </Symbol>
+                  </WatchListItem>
+                 <WatchListItem>
+                  <IsFolder>false</IsFolder>
+                  <BarConstruction>Default</BarConstruction>
+                  <Symbol>
+                   <StrikePrice>0</StrikePrice>
+                   <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                   <Name>SHOS</Name>
+                   <SymbolInformation>
+                    <Margin>0</Margin>
+                    <TickSize>0</TickSize>
+                    <ContractSize>0</ContractSize>
+                    <DecimalPlaces>2</DecimalPlaces>
+                    <ShortMargin>0</ShortMargin>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
+                    <CustomLiveData>hello</CustomLiveData>
+                    </SymbolInformation>
+                   </Symbol>
+                  </WatchListItem>
+                 <WatchListItem>
+                  <IsFolder>false</IsFolder>
+                  <BarConstruction>Default</BarConstruction>
+                  <Symbol>
+                   <StrikePrice>0</StrikePrice>
+                   <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                   <Name>STAF</Name>
+                   <SymbolInformation>
+                    <Margin>0</Margin>
+                    <TickSize>0</TickSize>
+                    <ContractSize>0</ContractSize>
+                    <DecimalPlaces>2</DecimalPlaces>
+                    <ShortMargin>0</ShortMargin>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
+                    <CustomLiveData>hello</CustomLiveData>
+                    </SymbolInformation>
+                   </Symbol>
+                  </WatchListItem>
+                 <WatchListItem>
+                  <IsFolder>false</IsFolder>
+                  <BarConstruction>Default</BarConstruction>
+                  <Symbol>
+                   <StrikePrice>0</StrikePrice>
+                   <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                   <Name>EYES</Name>
+                   <SymbolInformation>
+                    <Margin>0</Margin>
+                    <TickSize>0</TickSize>
+                    <ContractSize>0</ContractSize>
+                    <DecimalPlaces>2</DecimalPlaces>
+                    <ShortMargin>0</ShortMargin>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
+                    <CustomLiveData>hello</CustomLiveData>
+                    </SymbolInformation>
+                   </Symbol>
+                  </WatchListItem>
+                 <WatchListItem>
+                  <IsFolder>false</IsFolder>
+                  <BarConstruction>Default</BarConstruction>
+                  <Symbol>
+                   <StrikePrice>0</StrikePrice>
+                   <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                   <Name>CLSN</Name>
+                   <SymbolInformation>
+                    <Margin>0</Margin>
+                    <TickSize>0</TickSize>
+                    <ContractSize>0</ContractSize>
+                    <DecimalPlaces>2</DecimalPlaces>
+                    <ShortMargin>0</ShortMargin>
+                    <CustomHistoricalData>20181207</CustomHistoricalData>
                     <CustomLiveData>hello</CustomLiveData>
                     </SymbolInformation>
                    </Symbol>
@@ -26856,6 +26946,114 @@
                         <ShortMargin>0</ShortMargin>
                         <CustomHistoricalData>20181204</CustomHistoricalData>
                         <CustomLiveData>hello</CustomLiveData>
+                      </SymbolInformation>
+                    </Symbol>
+                  </WatchListItem>
+                </Contents>
+                <Frequency>-1</Frequency>
+                <InheritsHistService>true</InheritsHistService>
+                <HistService />
+                <InheritsRealtimeService>true</InheritsRealtimeService>
+                <RealtimeService />
+                <InheritsBrokerService>true</InheritsBrokerService>
+                <BrokerService />
+                <InheritsSaveTicks>true</InheritsSaveTicks>
+                <SaveTicks>false</SaveTicks>
+                <InheritsSaveBars>true</InheritsSaveBars>
+                <SaveBars>true</SaveBars>
+                <DownloadStartDate>0001-01-01T00:00:00</DownloadStartDate>
+                <InheritsDownloadStartDate>true</InheritsDownloadStartDate>
+                <InheritsFrequency>true</InheritsFrequency>
+              </Folder>
+            </WatchListItem>
+            <WatchListItem>
+              <IsFolder>true</IsFolder>
+              <BarConstruction>Default</BarConstruction>
+              <Folder>
+                <FolderName>20181205</FolderName>
+                <Contents>
+                  <WatchListItem>
+                    <IsFolder>false</IsFolder>
+                    <BarConstruction>Default</BarConstruction>
+                    <Symbol>
+                      <StrikePrice>0</StrikePrice>
+                      <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                      <Name>CARA</Name>
+                      <SymbolInformation>
+                        <Margin>0</Margin>
+                        <TickSize>0</TickSize>
+                        <ContractSize>0</ContractSize>
+                        <DecimalPlaces>2</DecimalPlaces>
+                        <ShortMargin>0</ShortMargin>
+                        <CustomHistoricalData>20181205</CustomHistoricalData>
+                        <CustomLiveData>hello</CustomLiveData>
+                      </SymbolInformation>
+                    </Symbol>
+                  </WatchListItem>
+                </Contents>
+                <Frequency>-1</Frequency>
+                <InheritsHistService>true</InheritsHistService>
+                <HistService />
+                <InheritsRealtimeService>true</InheritsRealtimeService>
+                <RealtimeService />
+                <InheritsBrokerService>true</InheritsBrokerService>
+                <BrokerService />
+                <InheritsSaveTicks>true</InheritsSaveTicks>
+                <SaveTicks>false</SaveTicks>
+                <InheritsSaveBars>true</InheritsSaveBars>
+                <SaveBars>true</SaveBars>
+                <DownloadStartDate>0001-01-01T00:00:00</DownloadStartDate>
+                <InheritsDownloadStartDate>true</InheritsDownloadStartDate>
+                <InheritsFrequency>true</InheritsFrequency>
+              </Folder>
+            </WatchListItem>
+            <WatchListItem>
+              <IsFolder>true</IsFolder>
+              <BarConstruction>Default</BarConstruction>
+              <Folder>
+                <FolderName>20181206</FolderName>
+                <Contents>
+                  <WatchListItem>
+                    <IsFolder>false</IsFolder>
+                    <BarConstruction>Default</BarConstruction>
+                    <Symbol>
+                      <StrikePrice>0</StrikePrice>
+                      <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                      <Name>DARE</Name>
+                      <SymbolInformation>
+                        <CompanyName />
+                        <Sector />
+                        <Industry />
+                        <Margin>0</Margin>
+                        <TickSize>0</TickSize>
+                        <ContractSize>0</ContractSize>
+                        <DecimalPlaces>2</DecimalPlaces>
+                        <ShortMargin>0</ShortMargin>
+                        <CustomHistoricalData>20181206</CustomHistoricalData>
+                        <CustomLiveData />
+                        <CustomBrokerData />
+                      </SymbolInformation>
+                    </Symbol>
+                  </WatchListItem>
+                  <WatchListItem>
+                    <IsFolder>false</IsFolder>
+                    <BarConstruction>Default</BarConstruction>
+                    <Symbol>
+                      <StrikePrice>0</StrikePrice>
+                      <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                      <Name>TST</Name>
+                      <SymbolInformation>
+                        <CompanyName />
+                        <Sector />
+                        <Industry />
+                        <Margin>0</Margin>
+                        <TickSize>0</TickSize>
+                        <ContractSize>0</ContractSize>
+                        <DecimalPlaces>2</DecimalPlaces>
+                        <ShortMargin>0</ShortMargin>
+                        <CustomHistoricalData>20181206</CustomHistoricalData>
+                        <CustomLiveData />
+                        <CustomBrokerData />
                       </SymbolInformation>
                     </Symbol>
                   </WatchListItem>
