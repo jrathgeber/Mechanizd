@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+
 import itertools
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
@@ -12,3 +13,8 @@ from sklearn.metrics import classification_report
 
 
 # Could we use above ? 
+import quandl
+df = quandl.get("CHRIS/CME_ES2")
+df.head()
+df.tail()
+df.shape
