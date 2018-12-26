@@ -25,19 +25,22 @@ os.chdir('c:\\dep\\Mechanizd\\rightedge\\')
 #cc_list = ('jrathgeber@yahoo.com','rathgeber.webster@gmail.com')
 cc_list = ('jrathgeber@yahoo.com')   
 
-model = 'MaxAlphaOne'
+model = 'MaxAlphaLive'
 timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
 #send live MaxAlpha Output
-with open('C:\dec\RightEdge\Systems\MaxAlphaOne\output.html', 'r') as f:
+with open('C:\dec\RightEdge\Systems\MaxAlphaLive\output.html', 'r') as f:
     data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaOne\output.txt'])
-    copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Live\\' + model + '_' + timestr + '.htm')  
+    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaLive\output.txt'])
+    
+    #copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Live\\' + model + '_' + timestr + '.htm')  
 
+    file = open('C:\dec\RightEdge\Systems\MaxAlphaLive\output.html','rb')
+    session.storbinary('STOR /mech/output/RightEdge/Live/' + model + '_' + timestr + '.htm', file)     # send the file
+    file.close()
 
-    session.storbinary('STOR /mech/output/RightEdge/Live/' + model + '_' + timestr + '.htm', f)     # send the file
-    f.close()
+    f.close();    
     
 FR.fileReading("C:\dev\godaddy\\mech\output\RightEdge\\Live\\*.htm", 'C:\dev\godaddy\\mech\output\RightEdge\Live\RightEdgeResults.htm', 'Rightedge Live - Today')
 
