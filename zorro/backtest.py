@@ -24,15 +24,15 @@ gdpass = config['godaddy']['pass']
 timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
-models = ('downloadj','J12a','J12b','J12c')
+models = ('downloadj','J12a','J12b','J12c', 'J12d', 'J12e', 'J17a')
 
 fileTypes = ('.png','.htm','.txt', '_pnl.csv', '_test.log')
 
 for model in models:
 
-    #j12 = [r"F:\\Zorro\\Zorro_19X\\Zorro.exe", "-run", model, "-c" , "J1"]
-    #j12_prog = Popen(j12)
-    #stdout, stderr = j12_prog.communicate()
+    j12 = [r"F:\\Zorro\\Zorro_19X\\Zorro.exe", "-run", model, "-c" , "J1"]
+    j12_prog = Popen(j12)
+    stdout, stderr = j12_prog.communicate()
     
     if model != 'downloadj' :
 
