@@ -21,7 +21,7 @@ def fileReading(location, location1, link):
     myFile.write(link)
     myFile.write('</h2>')
     myFile.write('<div class=\'datagrid\'><table>\n')
-    myFile.write('<thead><tr><th>Model</th><th>Summary</th><th>Chart</th><th>Trades</th><th>OpenPositions</th><th>PnL</th><th>Log</th><th>PL</th><th>Winner</th></tr></thead>\n')
+    myFile.write('<thead><tr><th>Model</th><th>Summary</th><th>Chart</th><th>Trades</th><th>OpenPositions</th><th>PnL</th><th>Log</th><th>Return</th><th>Winner</th></tr></thead>\n')
     myFile.write('<tfoot><tr><td colspan="10"><div id="paging"><ul><li><a href=\'\#\'><span>Previous</span></a></li><li><a href="#" class="active"><span>1</span></a></li><li><a href="#"><span>2</span></a></li><li><a href="#"><span>3</span></a></li><li><a href="#"><span>4</span></a></li><li><a href="#"><span>5</span></a></li><li><a href="#"><span>Next</span></a></li></ul></div></tr></tfoot>\n')
     
     myFile.write('<tbody>\n') 
@@ -41,10 +41,10 @@ def fileReading(location, location1, link):
                     
             for file_line in lines_list:
             
-                if ('<br>System State:' in file_line):
+                if ('Annual return ' in file_line):
                     profit = re.findall(r'[-+]?\d+', file_line)
                     print(profit[:])
-                    if (float(profit[12])-start > 0) : 
+                    if (float(profit[0]) > 0) : 
                         status = 'Winner'
                     else :
                         status  = 'Loser'
@@ -83,7 +83,8 @@ def fileReading(location, location1, link):
             myFile.write('</td>\n')
           
             myFile.write('<td  align="right">\n')
-            myFile.write(str(float(profit[12])-start))
+            myFile.write(str(profit[0])+'%')
+            #myFile.write(str(float(profit[12])-start))
             myFile.write('</td>\n')
             
             myFile.write('<td  align="right">\n')

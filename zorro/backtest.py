@@ -51,7 +51,7 @@ for model in models:
         file.close()    
     
 
-FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Test\\J*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Test\ZorroResults.htm', 'Zorro Backtest')
+FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Test\\J*.txt", 'C:\dev\godaddy\\mech\output\Zorro\Test\ZorroResults.htm', 'Zorro Daily Backtests')
 
 fileSummary = open('C:\dev\godaddy\\mech\output\Zorro\Test\ZorroResults.htm','rb')
 session.storbinary('STOR /mech/output/Zorro/Test/ZorroResults.htm', fileSummary)     # send the file
