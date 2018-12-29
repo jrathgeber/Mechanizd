@@ -9,9 +9,9 @@ import time
 from shutil import copyfile
 #import FileReading as FR
 #import sendMail
-import os;
+#import os;
 #import sys
-os.chdir('C:\\dep\\batch\\')
+#os.chdir('C:\\dep\\Mechanizd\\zorro\\')
 import FileReading as FR
 
 import configparser
