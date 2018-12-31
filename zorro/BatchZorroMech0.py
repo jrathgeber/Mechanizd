@@ -9,9 +9,9 @@ import time
 from shutil import copyfile
 #import FileReading as FR
 #import sendMail
-#import os;
+import os;
 #import sys
-#os.chdir('C:\\dep\\Mechanizd\\zorro\\')
+os.chdir('C:\\dep\\Mechanizd\\batch\\')
 import FileReading as FR
 
 import configparser
@@ -34,7 +34,11 @@ for model in models:
     file = open('F:\Zorro\\Zorro\Log\\' + model + '.htm','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '_' + timestr + '.htm', file)
     file.close()
-        
+
+    copyfile('F:\Zorro\\Zorro\Log\\' + model + '.png', 'C:\dev\godaddy\\mech\\output\Zorro\\Mech0\\' + model + '.png')
+    file2 = open('F:\Zorro\\Zorro\Log\\' + model + '.png','rb')
+    session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '.png', file2)
+    file2.close()        
 
 
 models2 = ('Z7',)
@@ -43,6 +47,11 @@ for model in models2:
     file = open('F:\Zorro\\Zorro_19X\Log\\' + model + '.htm','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '_' + timestr + '.htm', file)
     file.close()
+
+    copyfile('F:\Zorro\\Zorro\Log\\' + model + '.png', 'C:\dev\godaddy\\mech\\output\Zorro\\Mech0\\' + model + '.png')
+    file2 = open('F:\Zorro\\Zorro\Log\\' + model + '.png','rb')
+    session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '.png', file2)
+    file2.close()        
 
 
 FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Mech0\\Z*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Mech0\ZorroResults.htm', 'Zorro Mech0')

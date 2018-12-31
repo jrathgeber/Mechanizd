@@ -15,8 +15,8 @@ directive = 'NO'
 strategy = 'J12'
 
 
-models = ('downloadj','J12')
-#models = ('downloadj','J12','J12a','J12b','J12c')
+#models = ('downloadj','J12a')
+models = ('downloadj','J12a','J12b','J12c','J12d','J12e')
 
 for model in models:
 

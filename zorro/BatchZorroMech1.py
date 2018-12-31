@@ -36,10 +36,15 @@ for model in models:
     name = 'http://52.186.84.170/' + model + '.htm'
     print(name)
     urllib.request.urlretrieve(name, 'C:\dev\godaddy\\mech\output\Zorro\\Mech1\\' + model + '_' + timestr + '.htm')
-    
     file = open('C:\dev\godaddy\\mech\output\Zorro\\Mech1\\' + model + '_' + timestr + '.htm','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech1/' + model + '_' + timestr + '.htm', file)
     file.close()
+    
+    name2 = 'http://52.186.84.170/' + model + '.png'
+    urllib.request.urlretrieve(name2, 'C:\dev\godaddy\\mech\output\Zorro\\Mech1\\' + model + '.png')
+    file2 = open('C:\dev\godaddy\\mech\output\Zorro\\Mech1\\' + model + '.png','rb')
+    session.storbinary('STOR /mech/output/Zorro/Mech1/' + model + '.png', file2)
+    file2.close()        
        
 FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Mech1\\Z*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Mech1\ZorroResults.htm', '<a href="http://52.186.84.170">Zorro Mech1</a>')
 
