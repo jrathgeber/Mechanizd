@@ -30,7 +30,7 @@ timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
 # Backtest Js and download prices    
-exec(open('C:\\dep\\Mechanizd\\zorro\\backtest.py').read())
+#exec(open('C:\\dep\\Mechanizd\\zorro\\backtest.py').read())
 os.chdir('c:\\dep\\Mechanizd\\rightedge\\')
 
 #send live MaxAlpha Output
@@ -55,7 +55,7 @@ fileSummary.close()
 session.quit()
         
 # Send Back Test    
-exec(open('C:\\dep\\Mechanizd\\rightedge\\RightEdgeIB.py').read())
+#exec(open('C:\\dep\\Mechanizd\\rightedge\\RightEdgeIB.py').read())
     
 # Send Z7 Live Status    
 with open('F:\Zorro\Zorro_19X\Log\Z7.htm', 'r') as f:
@@ -63,4 +63,4 @@ with open('F:\Zorro\Zorro_19X\Log\Z7.htm', 'r') as f:
     sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Zorro Summary Z7', data, ['F:\Zorro\Zorro\Log\Z7.txt'])    
     
 # Backtest Js and download prices    
-exec(open('C:\\dep\\Mechanizd\\zorro\\backtest.py').read())
+# exec(open('C:\\dep\\Mechanizd\\zorro\\backtest.py').read())
