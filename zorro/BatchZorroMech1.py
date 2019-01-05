@@ -8,10 +8,13 @@ Created on Wed Mar  8 21:34:22 2017
 import ftplib
 import time
 import urllib.request
+
+import os;
+os.chdir('C:\\dep\\Mechanizd\\batch\\')
+
 import FileReading as FR
 from shutil import copyfile
 import configparser
-
 
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 

@@ -7,13 +7,11 @@ Created on Wed Mar  8 21:34:22 2017
 import ftplib
 import time
 from shutil import copyfile
-#import FileReading as FR
-#import sendMail
-import os;
-#import sys
-os.chdir('C:\\dep\\Mechanizd\\batch\\')
-import FileReading as FR
 
+import os;
+os.chdir('C:\\dep\\Mechanizd\\batch\\')
+
+import FileReading as FR
 import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
@@ -21,7 +19,6 @@ config.read('C:\etc\properties.ini')
 gdurl = config['godaddy']['url']
 gduser = config['godaddy']['user']
 gdpass = config['godaddy']['pass']
-
 
 #timestr = time.strftime("%Y%m%d_%H%M%S")
 timestr = time.strftime("%d%m%y")
@@ -46,13 +43,12 @@ for model in models2:
     copyfile('F:\Zorro\\Zorro_19X\Log\\' + model + '.htm', 'C:\dev\godaddy\\mech\\output\Zorro\\Mech0\\' + model + '_' + timestr + '.htm')
     file = open('F:\Zorro\\Zorro_19X\Log\\' + model + '.htm','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '_' + timestr + '.htm', file)
-    file.close()
+    file.close() 
 
     copyfile('F:\Zorro\\Zorro\Log\\' + model + '.png', 'C:\dev\godaddy\\mech\\output\Zorro\\Mech0\\' + model + '.png')
     file2 = open('F:\Zorro\\Zorro\Log\\' + model + '.png','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '.png', file2)
     file2.close()        
-
 
 FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Mech0\\Z*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Mech0\ZorroResults.htm', 'Zorro Mech0')
 
@@ -61,3 +57,4 @@ session.storbinary('STOR /mech/output/Zorro/Mech0/ZorroResults.htm', fileSummary
 fileSummary.close()   
     
 session.quit()     
+
