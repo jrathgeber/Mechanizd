@@ -11,6 +11,9 @@ import ftplib
 import time
 from shutil import copyfile
 
+import os;
+os.chdir('C:\\dep\\Mechanizd\\batch\\')
+
 import FileReadingBackTest as FR
 
 import configparser
@@ -24,7 +27,7 @@ gdpass = config['godaddy']['pass']
 timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
-models = ('downloadj','J12a','J12b','J12c', 'J12d', 'J12e', 'J17a')
+models = ('downloadj','J12a','J12b','J12c', 'J12d', 'J12e', 'J17a', 'J19a')
 
 fileTypes = ('.png','.htm','.txt', '_pnl.csv', '_test.log')
 
