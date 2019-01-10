@@ -2,7 +2,7 @@
 
 import os;
 import RightEdge as RE;
-import Maxalpha2 as MA;
+import MaxAlpha as MA;
 import time;
 import sendMail;
 import SymbolConfig as SC;
@@ -37,9 +37,10 @@ mode = '/L'
 maxdata='hello'
 
 def MyThread1():
-    RE.runRightEdge('MaxAlphaOne', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
+    RE.runRightEdge('MaxAlphaLive', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
     
     
+#tickerList = ['AXSM', 'VIPS']    
 tickerList = MA.parseWebSite(daterun);
 
 if tickerList[0]=='error':

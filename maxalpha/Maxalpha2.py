@@ -102,7 +102,7 @@ def parseWebSite(daterun):
     
     
         else:
-            juno = ['error']
+            juno = ['AXSM', 'VIPS']
         print(juno)    
     
     browser.close()
