@@ -23,7 +23,7 @@ server = config['yahoo']['server']
 port = config['yahoo']['port']
 username = config['yahoo']['username']
 
-os.chdir('C:\dep\Mechanizd\maxalpha\\')
+os.chdir('C:\\dep\Mechanizd\\maxalpha\\')
 
 daterun = time.strftime("%Y%m%d")
 
@@ -43,12 +43,14 @@ def MyThread1():
 #tickerList = ['AXSM', 'VIPS']    
 tickerList = MA.parseWebSite(daterun);
 
-if tickerList[0]=='error':
-    sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
-else:
+print(tickerList)
 
+if tickerList[0]=='error':
+    print('hello')
+    #sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
+else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
-    sendMail.send_mail(user, user, 'Max ' + ''.join(tickerList), ''.join(tickerList),[], server, port, username, password)
+    #sendMail.send_mail(user, user, 'Max ' + ''.join(tickerList), ''.join(tickerList),[], server, port, username, password)
     t1 = threading.Thread(target=MyThread1)
     t1.start()
 

@@ -17,24 +17,34 @@ from selenium.webdriver.common.keys import Keys
 
 from bs4 import BeautifulSoup
 import time
-import Pg
+#import Pg
 
-import configparser
+#import configparser
 
 def parseWebSite(daterun):
     
-    config = configparser.ConfigParser()
-    config.read('C:\etc\properties.ini') 
+    #config = configparser.ConfigParser()
+    #config.read('C:\etc\properties.ini') 
 
     maurl = 'https://secure.trade-ideas.com/cms_static/kathy_test/tivision/TradeIdeasVision.php?cloud_code=cbf36ff3ba1990a750ce63b90f22aa50&height=700&width=848'    
 
+    
+    print('hello1') 
+
     browser=webdriver.Firefox()
+
+    print('hello2') 
+
     browser.get(maurl)
 
-    time.sleep(6)
-    #time.sleep(60)    
+    #time.sleep(15)
+    time.sleep(7)    
+    
+    print('hello3')    
     
     soup=BeautifulSoup(browser.page_source, "lxml")
+    
+    print(maurl)    
     
     data = []
     
@@ -52,7 +62,7 @@ def parseWebSite(daterun):
     # Adda a stock here
     juno = []    
     
-    if data[50][0]!='No Stocks On WatchThe Max Alpha Watch List is only active on weekdays starting at 4AM EST': 
+    if data[45][0]!='No Stocks On WatchThe Max Alpha Watch List is only active on weekdays starting at 4AM EST': 
         
         print (len(data))    
     
@@ -87,7 +97,7 @@ def parseWebSite(daterun):
                         price_ok=False
         
                     gap = data[x][4]
-                    if(float(gap.replace(",", "")) >= 10):
+                    if(float(gap.replace(",", "").replace("M", "")) >= 10):
                         gain_ok=True    
         
                     vol = data[x][5]  
@@ -102,13 +112,13 @@ def parseWebSite(daterun):
                         juno.append(data[x][0])        
         
     
-        else:
-            juno = ['CARA', 'VIPS']
+        #else:
+        #    juno = ['CARA', 'VIPS']
         print(juno)    
     
-    browser.close()
+    #browser.close()
     
     return juno
     
-daterun = time.strftime("%Y%m%d")
-parseWebSite(daterun)
+#daterun = time.strftime("%Y%m%d")
+#parseWebSite(daterun)
