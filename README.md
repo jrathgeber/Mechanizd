@@ -1,4 +1,4 @@
-# mechanizd
+# Mechanizd
 
 This project is the source code behind Mechanizd.com
 
@@ -15,3 +15,6 @@ Work in progress includes connection the Interactive Brokers Python API and some
 - [ml](#ml)
 - [rightedge](#rightedge)
 - [zorro](#zorro)
+
+## Batch
+* [Batch7pmSun.py]( Mechanizd/batch/Batch7pmSun.py)
