@@ -17,4 +17,4 @@ Work in progress includes connection the Interactive Brokers Python API and some
 - [zorro](#zorro)
 
 ## Batch
-* [Batch7pmSun.py]( Mechanizd/batch/Batch7pmSun.py)
+* [Batch7pmSun.py]( /batch/Batch7pmSun.py)
