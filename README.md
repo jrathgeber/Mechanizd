@@ -7,3 +7,11 @@ The python code is responsible for automating the running my Zorro and RightEdge
 Also handled is batch scheduling and web site scraping.
 
 Work in progress includes connection the Interactive Brokers Python API and some basic decision trees with Scikitlearn.
+
+## Table of Contents
+- [batch](#batch)
+- [ib](#ib)
+- [maxalpha](#maxalpha)
+- [ml](#ml)
+- [rightedge](#rightedge)
+- [zorro](#zorro)
