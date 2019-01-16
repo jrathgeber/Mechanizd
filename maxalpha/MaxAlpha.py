@@ -44,7 +44,7 @@ def parseWebSite(daterun):
     
     soup=BeautifulSoup(browser.page_source, "lxml")
     
-    print(maurl)    
+    #print(soup)    
     
     data = []
     
@@ -55,9 +55,9 @@ def parseWebSite(daterun):
         data.append([ele for ele in cols if ele]) # Get rid of empty values
         
         
-    print (len(data))      
-    print(data[50][0])
-    print(data)
+    #print (len(data))      
+    #print(data[50][0])
+    #print(data)
     
     # Adda a stock here
     juno = []    
@@ -86,8 +86,8 @@ def parseWebSite(daterun):
                     if(data[x][0] not in ['USAU', 'NA', 'YERR', 'TVIX', 'MLPO']):
                         ticker_ok=True    
         
-                    print (len(data[x]))    
-                    print(data[x])
+                    #print (len(data[x]))    
+                    #print(data[x])
                  
                     num = data[x][1]            
                     if(float(num.replace("$", "")) <= 12.0):
@@ -114,11 +114,11 @@ def parseWebSite(daterun):
     
         #else:
         #    juno = ['CARA', 'VIPS']
-        print(juno)    
+        #print(juno)    
     
     #browser.close()
     
     return juno
     
-#daterun = time.strftime("%Y%m%d")
-#parseWebSite(daterun)
+daterun = time.strftime("%Y%m%d")
+parseWebSite(daterun)
