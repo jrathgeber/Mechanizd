@@ -50,7 +50,7 @@ if tickerList[0]=='error':
     sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
 else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
-    sendMail.send_mail(user, user, 'Max ' + ''.join(tickerList), ''.join(tickerList),[], server, port, username, password)
+    sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ','.join(tickerList),[], server, port, username, password)
     t1 = threading.Thread(target=MyThread1)
     t1.start()
 
