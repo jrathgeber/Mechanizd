@@ -5,6 +5,9 @@ Created on Sat Apr 29 10:06:53 2017
 @author: Jason
 """
 
+
+
+
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 
@@ -12,6 +15,7 @@ from ibapi.common import *
 from ibapi.contract import *
 
 class TestApp(EWrapper,EClient):
+
     def __init__(self):
         EClient.__init__(self,self)
         
@@ -21,6 +25,10 @@ class TestApp(EWrapper,EClient):
 
     def contractDetails(self,reqId:int, contractDetails:ContractDetails):        
         print("contractDeatils:", reqId, "", contractDetails)
+
+    def shorttDetails(self,reqId:int, contractDetails:ContractDetails):        
+        print("shortDeatils:", reqId, "", contractDetails)
+
         
 def main():
     app  = TestApp()
@@ -36,10 +44,13 @@ def main():
     contract.currency = "USD"
     contract.primaryExchange = "NASDAQ"
     
-    app.reqContractDetails(10,contract)
+    app.reqContractDetails(11,contract)
+    
+    #app.shorttDetails(236, contract)
     
     app.run()
     
 if __name__ == "__main__":
     main()
+    
     

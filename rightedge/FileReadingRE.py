@@ -49,8 +49,9 @@ def fileReading(location, location1, link):
                         status  = 'Loser'
       
         if (timestr in item ):
+            s = item.find('_')  
             myFile.write('<tr><td>\n')
-            myFile.write(item[42:48].replace('/','').replace('_','').replace('1',''))
+            myFile.write(item[42:s].replace('/','').replace('_','').replace('1',''))
             myFile.write('</td>\n')
         
             myFile.write('<td>\n')

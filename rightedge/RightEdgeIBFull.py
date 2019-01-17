@@ -12,10 +12,7 @@ import FileReadingRE as FR
 
 daterun = time.strftime("%Y%m%d")
 
-#models = ('/W:Jason',)
-#models = ('/W:Jason','/W:TSX','/W:Nasdaq100')
-#models = ('/W:Jason','/W:TSX','/W:Nasdaq100','/W:Fonsie','/W:HF')
-models = ('MaxAlphaStopAndReverse', 'MaxAlphaShortOnly', 'MaxAlphaMinShort', 'MaxAlphaOne')
+models = ('MaxAlphaStopAndReverse', 'MaxAlphaShortOnly', 'MaxAlphaMinShort', 'MaxAlphaOne', 'MaxAlpha25cent', 'MaxAlphaLive')
 
 get_prices_XX = '/U'
 get_prices = ''

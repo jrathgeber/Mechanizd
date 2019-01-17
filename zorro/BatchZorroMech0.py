@@ -46,7 +46,7 @@ for model in models2:
     file.close() 
 
     copyfile('F:\Zorro\\Zorro\Log\\' + model + '.png', 'C:\dev\godaddy\\mech\\output\Zorro\\Mech0\\' + model + '.png')
-    file2 = open('F:\Zorro\\Zorro\Log\\' + model + '.png','rb')
+    file2 = open('F:\Zorro\\Zorro_19X\Log\\' + model + '.png','rb')
     session.storbinary('STOR /mech/output/Zorro/Mech0/' + model + '.png', file2)
     file2.close()        
 
