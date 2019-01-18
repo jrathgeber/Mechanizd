@@ -57,7 +57,7 @@ def parseWebSite(daterun):
         
     #print (len(data))      
     #print(data[50][0])
-    #print(data)
+    print(data)
     
     # Adda a stock here
     juno = []    
@@ -90,7 +90,7 @@ def parseWebSite(daterun):
                     #print(data[x])
                  
                     num = data[x][1]            
-                    if(float(num.replace("$", "")) <= 12.0):
+                    if(float(num.replace("$", "")) <= 10.0):
                         price_ok=True    
         
                     if(float(num.replace("$", "")) <= 1.00):
@@ -101,7 +101,7 @@ def parseWebSite(daterun):
                         gain_ok=True    
         
                     vol = data[x][5]  
-                    if(float(vol.replace(",", "").replace("M", "")) >= 3):
+                    if(float(vol.replace(",", "").replace("M", "")) >= 10000):
                         volume_ok=True    
         
                     #string news = data[x][5]
@@ -114,9 +114,9 @@ def parseWebSite(daterun):
     
         #else:
         #    juno = ['CARA', 'VIPS']
-        #print(juno)    
+        print(juno)    
     
-    #browser.close()
+    browser.close()
     
     return juno
     
