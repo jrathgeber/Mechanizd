@@ -1,6 +1,6 @@
 # Mechanizd
 
-This project is the source code behind Mechanizd.com
+This project is the source code behind Http://www.Mechanizd.com
 
 The python code is responsible for automating the running my Zorro and RightEdge Algorithmic tools.
 
