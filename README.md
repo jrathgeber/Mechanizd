@@ -2,7 +2,9 @@
 
 This project is the source code behind Http://www.Mechanizd.com
 
-The python code is responsible for automating the running my Zorro and RightEdge Algorithmic tools.
+Mechanizd is site for displaying the status of various algorithmic trading strategies that I run. 
+
+The python code is responsible for automating the running of my Zorro and RightEdge Algorithmic tools.
 
 Also handled is batch scheduling and web site scraping.
 
