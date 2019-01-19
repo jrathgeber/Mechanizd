@@ -72,9 +72,9 @@ def parseWebSite(daterun):
 
         if len(data)>0:
             
-            for x in range(6, watchitems):
+            for x in range(5, watchitems):
         
-                if len(data[x])>9:
+                if len(data[x])>8:
                               
                     ticker_ok= False    
                     price_ok= False
@@ -97,12 +97,18 @@ def parseWebSite(daterun):
                         price_ok=False
         
                     gap = data[x][4]
-                    if(float(gap.replace(",", "").replace("M", "")) >= 10):
+                    if(float(gap.replace(",", "").replace("M", "").replace("K", "")) >= 10):
                         gain_ok=True    
         
                     vol = data[x][5]  
-                    if(float(vol.replace(",", "").replace("M", "")) >= 10000):
+                    if(float(vol.replace(",", "").replace("M", "")) >= 10):
                         volume_ok=True    
+
+                    #print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + ticker_ok + ' ' + price_ok + '' + gain_ok + ' ' + volume_ok)        
+
+                    print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + gap.replace(",", "").replace("M", "") )        
+                
+        
         
                     #string news = data[x][5]
                     #if(['Buy-out', 'Merger'] not in news):
@@ -116,7 +122,7 @@ def parseWebSite(daterun):
         #    juno = ['CARA', 'VIPS']
         print(juno)    
     
-    browser.close()
+    #browser.close()
     
     return juno
     
