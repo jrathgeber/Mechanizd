@@ -1,6 +1,6 @@
 # Mechanizd
 
-This project contains the source code to genrate Http://www.Mechanizd.com
+This project contains the source code to genrate http://www.Mechanizd.com
 
 Mechanizd is a site for displaying the status of various algorithmic trading strategies that I run in live, paper and backetst modes. The python code automates the running of the Zorro and RightEdge Algorithmic tools and extracts data from reports generated to populate the web site daily. Also handled is batch scheduling and web site scraping.
 
