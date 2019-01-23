@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jan  6 20:51:41 2019
+
+Created on Wed Jan  3 21:50:56 2019
 
 @author: Jason
-"""
 
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jan  3 21:50:56 2018
-
-@author: Jason
 """
 
 from selenium import webdriver
@@ -57,7 +52,7 @@ def parseWebSite(daterun):
         
     #print (len(data))      
     #print(data[50][0])
-    print(data)
+    #print(data)
     
     # Adda a stock here
     juno = []    
@@ -101,14 +96,11 @@ def parseWebSite(daterun):
                         gain_ok=True    
         
                     vol = data[x][5]  
-                    if(float(vol.replace(",", "").replace("M", "")) >= 10):
+                    if(float(vol.replace(",", "").replace("M", "")) >= 10000):
                         volume_ok=True    
 
-                    #print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + ticker_ok + ' ' + price_ok + '' + gain_ok + ' ' + volume_ok)        
-
-                    print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + gap.replace(",", "").replace("M", "") )        
-                
-        
+                    #print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + gap.replace(",", "").replace("M", "") )        
+            
         
                     #string news = data[x][5]
                     #if(['Buy-out', 'Merger'] not in news):
@@ -120,7 +112,7 @@ def parseWebSite(daterun):
     
         #else:
         #    juno = ['CARA', 'VIPS']
-        print(juno)    
+        #print(juno)    
     
     #browser.close()
     
