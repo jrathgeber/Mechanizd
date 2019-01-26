@@ -27,7 +27,7 @@ gdpass = config['godaddy']['pass']
 timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
-models = ('downloadj','J12a','J12b','J12c', 'J12d', 'J12e', 'J17a', 'J19a')
+models = ('downloadj','J12a','J12b','J12c', 'J12d', 'J12e', 'J17a', 'J19a', 'SFa', 'SFb')
 
 fileTypes = ('.png','.htm','.txt', '_pnl.csv', '_test.log')
 
