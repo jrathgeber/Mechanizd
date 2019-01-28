@@ -79,6 +79,15 @@ def fileReading(location, location1, link):
                 start = 2000
                 END_2017 = 1828
                 END_2018 = 1430
+        elif ('Paper1' in item ):        
+            if ('SFa' in item ):
+                start = 100000
+                END_2017 = 100000
+                END_2018 = 103624
+            elif ('SFb' in item ):
+                start = 100000
+                END_2017 = 100000
+                END_2018 = 100582
         elif ('Mech2' in item ):
             if ('Z12' in item ):
                 start = 2000
