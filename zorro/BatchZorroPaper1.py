@@ -47,7 +47,7 @@ for model in models:
     session.storbinary('STOR /mech/output/Zorro/Paper1/' + model + '.png', file2)
     file2.close()        
        
-FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Paper1\\Z*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Paper1\ZorroResults.htm', '<a href="http://52.186.84.170">Zorro Paper1</a>')
+FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Paper1\\SF*.htm", 'C:\dev\godaddy\\mech\output\Zorro\Paper1\ZorroResults.htm', '<a href="http://52.186.84.170">Zorro Paper1</a>')
 
 fileSummary = open('C:\dev\godaddy\\mech\output\Zorro\Paper1\ZorroResults.htm','rb')
 session.storbinary('STOR /mech/output/Zorro/Paper1/ZorroResults.htm', fileSummary)     # send the file
