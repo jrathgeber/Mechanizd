@@ -91,17 +91,34 @@ def parseWebSite(daterun):
                     if(float(num.replace("$", "")) <= 1.00):
                         price_ok=False
         
-                    gap = data[x][4]
-                    if(float(gap.replace(",", "").replace("M", "").replace("K", "")) >= 10):
+                    # Gap
+                    if(len(data[x])==9):
+                        gap = data[x][3]
+                        vol = data[x][4]
+                    else :
+                        gap = data[x][4]
+                        vol = data[x][5]                        
+                    
+                    # conditional gets
+                    gap_mult = 1
+                    if ('M' in gap):
+                        gap_mult = 1000000
+                    if ('K' in gap):
+                        gap_mult = 1000    
+                    if(float(gap.replace(",", "").replace("M", "").replace("K", "")) * gap_mult >= 10):
                         gain_ok=True    
         
-                    vol = data[x][5]  
-                    if(float(vol.replace(",", "").replace("M", "")) >= 10000):
+                    # Vol
+                    vol_mult = 1
+                    if ('M' in vol):
+                        vol_mult = 1000000
+                    if ('K' in gap):
+                        vol_mult = 1000                    
+                    if(float(vol.replace(",", "").replace("M", "").replace("K", "")) * vol_mult >= 10000):
                         volume_ok=True    
 
                     #print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + gap.replace(",", "").replace("M", "") )        
-            
-        
+
                     #string news = data[x][5]
                     #if(['Buy-out', 'Merger'] not in news):
                     #    events_ok=True    
