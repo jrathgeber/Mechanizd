@@ -14,7 +14,7 @@ from shutil import copyfile
 import os;
 os.chdir('C:\\dep\\Mechanizd\\batch\\')
 
-import FileReadingBackTestz as FR
+import FileReadingBackTest as FR
 
 import configparser
 config = configparser.ConfigParser()
@@ -29,7 +29,7 @@ session = ftplib.FTP(gdurl,gduser,gdpass)
 
 models = ('Z1','Z2','Z12','Z7')
 
-fileTypes = ('.png','.htm','.txt', '_pnl.csv', '_Test.log')
+fileTypes = ('.htm','.txt', '_pnl.csv', '_Test.log')
 
 for model in models:
 
@@ -49,7 +49,7 @@ for model in models:
     
         copyfile('F:\Zorro\\Zorro_19X\Log\\Testtrades.csv', 'C:\dev\godaddy\\mech\\output\Zorro\\Testz\\' + model + '_' + timestr + '_Testtrades.csv')    
         
-        file = open('F:\Zorro\\Zorro_19X\Log\\Testztrades.csv','rb')
+        file = open('F:\Zorro\\Zorro_19X\Log\\Testtrades.csv','rb')
         session.storbinary('STOR /mech/output/Zorro/Testz/' + model + '_' + timestr + '_testtrades.csv', file)
         file.close()    
     
