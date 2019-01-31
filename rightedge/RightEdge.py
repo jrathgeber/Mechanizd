@@ -61,17 +61,17 @@ for model in models:
         data = str(f.read())
         #sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + model.replace('/W:','') + ' Breakout Results', data, image_list)
 
-    copyfile('C:\dec\RightEdge\Systems\SymbolRanking\output.html', 'C:\dev\godaddy\\mech\output\RightEdge\\Hist\\' + model.replace('/W:','') + '_' + timestr + '.htm')  
+    copyfile('C:\dec\RightEdge\Systems\SymbolRanking\output.html', 'C:\dev\godaddy\\mech\output\RightEdge\\Index\\' + model.replace('/W:','') + '_' + timestr + '.htm')  
 
     session = ftplib.FTP(gdurl,gduser,gdpass)
     file = open('C:\dec\RightEdge\Systems\SymbolRanking\output.html','rb')
-    session.storbinary('STOR /mech/output/RightEdge/Hist/' + model.replace('/W:','') + '_' + timestr + '.htm', file)     # send the file
+    session.storbinary('STOR /mech/output/RightEdge/Index/' + model.replace('/W:','') + '_' + timestr + '.htm', file)     # send the file
     file.close()                                    # close file and FTP
 
-FR.fileReading("C:\dev\godaddy\\mech\output\RightEdge\\Hist\\*.htm", 'C:\dev\godaddy\\mech\output\RightEdge\Hist\RightEdgeResults.htm', 'RightEdge - Backtest YTD')
+FR.fileReading("C:\dev\godaddy\\mech\output\RightEdge\\Index\\*.htm", 'C:\dev\godaddy\\mech\output\RightEdge\Index\RightEdgeResults.htm', 'RightEdge - Backtest YTD')
 
-fileSummary = open('C:\dev\godaddy\\mech\output\RightEdge\Hist\RightEdgeResults.htm','rb')
-session.storbinary('STOR /mech/output/RightEdge/Hist/RightEdgeResults.htm', fileSummary)     # send the file
+fileSummary = open('C:\dev\godaddy\\mech\output\RightEdge\Index\RightEdgeResults.htm','rb')
+session.storbinary('STOR /mech/output/RightEdge/Index/RightEdgeResults.htm', fileSummary)     # send the file
 fileSummary.close()   
     
 session.quit()

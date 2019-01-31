@@ -20,4 +20,6 @@ exec(open("C:\\dep\\Mechanizd\\zorro\\BatchZorroMech1.py").read())
 
 exec(open("C:\\dep\\Mechanizd\\zorro\\BatchZorroMech2.py").read())
 
+exec(open("C:\\dep\\Mechanizd\\zorro\\backtestz.py").read())
+
 exec(open("C:\\dep\\Mechanizd\\zorro\\train.py").read())

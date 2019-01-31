@@ -28,6 +28,7 @@ timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl,gduser,gdpass)
 
 models = ('Z1','Z2','Z12','Z7')
+#models = ('Z7',)
 
 fileTypes = ('.htm','.txt', '_pnl.csv', '_Test.log')
 
@@ -54,7 +55,7 @@ for model in models:
         file.close()    
     
 
-FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Testz\\J*.txt", 'C:\dev\godaddy\\mech\output\Zorro\Testz\ZorroResults.htm', 'Zorro Daily Backtests')
+FR.fileReading("C:\dev\godaddy\\mech\output\Zorro\\Testz\\Z*.txt", 'C:\dev\godaddy\\mech\output\Zorro\Testz\ZorroResults.htm', 'Zorro Daily Backtests')
 
 fileSummary = open('C:\dev\godaddy\\mech\output\Zorro\Testz\ZorroResults.htm','rb')
 session.storbinary('STOR /mech/output/Zorro/Testz/ZorroResults.htm', fileSummary)     # send the file

@@ -23,23 +23,11 @@ def parseWebSite(daterun):
 
     maurl = 'https://secure.trade-ideas.com/cms_static/kathy_test/tivision/TradeIdeasVision.php?cloud_code=cbf36ff3ba1990a750ce63b90f22aa50&height=700&width=848'    
 
-    
-    print('hello1') 
-
     browser=webdriver.Firefox()
-
-    print('hello2') 
-
     browser.get(maurl)
-
-    #time.sleep(15)
     time.sleep(7)    
-    
-    print('hello3')    
-    
+
     soup=BeautifulSoup(browser.page_source, "lxml")
-    
-    #print(soup)    
     
     data = []
     
@@ -131,9 +119,9 @@ def parseWebSite(daterun):
         #    juno = ['CARA', 'VIPS']
         #print(juno)    
     
-    #browser.close()
+    browser.close()
     
     return juno
     
-daterun = time.strftime("%Y%m%d")
-parseWebSite(daterun)
+#daterun = time.strftime("%Y%m%d")
+#parseWebSite(daterun)

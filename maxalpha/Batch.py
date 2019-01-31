@@ -46,7 +46,6 @@ tickerList = MA.parseWebSite(daterun);
 print(tickerList)
 
 if tickerList[0]=='error':
-    print('hello')
     sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
 else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
