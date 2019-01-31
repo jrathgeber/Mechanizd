@@ -28,6 +28,8 @@ def fileReading(location, location1, link):
     
     profit = 'Last Update:  03.04. 04:47 UTC (00:47 Local)<br>System State:  9473 +0 -14 /\\\\<br><p>';
     
+    status = '?'    
+    
     for item in thelist:
         print(item)
         if ('Z7' in item ):
