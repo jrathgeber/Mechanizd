@@ -14,7 +14,7 @@ from shutil import copyfile
 import os;
 os.chdir('C:\\dep\\Mechanizd\\batch\\')
 
-import FileReadingBackTest as FR
+import FileReadingCrypto as FR
 
 import configparser
 config = configparser.ConfigParser()
