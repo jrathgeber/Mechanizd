@@ -52,11 +52,11 @@ def fileReading(location, location1, link):
         if (timestr in item ):
             s = item.find('_')   
             myFile.write('<tr><td>\n')
-            myFile.write(item[42:s].replace('/','').replace('_','').replace('1',''))
+            myFile.write(item[43:s].replace('/','').replace('_','').replace('1',''))
             myFile.write('</td>\n')
         
             myFile.write('<td>\n')
-            myFile.write('<a href=./output/RightEdge/'+item[37:]+'>'+item[42:]+'</a>')
+            myFile.write('<a href=./output/RightEdge/'+item[37:]+'>'+item[43:]+'</a>')
             myFile.write('</td>\n')
             
             myFile.write('<td  align="right">\n')

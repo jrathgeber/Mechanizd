@@ -6,6 +6,10 @@ import ftplib
 
 from subprocess import Popen
 from shutil import copyfile
+
+import os;
+os.chdir('C:\\dep\\Mechanizd\\batch\\')
+
 import FileReadingRE as FR
 
 # Runs the following : 
