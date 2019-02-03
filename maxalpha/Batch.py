@@ -12,16 +12,16 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
-gdurl = config['godaddy']['url']
-gduser = config['godaddy']['user']
-gdpass = config['godaddy']['pass']
+gdurl = config['godaddy']['godaddy.url']
+gduser = config['godaddy']['godaddy.user']
+gdpass = config['godaddy']['godaddy.pass']
 
-url = config['yahoo']['url']
-user = config['yahoo']['user']
-password = config['yahoo']['pass']
-server = config['yahoo']['server']
-port = config['yahoo']['port']
-username = config['yahoo']['username']
+url = config['yahoo']['yahoo.url']
+user = config['yahoo']['yahoo.user']
+password = config['yahoo']['yahoo.pass']
+server = config['yahoo']['yahoo.server']
+port = config['yahoo']['yahoo.port']
+username = config['yahoo']['yahoo.username']
 
 os.chdir('C:\\dep\Mechanizd\\maxalpha\\')
 

@@ -19,9 +19,9 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
-gdurl = config['godaddy']['url']
-gduser = config['godaddy']['user']
-gdpass = config['godaddy']['pass']
+gdurl = config['godaddy']['godaddy.url']
+gduser = config['godaddy']['godaddy.user']
+gdpass = config['godaddy']['godaddy.pass']
 
 
 #timestr = time.strftime("%Y%m%d_%H%M%S")

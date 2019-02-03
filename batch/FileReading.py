@@ -114,9 +114,13 @@ def fileReading(location, location1, link):
       
         if (timestr in item ):
 
+
             #Model        
             myFile.write('<tr><td>\n')
-            myFile.write(item[39:42].replace('/','').replace('_',''))
+            if ('Z7' in item ):
+                myFile.write('J1')
+            else :
+                myFile.write(item[39:42].replace('/','').replace('_',''))           
             myFile.write('</td>\n')
         
             #Details

@@ -16,10 +16,9 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
-gdurl = config['godaddy']['url']
-gduser = config['godaddy']['user']
-gdpass = config['godaddy']['pass']
-
+gdurl = config['godaddy']['godaddy.url']
+gduser = config['godaddy']['godaddy.user']
+gdpass = config['godaddy']['godaddy.pass']
 
 #   Runs the following : 
 #   "C:\Program Files (x86)\Yye Software\RightEdge 2010\RightEdge.exe" /W:"Nasdaq100" /P:"C:\dec\RightEdge\Systems\BarCheckerEQ\BarChecker.rep" /S /U /E
