@@ -7,6 +7,22 @@ import ftplib
 from subprocess import Popen
 from shutil import copyfile
 
+import configparser
+config = configparser.ConfigParser()
+config.read('C:\etc\properties.ini') 
+
+gdurl = config['godaddy']['godaddy.url']
+gduser = config['godaddy']['godaddy.user']
+gdpass = config['godaddy']['godaddy.pass']
+
+url = config['yahoo']['yahoo.url']
+user = config['yahoo']['yahoo.user']
+password = config['yahoo']['yahoo.pass']
+server = config['yahoo']['yahoo.server']
+port = config['yahoo']['yahoo.port']
+username = config['yahoo']['yahoo.username']
+
+
 import os;
 os.chdir('C:\\dep\\Mechanizd\\batch\\')
 
@@ -49,7 +65,7 @@ for model in models:
 
     with open("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'r') as f:
         data = str(f.read())
-        sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + model + ' Breakout Results', data, image_list)
+        sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + model + ' Breakout Results', data, image_list, server, port, username, password)
 
     copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Hist\\' + model + '_' + timestr + '.htm')  
 

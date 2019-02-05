@@ -20,9 +20,12 @@ gdurl = config['godaddy']['godaddy.url']
 gduser = config['godaddy']['godaddy.user']
 gdpass = config['godaddy']['godaddy.pass']
 
-yurl = config['yahoo']['yahoo.url']
-yuser = config['yahoo']['yahoo.user']
-ypass = config['yahoo']['yahoo.pass']
+url = config['yahoo']['yahoo.url']
+user = config['yahoo']['yahoo.user']
+password = config['yahoo']['yahoo.pass']
+server = config['yahoo']['yahoo.server']
+port = config['yahoo']['yahoo.port']
+username = config['yahoo']['yahoo.username']
 
 # Runs the following : 
 # "C:\Program Files (x86)\Yye Software\RightEdge 2010\RightEdge.exe" /W:"Nasdaq100" /P:"C:\dec\RightEdge\Systems\BarCheckerEQ\BarChecker.rep" /S /U /E
@@ -68,7 +71,7 @@ for model in models:
 
     with open("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'r') as f:
         data = str(f.read())
-        sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + model.replace('/W:','') + ' Breakout Results', data, image_list)
+        sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + model.replace('/W:','') + ' Breakout Results', data, image_list, server, port, username, password)
 
     copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Close\\' + model.replace('/W:','') + '_' + timestr + '.htm')  
 

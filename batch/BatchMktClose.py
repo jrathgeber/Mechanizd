@@ -16,11 +16,16 @@ from shutil import copyfile
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
-gdurl = config['godaddy']['url']
-gduser = config['godaddy']['user']
-gdpass = config['godaddy']['pass']
+gdurl = config['godaddy']['godaddy.url']
+gduser = config['godaddy']['godaddy.user']
+gdpass = config['godaddy']['godaddy.pass']
 
-
+url = config['yahoo']['yahoo.url']
+user = config['yahoo']['yahoo.user']
+password = config['yahoo']['yahoo.pass']
+server = config['yahoo']['yahoo.server']
+port = config['yahoo']['yahoo.port']
+username = config['yahoo']['yahoo.username']
 
 #cc_list = ('jrathgeber@yahoo.com','rathgeber.webster@gmail.com')
 cc_list = ('jrathgeber@yahoo.com')   
@@ -35,7 +40,7 @@ os.chdir('c:\\dep\\Mechanizd\\rightedge\\')
 #send live MaxAlpha Output
 with open('C:\dec\RightEdge\Systems\MaxAlphaLive\output.html', 'r') as f:
     data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaLive\output.txt'])
+    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data, ['C:\dec\RightEdge\Systems\MaxAlphaLive\output.txt'], server, port, username, password)
     
     copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html", 'C:\dev\godaddy\\mech\output\RightEdge\\Live\\' + model + '_' + timestr + '.htm')  
 
@@ -59,7 +64,7 @@ exec(open('C:\\dep\\Mechanizd\\rightedge\\RightEdgeIB.py').read())
 # Send Z7 Live Status    
 with open('F:\Zorro\Zorro_19X\Log\Z7.htm', 'r') as f:
     data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Zorro Summary Z7', data, ['F:\Zorro\Zorro\Log\Z7.txt'])    
+    sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Zorro Summary Z7', data, ['F:\Zorro\Zorro\Log\Z7.txt'],server, port, username, password)    
     
 # Backtest Js and download prices    
-exec(open('C:\\dep\\Mechanizd\\zorro\\backtest.py').read())
+exec(open('C:\\dep\\Mechanizd\\zorro\\BacktestJ.py').read())

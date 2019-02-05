@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
 
-def send_mail( send_from, send_to, subject, text, files=[], server="smtp.mail.yahoo.com", port=587, username='jrathgeber', password='ironfish35z', isTls=True):
+def send_mail( send_from, send_to, subject, text, files, server, port, username, password, isTls=True):
     msg = MIMEMultipart()
     msg['From'] = send_from
     msg['To'] = COMMASPACE.join(send_to)
@@ -26,7 +26,5 @@ def send_mail( send_from, send_to, subject, text, files=[], server="smtp.mail.ya
     if isTls: smtp.starttls()
     smtp.login(username,password)
     smtp.sendmail(send_from, send_to, msg.as_string())
-    
     smtp.quit()
-# -*- coding: utf-8 -*-
 

@@ -57,7 +57,7 @@ def parseWebSite(daterun):
             
             for x in range(5, watchitems):
         
-                if len(data[x])>8:
+                if len(data[x])>9:
                               
                     ticker_ok= False    
                     price_ok= False
