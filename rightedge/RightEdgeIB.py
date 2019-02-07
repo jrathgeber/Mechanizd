@@ -47,10 +47,10 @@ timestr = time.strftime("%d%m%y")
 #Main Model Loop Through
 for model in models:
 
-    cc_list = (yuser)
+    cc_list = (user)
     if "TSX" in model: 
 
-       cc_list = (yuser)
+       cc_list = (user)
 #      cc_list = ('jrathgeber@yahoo.com','rathgeber.webster@gmail.com')
 
     params = [r"C:\Program Files (x86)\Yye Software\RightEdge 2010\RightEdge.exe",  '/W:MaxAlpha' + '/'+ daterun , "/P:C:\dec\RightEdge\Systems\\" + model + "\MaxAlpha.rep", '/S', get_prices, '/E']
