@@ -29,7 +29,7 @@ username = config['yahoo']['yahoo.username']
 
 # Runs the following : 
 # "C:\Program Files (x86)\Yye Software\RightEdge 2010\RightEdge.exe" /W:"Nasdaq100" /P:"C:\dec\RightEdge\Systems\BarCheckerEQ\BarChecker.rep" /S /U /E
-# and send an email output
+# and send an email output common
 
 daterun = time.strftime("%Y%m%d")
 #daterun = '20181026'
@@ -37,7 +37,7 @@ daterun = time.strftime("%Y%m%d")
 #models = ('/W:Jason',)
 #models = ('/W:Jason','/W:TSX','/W:Nasdaq100')
 #models = ('/W:Jason','/W:TSX','/W:Nasdaq100','/W:Fonsie','/W:HF')
-models = ('MaxAlphaStopAndReverse', 'MaxAlphaShortOnly', 'MaxAlphaMinShort', 'MaxAlphaOne', 'MaxAlpha25cent')
+models = ('MaxAlphaStopAndReverse', 'MaxAlphaShortOnly', 'MaxAlphaMinShort', 'MaxAlphaOne', 'MaxAlpha25cent') 
 
 get_prices_XX = '/U'
 get_prices = ''

@@ -25,5 +25,5 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth) 
   
 # update the status 
-api.update_status(status ="That is all for today !") 
+api.update_status(status ="Penny Stock Watchlist for today : $TMSR $AMRS $CRON") 
 
