@@ -1,93 +1,91 @@
 # -*- coding: utf-8 -*-
 
-
-# https://github.com/dataquestio/twitter-scrape
-
-
-import settings
+#import time
+from getpass import getpass
+from textwrap import TextWrapper
 import tweepy
-import dataset
-from textblob import TextBlob
-from sqlalchemy.exc import ProgrammingError
-import json
 
-db = dataset.connect(settings.CONNECTION_STRING)
+import configparser
+config = configparser.ConfigParser()
+config.read('C:\etc\properties.ini') 
+   
+# personal details 
+consumer_key=config['twitter']['consumer_key']
+consumer_secret=config['twitter']['consumer_secret']
+access_token=config['twitter']['access_token']
+access_token_secret=config['twitter']['access_token_secret']
 
-class StreamListener(tweepy.StreamListener):
-
+class StreamWatcherListener(tweepy.StreamListener):
+    status_wrapper = TextWrapper(width=60, initial_indent='    ', subsequent_indent='    ')
     def on_status(self, status):
 
-        if status.retweeted:
-            return
-
-        description = status.user.description
-        loc = status.user.location
-        text = status.text
-        coords = status.coordinates
-        geo = status.geo
-        name = status.user.screen_name
-        user_created = status.user.created_at
-        followers = status.user.followers_count
-        id_str = status.id_str
-        created = status.created_at
-        retweets = status.retweet_count
-        bg_color = status.user.profile_background_color
-        blob = TextBlob(text)
-        sent = blob.sentiment
-
-
-        if geo is not None:
-            geo = json.dumps(geo)
-
-
-
-        if coords is not None:
-            coords = json.dumps(coords)
-
-
-        table = db[settings.TABLE_NAME]
-
         try:
-
-            table.insert(dict(
-
-                user_description=description,
-                user_location=loc,
-                coordinates=coords,
-                text=text,
-                geo=geo,
-                user_name=name,
-                user_created=user_created,
-                user_followers=followers,
-                id_str=id_str,
-                created=created,
-                retweet_count=retweets,
-                user_bg_color=bg_color,
-                polarity=sent.polarity,
-                subjectivity=sent.subjectivity,
-
-            ))
-
-        except ProgrammingError as err:
-
-            print(err)
-
+            print (self.status_wrapper.fill(status.text))
+            print ('\n %s  %s  via %s\n' % (status.author.screen_name, status.created_at, status.source))
+        except:
+            # Catch any unicode errors while printing to console
+            # and just ignore them to avoid breaking application.
+            pass
 
     def on_error(self, status_code):
+        print ('An error has occured! Status code = %s' % status_code)
+        return True  # keep stream alive
 
-        if status_code == 420:
+    def on_timeout(self):
+        print ('Snoozing Zzzzzz')
 
-            #returning False in on_data disconnects the stream
+def main():
 
-            return False
+    #auth
+    auth = tweepy.auth.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    stream = tweepy.Stream(auth, StreamWatcherListener(), timeout=None)
+
+    # Prompt for mode of streaming
+    valid_modes = ['sample', 'filter']
+    while True:
+        mode = 'filter'
+        if mode in valid_modes:
+            break
+        print ('Invalid mode! Try again.')
 
 
-auth = tweepy.OAuthHandler(settings.TWITTER_APP_KEY, settings.TWITTER_APP_SECRET)
-auth.set_access_token(settings.TWITTER_KEY, settings.TWITTER_SECRET)
-api = tweepy.API(auth)
+    if mode == 'sample':
+        stream.sample()
 
+    elif mode == 'filter':
+        #follow_list = '@GuyGentile, @THESUPERAKAME'
+        follow_list = '2945957362'        
+        track_list = '$'
+        if follow_list:
+            follow_list = [u for u in follow_list.split(',')]
+            userid_list = []
+            username_list = []
+           
+            for user in follow_list:
+                if user.isdigit():
+                    userid_list.append(user)
+                else:
+                    username_list.append(user)
+       
+            for username in username_list:
+                #user = tweepy.API().get_user(screen_name = 'JPRATHGEBER')                
+                user = tweepy.API().get_user(username)
+                userid_list.append(user.id)
+     
+            follow_list = userid_list
+        else:
+            follow_list = None
 
+        if track_list:
+            track_list = [k for k in track_list.split(',')]
+        else:
+            track_list = None
+        print (follow_list)
+        stream.filter(follow_list, track_list)
 
-stream_listener = StreamListener()
-stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-stream.filter(track=settings.TRACK_TERMS)
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print ('\nGoodbye!')

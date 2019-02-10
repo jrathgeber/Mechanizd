@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
 
-import pandas as pd
+#import pandas as pd
 import traceback
-
 #import fix_yahoo_finance as yf
 import quandl
 #import iexfinance as iex
 #import #nsepy
+import configparser
+config = configparser.ConfigParser()
+config.read('C:\etc\properties.ini') 
+
+   
+# personal details 
+quandl_key=config['quandl']['quandl.apikey']
+
 
 from quandl.errors.quandl_error import AuthenticationError
 
@@ -16,7 +23,7 @@ def get_quantinsti_api_key():
         To get your API key, sign up for a free Quandl account
         Then, you can find your API key on Quandl account settings page
     """
-    return ''
+    return quandl_key
 
 def get_data(ticker, start_date='2016-01-01', end_date='2017-01-01'):
     """
