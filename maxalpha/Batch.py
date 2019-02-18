@@ -8,6 +8,7 @@ import sendMail;
 import SymbolConfig as SC;
 import threading;
 import configparser
+import Tweet
 
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
@@ -36,6 +37,9 @@ mode = '/L'
 #maxdata=["The", "earth", "revolves", "around", "sun"]
 maxdata='hello'
 
+Tweet.tweetSomething('Goodnight')
+
+
 def MyThread1():
     RE.runRightEdge('MaxAlphaLive', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
     
@@ -50,6 +54,7 @@ if tickerList[0]=='error':
 else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
     sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ','.join(tickerList),[], server, port, username, password)
+    Tweet.tweetSomething('Watchlist ' + ' $'.join(tickerList))
     t1 = threading.Thread(target=MyThread1)
     t1.start()
 

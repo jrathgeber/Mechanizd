@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# -*- coding: utf-8 -*-
+
 # Ty to : 
 
 # https://www.geeksforgeeks.org/tweet-using-python/
@@ -30,3 +32,4 @@ def tweetSomething(something):
     #api.update_status(status ="Penny Stock Watchlist for today : $TMSR $AMRS $CRON") 
     #api.update_status(status ="Happy Presidents Day") 
     api.update_status(status = something) 
+
