@@ -57,7 +57,7 @@ def parseWebSite(daterun):
             
             for x in range(5, watchitems):
         
-                if len(data[x])>9:
+                if len(data[x])>7:
                               
                     ticker_ok= False    
                     price_ok= False
@@ -83,10 +83,19 @@ def parseWebSite(daterun):
                     if(len(data[x])==9):
                         gap = data[x][3]
                         vol = data[x][4]
-                    else :
+                    elif(len(data[x])==10):
+                        gap = data[x][3]
+                        vol = data[x][4]                        
+                    elif(len(data[x])==11):
                         gap = data[x][4]
-                        vol = data[x][5]                        
-                    
+                        vol = data[x][5]
+                    elif(len(data[x])==8):
+                        gap = data[x][3]
+                        vol = data[x][4]                         
+                    else :
+                        gap = data[x][3]
+                        vol = data[x][4]                  
+               
                     # conditional gets
                     gap_mult = 1
                     if ('M' in gap):
