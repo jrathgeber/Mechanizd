@@ -13,6 +13,8 @@ config.read('C:\etc\properties.ini')
 
    
 def tweetSomething(something):
+
+    tickerList = ['ZSAN', 'VIPS']          
       
     # personal details 
     consumer_key=config['twitter']['consumer_key']
@@ -30,6 +32,7 @@ def tweetSomething(something):
       
     # update the status 
     #api.update_status(status ="Penny Stock Watchlist for today : $TMSR $AMRS $CRON") 
-    #api.update_status(status ="Happy Presidents Day") 
-    api.update_status(status = something) 
-
+    #api.update_status(status = something)
+    api.update_status(status ='Day Trading Watchlist $' + ', $'.join(tickerList))
+    
+tweetSomething('Hi')

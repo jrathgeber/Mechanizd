@@ -80,15 +80,18 @@ def parseWebSite(daterun):
                         price_ok=False
         
                     # Gap
-                    if(len(data[x])==9):
-                        gap = data[x][3]
-                        vol = data[x][4]
-                    elif(len(data[x])==10):
-                        gap = data[x][3]
-                        vol = data[x][4]                        
-                    elif(len(data[x])==11):
+                    if(len(data[x])==12):
                         gap = data[x][4]
                         vol = data[x][5]
+                    elif(len(data[x])==11):
+                        gap = data[x][4]
+                        vol = data[x][5]                        
+                    elif(len(data[x])==10):
+                        gap = data[x][4]
+                        vol = data[x][5]
+                    elif(len(data[x])==9):
+                        gap = data[x][4]
+                        vol = data[x][5]                         
                     elif(len(data[x])==8):
                         gap = data[x][3]
                         vol = data[x][4]                         
@@ -115,6 +118,8 @@ def parseWebSite(daterun):
                         volume_ok=True    
 
                     #print(data[x][0] + ' ' + vol.replace(",", "").replace("M", "") + " " + gap.replace(",", "").replace("M", "") )        
+                    #print('' + str(ticker_ok) + ' ' + str(price_ok) + ' ' + str(gain_ok) + ' ' + str(volume_ok))
+
 
                     #string news = data[x][5]
                     #if(['Buy-out', 'Merger'] not in news):
