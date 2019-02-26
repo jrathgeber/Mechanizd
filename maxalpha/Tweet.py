@@ -14,7 +14,7 @@ config.read('C:\etc\properties.ini')
    
 def tweetSomething(something):
 
-    tickerList = ['ZSAN', 'VIPS']          
+    #tickerList = ['ZSAN', 'VIPS']          
       
     # personal details 
     consumer_key=config['twitter']['consumer_key']

@@ -92,12 +92,12 @@ def parseWebSite(daterun):
                     elif(len(data[x])==9):
                         gap = data[x][4]
                         vol = data[x][5]                         
-                    elif(len(data[x])==8):
-                        gap = data[x][3]
-                        vol = data[x][4]                         
+                    #elif(len(data[x])==8):
+                    #    gap = data[x][3]
+                    #    vol = data[x][4]                         
                     else :
-                        gap = data[x][3]
-                        vol = data[x][4]                  
+                        gap = data[x][4]
+                        vol = data[x][5]                  
                
                     # conditional gets
                     gap_mult = 1
