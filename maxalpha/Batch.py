@@ -28,7 +28,7 @@ os.chdir('C:\\dep\Mechanizd\\maxalpha\\')
 
 daterun = time.strftime("%Y%m%d")
 
-print(daterun)
+#print(daterun)
 
 closeup = '/E'
 get_prices = '/U'
@@ -38,10 +38,9 @@ mode = '/L'
 maxdata='hello'
 
 
-
 def MyThread1():
     RE.runRightEdge('MaxAlphaLive', 'MaxAlpha', 'MaxAlpha', mode, '/'+ daterun, get_prices, closeup)
-    
+   
     
 #tickerList = ['AXSM', 'VIPS']    
 tickerList = MA.parseWebSite(daterun);
