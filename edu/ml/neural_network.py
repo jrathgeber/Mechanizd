@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# -*- coding: utf-8 -*-
+
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
@@ -11,13 +13,8 @@ from scipy.optimize import minimize
 
 from sklearn.linear_model import LogisticRegression
 
-pd.set_option('display.notebook_repr_html', False)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 150)
-pd.set_option('display.max_seq_items', None)
- 
-#%config InlineBackend.figure_formats = {'pdf',}
-#%matplotlib inline
+import functions
+
 
 import seaborn as sns
 sns.set_context('notebook')
@@ -49,14 +46,12 @@ sample = np.random.choice(X.shape[0], 20)
 plt.imshow(X[sample,1:].reshape(-1,20).T)
 plt.axis('off');
 
-def sigmoid(z):
-    return(1 / (1 + np.exp(-z)))
-    
+
 
 
 def lrcostFunctionReg(theta, reg, X, y):
     m = y.size
-    h = sigmoid(X.dot(theta))
+    h = functions.sigmoid(X.dot(theta))
     
     J = -1*(1/m)*(np.log(h).T.dot(y)+np.log(1-h).T.dot(1-y)) + (reg/(2*m))*np.sum(np.square(theta[1:]))
     
@@ -66,7 +61,7 @@ def lrcostFunctionReg(theta, reg, X, y):
 
 def lrgradientReg(theta, reg, X,y):
     m = y.size
-    h = sigmoid(X.dot(theta.reshape(-1,1)))
+    h = functions.sigmoid(X.dot(theta.reshape(-1,1)))
       
     grad = (1/m)*X.T.dot(h-y) + (reg/m)*np.r_[[[0]],theta[1:].reshape(-1,1)]
         
@@ -86,7 +81,7 @@ def oneVsAll(features, classes, n_labels, reg):
 theta = oneVsAll(X, y, 10, 0.1)
 
 def predictOneVsAll(all_theta, features):
-    probs = sigmoid(X.dot(all_theta.T))
+    probs = functions.sigmoid(X.dot(all_theta.T))
         
     # Adding one because Python uses zero based indexing for the 10 columns (0-9),
     # while the 10 classes are numbered from 1 to 10.
@@ -96,7 +91,6 @@ def predictOneVsAll(all_theta, features):
 
 pred = predictOneVsAll(theta, X)
 print('Training set accuracy: {} %'.format(np.mean(pred == y.ravel())*100))
-
 
 
 
@@ -110,16 +104,13 @@ print('Training set accuracy: {} %'.format(np.mean(pred2 == y.ravel())*100))
 
 def predict(theta_1, theta_2, features):
     z2 = theta_1.dot(features.T)
-    a2 = np.c_[np.ones((data['X'].shape[0],1)), sigmoid(z2).T]
+    a2 = np.c_[np.ones((data['X'].shape[0],1)), functions.sigmoid(z2).T]
     
     z3 = a2.dot(theta_2.T)
-    a3 = sigmoid(z3)
+    a3 = functions.sigmoid(z3)
         
     return(np.argmax(a3, axis=1)+1) 
     
 pred = predict(theta1, theta2, X)
 print('Training set accuracy: {} %'.format(np.mean(pred == y.ravel())*100))
 
-
-
-    

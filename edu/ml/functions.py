@@ -27,3 +27,7 @@ def gradientDescent(X, y, theta=[[0],[0]], alpha=0.01, num_iters=1500):
         theta = theta - alpha*(1/m)*(X.T.dot(h-y))
         J_history[iter] = computeCost(X, y, theta)
         return(theta, J_history)
+        
+        
+def sigmoid(z):
+    return(1 / (1 + np.exp(-z)))   

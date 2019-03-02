@@ -52,7 +52,7 @@ if tickerList[0]=='error':
 else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
     sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList),[], server, port, username, password)
-    Tweet.tweetSomething('Day Trading Watchlist $' + ','.join(tickerList))
+    Tweet.tweetSomething('Day Trading Watchlist $' + ', $'.join(tickerList))
     t1 = threading.Thread(target=MyThread1)
     t1.start()
 

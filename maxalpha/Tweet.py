@@ -33,6 +33,6 @@ def tweetSomething(something):
     # update the status 
     #api.update_status(status ="Penny Stock Watchlist for today : $TMSR $AMRS $CRON") 
     #api.update_status(status = something)
-    api.update_status(status ='Day Trading Watchlist $' + ', $'.join(something))
+    api.update_status(status = something)
     
-tweetSomething('Hi')
+#tweetSomething('Hi')

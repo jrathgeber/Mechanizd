@@ -41,8 +41,12 @@ plt.ylabel('Profit in $10,000s');
 def computeCost(X, y, theta=[[0],[0]]):
     m = y.size
     J = 0
+
+    print(m)    
     
     h = X.dot(theta)
+
+    print(h)    
     
     J = 1/(2*m)*np.sum(np.square(h-y))
     
