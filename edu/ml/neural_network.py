@@ -48,7 +48,6 @@ plt.axis('off');
 
 
 
-
 def lrcostFunctionReg(theta, reg, X, y):
     m = y.size
     h = functions.sigmoid(X.dot(theta))
@@ -86,15 +85,15 @@ def predictOneVsAll(all_theta, features):
     # Adding one because Python uses zero based indexing for the 10 columns (0-9),
     # while the 10 classes are numbered from 1 to 10.
     return(np.argmax(probs, axis=1)+1)
-    
+   
 
 
 pred = predictOneVsAll(theta, X)
 print('Training set accuracy: {} %'.format(np.mean(pred == y.ravel())*100))
 
 
-
 clf = LogisticRegression(C=10, penalty='l2', solver='liblinear')
+
 # Scikit-learn fits intercept automatically, so we exclude first column with 'ones' from X when fitting.
 clf.fit(X[:,1:],y.ravel())
 
