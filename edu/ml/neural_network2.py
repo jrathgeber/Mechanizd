@@ -20,7 +20,6 @@ import seaborn as sns
 sns.set_context('notebook')
 sns.set_style('darkgrid')
 
-
 data = loadmat('F:\ML\machine-learning-ex4\machine-learning-ex4\ex4\ex4data1.mat')
 data.keys()
 

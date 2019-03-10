@@ -94,7 +94,6 @@ fit
 
 
 
-
 #Comparison: coefficients and cost obtained with LinearRegression in Scikit-learn¶
 
 regr = LinearRegression(fit_intercept=False)
@@ -112,7 +111,6 @@ plt.ylabel('Water flowing out of the dam (y)')
 plt.ylim(ymin=-5)
 plt.xlim(xmin=-50)
 plt.legend(loc=4);
-
 
 
 
@@ -163,9 +161,6 @@ plt.xlabel('Change in water level (x)')
 plt.ylabel('Water flowing out of the dam (y)')
 plt.title('Polynomial regression degree 8')
 plt.legend(loc=4);
-
-
-
 
 
 
