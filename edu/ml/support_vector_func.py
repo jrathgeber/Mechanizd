@@ -1,25 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# %load ../../../standard_import.txt
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-
-from scipy.io import loadmat
-from sklearn.svm import SVC
-
-pd.set_option('display.notebook_repr_html', False)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 150)
-pd.set_option('display.max_seq_items', None)
- 
-#%config InlineBackend.figure_formats = {'pdf',}
-#%matplotlib inline
-
-import seaborn as sns
-sns.set_context('notebook')
-sns.set_style('white')
+import numpy as np
 
 def plotData(X, y):
     pos = (y == 1).ravel()
@@ -49,25 +31,8 @@ def plot_svc(svc, X, y, h=0.02, pad=0.25):
     plt.ylabel('X2')
     plt.show()
     print('Number of support vectors: ', svc.support_.size)
-
     
-data1 = loadmat('F:\ML\machine-learning-ex6\machine-learning-ex6\ex6\ex6data1.mat')
-data1.keys()
-
-y1 = data1['y']
-X1 = data1['X']
-
-print('X1:', X1.shape)
-print('y1:', y1.shape)
-
-plotData(X1,y1)
-
-#SVM1
-clf = SVC(C=1.0, kernel='linear')
-clf.fit(X1, y1.ravel())
-plot_svc(clf, X1, y1)
-
-#SVM2
-clf.set_params(C=100)
-clf.fit(X1, y1.ravel())
-plot_svc(clf, X1, y1)
+    
+def gaussianKernel(x1, x2, sigma=2):
+    norm = (x1-x2).T.dot(x1-x2)
+    return(np.exp(-norm/(2*sigma**2)))
