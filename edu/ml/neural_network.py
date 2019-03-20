@@ -71,8 +71,7 @@ def oneVsAll(features, classes, n_labels, reg):
     all_theta = np.zeros((n_labels, X.shape[1])) #10x401
 
     for c in np.arange(1, n_labels+1):
-        res = minimize(lrcostFunctionReg, initial_theta, args=(reg, features, (classes == c)*1), method=None,
-                       jac=lrgradientReg, options={'maxiter':50})
+        res = minimize(lrcostFunctionReg, initial_theta, args=(reg, features, (classes == c)*1), method=None, jac=lrgradientReg, options={'maxiter':50})
         all_theta[c-1] = res.x
     return(all_theta)
     
