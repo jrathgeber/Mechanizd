@@ -76,17 +76,16 @@ print(gradient)
 
 
 def trainLinearReg(X, y, reg):
+    
     #initial_theta = np.zeros((X.shape[1],1))
     initial_theta = np.array([[15],[15]])
+    
     # For some reason the minimize() function does not converge when using
     # zeros as initial theta.
         
-    res = minimize(linearRegCostFunction, initial_theta, args=(X,y,reg), method=None, jac=lrgradientReg,
-                   options={'maxiter':5000})
+    res = minimize(linearRegCostFunction, initial_theta, args=(X,y,reg), method=None, jac=lrgradientReg, options={'maxiter':5000})
     
     return(res)
-    
-   
 
 
 fit = trainLinearReg(X_train, y_train, 0)
@@ -95,7 +94,6 @@ fit
 
 
 #Comparison: coefficients and cost obtained with LinearRegression in Scikit-learn¶
-
 regr = LinearRegression(fit_intercept=False)
 regr.fit(X_train, y_train.ravel())
 print(regr.coef_)
