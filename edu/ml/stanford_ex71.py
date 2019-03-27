@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# %load ../../../standard_import.txt
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
@@ -16,9 +15,6 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 150)
 pd.set_option('display.max_seq_items', None)
  
-#%config InlineBackend.figure_formats = {'pdf',}
-#%matplotlib inline
-
 print('\n')
 print('-- Ex 7 Kmeans -- ')
 
@@ -34,7 +30,6 @@ print('X1:', X1.shape)
 
 km1 = KMeans(3)
 print(km1.fit(X1))
-
 
 print('-- Plot -- ')
 plt.scatter(X1[:,0], X1[:,1], s=40, c=km1.labels_, cmap=plt.cm.prism) 
