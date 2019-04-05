@@ -7,16 +7,20 @@ import numpy as np
 from sklearn.metrics import mean_squared_error
 from sklearn import metrics
 
+import warnings
+
+
 def main():
 
+    warnings.filterwarnings("ignore")
 
-    print("# Loading data...")
+    print("\n# Loading Numerai Sata...")
     
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv('C:\dep\\numerai\\numerai_training_data.csv', header=0)
+    train = pd.read_csv('numerai_training_data.csv', header=0)
     
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv('C:\dep\\numerai\\numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv('numerai_tournament_data.csv', header=0)
 
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
@@ -40,12 +44,12 @@ def main():
     ids = tournament['id']
     
     # Need Xg Boot here
-    xg_reg = xgb.XGBRegressor(objective ='reg:linear', colsample_bytree = 0.3, learning_rate = 0.1, max_depth = 5, alpha = 10, n_estimators = 10)
+    xg_reg = xgb.XGBRegressor(objective ='reg:linear', colsample_bytree = 0.3, learning_rate = 0.1, max_depth = 6, alpha = 10, n_estimators = 10)
     xg_reg.fit(X_train,y_train)
     preds = xg_reg.predict(X_test)
     rmse = np.sqrt(mean_squared_error(y_test, preds))
+    
     print("RMSE: %f" % (rmse))
-
     print("- preds " , preds)
 
     # Based on the model we can predict the probability of each row being
@@ -59,7 +63,8 @@ def main():
 
     # We can see the probability does seem to be good at predicting the
     # true target correctly.
-    print("- target:", validation['target_bernie'][1:6])
+    print("- target : \n", validation['target_bernie'][1:10])
+    
     print("- rounded probability:", [round(p) for p in probabilities][1:6])
 
     # But overall the accuracy is very low.
