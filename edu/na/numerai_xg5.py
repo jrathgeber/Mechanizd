@@ -9,7 +9,7 @@ from sklearn import metrics
 
 import warnings
 
-names = ('bernie', 'ken') 
+
 
 def main():
 
@@ -17,33 +17,38 @@ def main():
     
     print("\n# Loading Numerai Sata...")
 
+    # The training data is used to train your model how to predict the targets.
+    train = pd.read_csv('C:\dep\\numerai2\\numerai_training_data.csv', header=0)
+        
+    # The tournament data is the data that Numerai uses to evaluate your model.
+    tournament = pd.read_csv('C:\dep\\numerai2\\numerai_tournament_data.csv', header=0)
+    
+    # The tournament data contains validation data, test data and live data.
+    # Validation is used to test your model locally so we separate that.
+    validation = tournament[tournament['data_type']=='validation']
+
+    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+
     for name in names:
         
         target = "target_" +  name
         submission = name + "_submission.csv"        
-                
-        # The training data is used to train your model how to predict the targets.
-        train = pd.read_csv('C:\dep\\numerai2\\numerai_training_data.csv', header=0)
-        
-        # The tournament data is the data that Numerai uses to evaluate your model.
-        tournament = pd.read_csv('C:\dep\\numerai2\\numerai_tournament_data.csv', header=0)
-    
-        # The tournament data contains validation data, test data and live data.
-        # Validation is used to test your model locally so we separate that.
-        validation = tournament[tournament['data_type']=='validation']
-    
+       
         # There are five targets in the training data which you can choose to model using the features.
         # Numerai does not say what the features mean but that's fine; we can still build a model.
         # Here we select the bernie_target.
-        train_bernie = train.drop([
-            'id', 'era', 'data_type',
-            'target_charles', 'target_elizabeth',
-            'target_jordan', 'target_ken'], axis=1)
+        #train_bernie = train.drop([
+        #    'id', 'era', 'data_type',
+        #    'target_charles', 'target_elizabeth',
+        #    'target_jordan', 'target_ken'], axis=1)
+
+        train_columns = train.drop([
+            'id', 'era', 'data_type'], axis=1)
     
         # Transform the loaded CSV data into numpy arrays
-        features = [f for f in list(train_bernie) if "feature" in f]
-        X_train = train_bernie[features]
-        y_train = train_bernie[target]
+        features = [f for f in list(train_columns) if "feature" in f]
+        X_train = train_columns[features]
+        y_train = train_columns[target]
         X_test = validation[features]
         y_test = validation[target]
         
