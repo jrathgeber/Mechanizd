@@ -18,21 +18,22 @@ def main():
     print("\n# Loading Numerai Sata...")
 
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv('C:\dep\\numerai2\\numerai_training_data.csv', header=0)
+    train = pd.read_csv('F:\\Numerai\\numerai157\\numerai_training_data.csv', header=0)
         
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv('C:\dep\\numerai2\\numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv('F:\\Numerai\\numerai157\\numerai_tournament_data.csv', header=0)
     
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    #names = ('bernie',) 
 
     for name in names:
         
         target = "target_" +  name
-        submission = name + "_submission.csv"        
+        submission = "F:\\Numerai\\numerai157\\"  + name + "_submission.csv"        
        
         # There are five targets in the training data which you can choose to model using the features.
         # Numerai does not say what the features mean but that's fine; we can still build a model.
@@ -105,11 +106,11 @@ def main():
     
         print("# Creating submission...")
         # Create your submission
-        results_df = pd.DataFrame(data={'probability':results})
+        results_df = pd.DataFrame(data={'probability_'+name:results})
         joined = pd.DataFrame(ids).join(results_df)
         print("- joined:", joined.head())
     
-        print("# Writing predictions to bernie_submissions.csv...")
+        print("# Writing predictions to "+name+"_submissions.csv...")
         # Save the predictions out to a CSV file.
         joined.to_csv(submission, index=False)
         # Now you can upload these predictions on https://numer.ai
