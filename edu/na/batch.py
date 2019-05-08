@@ -19,7 +19,7 @@ def numerox_example():
     """
 
     # download dataset from numerai, save it and then load it
-    data = nx.download('numerai_dataset.zip')
+    data = nx.download('F:\\Numerai\\numerai157\\numerai_dataset.zip')
 
     # we will use logistic regression; you will want to write your own model
     model = nx.logistic()
