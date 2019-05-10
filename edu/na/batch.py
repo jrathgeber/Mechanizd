@@ -10,8 +10,17 @@ Created on Sun May  5 12:12:26 2019
 
 import numerox as nx
 
+import configparser
 
 def numerox_example():
+    
+    config = configparser.ConfigParser()
+    config.read('C:\etc\properties.ini') 
+    
+    public = config['numerai']['public']
+    secret = config['numerai']['secret']
+    
+    
     """
     Example of how to prepare a submission for the Numerai tournament.
     It uses Numerox which you can install with: pip install numerox
@@ -34,6 +43,8 @@ def numerox_example():
     # create the public_id and secret_key on the Numerai website
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
+
+    nx.upload('logistic.csv', tournament='bernie', public, secret)
 
 
 if __name__ == '__main__':
