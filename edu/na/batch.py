@@ -14,6 +14,8 @@ import configparser
 
 import numerai_xg6
 
+import os
+
 def numerox_example():
     
     config = configparser.ConfigParser()
@@ -28,9 +30,17 @@ def numerox_example():
     It uses Numerox which you can install with: pip install numerox
     For more information see: https://github.com/kwgoodman/numerox
     """
+    
+    contest = 159
+
+    directory = 'F:\\Numerai\\numerai' + str(contest) + '\\'
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
 
     # download dataset from numerai, save it and then load it
-    data = nx.download('F:\\Numerai\\numerai157\\numerai_dataset.zip')
+    data = nx.download(directory + 'numerai_dataset.zip')
 
     # we will use logistic regression; you will want to write your own model
     model = nx.logistic()
@@ -41,14 +51,14 @@ def numerox_example():
     # save predictions to csv file
     prediction.to_csv('logistic.csv', verbose=True)
 
-    numerai_xg6.main()
+    #numerai_xg6.main()
 
     # upload predictions to Numerai to enter the tournament
     # create the public_id and secret_key on the Numerai website
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
 
-    nx.upload('logistic.csv', tournament='bernie', public, secret)
+    nx.upload('logistic.csv', 'bernie', public, secret)
 
 
 if __name__ == '__main__':
