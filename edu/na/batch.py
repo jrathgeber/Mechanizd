@@ -12,6 +12,8 @@ import numerox as nx
 
 import configparser
 
+import numerai_xg6
+
 def numerox_example():
     
     config = configparser.ConfigParser()
@@ -38,6 +40,8 @@ def numerox_example():
 
     # save predictions to csv file
     prediction.to_csv('logistic.csv', verbose=True)
+
+    numerai_xg6.main()
 
     # upload predictions to Numerai to enter the tournament
     # create the public_id and secret_key on the Numerai website
