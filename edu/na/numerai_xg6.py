@@ -33,7 +33,7 @@ def main(contest):
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
 
-    #names = ('bernie', ) 
+    names = ('bernie', ) 
 
     for name in names:
         
@@ -62,11 +62,8 @@ def main(contest):
         
         # run simple xgboost classification model and check 
         # prep modeling code
-        from sklearn.model_selection import train_test_split
-        X_train, X_test, y_train, y_test = train_test_split(X_train, 
-                                                         y_train, 
-                                                         test_size=0.3, 
-                                                         random_state=42)
+        #from sklearn.model_selection import train_test_split
+        #X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
         
         xgb_params = {
             'max_depth':3, 
@@ -118,4 +115,4 @@ def main(contest):
 
 
 if __name__ == '__main__':
-    main()
+    main(str(159))
