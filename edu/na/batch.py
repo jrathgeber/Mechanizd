@@ -12,7 +12,7 @@ import numerox as nx
 
 import configparser
 
-import numerai_xg6
+import numerai_xg7
 
 import os
  	
@@ -43,9 +43,9 @@ def numerox_example():
     # download dataset from numerai, save it and then load it
     #data = nx.download(directory + 'numerai_dataset.zip')
 
-    with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
+    #with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
        # Extract all the contents of zip file in current directory
-       zipObj.extractall(directory)
+    #   zipObj.extractall(directory)
 
 
     # we will use logistic regression; you will want to write your own model
@@ -57,14 +57,14 @@ def numerox_example():
     # save predictions to csv file
     # prediction.to_csv('logistic.csv', verbose=True)
 
-    numerai_xg6.main(contest)
+    numerai_xg7.main(contest)
 
     # upload predictions to Numerai to enter the tournament
     # create the public_id and secret_key on the Numerai website
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
 
-    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
     
     for name in names:
 

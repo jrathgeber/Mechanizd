@@ -38,9 +38,22 @@ def main(contest):
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
-    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
+    #names = ('bernie', ) 
 
-    names = ('bernie', ) 
+
+    train_columns = train.drop([ 'id', 'data_type'], axis=1)
+    
+    features = [f for f in list(train_columns) if f not in ['target_bernie', 'target_charles', 'target_hillary', 'target_ken', 'target_frank', 'target_elizabeth', 'target_jordan']]
+    
+    train_columns['era'] = train_columns['era'].str.replace(r'\D','').astype(int)
+    validation['era'] = validation['era'].str.replace(r'\D','').astype(int)
+        
+    tournament['era'] = tournament['era'].str.replace(r'eraX','500')
+    tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
+    
+        
+    ids = tournament['id']
 
     for name in names:
         
@@ -55,24 +68,12 @@ def main(contest):
         #    'target_charles', 'target_elizabeth',
         #    'target_jordan', 'target_ken'], axis=1)
 
-        train_columns = train.drop([ 'id', 'data_type'], axis=1)
-    
-        features = [f for f in list(train_columns) if f not in ['target_bernie', 'target_charles', 'target_hillary', 'target_ken', 'target_frank', 'target_elizabeth', 'target_jordan']]
-    
-        train_columns['era'] = train_columns['era'].str.replace(r'\D','').astype(int)
-        validation['era'] = validation['era'].str.replace(r'\D','').astype(int)
-        
-        tournament['era'] = tournament['era'].str.replace(r'eraX','500')
-        tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
-    
         # Transform the loaded CSV data into numpy arrays
         # features = [f for f in list(train_columns) if "feature" in f]
         X_train = train_columns[features]
         y_train = train_columns[target]
         X_test = validation[features]
         y_test = validation[target]
-        
-        ids = tournament['id']
         
         # run simple xgboost classification model and check 
         # prep modeling code
