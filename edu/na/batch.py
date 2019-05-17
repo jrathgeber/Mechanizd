@@ -64,7 +64,7 @@ def numerox_example():
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
 
-    names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
+    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
     
     for name in names:
 
