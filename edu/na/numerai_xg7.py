@@ -39,7 +39,7 @@ def main(contest):
     validation = tournament[tournament['data_type']=='validation']
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
-    #names = ('bernie', ) 
+    #names = ('frank', ) 
 
 
     train_columns = train.drop([ 'id', 'data_type'], axis=1)

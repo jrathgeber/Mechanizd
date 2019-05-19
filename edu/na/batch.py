@@ -33,7 +33,7 @@ def numerox_example():
     For more information see: https://github.com/kwgoodman/numerox
     """
     
-    contest = str(159)
+    contest = str(160)
 
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -41,11 +41,11 @@ def numerox_example():
         os.makedirs(directory)
 
     # download dataset from numerai, save it and then load it
-    #data = nx.download(directory + 'numerai_dataset.zip')
+    data = nx.download(directory + 'numerai_dataset.zip')
 
-    #with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
-       # Extract all the contents of zip file in current directory
-    #   zipObj.extractall(directory)
+    with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
+    #Extract all the contents of zip file in current directory
+        zipObj.extractall(directory)
 
 
     # we will use logistic regression; you will want to write your own model
