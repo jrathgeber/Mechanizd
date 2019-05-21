@@ -33,7 +33,7 @@ def main(contest):
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
 
-    names = ('bernie', ) 
+    names = ('hillary', ) 
 
     for name in names:
         
@@ -115,4 +115,4 @@ def main(contest):
 
 
 if __name__ == '__main__':
-    main(str(159))
+    main(str(160))

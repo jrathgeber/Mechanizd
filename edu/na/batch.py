@@ -66,6 +66,8 @@ def numerox_example():
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
     
+    names = ('hillary')     
+    
     for name in names:
 
         nx.upload(directory + name + '_new_submission.csv', name, public, secret)
