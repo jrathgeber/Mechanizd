@@ -4,7 +4,7 @@ This project contains the source code to genrate http://www.Mechanizd.com
 
 Mechanizd is a site for displaying the status of various algorithmic trading strategies that I run in live, paper and backetest modes. The python code automates the running of the Zorro and RightEdge Algorithmic tools and extracts data from reports generated to populate the web site daily. Also handled is batch scheduling and web site scraping.
 
-Work in progress includes connection to the Interactive Brokers Python API for trading stocks, machine learning with xgboost, and lastly twitter API for tweeting results. Most recently I have been submitting entries to the https://numer.ai/mechanizd machine learning competition. 
+Work in progress includes connection to the Interactive Brokers Python API for trading stocks, machine learning with xgboost, and lastly twitter API for tweeting results. Most recently I have been submitting entries to the numer.ai machine learning competition at https://numer.ai/mechanizd . 
 
 ## Table of Contents
 - [batch](#batch)
