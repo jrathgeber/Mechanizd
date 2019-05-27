@@ -39,7 +39,7 @@ def main(contest):
     validation = tournament[tournament['data_type']=='validation']
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
-    names = ('hillary', ) 
+    #names = ('hillary', ) 
 
 
     train_columns = train.drop([ 'id', 'data_type'], axis=1)
@@ -125,11 +125,11 @@ def main(contest):
         print("- joined:", joined.head())
     
         print("# Writing predictions to " + name + "_submissions.csv...")
+        
         # Save the predictions out to a CSV file.
         joined.to_csv(submission, index=False)
-        # Now you can upload these predictions on https://numer.ai
-        
+      
 
 
 if __name__ == '__main__':
-    main(str(160))
+    main(str(161))

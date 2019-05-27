@@ -33,7 +33,7 @@ def numerox_example():
     For more information see: https://github.com/kwgoodman/numerox
     """
     
-    contest = str(160)
+    contest = str(161)
 
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -66,7 +66,7 @@ def numerox_example():
 
     names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
     
-    names = ('hillary')     
+    #names = ('hillary')     
     
     for name in names:
 

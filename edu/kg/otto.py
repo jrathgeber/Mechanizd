@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 24 18:25:14 2019
+Created on Sun May 26 21:58:29 2019
 
 @author: Jason
 """
 
+# From : https://machinelearningmastery.com/tune-learning-rate-for-gradient-boosting-with-xgboost-in-python/
+	
 # XGBoost on Otto dataset, Tune learning_rate
 from pandas import read_csv
 from xgboost import XGBClassifier
