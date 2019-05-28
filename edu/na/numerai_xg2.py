@@ -6,16 +6,16 @@ import pandas as pd
 import numpy as np
 
 
-def main():
+def main(contest):
 
 
     print("# Loading data...")
     
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv('numerai_training_data.csv', header=0)
+    train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
     
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv('numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_tournament_data.csv', header=0)
 
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
@@ -70,9 +70,6 @@ def main():
     plt.show()
 
 
-
-
-
 if __name__ == '__main__':
-    main()
+    main(str(161))
 

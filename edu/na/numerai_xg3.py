@@ -10,17 +10,17 @@ from sklearn import metrics
 import warnings
 
 
-def main():
+def main(contest):
 
     warnings.filterwarnings("ignore")
 
-    print("\n# Loading Numerai Sata...")
+    print("\n# xg 3 : Loading Numerai Data...")
     
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv('C:\dep\\numerai2\\numerai_training_data.csv', header=0)
+    train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
     
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv('C:\dep\\numerai2\\numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_tournament_data.csv', header=0)
 
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
@@ -100,11 +100,11 @@ def main():
 
     print("# Writing predictions to bernie_submissions.csv...")
     # Save the predictions out to a CSV file.
-    joined.to_csv("bernie_submission.csv", index=False)
+    joined.to_csv('F:\\Numerai\\numerai' + contest + '\\bernie_xg3_submission.csv', index=False)
     # Now you can upload these predictions on https://numer.ai
 
 
 
 if __name__ == '__main__':
-    main()
+    main(str(161))
 
