@@ -57,7 +57,8 @@ def main(contest):
     
     # grid search
     model = XGBRegressor()
-    learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
+    # learning_rate = [0.0001, 0.001, 0.01, 0.1, 0.2, 0.3]
+    learning_rate = [0.01, 0.1]    
     param_grid = dict(learning_rate=learning_rate)
     kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=7)
     grid_search = GridSearchCV(model, param_grid, scoring="neg_log_loss", n_jobs=-1, cv=kfold)
