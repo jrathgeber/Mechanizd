@@ -38,8 +38,8 @@ def main(contest):
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
-    names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
-    #names = ('hillary', ) 
+    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
+    names = ('hillary', ) 
 
 
     train_columns = train.drop([ 'id', 'data_type'], axis=1)

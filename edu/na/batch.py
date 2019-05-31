@@ -40,13 +40,13 @@ def numerox_example():
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    # download dataset from numerai, save it and then load it
-    data = nx.download(directory + 'numerai_dataset.zip')
+        # download dataset from numerai, save it and then load it
+        # data = nx.download(directory + 'numerai_dataset.zip')
+        nx.download(directory + 'numerai_dataset.zip')
 
-    with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
-    #Extract all the contents of zip file in current directory
-        zipObj.extractall(directory)
-
+        with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
+            #Extract all the contents of zip file in current directory
+            zipObj.extractall(directory)
 
     # we will use logistic regression; you will want to write your own model
     # model = nx.logistic()
@@ -64,9 +64,9 @@ def numerox_example():
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
 
-    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
     
-    #names = ('hillary')     
+    names = ('hillary')     
     
     for name in names:
 
