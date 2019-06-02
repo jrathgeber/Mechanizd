@@ -66,7 +66,7 @@ def numerox_example():
 
     #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
     
-    names = ('hillary')     
+    names = ('hillary',)     
     
     for name in names:
 

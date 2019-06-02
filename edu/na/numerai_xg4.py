@@ -5,6 +5,7 @@ import numpy as np
 from sklearn import metrics, preprocessing, linear_model
 import xgboost as xgb
 from xgboost.sklearn import XGBRegressor
+from xgboost.sklearn import XGBClassifier
 from sklearn import  metrics
 
 from sklearn.model_selection import GridSearchCV
@@ -23,11 +24,13 @@ rcParams['figure.figsize'] = 12, 4
 # Set seed for reproducibility
 np.random.seed(0)
 
+contest=str(161)
+
 print("# Loading data...")
 # The training data is used to train your model how to predict the targets.
-train = pd.read_csv('numerai_training_data.csv', header=0)
+train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
 # The tournament data is the data that Numerai uses to evaluate your model.
-tournament = pd.read_csv('numerai_tournament_data.csv', header=0)
+tournament = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_tournament_data.csv', header=0)
 
 # The tournament data contains validation data, test data and live data.
 # Validation is used to test your model locally so we separate that.
@@ -90,28 +93,29 @@ xgb1 = XGBRegressor(
  )
 modelfit(xgb1)
 
-
+print ("\nparam_test1")
 param_test1 = {
  'max_depth':range(3,10,2),
  'min_child_weight':range(1,6,2)
 }
 gsearch1 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=140, max_depth=5,
  min_child_weight=1, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1, seed=27), 
- param_grid = param_test1,n_jobs=4,iid=False, cv=5, verbose=1)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1, seed=27), 
+ param_grid = param_test1,n_jobs=2,iid=False, cv=5, verbose=1)
 gsearch1.fit(train[predictors],train[target])
 
 print("Best Params ", gsearch1.best_params_)
 print("Best Score   : %.4g" %  gsearch1.best_score_)
 
+print ("\nparam_test2")
 param_test2 = {
  'max_depth':[4,5,6],
  'min_child_weight':[4,5,6]
 }
 gsearch2 = GridSearchCV(estimator = XGBRegressor( learning_rate=0.1, n_estimators=140, max_depth=5,
  min_child_weight=2, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test2,n_jobs=4,iid=False, cv=5, verbose=1)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test2,n_jobs=2,iid=False, cv=5, verbose=1)
 gsearch2.fit(train[predictors],train[target])
 
 print("Best Params ", gsearch2.best_params_)
@@ -125,25 +129,25 @@ param_test2b = {
 
 gsearch2b = GridSearchCV(estimator = XGBRegressor( learning_rate=0.1, n_estimators=140, max_depth=4,
  min_child_weight=2, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1, seed=27), 
- param_grid = param_test2b, n_jobs=4, iid=False, cv=5, verbose=1)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1, seed=27), 
+ param_grid = param_test2b, n_jobs=2, iid=False, cv=5, verbose=1)
 gsearch2b.fit(train[predictors],train[target])
 
 print("Best Params ", gsearch2b.best_params_)
 print("Best Score   : %.4g" %  gsearch2b.best_score_)
 
 
-'''
-
+print ("\nparam_test3")
 param_test3 = {
  'gamma':[i/10.0 for i in range(0,5)]
 }
 gsearch3 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=140, max_depth=4,
  min_child_weight=6, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test3,n_jobs=4,iid=False, cv=5)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test3,n_jobs=2,iid=False, cv=5)
 gsearch3.fit(train[predictors],train[target])
-gsearch3.grid_scores_, gsearch3.best_params_, gsearch3.best_score_
+print("Best Params ", gsearch3.best_params_)
+print("Best Score   : %.4g" %  gsearch3.best_score_)
 
 
 
@@ -161,50 +165,54 @@ xgb2 = XGBRegressor(
  seed=27)
 modelfit(xgb2, train, predictors)
 
-
+print ("\nparam_test4")
 param_test4 = {
  'subsample':[i/10.0 for i in range(6,10)],
  'colsample_bytree':[i/10.0 for i in range(6,10)]
 }
 gsearch4 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=177, max_depth=4,
  min_child_weight=6, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test4,n_jobs=4,iid=False, cv=5)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test4,n_jobs=2,iid=False, cv=5)
 gsearch4.fit(train[predictors],train[target])
-gsearch4.grid_scores_, gsearch4.best_params_, gsearch4.best_score_
+print("Best Params ", gsearch4.best_params_)
+print("Best Score   : %.4g" %  gsearch4.best_score_)
 
+print ("\nparam_test5")
 param_test5 = {
  'subsample':[i/100.0 for i in range(75,90,5)],
  'colsample_bytree':[i/100.0 for i in range(75,90,5)]
 }
 gsearch5 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=177, max_depth=4,
  min_child_weight=6, gamma=0, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test5,n_jobs=4,iid=False, cv=5)
-gsearch5.fit(train[predictors],train[target])
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test5,n_jobs=2,iid=False, cv=5)
+print("Best Params ", gsearch5.best_params_)
+print("Best Score   : %.4g" %  gsearch5.best_score_)
 
-
+print ("\nparam_test6")
 param_test6 = {
  'reg_alpha':[1e-5, 1e-2, 0.1, 1, 100]
 }
 gsearch6 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=177, max_depth=4,
  min_child_weight=6, gamma=0.1, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test6,n_jobs=4,iid=False, cv=5)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test6,n_jobs=2,iid=False, cv=5)
 gsearch6.fit(train[predictors],train[target])
-gsearch6.grid_scores_, gsearch6.best_params_, gsearch6.best_score_
+print("Best Params ", gsearch6.best_params_)
+print("Best Score   : %.4g" %  gsearch6.best_score_)
 
-
+print ("\nparam_test7")
 param_test7 = {
  'reg_alpha':[0, 0.001, 0.005, 0.01, 0.05]
 }
 gsearch7 = GridSearchCV(estimator = XGBRegressor( learning_rate =0.1, n_estimators=177, max_depth=4,
  min_child_weight=6, gamma=0.1, subsample=0.8, colsample_bytree=0.8,
- objective= 'reg:linear', nthread=4, scale_pos_weight=1,seed=27), 
- param_grid = param_test7,n_jobs=4,iid=False, cv=5)
+ objective= 'reg:linear', nthread=2, scale_pos_weight=1,seed=27), 
+ param_grid = param_test7,n_jobs=2,iid=False, cv=5)
 gsearch7.fit(train[predictors],train[target])
-gsearch7.grid_scores_, gsearch7.best_params_, gsearch7.best_score_
-
+print("Best Params ", gsearch7.best_params_)
+print("Best Score   : %.4g" %  gsearch7.best_score_)
 
 xgb3 = XGBClassifier(
  learning_rate =0.1,
@@ -219,8 +227,7 @@ xgb3 = XGBClassifier(
  nthread=4,
  scale_pos_weight=1,
  seed=27)
-modelfit(xgb3, train, predictors)
-
+modelfit(xgb3)
 
 
 xgb4 = XGBClassifier(
@@ -236,11 +243,4 @@ xgb4 = XGBClassifier(
  nthread=4,
  scale_pos_weight=1,
  seed=27)
-modelfit(xgb4, train, predictors)
-
-
-'''
-
-
-
-
+modelfit(xgb4)
