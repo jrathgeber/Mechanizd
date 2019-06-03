@@ -12,7 +12,7 @@ import numerox as nx
 
 import configparser
 
-import numerai_xg7
+import numerai_xg6 as mechXg
 
 import os
  	
@@ -33,7 +33,7 @@ def numerox_example():
     For more information see: https://github.com/kwgoodman/numerox
     """
     
-    contest = str(161)
+    contest = str(162)
 
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -57,16 +57,15 @@ def numerox_example():
     # save predictions to csv file
     # prediction.to_csv('logistic.csv', verbose=True)
 
-    numerai_xg7.main(contest)
+    mechXg.main(contest)
 
     # upload predictions to Numerai to enter the tournament
     # create the public_id and secret_key on the Numerai website
     #
     # nx.upload('logistic.csv', tournament='bernie', public_id, secret_key)
 
-    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
-    
-    names = ('hillary',)     
+    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    #names = ('hillary',)     
     
     for name in names:
 
