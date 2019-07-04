@@ -89,9 +89,9 @@ def main(contest):
                       maximize = True)
          
         # plot the important features  
-        fig, ax = plt.subplots(figsize=(6,9))
-        xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
-        plt.show()
+        #fig, ax = plt.subplots(figsize=(6,9))
+        #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
+        #plt.show()
 
         #x_prediction = tournament[features] 
         x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 

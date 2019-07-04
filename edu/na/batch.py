@@ -9,12 +9,10 @@ Created on Sun May  5 12:12:26 2019
 #!/usr/bin/env python
 
 import numerox as nx
-
 import configparser
-
 import numerai_xg6 as mechXg
-
 import os
+import time
  	
 from zipfile import ZipFile
 
@@ -33,7 +31,10 @@ def numerox_example():
     For more information see: https://github.com/kwgoodman/numerox
     """
     
-    contest = str(162)
+    #contest = str(165)
+    #contest = str(config['numerai']['tournament'])
+    week = time.strftime("%U")
+    contest = str(int(week) + 141)
 
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -73,4 +74,7 @@ def numerox_example():
     
 
 if __name__ == '__main__':
+    week = time.strftime("%U")
+    contest = int(week) + 140
+    print(str(contest))
     numerox_example()
