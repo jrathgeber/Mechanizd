@@ -34,7 +34,7 @@ def numerox_example():
     #contest = str(165)
     #contest = str(config['numerai']['tournament'])
     week = time.strftime("%U")
-    contest = str(int(week) + 141)
+    contest = str(int(week) + 140)
 
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -74,6 +74,7 @@ def numerox_example():
     
 
 if __name__ == '__main__':
+    
     week = time.strftime("%U")
     contest = int(week) + 140
     print(str(contest))
