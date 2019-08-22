@@ -33,14 +33,14 @@ def payout(scores):
 
 def main():
 
-
-    contest = str(169)
+    contest = str(172)
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
-
     print("# Loading data...")
+    
     # The training data is used to train your model how to predict the targets.
     training_data = pd.read_csv(directory + "numerai_training_data.csv").set_index("id")
+
     # The tournament data is the data that Numerai uses to evaluate your model.
     tournament_data = pd.read_csv(directory + "numerai_tournament_data.csv").set_index("id")
 
@@ -48,6 +48,7 @@ def main():
     print("Loaded {len(feature_names)} features")
 
     print("Training model")
+
     # For faster experimentation you can decrease n_estimators to 200, for better performance increase to 20,000
     model = XGBRegressor(max_depth=5, learning_rate=0.01, n_estimators=2000, n_jobs=-1, colsample_bytree=0.1)
     model.fit(training_data[feature_names], training_data[TARGET_NAME])

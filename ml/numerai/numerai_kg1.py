@@ -31,9 +31,7 @@ def main(contest):
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
-    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary', 'elizabeth', 'jordan') 
-    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
-    names = ('bernie', ) 
+    names = ('kazutsugi', ) 
 
     for name in names:
         
@@ -81,7 +79,7 @@ def main(contest):
         evals = [(dtrain,'train'),(dtest,'eval')]
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 2000,
+                      num_boost_round = 200,  #2000
                       verbose_eval=50, 
                       early_stopping_rounds = 500,
                       evals=evals,
@@ -89,9 +87,9 @@ def main(contest):
                       maximize = True)
          
         # plot the important features  
-        #fig, ax = plt.subplots(figsize=(6,9))
-        #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
-        #plt.show()
+        fig, ax = plt.subplots(figsize=(6,9))
+        xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
+        plt.show()
 
         #x_prediction = tournament[features] 
         x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
@@ -115,4 +113,4 @@ def main(contest):
 
 
 if __name__ == '__main__':
-    main(str(168))
+    main(str(173))

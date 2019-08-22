@@ -27,8 +27,8 @@ def main(contest):
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
-    names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
-    #names = ('bernie',) 
+    #names = ('bernie', 'ken', 'charles', 'frank', 'hillary') 
+    names = ('bernie',) 
 
     for name in names:
         

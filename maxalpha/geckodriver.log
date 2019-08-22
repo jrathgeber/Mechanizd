@@ -6359,3 +6359,346 @@ A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1564405810540	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.WZ9RXSUbamYS"
+1564405812173	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1564405812173	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1564405812173	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1564405812174	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1564405817634	Marionette	INFO	Listening on port 54943
+1564405817854	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1564405827952	Marionette	INFO	Stopped listening on port 54943
+[Child 77116, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Chi[GPU
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1564492213986	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.qKApU1sPec3z"
+1564492215441	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1564492215442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1564492215442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1564492215442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1564492222203	Marionette	INFO	Listening on port 63492
+1564492222639	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1564492232602	Marionette	INFO	Stopped listening on port 63492
+[Child 245384, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Chil
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GP
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1564578613420	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.DR5AP33q3GZk"
+1564578614813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1564578614814	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1564578614814	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1564578614814	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1564578621139	Marionette	INFO	Listening on port 60699
+1564578621502	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1564578631392	Marionette	INFO	Stopped listening on port 60699
+[Child 218172, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 218172, Chrome_ChildThrea[Parent 55176, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 194776, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Ch
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GP
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1564665013887	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.ZCySKXZPpbZS"
+1564665015381	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1564665015381	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1564665015381	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1564665015381	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1564665024435	Marionette	INFO	Listening on port 63369
+1564665025106	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1564665035527	Marionette	INFO	Stopped listening on port 63369
+[Child 232740, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 232740, Chrome_ChildT
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[G
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1564751414313	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.jEDSMrXgvukt"
+1564751415748	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1564751415749	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1564751415749	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1564751415749	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1564751422176	Marionette	INFO	Listening on port 53412
+1564751422664	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1564751432668	Marionette	INFO	Stopped listening on port 53412
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[G
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565010613755	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.Kp6linuwZm4a"
+1565010615148	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565010615148	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565010615148	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565010615148	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565010620716	Marionette	INFO	Listening on port 64549
+1565010621038	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565010632063	Marionette	INFO	Stopped listening on port 64549
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GP
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565097013712	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.zWi1I87SaDod"
+1565097014936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565097014937	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565097014937	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565097014937	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565097020671	Marionette	INFO	Listening on port 54492
+1565097021049	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565097031876	Marionette	INFO	Stopped listening on port 54492
+[Parent 168844, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 219804, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Ch[GP
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565183414250	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.OnhuuLEfyyQu"
+1565183415428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565183415428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565183415429	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565183415429	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565183421176	Marionette	INFO	Listening on port 50099
+1565183421723	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565183431927	Marionette	INFO	Stopped listening on port 50099
+[Parent 97060, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 210844, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Chi[Child 153880, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 1
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565269819642	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.CcaMSHhWAkQh"
+1565269824824	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565269824824	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565269824824	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565269824824	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565269835831	Marionette	INFO	Listening on port 64634
+1565269836185	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565269845808	Marionette	INFO	Stopped listening on port 64634
+[Child 235932, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 235932, Chrome_ChildThread] WARNING: pipe error: 109: file z[Child 283780, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[G
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565356219498	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.YaRNPlHNq7j8"
+1565356222396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565356222396	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565356222397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565356222397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565356228929	Marionette	INFO	Listening on port 52833
+1565356229493	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565356241988	Marionette	INFO	Stopped listening on port 52833
+[G
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565615419737	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.DgIz55ly7baj"
+1565615423554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565615423554	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565615423555	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565615423555	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565615432978	Marionette	INFO	Listening on port 62621
+1565615433532	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565395285947%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1565615444172	Marionette	INFO	Stopped listening on port 62621
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565701816164	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.M9dY3SoBh5zw"
+1565701820181	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565701820181	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565701820181	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565701820182	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565701827867	Marionette	INFO	Listening on port 59172
+1565701828317	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565701838204	Marionette	INFO	Stopped listening on port 59172
+[Child 103416, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 103416, Chrome_ChildThread] WARNING: pipe error: 109: file z[Child 99776, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[ChiJavaScript error: resource://gre/modules/JSONFile.jsm, line 159: Error: Data is not ready.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 8
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565788225000	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.sm7L5gGuc9Ap"
+1565788229305	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565788229305	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565788229305	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565788229306	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565788236860	Marionette	INFO	Listening on port 60217
+1565788237300	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565788247182	Marionette	INFO	Stopped listening on port 60217
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565874614332	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.SExfP29Y28ES"
+1565874616312	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565874616312	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565874616312	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565874616313	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565874623257	Marionette	INFO	Listening on port 57268
+1565874624033	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565874635421	Marionette	INFO	Stopped listening on port 57268
+[Parent 115620, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 160140, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 160140, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 87680, Chrome_ChildTh
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1565961018143	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.bnEWv7Af1X1c"
+1565961027896	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565961027898	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565961027898	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565961027898	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+[Child 194604, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 194604, Chrome_[Parent 170168, Gecko_IOThread] WARNING: file z:/task_1563383129/build/src/ipc/chromium/src/base/process_util_win.cc, line 160
+1565961058560	Marionette	INFO	Listening on port 53284
+1565961058963	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565913612838%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1565961072421	Marionette	INFO	Stopped listening on port 53284
+[Child 195464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium[/src/chrome/common/ipc_channel_win.cc, line 341
+Child 183332, Chrome_ChildThread] WARNING: pipe error:[ Child 195464, Chrome1_ChildThread] WARNING: pipe erro0r: 109: file z:9/: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+[Child 190176, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Ch
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 1566220222540	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.6iu3T6Lo4lrA"
+1566220227673	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1566220227673	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1566220227674	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1566220227674	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x350119,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/ExtensionProcessScript.jsm, line 322: NS_ERROR_UNEXPECTED: 
+[Child 275172, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+1566220239501	Marionette	INFO	Listening on port 50922
+1566220240097	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221566000082377%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1566220254781	Marionette	INFO	Stopped listening on port 50922
+[Child 290172, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1563383129/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1566306637559	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.UK1B3fsk2th2"
+1566306641765	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1566306641765	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1566306641765	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1566306641766	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1566306659979	Marionette	INFO	Listening on port 49709
+1566306660584	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1566306672847	Marionette	INFO	Stopped listening on port 49709
+[Parent 301916, Gecko_IOThread] WARNING: file z:/task_1565706750/build/src/ipc/chromium/src/base/process_util_win.cc, line 160
+[Parent 301916, Gecko_IOThread] WARNING: file z:/task_1565706750/build/src/ipc/chromium/src/base/process_util_win.cc, line 160
+[
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1566393032109	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.lUzVRlK7mm12"
+1566393036754	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1566393036755	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1566393036755	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1566393036755	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+[Child 349368, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1565706750/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 349368, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1565706750/build/src/ipc/ch1566393052070	Marionette	INFO	Listening on port 63040
+1566393052944	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221566233826256%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1566393063224	Marionette	INFO	Stopped listening on port 63040
+[Parent 349808, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1565706750/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
