@@ -20,8 +20,10 @@ Work in progress includes connection to the Interactive Brokers Python API for t
 * [BatchOptimise](/batch/BatchOptimise.py)
 * [Batch_Weekday](/batch/Batch_Weekday.py)
 * [sendMail](/batch/sendMail.py)
+
 ## ib
 * [hello_world](/ib/hello_world.py)
+
 ## maxalpha
 * [Batch](/maxalpha/Batch.py)
 * [BatchOp](/maxalpha/BatchOp.py)
@@ -32,15 +34,18 @@ Work in progress includes connection to the Interactive Brokers Python API for t
 * [Pg](/maxalpha/Pg.py)
 * [RightEdge](/maxalpha/RightEdge.py)
 * [SymbolConfig](/maxalpha/SymbolConfig.py)
+
 ## ml
 * [es_mini_tree](/ml/es_mini_tree.py)
 * [plot_confusion](/ml/plot_confusion.py)
 * [ts_feature_extraction](/ml/ts_feature_extraction.py)
+
 ## rightedge
 * [FileReadingRE](/rightedge/FileReadingRE.py)
 * [RightEdge](/rightedge/RightEdge.py)
 * [RightEdgeIB](/rightedge/RightEdgeIB.py)
 * [RightEdgeIBFull](/rightedge/RightEdgeIBFull.py)
+
 ## zorro
 * [BatchZorroMech0](/zorro/BatchZorroMech0.py)
 * [BatchZorroMech1](/zorro/BatchZorroMech1.py)
