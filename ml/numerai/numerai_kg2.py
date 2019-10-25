@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 24 20:15:26 2019
+
+What a day
+
+@author: Jason
+"""
+# -*- coding: utf-8 -*-
 
 import xgboost as xgb
 import pandas as pd
@@ -87,28 +95,25 @@ def main(contest):
                       maximize = True)
          
         # plot the important features  
-        #fig, ax = plt.subplots(figsize=(6,9))
-        #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
-        #plt.show()
+        fig, ax = plt.subplots(figsize=(6,9))
+        xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
+        plt.show()
 
-        #x_prediction = tournament[features] 
         x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
   
         preds = xgb_model.predict(x_prediction)
             
-        #results = y_prediction[:, 1]
-        results = preds
-    
-        print("# Creating submission...")
+        #results = preds
+   
+        #print("# Creating submission...")
+
         # Create your submission
-        results_df = pd.DataFrame(data={'probability_' + name:results})
-        joined = pd.DataFrame(ids).join(results_df)
-        print("- joined:", joined.head())
-    
+        #results_df = pd.DataFrame(data={'probability_' + name:results})
+        #joined = pd.DataFrame(ids).join(results_df)
+            
         print("# Writing predictions to " + name + "_submissions.csv...")
         # Save the predictions out to a CSV file.
-        joined.to_csv(submission, index=False)
-        # Now you can upload these predictions on https://numer.ai
+        # joined.to_csv(submission, index=False)
         
 
 

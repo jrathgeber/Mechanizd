@@ -11,6 +11,11 @@ from shutil import copyfile
 import FileReadingRE as FR
 
 
+import configparser
+
+
+
+
 # Used to Shut down RE after Market is closed
 def kill(proc_pid):
     process = psutil.Process(proc_pid)
@@ -24,7 +29,17 @@ def kill(proc_pid):
 #   and send an email output
 
 def runRightEdge(system, name, watchlist, mode, daterun, get_prices, closeup):
-   
+
+    
+    config = configparser.ConfigParser()
+    config.read('C:\etc\properties.ini') 
+    
+    password = config['yahoo']['yahoo.pass']
+    server = config['yahoo']['yahoo.server']
+    port = config['yahoo']['yahoo.port']
+    username = config['yahoo']['yahoo.username']
+    
+    
     models = ('/W:'+ watchlist + daterun,)
                   
     timestr = time.strftime("%d%m%y")
@@ -68,7 +83,7 @@ def runRightEdge(system, name, watchlist, mode, daterun, get_prices, closeup):
     
         with open(systemoutput, 'r') as f:
             data = str(f.read())
-            sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + system + ' Breakout Results', data, image_list)
+            sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'RE ' + system + ' Breakout Results', data, image_list, server, port, username, password)
     
         copyfile(systemoutput, 'C:\\dev\godaddy\\mech\\output\RightEdge\\Live\\' + model.replace('/W:','').replace('/','') + '_' + timestr + '.htm')  
     
