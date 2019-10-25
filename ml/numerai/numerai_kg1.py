@@ -19,7 +19,7 @@ def main(contest):
 
     warnings.filterwarnings("ignore")
     
-    print("\n# Loading Numerai Sata...")
+    print("\n# Loading Numerai Data...")
 
     # The training data is used to train your model how to predict the targets.
     train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
