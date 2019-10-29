@@ -20,7 +20,6 @@ import matplotlib.pyplot as plt
 import warnings
 
 # Somme feature enginner
-
 # Better output
 
 def main(contest):
