@@ -3,7 +3,7 @@
 """
 Created on Tue Oct 29 08:18:30 2019
 
-@author: Jason
+@author: https://github.com/numerai/example-scripts/blob/master/analysis_and_tips.ipynb
 
 """
 

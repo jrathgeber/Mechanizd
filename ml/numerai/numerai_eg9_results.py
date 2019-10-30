@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+
 """
 Created on Tue Oct 29 15:14:48 2019
 
-@author: Jason
+@author: https://github.com/numerai/example-scripts/blob/master/analysis_and_tips.ipynb
+
 """
 
 # The results are sensitive to the choice of parameters, which should be picked through cross-validation¶
