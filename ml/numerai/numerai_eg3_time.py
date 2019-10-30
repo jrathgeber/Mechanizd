@@ -16,8 +16,11 @@ print("The correlation can change over time")
 print("You can see this by comparing feature correlations on the first half and second half on the training set")
 
 df = df
-eras = eras
-features = features
+
+df["erano"] = df.era.str.slice(3).astype(int)
+eras = df.erano
+
+features = [c for c in df if c.startswith("feature")]
 
 target = "target_kazutsugi"
 

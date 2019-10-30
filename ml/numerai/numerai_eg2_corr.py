@@ -13,7 +13,7 @@ print("Some of the features are very correlated")
 print("Especially within feature groups")
 
 df = df
-features = features
+features = [c for c in df if c.startswith("feature")]
 
 print ("") #Print Shape
 print("df.shape")
