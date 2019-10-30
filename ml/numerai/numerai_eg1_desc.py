@@ -22,8 +22,6 @@ from sklearn import (
     model_selection, metrics, svm
 )
 
-#pandas.options.display.max_rows=1000
-#pandas.options.display.max_columns=300
 
 # The cotest
 contest = str(183)
@@ -49,15 +47,6 @@ feature_groups = {
 print("feature_groups")
 print(feature_groups)
 
-
-# The models should be scored based on the rank-correlation (spearman) with the target
-def numerai_score(y_true, y_pred):
-    rank_pred = y_pred.groupby(eras).apply(lambda x: x.rank(pct=True, method="first"))
-    return numpy.corrcoef(y_true, rank_pred)[0,1]
-
-# It can also be convenient while working to evaluate based on the regular (pearson) correlation
-def correlation_score(y_true, y_pred):
-    return numpy.corrcoef(y_true, y_pred)[0,1]
 
 print ("") # There are 120 eras numbered from 1 to 120
 print ("eras.describe()")

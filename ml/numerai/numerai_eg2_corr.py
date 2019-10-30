@@ -8,26 +8,12 @@ Created on Tue Oct 29 08:18:30 2019
 
 """
 
-import matplotlib
-import numpy
-import pandas
-import random
-import sklearn
-import xgboost
-import matplotlib.pyplot as plt
 
+print("Some of the features are very correlated")
+print("Especially within feature groups")
 
-from sklearn import (
-    feature_extraction, feature_selection, decomposition, linear_model,
-    model_selection, metrics, svm
-)
-
-
-# The cotest
-contest = str(183)
-
-# Read File
-#df=pandas.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
+df = df
+features = features
 
 print ("") #Print Shape
 print("df.shape")
