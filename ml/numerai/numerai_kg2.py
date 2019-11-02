@@ -23,7 +23,7 @@ def numerai_score(y_true, y_pred):
 # Somme feature enginner
 # Better output
 
-contest = str(183)
+contest = str(184)
 
 warnings.filterwarnings("ignore")
     

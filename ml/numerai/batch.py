@@ -25,8 +25,7 @@ def run_numerai_batch():
     # Numerai credentials for submission
     public = config['numerai']['public']
     secret = config['numerai']['secret']
-    
-    
+        
     # compute the tournament numer
     week = time.strftime("%U")
     contest = str(int(week) + 140)

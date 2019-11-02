@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """
 
 Created on Tue Oct 29 08:18:30 2019
@@ -8,19 +9,7 @@ Created on Tue Oct 29 08:18:30 2019
 """
 
 
-import matplotlib
-import numpy
 import pandas
-import random
-import sklearn
-import xgboost
-import matplotlib.pyplot as plt
-
-
-from sklearn import (
-    feature_extraction, feature_selection, decomposition, linear_model,
-    model_selection, metrics, svm
-)
 
 
 # The cotest
