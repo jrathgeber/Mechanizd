@@ -36,8 +36,20 @@ def main(contest):
     for name in names:
         
         target = "target_" +  name
-        submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_new_submission.csv"        
-       
+        submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_new_submission.csv"     
+                
+        features = [c for c in train if c.startswith("feature")]
+        train["erano"] = train.era.str.slice(3).astype(int)
+        eras = train.erano
+        target = "target_kazutsugi"
+        print("Len Features : " + str(len(features)))
+        
+        print ("") # There are 120 eras numbered from 1 to 120
+        print ("", "eras.describe()")
+        print (eras.describe())
+        print ("")
+        
+        
         # There are five targets in the training data which you can choose to model using the features.
         # Numerai does not say what the features mean but that's fine; we can still build a model.
         # Here we select the bernie_target.
@@ -77,6 +89,7 @@ def main(contest):
         dtrain = xgb.DMatrix(X_train[features], y_train, feature_names = features)
         dtest = xgb.DMatrix(X_test[features], y_test, feature_names = features)
         evals = [(dtrain,'train'),(dtest,'eval')]
+        
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
                       num_boost_round = 200,  #2000
@@ -86,7 +99,7 @@ def main(contest):
                       #feval = f1_score_cust,
                       maximize = True)
          
-        # plot the important features  
+        # plot the important features  if desired
         #fig, ax = plt.subplots(figsize=(6,9))
         #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
         #plt.show()
@@ -99,18 +112,18 @@ def main(contest):
         #results = y_prediction[:, 1]
         results = preds
     
-        print("# Creating submission...")
         # Create your submission
+        print("", "Creating submission file...")
         results_df = pd.DataFrame(data={'probability_' + name:results})
         joined = pd.DataFrame(ids).join(results_df)
-        print("- joined:", joined.head())
+        print("", "Top rows of Submission : ", joined.head())
     
-        print("# Writing predictions to " + name + "_submissions.csv...")
-        # Save the predictions out to a CSV file.
+        print("Writing predictions to " + name + "_submissions.csv...")
         joined.to_csv(submission, index=False)
+        print("All done")
+        
         # Now you can upload these predictions on https://numer.ai
         
-
 
 if __name__ == '__main__':
     main(str(184))
