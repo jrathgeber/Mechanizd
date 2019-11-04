@@ -68,7 +68,7 @@ def main():
     print("On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
     print("On validation the average per-era payout is {payout(validation_correlations).mean()}")
 
-    tournament_data[PREDICTION_NAME].to_csv(TOURNAMENT_NAME + "_submission.csv")
+    tournament_data[PREDICTION_NAME].to_csv(TOURNAMENT_NAME + "_eg_submission.csv")
     # Now you can upload these predictions on https://numer.ai
 
 

@@ -30,10 +30,10 @@ warnings.filterwarnings("ignore")
 print("\n# Loading Numerai Data...")
 
 # The training data is used to train your model how to predict the targets.
-train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
+#train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
         
 # The tournament data is the data that Numerai uses to evaluate your model.
-tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
+#tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
      
 #train = df
    
@@ -102,7 +102,7 @@ x_prediction = xgb.DMatrix(tournament[features], feature_names = features)
  
 preds = xgb_model.predict(x_prediction)
                 
-print(numerai_score(train[target], pd.Series(preds)))
+#print(numerai_score(train[target], pd.Series(preds)))
        
         
 #results = preds
