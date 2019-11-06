@@ -2,16 +2,32 @@
 
 import xgboost as xgb
 import pandas as pd
-import numpy as np
+import numpy
 
-from sklearn.metrics import mean_squared_error
-from sklearn import metrics
 
 import matplotlib.pyplot as plt
 
 import warnings
 
-import numpy
+
+
+TOURNAMENT_NAME = "kazutsugi"
+TARGET_NAME = "target_kazutsugi"
+PREDICTION_NAME = "prediction_kazutsugi"
+
+BENCHMARK = 0.002
+BAND = 0.04
+
+
+# Submissions are scored by spearman correlation
+def score(df):
+    
+    # method="first" breaks ties based on order in array
+    return numpy.corrcoef( df[TARGET_NAME], df[PREDICTION_NAME].rank(pct=True, method="first") )[0,1]
+
+# The payout function
+def payout(scores):
+    return ((scores - BENCHMARK)/BAND).clip(lower=-1, upper=1)
 
 
 # The models should be scored based on the rank-correlation (spearman) with the target
@@ -24,25 +40,20 @@ def numerai_score(y_true, y_pred):
 # Better output
 
 contest = str(184)
-
 warnings.filterwarnings("ignore")
-    
 print("\n# Loading Numerai Data...")
+     
 
 # The training data is used to train your model how to predict the targets.
-#train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
+train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
         
 # The tournament data is the data that Numerai uses to evaluate your model.
-#tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
-     
-#train = df
+tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
+   
    
 train["erano"] = train.era.str.slice(3).astype(int)
 eras = train.erano
     
-    
-# The tournament data is the data that Numerai uses to evaluate your model.
-# tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
     
 # The tournament data contains validation data, test data and live data.
 # Validation is used to test your model locally so we separate that.
@@ -68,14 +79,13 @@ y_test = validation[target]
         #X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
         
 xgb_params = {
-            'n_jobs':2,    
-            'max_depth':3, 
-            'eta':0.05, 
-            'silent':0, 
-            'eval_metric':'auc',
+            'nthread': 2,    
+            'max_depth': 5, 
+            'learning_rate': 0.03, 
+            'eval_metric': 'rmse',
             'subsample': 0.8,
-            'colsample_bytree': 0.8,
-            'objective':'binary:logistic',
+            'colsample_bytree': 0.2,
+            'objective':'reg:squarederror',
             'seed' : 0
       }
         
@@ -86,24 +96,43 @@ evals = [(dtrain,'train'),(dtest,'eval')]
         
 xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 100,  #2000
+                      num_boost_round = 2000,  #2000
                       verbose_eval=50, 
                       early_stopping_rounds = 100,
                       evals=evals,
-                      #feval = f1_score_cust,
                       maximize = True)
          
 # plot the important features  
-fig, ax = plt.subplots(figsize=(6,9))
-xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
-plt.show()
+#fig, ax = plt.subplots(figsize=(6,9))
+#xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
+#plt.show()
 
 x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
  
 preds = xgb_model.predict(x_prediction)
-                
-#print(numerai_score(train[target], pd.Series(preds)))
-       
+
+print("Generating predictions...")
+    
+#training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
+#tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])    
+
+train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
+tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
+
+# Check the per-era correlations on the training set
+train_correlations = train.groupby("era").apply(score)
+    
+print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
+print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
+        
+
+# Check the per-era correlations on the validation set
+validation_data = tournament[tournament.data_type == "validation"]
+validation_correlations = validation_data.groupby("era").apply(score)
+
+print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
+print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
+
         
 #results = preds
            

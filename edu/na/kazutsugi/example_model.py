@@ -63,6 +63,7 @@ def main():
     model.fit(training_data[feature_names], training_data[TARGET_NAME])
 
     print("Generating predictions...")
+    
     training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
     tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])
 
