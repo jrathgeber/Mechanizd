@@ -42,7 +42,7 @@ def main():
 
     print (f"xgboost {xgboost.__version__}")
     
-    contest = str(184)
+    contest = str(185)
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
     print("Loading data...")
@@ -80,7 +80,7 @@ def main():
     print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
     print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
 
-    #tournament_data[PREDICTION_NAME].to_csv(TOURNAMENT_NAME + "_eg_submission.csv", header=True)
+    tournament_data[PREDICTION_NAME].to_csv("F:\\Numerai\\numerai" + contest + "\\" + TOURNAMENT_NAME + "_eg_submission.csv", header=True)
     
 
 if __name__ == '__main__':

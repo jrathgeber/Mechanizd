@@ -3,12 +3,7 @@
 import xgboost as xgb
 import pandas as pd
 import numpy
-
-
-import matplotlib.pyplot as plt
-
 import warnings
-
 
 
 TOURNAMENT_NAME = "kazutsugi"
@@ -17,7 +12,6 @@ PREDICTION_NAME = "prediction_kazutsugi"
 
 BENCHMARK = 0.002
 BAND = 0.04
-
 
 # Submissions are scored by spearman correlation
 def score(df):
@@ -36,10 +30,9 @@ def numerai_score(y_true, y_pred):
     return numpy.corrcoef(y_true, rank_pred)[0,1]
 
 
-# Somme feature enginner
-# Better output
+# The Script Enter the Week Number Below
 
-contest = str(184)
+contest = str(185)
 warnings.filterwarnings("ignore")
 print("\n# Loading Numerai Data...")
      
@@ -71,22 +64,22 @@ y_train = train_columns[target]
 X_test = validation[features]
 y_test = validation[target]
         
-        #ids = tournament['id']
+ids = tournament['id']
         
-        # run simple xgboost classification model and check 
-        # prep modeling code
-        #from sklearn.model_selection import train_test_split
-        #X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
+# run simple xgboost classification model and check 
+# prep modeling code
+# from sklearn.model_selection import train_test_split
+# X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
         
 xgb_params = {
             'nthread': 2,    
             'max_depth': 5, 
-            'learning_rate': 0.03, 
-            'eval_metric': 'rmse',
-            'subsample': 0.8,
-            'colsample_bytree': 0.2,
-            'objective':'reg:squarederror',
-            'seed' : 0
+            'learning_rate': 0.01, 
+            #'eval_metric': 'rmse',
+            #'subsample': 0.8,
+            'colsample_bytree': 0.1,
+            'objective':'reg:squarederror'#,
+            #'seed' : 0
       }
         
 dtrain = xgb.DMatrix(X_train[features], y_train, feature_names = features)
@@ -97,15 +90,16 @@ evals = [(dtrain,'train'),(dtest,'eval')]
 xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
                       num_boost_round = 2000,  #2000
-                      verbose_eval=50, 
-                      early_stopping_rounds = 100,
+                      verbose_eval=100, 
+                      #early_stopping_rounds = 100,
                       evals=evals,
-                      maximize = True)
+                      maximize = False)
          
 # plot the important features  
-#fig, ax = plt.subplots(figsize=(6,9))
-#xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
-#plt.show()
+# import matplotlib.pyplot as plt
+# fig, ax = plt.subplots(figsize=(6,9))
+# xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
+# plt.show()
 
 x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
  
@@ -113,8 +107,8 @@ preds = xgb_model.predict(x_prediction)
 
 print("Generating predictions...")
     
-#training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
-#tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])    
+# training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
+# tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])    
 
 train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
 tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
@@ -133,18 +127,20 @@ validation_correlations = validation_data.groupby("era").apply(score)
 print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
 print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
 
-        
-#results = preds
            
+# Needed Vars to Gen the CSV
+results = preds
+name = 'kazutsugi' 
+submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_new_2_submission.csv"    
+
 # Create your submission
-## results_df = pd.DataFrame(data={'probability_' + name:results})
-## joined = pd.DataFrame(ids).join(results_df)
-## print("- joined:", joined.head())
+results_df = pd.DataFrame(data={'probability_' + name:results})
+joined = pd.DataFrame(ids).join(results_df)
+print("- joined:", joined.head())
     
-# print("# Writing predictions to " + name + "_submissions.csv...")
-# Save the predictions out to a CSV file.
-# joined.to_csv(submission, index=False)
-# Now you can upload these predictions on https://numer.ai
+print("# Writing predictions to " + name + "_new_2_submission.csv...")
+joined.to_csv(submission, index=False)
+
         
 
 
