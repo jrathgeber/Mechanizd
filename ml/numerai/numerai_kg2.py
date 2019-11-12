@@ -75,7 +75,7 @@ xgb_params = {
             'nthread': 2,    
             'max_depth': 5, 
             'learning_rate': 0.01, 
-            #'eval_metric': 'rmse',
+            'eval_metric': 'rmse',
             #'subsample': 0.8,
             'colsample_bytree': 0.1,
             'objective':'reg:squarederror'#,
@@ -105,7 +105,7 @@ x_prediction = xgb.DMatrix(tournament[features], feature_names = features)
  
 preds = xgb_model.predict(x_prediction)
 
-print("Generating predictions...")
+print("Generating metrics...")
     
 # training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
 # tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])    
@@ -127,6 +127,7 @@ validation_correlations = validation_data.groupby("era").apply(score)
 print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
 print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
 
+print("Generating Submission...")
            
 # Needed Vars to Gen the CSV
 results = preds
