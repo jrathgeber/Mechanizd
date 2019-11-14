@@ -11,9 +11,22 @@ import matplotlib.pyplot as plt
 
 import warnings
 
-# Somme feature enginner
+TOURNAMENT_NAME = "kazutsugi"
+TARGET_NAME = "target_kazutsugi"
+PREDICTION_NAME = "prediction_kazutsugi"
 
-# Better output
+BENCHMARK = 0.002
+BAND = 0.04
+
+# Submissions are scored by spearman correlation
+def score(df):
+   
+    return np.corrcoef( df[TARGET_NAME], df[PREDICTION_NAME].rank(pct=True, method="first") )[0,1]
+
+# The payout function
+def payout(scores):
+    return ((scores - BENCHMARK)/BAND).clip(lower=-1, upper=1)
+
 
 def main(contest):
 
@@ -76,7 +89,7 @@ def main(contest):
         #X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
         
         xgb_params = {
-            'max_depth':3, 
+            'max_depth':5, 
             'eta':0.05, 
             'silent':0, 
             'eval_metric':'auc',
@@ -92,7 +105,7 @@ def main(contest):
         
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 200,  #2000
+                      num_boost_round = 2000,  #2000
                       verbose_eval=50, 
                       early_stopping_rounds = 500,
                       evals=evals,
@@ -112,13 +125,32 @@ def main(contest):
         #results = y_prediction[:, 1]
         results = preds
     
+        print("Generating metrics...")
+
+        train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
+        tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
+
+        # Check the per-era correlations on the training set
+        train_correlations = train.groupby("era").apply(score)
+    
+        print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
+        print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
+        
+
+        # Check the per-era correlations on the validation set
+        validation_data = tournament[tournament.data_type == "validation"]
+        validation_correlations = validation_data.groupby("era").apply(score)
+
+        print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
+        print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
+    
         # Create your submission
         print("", "Creating submission file...")
         results_df = pd.DataFrame(data={'probability_' + name:results})
         joined = pd.DataFrame(ids).join(results_df)
         print("", "Top rows of Submission : ", joined.head())
     
-        print("Writing predictions to " + name + "_submissions.csv...")
+        print("Writing predictions to " + name + "_xsubmissions.csv...")
         joined.to_csv(submission, index=False)
         print("All done")
         
@@ -126,4 +158,4 @@ def main(contest):
         
 
 if __name__ == '__main__':
-    main(str(184))
+    main(str(185))

@@ -280,8 +280,7 @@ def main():
     xg = XgbWrapper(seed=2019, params=xgb_params)
     xg_oof_train, xg_oof_test = get_oof(xg, ntrain, ntest, kf, train, labels, test)
     #print("XG-CV: {}".format(roc_auc_score(labels, xg_oof_train)))
-    
-    
+        
     
     print("Generating metrics...")
     ###################################################
@@ -292,22 +291,23 @@ def main():
     # train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
     # tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
 
-    # train_df[PREDICTION_NAME] = xg.predict(train_df[combined_features] )
-    # test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
+    train_df[PREDICTION_NAME] = xg.predict(train_df[combined_features] )
+    test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
     
     # Check the per-era correlations on the training set
-    # train_correlations = train_df.groupby("era").apply(score)
-    train_correlations = xg_oof_train.groupby("era").apply(score)
+    train_correlations = train_df.groupby("era").apply(score)
+    
+    # train_correlations = xg_oof_train.groupby("era").apply(score)
         
     print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
     print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
             
     
     # Check the per-era correlations on the validation set
-    # validation_data = test_df[test_df.data_type == "validation"]
-    # validation_correlations = validation_data.groupby("era").apply(score)
+    validation_data = test_df[test_df.data_type == "validation"]
+    validation_correlations = validation_data.groupby("era").apply(score)
     
-    validation_correlations = xg_oof_test.groupby("era").apply(score)
+    # validation_correlations = xg_oof_test.groupby("era").apply(score)
     
     print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
     print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
