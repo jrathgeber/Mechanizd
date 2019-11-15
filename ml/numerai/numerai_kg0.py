@@ -71,7 +71,8 @@ def main(contest):
         #    'target_charles', 'target_elizabeth',
         #    'target_jordan', 'target_ken'], axis=1)
 
-        train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
+        train_columns = train.drop([
+            'id', 'era', 'data_type'], axis=1)
     
         # Transform the loaded CSV data into numpy arrays
         features = [f for f in list(train_columns) if "feature" in f]
@@ -88,14 +89,14 @@ def main(contest):
         #X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.3,  random_state=42)
         
         xgb_params = {
-            'nthread': 2, 
             'max_depth':5, 
-            'learning_rate':0.01, 
-            'eval_metric':'rmse',
-            #'subsample': 0.8,
+            'eta':0.05, 
+            'silent':0, 
+            'eval_metric':'auc',
+            'subsample': 0.8,
             'colsample_bytree': 0.8,
-            'objective':'reg:squarederror',
-            #'seed' : 0
+            'objective':'binary:logistic',
+            'seed' : 0
         }
         
         dtrain = xgb.DMatrix(X_train[features], y_train, feature_names = features)
@@ -109,7 +110,7 @@ def main(contest):
                       early_stopping_rounds = 500,
                       evals=evals,
                       #feval = f1_score_cust,
-                      maximize = False)
+                      maximize = True)
          
         # plot the important features  if desired
         #fig, ax = plt.subplots(figsize=(6,9))
