@@ -89,11 +89,11 @@ def main(contest):
         
         xgb_params = {
             'nthread': 2, 
-            'max_depth':5, 
+            'max_depth': 6, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
             #'subsample': 0.8,
-            'colsample_bytree': 0.8,
+            'colsample_bytree': 0.1,
             'objective':'reg:squarederror',
             #'seed' : 0
         }
@@ -144,11 +144,14 @@ def main(contest):
         print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
     
         # Create your submission
-        print("", "Creating submission file...")
+        print("")
+        print("Creating submission file...")
         results_df = pd.DataFrame(data={'probability_' + name:results})
         joined = pd.DataFrame(ids).join(results_df)
-        print("", "Top rows of Submission : ", joined.head())
+        print("")
+        print("Top rows of Submission : ", joined.head())
     
+        print("")
         print("Writing predictions to " + name + "_xsubmissions.csv...")
         joined.to_csv(submission, index=False)
         print("All done")
