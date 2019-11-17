@@ -89,7 +89,7 @@ def main(contest):
         
         xgb_params = {
             'nthread': 2, 
-            'max_depth': 6, 
+            'max_depth': 5, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
             #'subsample': 0.8,
@@ -104,9 +104,9 @@ def main(contest):
         
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 2000,  #2000
-                      verbose_eval=50, 
-                      early_stopping_rounds = 500,
+                      num_boost_round = 4000,  #2000
+                      verbose_eval=200, 
+                      early_stopping_rounds = 100,
                       evals=evals,
                       #feval = f1_score_cust,
                       maximize = False)
