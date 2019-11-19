@@ -228,101 +228,12 @@ def main():
         combined_features += important_cols
 
 
+
     print("Combined Features : ")
     print(combined_features)
 
 
-    print("Limit Features ...")
-    ###################################################
 
-    train_feats = train_df[combined_features]
-    test_feats = test_df[combined_features]
-
-    print("Generate Linear Neighbors ...")
-    ###################################################
-
-    linear_feats = GenerateLinear(n_neighbors=train_feats.shape[1], max_elts=2)
-    train_feats = linear_feats.fit_transform(train_feats, labels)
-    test_feats = linear_feats.transform(test_feats)
-
-    print("Scaling Columns ...")
-    ###################################################
-
-    train_feats = train_feats[important_cols]
-    test_feats = test_feats[important_cols]
-    pipeline = Pipeline([('scaler', MinMaxScaler())])
-    poly_train = pd.DataFrame(pipeline.fit_transform(train_feats))
-    poly_test = pd.DataFrame(pipeline.transform(test_feats))
-
-    print("Generating PCA ...")
-    ###################################################
-
-    pca_feats = GeneratePCA()
-    train_feats = pca_feats.fit_transform(train_feats, poly_train)
-    test_feats = pca_feats.transform(test_feats, poly_test)
-
-    print("Training First Layer ...")
-    ###################################################
-
-    train = np.array(train_feats)
-    test = np.array(test_feats)
-    labels = np.array(labels)
-
-    ntrain = train.shape[0]
-    ntest = test.shape[0]
-    kf = KFold(n_splits=5, shuffle=True, random_state=2018).split(train)
-
-    xgb_params = {}
-    xgb_params["objective"] = "reg:squarederror"
-    xgb_params["eta"] = 0.05
-    xgb_params["subsample"] = 0.7
-    xgb_params["silent"] = 1
-    xgb_params["max_depth"] = 5
-    xgb_params["min_child_weight"] = 5
-    xgb_params['eval_metric'] = 'rmse'
-
-    xg = XgbWrapper(seed=2019, params=xgb_params)
-    xg_oof_train, xg_oof_test = get_oof(xg, ntrain, ntest, kf, train, labels, test)
-    #print("XG-CV: {}".format(roc_auc_score(labels, xg_oof_train)))
-        
-    
-    print("Generating metrics...")
-    ###################################################
-    
-    # training_data[PREDICTION_NAME] = model.predict(training_data[feature_names])
-    # tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])    
-    
-    # train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
-    # tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
-
-    train_df[PREDICTION_NAME] = xg.predict(train_df[combined_features] )
-    test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
-    
-    # Check the per-era correlations on the training set
-    train_correlations = train_df.groupby("era").apply(score)
-    
-    # train_correlations = xg_oof_train.groupby("era").apply(score)
-        
-    print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
-    print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
-            
-    
-    # Check the per-era correlations on the validation set
-    validation_data = test_df[test_df.data_type == "validation"]
-    validation_correlations = validation_data.groupby("era").apply(score)
-    
-    # validation_correlations = xg_oof_test.groupby("era").apply(score)
-    
-    print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
-    print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
-           
-    print("Generate Submission ...")
-    ###################################################
-
-    submission = pd.DataFrame()
-    submission['id'] = ids
-    submission['prediction_kazutsugi'] = xg_oof_test
-    submission.to_csv("F:\\Numerai\\numerai" + 185 + "\\" + "output_sarris.csv", index=False)
 
 if __name__ == "__main__":
     main()

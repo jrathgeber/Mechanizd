@@ -13,6 +13,7 @@ import configparser
 import numerai_kg1 as mechXg
 import os
 import time
+import Tweet
  	
 from zipfile import ZipFile
 
@@ -52,6 +53,7 @@ def run_numerai_batch():
     for name in names:
         nx.upload(directory + name + '_new_submission.csv', name, public, secret)
     
+    Tweet.tweetSomething('Uploaded My Numerai Submission : ' + contest + ' kazutsugi')
 
 if __name__ == '__main__':
     

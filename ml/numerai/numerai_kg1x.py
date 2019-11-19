@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 
 import warnings
 
+import operator
+
 TOURNAMENT_NAME = "kazutsugi"
 TARGET_NAME = "target_kazutsugi"
 PREDICTION_NAME = "prediction_kazutsugi"
@@ -20,13 +22,33 @@ BAND = 0.04
 
 # Submissions are scored by spearman correlation
 def score(df):
-   
     return np.corrcoef( df[TARGET_NAME], df[PREDICTION_NAME].rank(pct=True, method="first") )[0,1]
 
 # The payout function
 def payout(scores):
     return ((scores - BENCHMARK)/BAND).clip(lower=-1, upper=1)
 
+
+def SelectFeatures(X, y, cutoff):
+
+    clf = xgb.XGBClassifier(n_estimators=20, base_score=0.005)
+    clf.fit(X, y)
+
+    column_importance = clf.feature_importances_
+    columns = X.columns
+    column_dict = dict()
+    column_list = []
+
+    for row, value in zip(columns, column_importance):
+        column_dict[row] = value
+
+    column_dict = sorted(column_dict.items(), key=operator.itemgetter(1))
+    for row, value in column_dict:
+        print ('Feature:', row,'| Importance:', value)
+        if value > cutoff:
+            list.append(column_list, row)
+
+    return column_list
 
 def main(contest):
 
@@ -62,6 +84,22 @@ def main(contest):
         print (eras.describe())
         print ("")
         
+        # Feature Importance
+        
+        labels = pd.DataFrame(train['target_kazutsugi'].values)
+        
+        combined_features = []
+        attributes = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]
+
+        for attribute in attributes:
+            print("\nTraining on Attribute: {}".format(attribute.capitalize()))
+            feature_df = train[[col for col in train.columns if attribute in col]]
+            important_cols = SelectFeatures(feature_df, labels, 0.01)
+            combined_features += important_cols
+
+        print("Combined Features : ")
+        print(combined_features)
+                        
         
         # There are five targets in the training data which you can choose to model using the features.
         # Numerai does not say what the features mean but that's fine; we can still build a model.
@@ -74,7 +112,10 @@ def main(contest):
         train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
     
         # Transform the loaded CSV data into numpy arrays
-        features = [f for f in list(train_columns) if "feature" in f]
+        # features = [f for f in list(train_columns) if "feature" in f]
+        
+        features = combined_features
+        
         X_train = train_columns[features]
         y_train = train_columns[target]
         X_test = validation[features]
@@ -143,21 +184,8 @@ def main(contest):
         print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
         print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
     
-        # Create your submission
-        print("")
-        print("Creating submission file...")
-        results_df = pd.DataFrame(data={'probability_' + name:results})
-        joined = pd.DataFrame(ids).join(results_df)
-        print("")
-        print("Top rows of Submission : ", joined.head())
-    
-        print("")
-        print("Writing predictions to " + name + "_submissions.csv...")
-        joined.to_csv(submission, index=False)
-        print("All done")
-        
-        # Now you can upload these predictions on https://numer.ai
+
         
 
 if __name__ == '__main__':
-    main(str(185))
+    main(str(186))

@@ -32,7 +32,7 @@ def numerai_score(y_true, y_pred):
 
 # The Script Enter the Week Number Below
 
-contest = str(185)
+contest = str(186)
 warnings.filterwarnings("ignore")
 print("\n# Loading Numerai Data...")
      
@@ -58,6 +58,7 @@ train_columns = train.drop([ 'id', 'era', 'data_type'], axis=1)
     
 # Transform the loaded CSV data into numpy arrays
 features = [f for f in list(train_columns) if "feature" in f]
+
 X_train = train_columns[features]
 y_train = train_columns[target]
         
@@ -132,14 +133,14 @@ print("Generating Submission...")
 # Needed Vars to Gen the CSV
 results = preds
 name = 'kazutsugi' 
-submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_new_2_submission.csv"    
+submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_Nm_Example_Submission.csv"    
 
 # Create your submission
 results_df = pd.DataFrame(data={'probability_' + name:results})
 joined = pd.DataFrame(ids).join(results_df)
 print("- joined:", joined.head())
     
-print("# Writing predictions to " + name + "_new_2_submission.csv...")
+print("# Writing predictions to " + name + "_Nm_Example_Submission.csv")
 joined.to_csv(submission, index=False)
 
         
