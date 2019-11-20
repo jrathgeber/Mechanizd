@@ -208,6 +208,7 @@ def main():
 
     ids = test_df['id'].values
     labels = pd.DataFrame(train_df['target_kazutsugi'].values)
+    
     cols_to_drop = ["id", "era", "data_type", "target_kazutsugi"]
 
     for col in cols_to_drop:
@@ -257,10 +258,16 @@ def main():
     print("Generating PCA ...")
     ###################################################
 
-    pca_feats = GeneratePCA()
-    train_feats = pca_feats.fit_transform(train_feats, poly_train)
-    test_feats = pca_feats.transform(test_feats, poly_test)
-
+    #pca_feats = GeneratePCA()
+    #train_feats = pca_feats.fit_transform(train_feats, poly_train)
+    #test_feats = pca_feats.transform(test_feats, poly_test)
+    
+    print("train_feats")
+    print(train_feats)
+        
+    print("test_feats")
+    print(test_feats)
+    
     print("Training First Layer ...")
     ###################################################
 
@@ -268,8 +275,11 @@ def main():
     test = np.array(test_feats)
     labels = np.array(labels)
 
-    ntrain = train.shape[0]
-    ntest = test.shape[0]
+    print("labels")
+    print(labels)
+
+    ntrain = train.shape[0] # rows in training
+    ntest = test.shape[0]   # rows in test
     kf = KFold(n_splits=5, shuffle=True, random_state=2018).split(train)
 
     xgb_params = {}
@@ -282,7 +292,7 @@ def main():
     xgb_params['eval_metric'] = 'rmse'
 
     xg = XgbWrapper(seed=2019, params=xgb_params)
-    xg_oof_train, xg_oof_test = get_oof(xg, ntrain, ntest, kf, train, labels, test)
+    #xg_oof_train, xg_oof_test = get_oof(xg, ntrain, ntest, kf, train, labels, test)
     #print("XG-CV: {}".format(roc_auc_score(labels, xg_oof_train)))
         
     
@@ -295,7 +305,22 @@ def main():
     # train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
     # tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
 
-    train_df[PREDICTION_NAME] = xg.predict(train_df[combined_features] )
+    print("train_feats")
+    print(train_feats)
+        
+    print("test_feats")
+    print(test_feats)
+
+    print("combined_features")
+    print(combined_features)
+
+    print("ntrain")
+    print(ntrain)
+        
+    print("ntest")
+    print(ntest)
+
+    train_df[PREDICTION_NAME] = xg.train(train_df[combined_features], labels )
     test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
     
     # Check the per-era correlations on the training set
@@ -321,7 +346,7 @@ def main():
 
     submission = pd.DataFrame()
     submission['id'] = ids
-    submission['prediction_kazutsugi'] = xg_oof_test
+    #submission['prediction_kazutsugi'] = xg_oof_test
     submission.to_csv("F:\\Numerai\\numerai" + 185 + "\\" + "output_sarris.csv", index=False)
 
 if __name__ == "__main__":

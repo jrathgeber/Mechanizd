@@ -97,8 +97,8 @@ def main(contest):
             important_cols = SelectFeatures(feature_df, labels, 0.01)
             combined_features += important_cols
 
-        print("Combined Features : ")
-        print(combined_features)
+        #print("Combined Features : ")
+        #print(combined_features)
                         
         
         # There are five targets in the training data which you can choose to model using the features.
@@ -112,8 +112,7 @@ def main(contest):
         train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
     
         # Transform the loaded CSV data into numpy arrays
-        # features = [f for f in list(train_columns) if "feature" in f]
-        
+        #features = [f for f in list(train_columns) if "feature" in f]
         features = combined_features
         
         X_train = train_columns[features]
