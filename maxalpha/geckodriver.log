@@ -260,3 +260,23 @@ JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/
 [GP
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1574259024670	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.4MK008wCyBdF"
+1574259026511	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1574259026511	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1574259026511	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1574259026512	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1574259036720	Marionette	INFO	Listening on port 59891
+1574259036786	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1574259046821	Marionette	INFO	Stopped listening on port 59891
+[Child 40704, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1572401533/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 40704, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1572401533/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 29356, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1572401533/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 29356,
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[G
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

@@ -206,7 +206,12 @@ def main():
     print("Initial Processing ...")
     ###################################################
 
+    # copy I hope
+    orig_train_df = train_df
+    orig_test_df = test_df
+
     ids = test_df['id'].values
+    eras = train_df['era'].values
     labels = pd.DataFrame(train_df['target_kazutsugi'].values)
     
     cols_to_drop = ["id", "era", "data_type", "target_kazutsugi"]
@@ -320,23 +325,21 @@ def main():
     print("ntest")
     print(ntest)
 
-    train_df[PREDICTION_NAME] = xg.train(train_df[combined_features], labels )
-    test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
+    orig_train_df[PREDICTION_NAME] = xg.train(train_df[combined_features], labels )
+    orig_test_df[PREDICTION_NAME] = xg.predict(test_df[combined_features] )
+    
+    orig_train_df['era'] = eras
     
     # Check the per-era correlations on the training set
-    train_correlations = train_df.groupby("era").apply(score)
-    
-    # train_correlations = xg_oof_train.groupby("era").apply(score)
-        
+    train_correlations = orig_train_df.groupby("era").apply(score)
+
     print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
     print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
-            
     
     # Check the per-era correlations on the validation set
-    validation_data = test_df[test_df.data_type == "validation"]
-    validation_correlations = validation_data.groupby("era").apply(score)
-    
-    # validation_correlations = xg_oof_test.groupby("era").apply(score)
+    # validation_data = test_df[test_df.data_type == "validation"]
+    # validation_correlations = validation_data.groupby("era").apply(score)
+    validation_correlations = orig_test_df.groupby("era").apply(score)
     
     print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
     print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
