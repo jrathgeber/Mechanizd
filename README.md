@@ -1,6 +1,6 @@
 # Mechanizd
 
-This project contains the source code to genrate http://www.Mechanizd.com
+This project contains the source code to generate http://www.Mechanizd.com
 
 
 
