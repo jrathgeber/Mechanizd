@@ -109,7 +109,15 @@ def main(contest):
         #    'target_charles', 'target_elizabeth',
         #    'target_jordan', 'target_ken'], axis=1)
 
-        train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
+        train_columns = train.drop(['id', 'data_type'], axis=1)
+        # train_columns = train.drop(['id', 'era', 'data_type'], axis=1)        
+        
+        train_columns['era'] = train_columns['era'].str.replace(r'\D','').astype(int)
+        validation['era'] = validation['era'].str.replace(r'\D','').astype(int)
+        
+        tournament['era'] = tournament['era'].str.replace(r'eraX','500')
+        tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
+        
     
         # Transform the loaded CSV data into numpy arrays
         #features = [f for f in list(train_columns) if "feature" in f]
