@@ -154,10 +154,14 @@ def main(contest):
         print("")
         print("Writing predictions to " + name + "_submissions.csv...")
         joined.to_csv(submission, index=False)
-        print("All done")
         
         # Now you can upload these predictions on https://numer.ai
+        print("Prepare return Value")
         
+        rvalue = validation_correlations.mean()
+        
+        return rvalue 
+                
 
 if __name__ == '__main__':
     main(str(185))

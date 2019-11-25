@@ -35,25 +35,35 @@ def run_numerai_batch():
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
     if not os.path.exists(directory):
+        
+        # Make new Dir
         os.makedirs(directory)
 
-    # download dataset from numerai, save it and then load it
-    nx.download(directory + 'numerai_dataset.zip')
+        # download dataset from numerai, save it and then load it
+        nx.download(directory + 'numerai_dataset.zip')
 
-    # Unzip it
-    with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
-        #Extract all the contents of zip file in current directory
-        zipObj.extractall(directory)
+        # Unzip it
+        with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
+            
+            #Extract all the contents of zip file in current directory
+            zipObj.extractall(directory)
 
     # Run my xg boost algo on it
-    mechXg.main(contest)
+    rvalue = str(mechXg.main(contest))
+    #rvalue = str(0.041)
+
+    # Tweet
+    print("Tweeting ..")
+    Tweet.tweetSomething('Uploading my numerai Submission round [' + contest + '] kazutsugi with corr [' + rvalue + '] ')
 
     # Upload to numerai
+    print("Uploading...")
     names = ('kazutsugi',)     
     for name in names:
         nx.upload(directory + name + '_new_submission.csv', name, public, secret)
     
-    Tweet.tweetSomething('Uploaded My Numerai Submission : ' + contest + ' kazutsugi')
+    print("All Done")
+  
 
 if __name__ == '__main__':
     
