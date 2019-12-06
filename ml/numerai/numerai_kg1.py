@@ -71,7 +71,17 @@ def main(contest):
         #    'target_charles', 'target_elizabeth',
         #    'target_jordan', 'target_ken'], axis=1)
 
-        train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
+        # train_columns = train.drop(['id', 'era', 'data_type'], axis=1)
+        train_columns = train.drop(['id', 'data_type'], axis=1)
+        
+        
+        train_columns['era'] = train_columns['era'].str.replace(r'\D','').astype(int)
+        validation['era'] = validation['era'].str.replace(r'\D','').astype(int)
+        
+        tournament['era'] = tournament['era'].str.replace(r'eraX','500')
+        tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
+       
+        
     
         # Transform the loaded CSV data into numpy arrays
         features = [f for f in list(train_columns) if "feature" in f]
@@ -146,8 +156,10 @@ def main(contest):
         # Create your submission
         print("")
         print("Creating submission file...")
+        
         results_df = pd.DataFrame(data={'probability_' + name:results})
         joined = pd.DataFrame(ids).join(results_df)
+        
         print("")
         print("Top rows of Submission : ", joined.head())
     
@@ -164,4 +176,4 @@ def main(contest):
                 
 
 if __name__ == '__main__':
-    main(str(185))
+    main(str(188))

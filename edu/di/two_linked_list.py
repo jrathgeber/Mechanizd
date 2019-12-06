@@ -2,7 +2,7 @@
 """
 Created on Wed Dec  4 14:31:02 2019
 
-@author: Jason
+@author: Geek for Geeks I think
 
 You are given two linked-lists representing two non-negative integers. 
 
@@ -19,6 +19,7 @@ class ListNode(object):
     self.val = x
     self.next = None
 
+# Solution
 class Solution:
   def addTwoNumbers(self, l1, l2, c = 0):
     # Fill this in.
