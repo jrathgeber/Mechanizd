@@ -21,12 +21,15 @@ class Solution:
     
   # Python3 code to Check for  
   # balanced parentheses in an expression 
-  open_list = ["[","{","("] 
-  close_list = ["]","}",")"]     
+  
     
-  def isValid(self, mystring):
+  def isValid(self, myString):
+
+    open_list = ["[","{","("] 
+    close_list = ["]","}",")"]        
     stack = [] 
-    for i in myStr: 
+    
+    for i in myString: 
         if i in open_list: 
             stack.append(i) 
         elif i in close_list: 
@@ -39,7 +42,6 @@ class Solution:
     if len(stack) == 0: 
         return "Balanced"
   
-
 
 # Test Program
 s = "()(){(())" 

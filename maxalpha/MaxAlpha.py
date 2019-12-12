@@ -66,17 +66,17 @@ def parseWebSite(daterun):
                     #events_ok= False 
                                 
                     # these tickers cause problems
-                    if(data[x][0] not in ['USAU', 'NA', 'YERR', 'TVIX', 'MLPO']):
+                    if(data[x][0] not in ['USAU', 'NA', 'YERR', 'TVIX', 'MLPO', 'AZO']):
                         ticker_ok=True    
         
                     #print (len(data[x]))    
                     #print(data[x])
                  
                     num = data[x][1]            
-                    if(float(num.replace("$", "")) <= 10.0):
+                    if(float(num.replace("$", "").replace(",", "")) <= 10.0):
                         price_ok=True    
         
-                    if(float(num.replace("$", "")) <= 1.00):
+                    if(float(num.replace("$", "").replace(",", "")) <= 1.00):
                         price_ok=False
         
                     # Gap

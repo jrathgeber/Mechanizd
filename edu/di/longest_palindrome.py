@@ -22,7 +22,7 @@ class Solution:
   
     # This function prints the longest palindrome substring (LPS) 
     # of str[]. It also returns the length of the longest palindrome 
-    def longestPalindrome(self, s):
+    def longestPalindrome(self, string):
         maxLength = 1
       
         start = 0
@@ -33,9 +33,10 @@ class Solution:
       
         # One by one consider every character as center point of  
         # even and length palindromes 
-        for i in xrange(1, length): 
+        for i in range(1, length): 
+        
             # Find the longest even length palindrome with center 
-        # points as i-1 and i. 
+            # points as i-1 and i. 
             low = i - 1
             high = i 
             while low >= 0 and high < length and string[low] == string[high]: 

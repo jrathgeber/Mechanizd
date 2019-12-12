@@ -73,7 +73,7 @@ def parseWebSite(daterun):
                 #events_ok= False 
                             
                 # these tickers cause problems
-                if(data[x][0] not in ['USAU', 'NA', 'YERR', 'TVIX']):
+                if(data[x][0] not in ['USAU', 'NA', 'YERR', 'TVIX', 'AZO']):
                     ticker_ok=True    
     
                 #print(data[:])
