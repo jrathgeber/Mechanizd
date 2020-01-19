@@ -13,7 +13,7 @@ import pandas
 
 
 # The cotest
-contest = str(142)
+contest = str(300)
 
 # Read File
 df=pandas.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
