@@ -99,7 +99,7 @@ def main(contest):
         
         xgb_params = {
             'nthread': 2, 
-            'max_depth': 5, 
+            'max_depth': 4, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
             #'subsample': 0.8,
@@ -114,7 +114,7 @@ def main(contest):
         
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 4000,  #2000
+                      num_boost_round = 200,  #2000
                       verbose_eval=200, 
                       early_stopping_rounds = 100,
                       evals=evals,
@@ -134,18 +134,17 @@ def main(contest):
         #results = y_prediction[:, 1]
         results = preds
     
-        print("Generating metrics...")
-
-        train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
+        print("Generating predictions...")
+        #train[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(train[features], feature_names = features) )
         tournament[PREDICTION_NAME] = xgb_model.predict(xgb.DMatrix(tournament[features], feature_names = features) )
 
         # Check the per-era correlations on the training set
-        train_correlations = train.groupby("era").apply(score)
+        #train_correlations = train.groupby("era").apply(score)
     
-        print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
-        print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
+        #print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
+        #print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
         
-
+        print("Generating validation data...")
         # Check the per-era correlations on the validation set
         validation_data = tournament[tournament.data_type == "validation"]
         validation_correlations = validation_data.groupby("era").apply(score)

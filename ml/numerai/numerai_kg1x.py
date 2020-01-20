@@ -31,7 +31,7 @@ def payout(scores):
 
 def SelectFeatures(X, y, cutoff):
 
-    clf = xgb.XGBClassifier(n_estimators=20, base_score=0.005)
+    clf = xgb.XGBClassifier(n_estimators=20, base_score=0.5)
     clf.fit(X, y)
 
     column_importance = clf.feature_importances_
@@ -94,7 +94,7 @@ def main(contest):
         for attribute in attributes:
             print("\nTraining on Attribute: {}".format(attribute.capitalize()))
             feature_df = train[[col for col in train.columns if attribute in col]]
-            important_cols = SelectFeatures(feature_df, labels, 0.01)
+            important_cols = SelectFeatures(feature_df, labels, 0.001)
             combined_features += important_cols
 
         #print("Combined Features : ")
@@ -154,7 +154,7 @@ def main(contest):
                       dtrain = dtrain,
                       num_boost_round = 4000,  #2000
                       verbose_eval=200, 
-                      early_stopping_rounds = 100,
+                      early_stopping_rounds = 200,
                       evals=evals,
                       #feval = f1_score_cust,
                       maximize = False)
@@ -191,8 +191,23 @@ def main(contest):
         print(f"On validation the correlation has mean {validation_correlations.mean()} and std {validation_correlations.std()}")
         print(f"On validation the average per-era payout is {payout(validation_correlations).mean()}")
     
-
+        # Create your submission
+        print("")
+        print("Creating submission file...")
+        
+        results_df = pd.DataFrame(data={'probability_' + name:results})
+        joined = pd.DataFrame(ids).join(results_df)
+        
+        print("")
+        print("Top rows of Submission : ", joined.head())
+    
+        print("")
+        print("Writing predictions to " + name + "_submissions.csv...")
+        joined.to_csv(submission, index=False)
+        
+        # Now you can upload these predictions on https://numer.ai
+        print("Prepare return Value")
         
 
 if __name__ == '__main__':
-    main(str(186))
+    main(str(195))
