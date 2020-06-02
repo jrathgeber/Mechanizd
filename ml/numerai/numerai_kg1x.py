@@ -94,7 +94,7 @@ def main(contest):
         for attribute in attributes:
             print("\nTraining on Attribute: {}".format(attribute.capitalize()))
             feature_df = train[[col for col in train.columns if attribute in col]]
-            important_cols = SelectFeatures(feature_df, labels, 0.001)
+            important_cols = SelectFeatures(feature_df, labels, 0.0000)
             combined_features += important_cols
 
         #print("Combined Features : ")
@@ -210,4 +210,4 @@ def main(contest):
         
 
 if __name__ == '__main__':
-    main(str(195))
+    main(str(196))
