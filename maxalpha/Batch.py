@@ -9,6 +9,7 @@ import SymbolConfig as SC;
 import threading;
 import configparser
 import Tweet
+#import iex.first as IEX
 
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
@@ -45,8 +46,10 @@ def MyThread1():
     
 #tickerList = ['AXSM', 'VIPS']    
 tickerList = MA.parseWebSite(daterun);
-
 print(tickerList)
+
+#allpriceslist = IEX.getAllPrices()
+#print(allpriceslist)
 
 if tickerList[0]=='error':
     sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
