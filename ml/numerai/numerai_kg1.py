@@ -116,7 +116,7 @@ def main(contest):
                       dtrain = dtrain,
                       num_boost_round = 4000,  #2000
                       verbose_eval=200, 
-                      early_stopping_rounds = 100,
+                      #early_stopping_rounds = 1000,
                       evals=evals,
                       #feval = f1_score_cust,
                       maximize = False)
@@ -158,6 +158,7 @@ def main(contest):
         print("Creating submission file...")
         
         results_df = pd.DataFrame(data={'probability_' + name:results})
+        #results_df = pd.DataFrame(data={'prediction_' + name:results})
         joined = pd.DataFrame(ids).join(results_df)
         
         print("")
@@ -176,4 +177,4 @@ def main(contest):
                 
 
 if __name__ == '__main__':
-    main(str(195))
+    main(str(233))

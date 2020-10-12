@@ -53,8 +53,8 @@ def run_numerai_batch():
     #rvalue = str(0.041)
 
     # Tweet
-    print("Tweeting ..")
-    Tweet.tweetSomething('Uploading my numer.ai machine learning stock market submission for round [' + contest + '] kazutsugi with correlation [' + rvalue + '] ')
+    # print("Tweeting ..")
+    # @Tweet.tweetSomething('Uploading my numer.ai machine learning stock market submission for round [' + contest + '] kazutsugi with correlation [' + rvalue + '] ')
 
     # Upload to numerai
     print("Uploading...")

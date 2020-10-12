@@ -39,8 +39,8 @@ daterun = time.strftime("%Y%m%d")
 #models = ('/W:Jason','/W:TSX','/W:Nasdaq100','/W:Fonsie','/W:HF')
 models = ('MaxAlphaStopAndReverse', 'MaxAlphaShortOnly', 'MaxAlphaMinShort', 'MaxAlphaOne', 'MaxAlpha25cent') 
 
-get_prices_XX = '/U'
-get_prices = ''
+get_prices = '/U'
+get_prices_XX = ''
 
 timestr = time.strftime("%d%m%y")
 

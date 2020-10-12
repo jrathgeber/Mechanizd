@@ -34,7 +34,8 @@ daterun = time.strftime("%Y%m%d")
 closeup = '/E'
 get_prices = '/U'
 #get_prices = ''
-mode = '/L'
+#mode = '/L'
+mode = ''
 
 #maxdata=["The", "earth", "revolves", "around", "sun"]
 maxdata='hello'

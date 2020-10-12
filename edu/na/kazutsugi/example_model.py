@@ -42,7 +42,7 @@ def main():
 
     print (f"xgboost {xgboost.__version__}")
     
-    contest = str(195)
+    contest = str(233)
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
     print("Loading data...")
