@@ -1,0 +1,41 @@
+
+
+PROJECT_ID=[YOUR-PROJECT-ID]
+BUCKET_ID=[YOUR-BUCKET-ID]
+JOB_NAME=census_training_$(date +"%Y%m%d_%H%M%S")
+JOB_DIR=gs://$BUCKET_ID/xgboost_job_dir
+TRAINING_PACKAGE_PATH="[YOUR-LOCAL-PATH-TO-TRAINING-PACKAGE]/census_training/"
+MAIN_TRAINER_MODULE=census_training.train
+REGION=us-central1
+RUNTIME_VERSION=2.2
+PYTHON_VERSION=3.7
+SCALE_TIER=BASIC
+
+Submit the request:
+
+gcloud ai-platform jobs submit training $JOB_NAME \
+--job-dir $JOB_DIR \
+--package-path $TRAINING_PACKAGE_PATH \
+--module-name $MAIN_TRAINER_MODULE \
+--region $REGION \
+--runtime-version=$RUNTIME_VERSION \
+--python-version=$PYTHON_VERSION \
+--scale-tier $SCALE_TIER
+
+gcloud ai-platform jobs submit training census_training_$(date +"%Y%m%d_%H%M%S")
+--job-dir gs://jason_general_data/xgboost_job_dir \
+--package-path "C:/Users/Jason/AppData/Local/Google/Cloud SDK/census_training/" \
+--module-name census_training.train \
+--region us-central1 \
+--runtime-version=2.2 \
+--python-version=3.7 \
+--scale-tier BASIC
+
+
+
+gcloud ai-platform jobs submit training census_training_TEST1 --job-dir gs://jason_general_data/xgboost_job_dir --package-path "C:/Users/Jason/AppData/Local/Google/Cloud SDK/census_training/" --module-name census_training.train --region us-central1 --runtime-version=2.2 --python-version=3.7 --scale-tier BASIC
+
+
+
+
+
