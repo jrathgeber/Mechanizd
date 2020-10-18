@@ -34,7 +34,11 @@ def run_numerai_batch():
     # Work out directory and create if not exists
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
+    first = "FALSE"
+
     if not os.path.exists(directory):
+    
+        first = "TRUE"
         
         # Make new Dir
         os.makedirs(directory)
@@ -52,15 +56,18 @@ def run_numerai_batch():
     rvalue = str(mechXg.main(contest))
     #rvalue = str(0.041)
 
-    # Tweet
-    print("Tweeting ..")
-    Tweet.tweetSomething('Made some tweaks to my numer.ai machine learning stock market submission for round [' + contest + '] kazutsugi with correlation [' + rvalue + '] ')
 
-    # Upload to numerai
-    print("Uploading...")
-    names = ('kazutsugi',)     
-    for name in names:
-        nx.upload(directory + name + '_new_submission.csv', name, public, secret)
+    if not first == "FALSE" :
+
+        # Tweet
+        print("Tweeting ..")
+        Tweet.tweetSomething('Made some tweaks to my numer.ai machine learning stock market submission for round [' + contest + '] kazutsugi with correlation [' + rvalue + '] ')
+    
+        # Upload to numerai
+        print("Uploading...")
+        names = ('kazutsugi',)     
+        for name in names:
+            nx.upload(directory + name + '_new_submission.csv', name, public, secret)
     
     print("All Done")
   
