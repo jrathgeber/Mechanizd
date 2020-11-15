@@ -17,7 +17,7 @@ from google.cloud.language import types
 client = language.LanguageServiceClient()
 
 # The text to analyze
-text = u"Hello, world!"
+text = u"Hello, Hackathon"
 document = types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
 
 # Detects the sentiment of the text
