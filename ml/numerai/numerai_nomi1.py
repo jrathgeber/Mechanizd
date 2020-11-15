@@ -44,12 +44,12 @@ def main(contest):
     # Validation is used to test your model locally so we separate that.
     validation = tournament[tournament['data_type']=='validation']
 
-    names = ('kazutsugi', ) 
+    names = ('nomi', ) 
 
     for name in names:
         
         target = "target_" +  name
-        submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_new_submission.csv"     
+        submission = "F:\\Numerai\\numerai" + contest + "\\" + name + "_submission.csv"     
                 
         features = [c for c in train if c.startswith("feature")]
         train["erano"] = train.era.str.slice(3).astype(int)
@@ -157,8 +157,8 @@ def main(contest):
         print("")
         print("Creating submission file...")
         
-        results_df = pd.DataFrame(data={'probability_' + name:results})
-        #results_df = pd.DataFrame(data={'prediction_' + name:results})
+        #results_df = pd.DataFrame(data={'probability_' + name:results})
+        results_df = pd.DataFrame(data={'prediction':results})
         joined = pd.DataFrame(ids).join(results_df)
         
         print("")

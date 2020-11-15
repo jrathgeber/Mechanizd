@@ -10,7 +10,8 @@ Created on Saturday August 24th 2019
 
 import numerox as nx
 import configparser
-import numerai_kg1 as mechXg
+#import numerai_kg1 as mechXg
+import numerai_nomi1 as mechXg
 import os
 import time
 import Tweet
@@ -65,9 +66,9 @@ def run_numerai_batch():
     
         # Upload to numerai
         print("Uploading...")
-        names = ('kazutsugi',)     
+        names = ('nomi',)     
         for name in names:
-            nx.upload(directory + name + '_new_submission.csv', name, public, secret)
+            nx.upload(directory + name + '_submission.csv', name, public, secret)
     
     print("All Done")
   
