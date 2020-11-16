@@ -59,10 +59,11 @@ def run_numerai_batch():
 
 
     if not first == "FALSE" :
+    #if not first == "FALSE" :
 
         # Tweet
         print("Tweeting ..")
-        #Tweet.tweetSomething('Made some tweaks to my numer.ai machine learning stock market submission for round [' + contest + '] kazutsugi with correlation [' + rvalue + '] ')
+        #Tweet.tweetSomething('Uploading first Ttrget Nomi numer.ai machine learning stock market submission for round [' + contest + '] with correlation [' + rvalue + '] ')
     
         # Upload to numerai
         print("Uploading...")
