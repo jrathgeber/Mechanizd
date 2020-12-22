@@ -23,9 +23,10 @@ print(a.get_quote())
 
 
 aapl = Stock("AAPL", token=key)
-print(aapl.get_company_name())
 
-print(aapl.get_key_stats())
+#print(aapl.get_company_name())
+
+#print(aapl.get_key_stats())
 
 
 def getAllPrices(tickerlist):

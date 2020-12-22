@@ -15,6 +15,7 @@ import numerai_nomi1 as mechXg
 import os
 import time
 import Tweet
+import numeroxj as nxj
  	
 from zipfile import ZipFile
 
@@ -54,11 +55,11 @@ def run_numerai_batch():
             zipObj.extractall(directory)
 
     # Run my xg boost algo on it
-    rvalue = str(mechXg.main(contest))
+#    rvalue = str(mechXg.main(contest))
     #rvalue = str(0.041)
 
 
-    if not first == "FALSE" :
+    if not first == "TRUE" :
     #if not first == "FALSE" :
 
         # Tweet
@@ -66,10 +67,10 @@ def run_numerai_batch():
         #Tweet.tweetSomething('Uploading first Ttrget Nomi numer.ai machine learning stock market submission for round [' + contest + '] with correlation [' + rvalue + '] ')
     
         # Upload to numerai
-        print("Uploading...")
+        print("Uploading")
         names = ('nomi',)     
         for name in names:
-            nx.upload(directory + name + '_submission.csv', name, public, secret)
+            nxj.upload(directory + name + '_submission.csv', name, public, secret)
     
     print("All Done")
   
