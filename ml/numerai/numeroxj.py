@@ -7,6 +7,12 @@ Created on Sun Dec 20 17:02:52 2020
 
 from numerapi import NumerAPI
 
+from numerox.upload import status_block
+
+from numerox.upload import upload_status
+
+import time
+
 
 def upload(filename,
            tournament,
