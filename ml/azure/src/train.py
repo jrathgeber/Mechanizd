@@ -11,6 +11,10 @@ import torchvision
 import torchvision.transforms as transforms
 
 from model import Net
+from azureml.core import Run
+
+# ADDITIONAL CODE: get AML run from the current context
+run = Run.get_context()
 
 # download CIFAR 10 data
 trainset = torchvision.datasets.CIFAR10(
@@ -20,7 +24,10 @@ trainset = torchvision.datasets.CIFAR10(
     transform=torchvision.transforms.ToTensor(),
 )
 trainloader = torch.utils.data.DataLoader(
-    trainset, batch_size=4, shuffle=True, num_workers=2
+    trainset,
+    batch_size=4,
+    shuffle=True,
+    num_workers=2
 )
 
 if __name__ == "__main__":
@@ -53,7 +60,10 @@ if __name__ == "__main__":
             running_loss += loss.item()
             if i % 2000 == 1999:
                 loss = running_loss / 2000
-                print(f"epoch={epoch + 1}, batch={i + 1:5}: loss {loss:.2f}")
+                
+                # ADDITIONAL CODE: log loss metric to AML
+                run.log('loss', loss)
+                print(f'epoch={epoch + 1}, batch={i + 1:5}: loss {loss:.2f}')
                 running_loss = 0.0
 
     print("Finished Training")
