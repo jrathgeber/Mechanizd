@@ -4,13 +4,14 @@
 
 Created on Saturday August 24th 2019
 
+Working on it today on Sunday December 27th 2020
+
 @author: Jason Rathgeber
 
 """
 
 import numerox as nx
 import configparser
-#import numerai_kg1 as mechXg
 import numerai_nomi1 as mechXg
 import os
 import time
@@ -55,16 +56,16 @@ def run_numerai_batch():
             zipObj.extractall(directory)
 
     # Run my xg boost algo on it
-#    rvalue = str(mechXg.main(contest))
+    rvalue = str(mechXg.main(contest))
     #rvalue = str(0.041)
 
 
-    if not first == "TRUE" :
-    #if not first == "FALSE" :
+    #if not first == "TRUE" :
+    if not first == "FALSE" :
 
         # Tweet
         print("Tweeting ..")
-        #Tweet.tweetSomething('Uploading first Ttrget Nomi numer.ai machine learning stock market submission for round [' + contest + '] with correlation [' + rvalue + '] ')
+        Tweet.tweetSomething('Still going on numer.ai making some tweaks later today but for now [' + contest + '] with correlation [' + rvalue + '] ')
     
         # Upload to numerai
         print("Uploading")

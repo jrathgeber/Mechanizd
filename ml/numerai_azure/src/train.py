@@ -15,7 +15,7 @@ TARGET_NAME = f"target"
 PREDICTION_NAME = f"prediction"
 
 #MODEL_FILE = Path("example_model.xgb")
-MODEL_FILE = Path("F:\\Numerai\\numerai233\\example_model.xgb")
+MODEL_FILE = Path("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
 
 # Submissions are scored by spearman correlation
 def correlation(predictions, targets):
@@ -69,11 +69,11 @@ def main():
     model = XGBRegressor(max_depth=5, learning_rate=0.01, n_estimators=2000, n_jobs=-1, colsample_bytree=0.1)
     if MODEL_FILE.is_file():
         print("Loading pre-trained model...")
-        model.load_model(MODEL_FILE)
+        model.load_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
     else:
         print("Training model...")
         model.fit(training_data[feature_names], training_data[TARGET_NAME])
-        model.save_model(MODEL_FILE)
+        model.save_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
 
     # Generate predictions on both training and tournament data
     print("Generating predictions...")
@@ -105,8 +105,7 @@ def main():
     print(f"max drawdown: {max_drawdown}")
 
     # Check the feature exposure of your validation predictions
-    feature_exposures = validation_data[feature_names].apply(lambda d: correlation(validation_data[PREDICTION_NAME], d),
-                                                             axis=0)
+    feature_exposures = validation_data[feature_names].apply(lambda d: correlation(validation_data[PREDICTION_NAME], d), axis=0)
     max_per_era = validation_data.groupby("era").apply(
         lambda d: d[feature_names].corrwith(d[PREDICTION_NAME]).abs().max())
     max_feature_exposure = max_per_era.mean()
@@ -118,7 +117,7 @@ def main():
     print(f"Feature Neutral Mean is {feature_neutral_mean}")
 
     # Load example preds to get MMC metrics
-    example_preds = pd.read_csv("example_predictions.csv").set_index("id")["prediction"]
+    example_preds = pd.read_csv("../data/example_predictions.csv").set_index("id")["prediction"]
     validation_example_preds = example_preds.loc[validation_data.index]
     validation_data["ExamplePreds"] = validation_example_preds
 
