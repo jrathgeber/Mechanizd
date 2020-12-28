@@ -56,6 +56,7 @@ def read_csv(file_path):
 
 def main():
     
+    # Get the Args which in particular have the data store path
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--data_path',
@@ -104,7 +105,7 @@ def main():
 
     print("Training model...")
     model.fit(training_data[feature_names], training_data[TARGET_NAME])
-    model.save_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
+    #model.save_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
 
     # Generate predictions on both training and tournament data
     print("Generating predictions...")
@@ -148,17 +149,16 @@ def main():
     print(f"Feature Neutral Mean is {feature_neutral_mean}")
 
     # Load example preds to get MMC metrics
-    example_preds = pd.read_csv("../datasets/numerai/example_predictions.csv").set_index("id")["prediction"]
+    example_preds = pd.read_csv(args.data_path + "/example_predictions.csv").set_index("id")["prediction"]
     validation_example_preds = example_preds.loc[validation_data.index]
     validation_data["ExamplePreds"] = validation_example_preds
 
-    print("calculating MMC stats...")
     # MMC over validation
+    print("calculating MMC stats...")
     mmc_scores = []
     corr_scores = []
     for _, x in validation_data.groupby("era"):
-        series = neutralize_series(pd.Series(unif(x[PREDICTION_NAME])),
-                                   pd.Series(unif(x["ExamplePreds"])))
+        series = neutralize_series(pd.Series(unif(x[PREDICTION_NAME])), pd.Series(unif(x["ExamplePreds"])))
         mmc_scores.append(np.cov(series, x[TARGET_NAME])[0, 1] / (0.29 ** 2))
         corr_scores.append(correlation(unif(x[PREDICTION_NAME]), x[TARGET_NAME]))
 
