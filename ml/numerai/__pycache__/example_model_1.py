@@ -1,14 +1,21 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
+Created on Sun Dec 27 20:23:21 2020
+
+@author: Jason
+"""
+
+#!/usr/bin/env python
+
+"""
+
 Example classifier on Numerai data using a xgboost regression.
 To get started, install the required packages: pip install pandas numpy sklearn xgboost
+
 """
 
 import csv
 from pathlib import Path
-
-import os
-import argparse
 
 import pandas as pd
 import numpy as np
@@ -18,7 +25,7 @@ TARGET_NAME = f"target"
 PREDICTION_NAME = f"prediction"
 
 #MODEL_FILE = Path("example_model.xgb")
-#MODEL_FILE = Path("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
+MODEL_FILE = Path("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
 
 # Submissions are scored by spearman correlation
 def correlation(predictions, targets):
@@ -55,42 +62,11 @@ def read_csv(file_path):
 
 
 def main():
-    
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--data_path',
-        type=str,
-        help='Path to the training data'
-    )
-    parser.add_argument(
-        '--learning_rate',
-        type=float,
-        default=0.001,
-        help='Learning rate for SGD'
-    )
-    parser.add_argument(
-        '--momentum',
-        type=float,
-        default=0.9,
-        help='Momentum for SGD'
-    )
-
-    args = parser.parse_args()
-
-    print("===== DATA =====")
-    print("DATA PATH: " + args.data_path)
-    print("LIST FILES IN DATA PATH...")
-    print(os.listdir(args.data_path))
-    print("================")
-    
-    
-    
-    
     print("Loading data...")
     # The training data is used to train your model how to predict the targets.
-    training_data = read_csv(args.data_path + '/numerai_training_data.csv')
+    training_data = read_csv('../data/numerai_training_data.csv')
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament_data = read_csv(args.data_path + '/numerai_tournament_data.csv')
+    tournament_data = read_csv("../data/numerai_tournament_data.csv")
 
     feature_names = [
         f for f in training_data.columns if f.startswith("feature")
@@ -101,10 +77,13 @@ def main():
     # Taking too long? Set learning_rate=0.1 and n_estimators=200 to make this run faster.
     # Remember to delete example_model.xgb if you change any of the parameters below.
     model = XGBRegressor(max_depth=5, learning_rate=0.01, n_estimators=2000, n_jobs=-1, colsample_bytree=0.1)
-
-    print("Training model...")
-    model.fit(training_data[feature_names], training_data[TARGET_NAME])
-    model.save_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
+    if MODEL_FILE.is_file():
+        print("Loading pre-trained model...")
+        model.load_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
+    else:
+        print("Training model...")
+        model.fit(training_data[feature_names], training_data[TARGET_NAME])
+        model.save_model("C:\\dep\\Mechanizd\\ml\\numerai_azure\\dataexample_model.xgb")
 
     # Generate predictions on both training and tournament data
     print("Generating predictions...")
@@ -148,7 +127,7 @@ def main():
     print(f"Feature Neutral Mean is {feature_neutral_mean}")
 
     # Load example preds to get MMC metrics
-    example_preds = pd.read_csv("../datasets/numerai/example_predictions.csv").set_index("id")["prediction"]
+    example_preds = pd.read_csv("../data/example_predictions.csv").set_index("id")["prediction"]
     validation_example_preds = example_preds.loc[validation_data.index]
     validation_data["ExamplePreds"] = validation_example_preds
 

@@ -9,7 +9,7 @@ Created on Fri Dec 25 11:40:30 2020
 from azureml.core import Workspace, Experiment, Environment, ScriptRunConfig
 
 ws = Workspace.from_config()
-experiment = Experiment(workspace=ws, name='day1-experiment-hello')
+experiment = Experiment(workspace=ws, name='day2-experiment-hello')
 
 config = ScriptRunConfig(source_directory='./src', script='hello.py', compute_target='cpu-cluster')
 

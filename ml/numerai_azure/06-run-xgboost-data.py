@@ -15,9 +15,9 @@ from azureml.core import Dataset
 if __name__ == "__main__":
     ws = Workspace.from_config()
     datastore = ws.get_default_datastore()
-    dataset = Dataset.File.from_files(path=(datastore, 'datasets/cifar10'))
+    dataset = Dataset.File.from_files(path=(datastore, 'datasets/numerai'))
 
-    experiment = Experiment(workspace=ws, name='day1-experiment-data')
+    experiment = Experiment(workspace=ws, name='day5-experiment-data')
 
     config = ScriptRunConfig(
         source_directory='./src',
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # set up pytorch environment
     env = Environment.from_conda_specification(
         name='pytorch-env',
-        file_path='./.azureml/pytorch-env.yml'
+        file_path='./.azureml/xgboost-env.yml'
     )
     config.run_config.environment = env
 

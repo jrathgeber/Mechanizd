@@ -7,9 +7,8 @@ Created on Sun Dec 20 17:02:52 2020
 
 from numerapi import NumerAPI
 
-from numerox.upload import status_block
-
-from numerox.upload import upload_status
+#from numerox.upload import status_block
+#from numerox.upload import upload_status
 
 import time
 
@@ -58,11 +57,11 @@ def upload(filename,
             upload_id = napi.upload_predictions(filename,
                                                 tournament=tournament,
                                                 model_id=model_id)
-            if block:
-                status = status_block(upload_id, public_id, secret_key, model_id=model_id)
-            else:
-                status = upload_status(upload_id, public_id, secret_key, model_id=model_id)
-            break
+            # if block:
+            #    status = status_block(upload_id, public_id, secret_key, model_id=model_id)
+            # else:
+            #    status = upload_status(upload_id, public_id, secret_key, model_id=model_id)
+            # break
 
         except Exception as e:  # noqa
             if str(e).startswith("Can't update submission after deadline"):
@@ -76,4 +75,4 @@ def upload(filename,
     else:
         raise Exception('Upload failed after reaching max retries')
 
-    return upload_id, status
+    return upload_id #, status

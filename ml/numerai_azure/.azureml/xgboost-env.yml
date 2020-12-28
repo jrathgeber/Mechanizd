@@ -1,9 +1,11 @@
-name: pytorch-env
+name: xgboost-env
 channels:
     - defaults
-    - pytorch
+    - conda-forge
 dependencies:
     - python=3.6.2
-    - pytorch
+    - py-xgboost
+    - pandas
+    - matplotlib
     - pip:
         - azureml-sdk

@@ -13,15 +13,15 @@ from azureml.core import ScriptRunConfig
 
 if __name__ == "__main__":
     ws = Workspace.from_config()
-    experiment = Experiment(workspace=ws, name='day1-experiment-train')
+    experiment = Experiment(workspace=ws, name='day4-experiment-xgboost')
     config = ScriptRunConfig(source_directory='./src',
                              script='train.py',
                              compute_target='cpu-cluster')
 
     # set up pytorch environment
     env = Environment.from_conda_specification(
-        name='pytorch-env',
-        file_path='./.azureml/pytorch-env.yml'
+        name='xgboost-env',
+        file_path='./.azureml/xgboost-env.yml'
     )
     config.run_config.environment = env
 

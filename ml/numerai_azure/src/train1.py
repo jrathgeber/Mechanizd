@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Sun Dec 27 17:38:06 2020
+
+@author: Jason
+"""
+
+# -*- coding: utf-8 -*-
 
 import xgboost as xgb
 from sklearn.metrics import mean_squared_error
@@ -43,18 +50,3 @@ cv_results = xgb.cv(dtrain=data_dmatrix, params=params, nfold=3, num_boost_round
 cv_results.head()
 print((cv_results["test-rmse-mean"]).tail(1))
 
-# Plotting
-import matplotlib.pyplot as plt
-
-import os
-os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
-
-xg_reg = xgb.train(params=params, dtrain=data_dmatrix, num_boost_round=10)
-xgb.plot_tree(xg_reg,num_trees=0)
-plt.rcParams['figure.figsize'] = [50, 10]
-plt.show()
-
-# Feature importnance
-xgb.plot_importance(xg_reg)
-plt.rcParams['figure.figsize'] = [5, 5]
-plt.show()
