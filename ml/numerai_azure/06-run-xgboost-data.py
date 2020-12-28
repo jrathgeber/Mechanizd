@@ -22,7 +22,7 @@ if __name__ == "__main__":
     config = ScriptRunConfig(
         source_directory='./src',
         script='train.py',
-        compute_target='cpu-cluster',
+        compute_target='cpu-cluster2',
         arguments=[
             '--data_path', dataset.as_named_input('input').as_mount(),
             '--learning_rate', 0.003,
