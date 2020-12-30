@@ -742,3 +742,49 @@ JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1609251010713	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.dPt5lRQY9SvP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609251020970	Marionette	INFO	Listening on port 55833
+1609251021619	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1609251032166	Marionette	INFO	Stopped listening on port 55833
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609275502392	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.wc3NJJwAEIDc"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609275509433	Marionette	INFO	Listening on port 60252
+1609275509806	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1609275521054	Marionette	INFO	Stopped listening on port 60252
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609276091779	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.eYeYhBdryvHT"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609276098976	Marionette	INFO	Listening on port 61693
+1609276099468	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1609276109270	Marionette	INFO	Stopped listening on port 61693
+[Parent 15692, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:166
+1609337418441	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.Hyr0WmQIEuMH"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609337433022	Marionette	INFO	Listening on port 53656
+1609337433699	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1609337443731	Marionette	INFO	Stopped listening on port 53656
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

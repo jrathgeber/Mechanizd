@@ -6,15 +6,11 @@ import os;
 
 os.chdir('C:\\dep\\Mechanizd\\batch\\')
 
-exec(open("C:\\dep\\coin\\batch.py").read())
-
-#os.chdir('C:\\dep\\rightedge\\')
+exec(open("C:\\dep\\Mechanizd\\coin\\batch.py").read())
 
 exec(open("C:\\dep\\Mechanizd\\rightedge\\RightEdge.py").read())
 
 exec(open("C:\\dep\\Mechanizd\\rightedge\\RightEdgeIBFull.py").read())
-
-#os.chdir('C:\\dep\\Mechanizd\\zorro\\')
 
 exec(open("C:\\dep\\Mechanizd\\zorro\\BatchZorroMech0.py").read())
 
