@@ -788,3 +788,16 @@ JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1609423821973	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.H4TW18QPFAfz"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609423827388	Marionette	INFO	Listening on port 64099
+1609423827930	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1609423837619	Marionette	INFO	Stopped listening on port 64099
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

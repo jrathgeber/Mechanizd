@@ -17,7 +17,6 @@ config.read('C:\etc\properties.ini')
 apikey = config['coin']['coin.apikey']
 
 
-
 def myformat(x):
     return ('%.2f' % x).rstrip('0').rstrip('.')
 
@@ -48,28 +47,34 @@ except (ConnectionError, Timeout, TooManyRedirects) as e:
 df = json_normalize(data['data'])
 
  
-# create an empty DataFrame
-#df = pd.DataFrame(columns=["Ticker","Name", "MarketCap", "Price", "Change"])
- 
-#for i in range(len(dic)):
-#   df.loc[len(df)] = [dic[i]['symbol'], dic[i]['name'], dic[i]['market_cap'], dic[i]['price'], dic[i]['percent_change_24h']]
+print("\nColumns:")
  
 # iterating the columns 
 for col in df.columns: 
     print(col) 
     
 
+# Rename
+df.rename(columns={'symbol': 'Ticker'}, inplace=True)
+df.rename(columns={'name': 'Name'}, inplace=True)
+df.rename(columns={'quote.USD.market_cap': 'MarketCap'}, inplace=True)
+df.rename(columns={'quote.USD.price': 'Price'}, inplace=True)
+df.rename(columns={'quote.USD.percent_change_24h': 'Change'}, inplace=True)
 
-df.sort_values(by=['quote.USD.market_cap'])
+
+df.sort_values(by=['MarketCap'])
+
 # apply conversion to numeric as 'df' contains lots of 'None' string as values
+df.MarketCap = pd.to_numeric(df.MarketCap)
+df.Price = pd.to_numeric(df.Price)
+P = df[df.MarketCap > 20e6]
+print(P, end="\n\n")
+portfolio = list(P.Ticker)
+print(portfolio)
 
-#df.MarketCap = pd.to_numeric("quote.USD.market_cap")
-#df.Price = pd.to_numeric(df.Price)
-#P = df[df.MarketCap > 20e6]
-#print(P, end="\n\n")
-#portfolio = list(P.Ticker)
-#print(portfolio)
 
+
+# Create Table
 myFile = open('C:\\dep\\coin\\btcmktcap.htm' ,'w')
 
 myFile.write('<!DOCTYPE html>\n')
@@ -90,23 +95,23 @@ for index, row in df.iterrows():
     myFile.write('<tr>\n')
     
     myFile.write('<td>\n')
-    myFile.write(row['symbol'])
+    myFile.write(row['Ticker'])
     myFile.write('</td>\n')
         
     myFile.write('<td>\n')
-    myFile.write(row['name'])
+    myFile.write(row['Name'])
     myFile.write('</td>\n')
 
     myFile.write('<td  align="right">\n')
-    myFile.write(myformat(row['quote.USD.price']))
+    myFile.write(myformat(row['Price']))
     myFile.write('</td>\n')
 
     myFile.write('<td  align="right">\n')
-    myFile.write(str(row['quote.USD.percent_change_24h']))
+    myFile.write(str(row['Change']))
     myFile.write('</td>\n')
 
     myFile.write('<td  align="right">\n')
-    myFile.write(myformat(row['quote.USD.market_cap']))
+    myFile.write(myformat(row['MarketCap']))
     myFile.write('</td>\n')
     
     myFile.write('</tr>\n')   
