@@ -32,7 +32,9 @@ def run_numerai_batch():
         
     # compute the tournament numer
     week = time.strftime("%U")
-    contest = str(int(week) + 192)
+    contest = str(int(week) + 245)
+
+    print("\n Numerai Contest..." + contest)
 
     # Work out directory and create if not exists
     directory = 'F:\\Numerai\\numerai' + contest + '\\'
@@ -65,7 +67,7 @@ def run_numerai_batch():
 
         # Tweet
         print("Tweeting ..")
-        Tweet.tweetSomething('Uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
+        Tweet.tweetSomething('Happy New Year! I am uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
     
         # Upload to numerai
         print("Uploading")
@@ -79,7 +81,7 @@ def run_numerai_batch():
 if __name__ == '__main__':
     
     week = time.strftime("%U")
-    contest = int(week) + 192
+    contest = int(week) + 245
     print(str(contest))
     run_numerai_batch()
 
