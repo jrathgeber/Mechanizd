@@ -3,6 +3,7 @@
 Created on Fri Dec 25 20:42:08 2020
 
 @author: Jason
+
 """
 
 # 04-run-pytorch.py
@@ -12,17 +13,20 @@ from azureml.core import Environment
 from azureml.core import ScriptRunConfig
 
 if __name__ == "__main__":
+    
     ws = Workspace.from_config()
-    experiment = Experiment(workspace=ws, name='day4-experiment-xgboost')
+    experiment = Experiment(workspace=ws, name='day6-experiment-xgboost')
+    
     config = ScriptRunConfig(source_directory='./src',
-                             script='train.py',
-                             compute_target='cpu-cluster')
+                             script='train_a_test.py',
+                             compute_target='cpu-cluster2')
 
     # set up pytorch environment
     env = Environment.from_conda_specification(
         name='xgboost-env',
         file_path='./.azureml/xgboost-env.yml'
     )
+    
     config.run_config.environment = env
 
     run = experiment.submit(config)
