@@ -10,6 +10,9 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 import warnings
+import argparse
+import os
+
 
 TOURNAMENT_NAME = "nomi"
 TARGET_NAME = "target"
@@ -32,13 +35,44 @@ def main(contest):
 
     warnings.filterwarnings("ignore")
     
+    
+    # Get the Args which in particular have the data store path
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--data_path',
+        type=str,
+        help='Path to the training data'
+    )
+    parser.add_argument(
+        '--learning_rate',
+        type=float,
+        default=0.001,
+        help='Learning rate for SGD'
+    )
+    parser.add_argument(
+        '--momentum',
+        type=float,
+        default=0.9,
+        help='Momentum for SGD'
+    )
+
+    args = parser.parse_args()
+
+    print("===== DATA =====")
+    print("DATA PATH: " + args.data_path)
+    print("LIST FILES IN DATA PATH...")
+    print(os.listdir(args.data_path))
+    print("================")
+    
+    
+    
     print("\n Loading Numerai Data...")
 
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
+    train = pd.read_csv(args.data_path + '/numerai_training_data.csv', header=0)
         
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv(args.data_path + '/numerai_tournament_data.csv', header=0)
     
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
