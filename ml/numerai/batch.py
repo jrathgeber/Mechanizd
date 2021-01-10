@@ -67,7 +67,7 @@ def run_numerai_batch():
 
         # Tweet
         print("Tweeting ..")
-        Tweet.tweetSomething('Happy New Year! I am uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
+        Tweet.tweetSomething('I am uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
     
         # Upload to numerai
         print("Uploading")

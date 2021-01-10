@@ -15,7 +15,7 @@ from azureml.core import ScriptRunConfig
 if __name__ == "__main__":
     
     ws = Workspace.from_config()
-    experiment = Experiment(workspace=ws, name='day6-experiment-xgboost')
+    experiment = Experiment(workspace=ws, name='day7-experiment-xgboost')
     
     config = ScriptRunConfig(source_directory='./src',
                              script='train_a_test.py',

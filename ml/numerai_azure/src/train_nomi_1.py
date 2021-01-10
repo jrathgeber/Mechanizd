@@ -4,10 +4,6 @@ import xgboost as xgb
 import pandas as pd
 import numpy as np
 
-from sklearn.metrics import mean_squared_error
-from sklearn import metrics
-
-import matplotlib.pyplot as plt
 
 import warnings
 import argparse
@@ -179,7 +175,6 @@ def main(contest):
         print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
         print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
         
-
         # Check the per-era correlations on the validation set
         validation_data = tournament[tournament.data_type == "validation"]
         validation_correlations = validation_data.groupby("era").apply(score)

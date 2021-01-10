@@ -5,7 +5,6 @@ To get started, install the required packages: pip install pandas numpy sklearn 
 """
 
 import csv
-from pathlib import Path
 
 import os
 import argparse
