@@ -13,7 +13,7 @@ import pandas
 
 
 # The cotest
-contest = str(300)
+contest = str(246)
 
 # Read File
 df=pandas.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
@@ -25,7 +25,7 @@ print(df.shape)
 features = [c for c in df if c.startswith("feature")]
 df["erano"] = df.era.str.slice(3).astype(int)
 eras = df.erano
-target = "target_kazutsugi"
+target = "target"
 print(len(features))
 
 # The features are grouped together into 6 types
