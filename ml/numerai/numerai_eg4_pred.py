@@ -16,7 +16,7 @@ print("Some features are predictive on their own")
 df = df
 eras = eras
 features = features
-target = "target_kazutsugi"
+target = "target"
 
 
 # The models should be scored based on the rank-correlation (spearman) with the target
