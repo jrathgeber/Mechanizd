@@ -56,8 +56,10 @@ if tickerList[0]=='error':
     sendMail.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
 else:
     SC.getSymbolConfig(tickerList, daterun, maxdata)
-    sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com',[], server, port, username, password)
-    Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com')
+    #sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com',[], server, port, username, password)
+    #Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com')
+    sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + '',[], server, port, username, password)
+    Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + '')
     t1 = threading.Thread(target=MyThread1)
     t1.start()
 
