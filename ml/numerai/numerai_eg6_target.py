@@ -29,7 +29,7 @@ def numerai_score(y_true, y_pred):
 
 df = df
 features = [c for c in df if c.startswith("feature")]
-target = "target_kazutsugi"
+target = "target"
 
 
 # Train a standard logistic regression as a classifier

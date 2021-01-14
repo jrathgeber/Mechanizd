@@ -26,7 +26,7 @@ print(" Models will generally be overconfident, so even if they are good are ran
 df = df
 eras = eras
 features = features
-target = "target_kazutsugi"
+target = "target"
 
 
 df1 = df[eras<=eras.median()]
