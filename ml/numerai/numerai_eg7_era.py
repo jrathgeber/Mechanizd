@@ -1,42 +1,47 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Tue Oct 29 15:12:42 2019
 
-@author: https://github.com/numerai/example-scripts/blob/master/analysis_and_tips.ipynb
+Created on Tue Oct 29 15:13:15 2019
+
+@author: Jason
+
 
 """
 
 
 
-#Gotcha: eras are homogenous, but different from each other
-#Random cross-validation will look much better than cross-validating by era
-#Even for a simple linear model, taking a random shuffle reports a correlation of 4.3%, but a time series split reports a lower score of 3.4%
+# Eras can be more or less applicable to other eras
+# You can test this be splitting the eras into blocks of 10, training on each block, and evaluating on each other block.
 
 
-crossvalidators = [
-    model_selection.KFold(5),
-    model_selection.KFold(5, shuffle=True),
-    model_selection.GroupKFold(5),
-    model_selection.TimeSeriesSplit(5)
-]
+eras10 = (eras // 10) * 10
+print(eras10.value_counts())
 
-def correlation_score(y_true, y_pred):
-    return numpy.corrcoef(y_true, y_pred)[0,1]
+results10 = []
+for train_era, tdf in df[eras10<120].groupby(eras10):
+    print(train_era)
+    model = linear_model.LinearRegression()
+    model.fit(tdf[features], tdf[target])
+    for test_era, tdf in df[eras10<120].groupby(eras10):
+        results10.append([
+            train_era,
+            test_era,
+            correlation_score(tdf[target], model.predict(tdf[features]))
+        ])
 
 
+    
+results_df = pandas.DataFrame(
+    results10,
+    columns=["train_era", "test_era", "score"]
+).pivot(index="train_era", columns="test_era", values="score")
+print(results_df)
 
-for cv in crossvalidators:
-    print(cv)
-    print(numpy.mean(
-            model_selection.cross_val_score(
-            linear_model.LinearRegression(),
-            df[features],
-            df[target],
-            cv=cv,
-            n_jobs=1,
-            groups=eras,
-            scoring=metrics.make_scorer(correlation_score, greater_is_better=True)
-        )))
-    print()
+
+# Each row here is the training block of eras, each column is a testing block of eras.
+# Note that there is a period in the middle that does not seem to be relevant to other eras, and the
+#  overall performance seems to decrease a bit over time.
+plt.figure(figsize=(15,15))
+plt.imshow(results_df, vmin=-0.04, vmax=0.04, cmap="RdYlGn")
 
