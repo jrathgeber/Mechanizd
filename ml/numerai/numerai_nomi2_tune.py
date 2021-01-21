@@ -114,7 +114,7 @@ def main(contest):
         
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 5000,  #2000
+                      num_boost_round = 500,  #2000
                       verbose_eval=200, 
                       #early_stopping_rounds = 1000,
                       evals=evals,
@@ -130,7 +130,7 @@ def main(contest):
         cv_results = xgb.cv(
             xgb_params,
             dtrain,
-            num_boost_round=1000,
+            num_boost_round=500,
             seed=42,
             nfold=5,
             metrics={'mae'},
@@ -139,7 +139,11 @@ def main(contest):
         
         
         print("CV Results")
-        cv_results
+        print(cv_results)
+
+        
+        print("CV Results Min")
+        print(cv_results['test-mae-mean'].min())
 
 
         #x_prediction = tournament[features] 
