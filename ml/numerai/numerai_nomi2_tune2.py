@@ -35,10 +35,10 @@ def main(contest):
     print("\n Loading Numerai Data...")
 
     # The training data is used to train your model how to predict the targets.
-    train = train
+    #train = train
         
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = tournament
+    #tournament = tournament
     
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
