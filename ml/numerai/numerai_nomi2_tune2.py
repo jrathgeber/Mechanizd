@@ -18,11 +18,9 @@ PREDICTION_NAME = "prediction"
 BENCHMARK = 0.002
 BAND = 0.04
 
-
-
 warnings.filterwarnings("ignore")
 
-print("\n Loading Numerai Data...")
+print("\n RE using Numerai Data...")
 
 # The training data is used to train your model how to predict the targets.
 train = train
@@ -103,7 +101,7 @@ for name in names:
 
     xgb_model = xgb.train (params = xgb_params,
                   dtrain = dtrain,
-                  num_boost_round = 500,  #2000
+                  num_boost_round = 400,  #2000
                   verbose_eval=200,
                   #early_stopping_rounds = 1000,
                   evals=evals,
@@ -119,7 +117,7 @@ for name in names:
     cv_results = xgb.cv(
         xgb_params,
         dtrain,
-        num_boost_round=500,
+        num_boost_round=400,
         seed=42,
         nfold=5,
         metrics={'mae'},
@@ -135,8 +133,14 @@ for name in names:
     print(cv_results['test-mae-mean'].min())
 
 
-    #x_prediction = tournament[features]
-    x_prediction = xgb.DMatrix(tournament[features], feature_names = features)
-
-    preds = xgb_model.predict(x_prediction)
+    # You can try wider intervals with a larger step between
+    # each value and then narrow it down. Here after several
+    # iteration I found that the optimal value was in the
+    # following ranges.
+    
+    #gridsearch_params = [
+    #        (max_depth, min_child_weight)
+    #        for max_depth in range(9,12)
+    #        for min_child_weight in range(5,8)
+    #        ]
 
