@@ -186,18 +186,19 @@ def main(contest):
         # following ranges.
         
         gridsearch_params = [
-                (max_depth, min_child_weight)
-                for max_depth in range(9,12)
-                for min_child_weight in range(5,8)
+                (subsample, colsample)
+                for subsample in [i/10. for i in range(7,11)]
+                for colsample in [i/10. for i in range(7,11)]
                 ]
         
-        # Define initial best params and MAE
         min_mae = float("Inf")
-        best_params = None
-        for max_depth, min_child_weight in gridsearch_params:
-            print("CV with max_depth={}, min_child_weight={}".format( max_depth, min_child_weight))    # Update our parameters
-            xgb_params['max_depth'] = max_depth
-            xgb_params['min_child_weight'] = min_child_weight    # Run CV
+        best_params = None# We start by the largest values and go down to the smallest
+        for subsample, colsample in reversed(gridsearch_params):
+            print("CV with subsample={}, colsample={}".format(
+                                     subsample,
+                                     colsample))    # We update our parameters
+            xgb_params['subsample'] = subsample
+            xgb_params['colsample_bytree'] = colsample    # Run CV
             cv_results = xgb.cv(
                 xgb_params,
                 dtrain,
@@ -206,15 +207,17 @@ def main(contest):
                 nfold=5,
                 metrics={'mae'},
                 early_stopping_rounds=10
-            )    # Update best MAE
+            )    # Update best score
             mean_mae = cv_results['test-mae-mean'].min()
             boost_rounds = cv_results['test-mae-mean'].argmin()
             print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
             if mean_mae < min_mae:
                 min_mae = mean_mae
-                best_params = (max_depth,min_child_weight)
+                best_params = (subsample,colsample)
                 print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
-
+                
+        xgb_params['subsample'] = .8
+        xgb_params['colsample_bytree'] = 1.
 
 
 

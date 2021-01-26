@@ -117,7 +117,7 @@ for name in names:
     cv_results = xgb.cv(
         xgb_params,
         dtrain,
-        num_boost_round=400,
+        num_boost_round=4000,
         seed=42,
         nfold=5,
         metrics={'mae'},
@@ -154,7 +154,7 @@ for name in names:
         cv_results = xgb.cv(
             xgb_params,
             dtrain,
-            num_boost_round=400,
+            num_boost_round=4000,
             seed=42,
             nfold=5,
             metrics={'mae'},

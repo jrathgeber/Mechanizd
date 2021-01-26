@@ -185,35 +185,32 @@ def main(contest):
         # iteration I found that the optimal value was in the
         # following ranges.
         
-        gridsearch_params = [
-                (max_depth, min_child_weight)
-                for max_depth in range(9,12)
-                for min_child_weight in range(5,8)
-                ]
+        #%time
         
-        # Define initial best params and MAE
+        # This can take some time…
         min_mae = float("Inf")
         best_params = None
-        for max_depth, min_child_weight in gridsearch_params:
-            print("CV with max_depth={}, min_child_weight={}".format( max_depth, min_child_weight))    # Update our parameters
-            xgb_params['max_depth'] = max_depth
-            xgb_params['min_child_weight'] = min_child_weight    # Run CV
+        for eta in [.3, .2, .1, .05, .01, .005]:
+            print("CV with eta={}".format(eta))    # We update our parameters
+            xgb_params['eta'] = eta    # Run and time CV
             cv_results = xgb.cv(
-                xgb_params,
-                dtrain,
-                num_boost_round=4000,
-                seed=42,
-                nfold=5,
-                metrics={'mae'},
-                early_stopping_rounds=10
-            )    # Update best MAE
+                    xgb_params,
+                    dtrain,
+                    num_boost_round=4000,
+                    seed=42,
+                    nfold=5,
+                    metrics=['mae'],
+                    early_stopping_rounds=10
+                  )    # Update best score
             mean_mae = cv_results['test-mae-mean'].min()
             boost_rounds = cv_results['test-mae-mean'].argmin()
-            print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
+            print("\tMAE {} for {} rounds\n".format(mean_mae, boost_rounds))
             if mean_mae < min_mae:
                 min_mae = mean_mae
-                best_params = (max_depth,min_child_weight)
-                print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
+                best_params = eta
+                print("Best params: {}, MAE: {}".format(best_params, min_mae))
+                
+        xgb_params['eta'] = .01
 
 
 
