@@ -17,7 +17,7 @@ if __name__ == "__main__":
     datastore = ws.get_default_datastore()
     dataset = Dataset.File.from_files(path=(datastore, 'datasets/numerai'))
 
-    experiment = Experiment(workspace=ws, name='day9-experiment-nomi')
+    experiment = Experiment(workspace=ws, name='day9-experiment-nomi-tune')
 
     config = ScriptRunConfig(
         source_directory='./src',
