@@ -164,17 +164,17 @@ def main(contest):
             num_boost_round=500,
             seed=42,
             nfold=5,
-            metrics={'mae'},
+            metrics={'rmse'},
             early_stopping_rounds=10
         )
         
         
-        print("CV Results")
+        print("\n CV Results")
         print(cv_results)
 
         
-        print("CV Results Min")
-        print(cv_results['test-mae-mean'].min())
+        print("\n CV Results Min")
+        print(cv_results['test-rmse-mean'].min())
 
 
 
@@ -191,8 +191,8 @@ def main(contest):
                 for min_child_weight in range(5,8)
                 ]
         
-        # Define initial best params and MAE
-        min_mae = float("Inf")
+        # Define initial best params and rmse
+        min_rmse = float("Inf")
         best_params = None
         for max_depth, min_child_weight in gridsearch_params:
             print("CV with max_depth={}, min_child_weight={}".format( max_depth, min_child_weight))    # Update our parameters
@@ -204,16 +204,16 @@ def main(contest):
                 num_boost_round=4000,
                 seed=42,
                 nfold=5,
-                metrics={'mae'},
+                metrics={'rmse'},
                 early_stopping_rounds=10
-            )    # Update best MAE
-            mean_mae = cv_results['test-mae-mean'].min()
-            boost_rounds = cv_results['test-mae-mean'].argmin()
-            print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
-            if mean_mae < min_mae:
-                min_mae = mean_mae
+            )    # Update best rmse
+            mean_rmse = cv_results['test-rmse-mean'].min()
+            boost_rounds = cv_results['test-rmse-mean'].argmin()
+            print("\trmse {} for {} rounds".format(mean_rmse, boost_rounds))
+            if mean_rmse < min_rmse:
+                min_rmse = mean_rmse
                 best_params = (max_depth,min_child_weight)
-                print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
+                print("\n Best params: {}, {}, rmse: {}".format(best_params[0], best_params[1], min_rmse))
 
 
 
