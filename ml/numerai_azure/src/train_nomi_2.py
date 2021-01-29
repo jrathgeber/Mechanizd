@@ -203,3 +203,7 @@ def main(contest):
         rvalue = validation_correlations.mean()
         
         return rvalue 
+        
+
+if __name__ == '__main__':
+    main(str(238))
