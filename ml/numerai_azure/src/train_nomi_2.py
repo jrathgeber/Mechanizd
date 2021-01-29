@@ -111,7 +111,8 @@ def main(contest):
         tournament['era'] = tournament['era'].str.replace(r'eraX','500')
         tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
        
-            
+        
+    
         # Transform the loaded CSV data into numpy arrays
         features = [f for f in list(train_columns) if "feature" in f]
         X_train = train_columns[features]
@@ -128,10 +129,10 @@ def main(contest):
         
         xgb_params = {
             'nthread': 2, 
-            'max_depth': 5, 
+            'max_depth': 9, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
-            #'subsample': 0.8,
+            'subsample': 1,
             'colsample_bytree': 0.1,
             'objective':'reg:squarederror',
             #'seed' : 0
@@ -154,73 +155,6 @@ def main(contest):
         #fig, ax = plt.subplots(figsize=(6,9))
         #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
         #plt.show()
-
-
-        # Tuneing
-        cv_results = xgb.cv(
-            xgb_params,
-            dtrain,
-            num_boost_round=500,
-            seed=42,
-            nfold=5,
-            metrics={'mae'},
-            early_stopping_rounds=10
-        )
-        
-        
-        print("CV Results")
-        print(cv_results)
-
-        
-        print("CV Results Min")
-        print(cv_results['test-mae-mean'].min())
-
-
-
-
-
-        # You can try wider intervals with a larger step between
-        # each value and then narrow it down. Here after several
-        # iteration I found that the optimal value was in the
-        # following ranges.
-        
-        gridsearch_params = [
-                (subsample, colsample)
-                for subsample in [i/10. for i in range(7,11)]
-                for colsample in [i/10. for i in range(7,11)]
-                ]
-        
-        min_mae = float("Inf")
-        best_params = None# We start by the largest values and go down to the smallest
-        for subsample, colsample in reversed(gridsearch_params):
-            print("CV with subsample={}, colsample={}".format(
-                                     subsample,
-                                     colsample))    # We update our parameters
-            xgb_params['subsample'] = subsample
-            xgb_params['colsample_bytree'] = colsample    # Run CV
-            cv_results = xgb.cv(
-                xgb_params,
-                dtrain,
-                num_boost_round=4000,
-                seed=42,
-                nfold=5,
-                metrics={'mae'},
-                early_stopping_rounds=10
-            )    # Update best score
-            mean_mae = cv_results['test-mae-mean'].min()
-            boost_rounds = cv_results['test-mae-mean'].argmin()
-            print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
-            if mean_mae < min_mae:
-                min_mae = mean_mae
-                best_params = (subsample,colsample)
-                print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
-                
-        xgb_params['subsample'] = .8
-        xgb_params['colsample_bytree'] = 1.
-
-
-
-
 
         #x_prediction = tournament[features] 
         x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
@@ -269,7 +203,3 @@ def main(contest):
         rvalue = validation_correlations.mean()
         
         return rvalue 
-                
-
-if __name__ == '__main__':
-    main(str(238))

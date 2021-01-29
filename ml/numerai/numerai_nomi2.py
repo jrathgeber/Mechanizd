@@ -4,11 +4,12 @@ import xgboost as xgb
 import pandas as pd
 import numpy as np
 
+from sklearn.metrics import mean_squared_error
+from sklearn import metrics
+
+import matplotlib.pyplot as plt
 
 import warnings
-import argparse
-import os
-
 
 TOURNAMENT_NAME = "nomi"
 TARGET_NAME = "target"
@@ -31,44 +32,13 @@ def main(contest):
 
     warnings.filterwarnings("ignore")
     
-    
-    # Get the Args which in particular have the data store path
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--data_path',
-        type=str,
-        help='Path to the training data'
-    )
-    parser.add_argument(
-        '--learning_rate',
-        type=float,
-        default=0.001,
-        help='Learning rate for SGD'
-    )
-    parser.add_argument(
-        '--momentum',
-        type=float,
-        default=0.9,
-        help='Momentum for SGD'
-    )
-
-    args = parser.parse_args()
-
-    print("===== DATA =====")
-    print("DATA PATH: " + args.data_path)
-    print("LIST FILES IN DATA PATH...")
-    print(os.listdir(args.data_path))
-    print("================")
-    
-    
-    
     print("\n Loading Numerai Data...")
 
     # The training data is used to train your model how to predict the targets.
-    train = pd.read_csv(args.data_path + '/numerai_training_data.csv', header=0)
+    train = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
         
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament = pd.read_csv(args.data_path + '/numerai_tournament_data.csv', header=0)
+    tournament = pd.read_csv('F:\\Numerai\\numerai'+ contest +'\\numerai_tournament_data.csv', header=0)
     
     # The tournament data contains validation data, test data and live data.
     # Validation is used to test your model locally so we separate that.
@@ -111,7 +81,8 @@ def main(contest):
         tournament['era'] = tournament['era'].str.replace(r'eraX','500')
         tournament['era'] = tournament['era'].str.replace(r'\D','').astype(int)
        
-            
+        
+    
         # Transform the loaded CSV data into numpy arrays
         features = [f for f in list(train_columns) if "feature" in f]
         X_train = train_columns[features]
@@ -128,7 +99,7 @@ def main(contest):
         
         xgb_params = {
             'nthread': 2, 
-            'max_depth': 5, 
+            'max_depth': 9, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
             #'subsample': 0.8,
@@ -155,73 +126,6 @@ def main(contest):
         #xgb.plot_importance(xgb_model,  height=0.8, ax=ax)
         #plt.show()
 
-
-        # Tuneing
-        cv_results = xgb.cv(
-            xgb_params,
-            dtrain,
-            num_boost_round=500,
-            seed=42,
-            nfold=5,
-            metrics={'mae'},
-            early_stopping_rounds=10
-        )
-        
-        
-        print("CV Results")
-        print(cv_results)
-
-        
-        print("CV Results Min")
-        print(cv_results['test-mae-mean'].min())
-
-
-
-
-
-        # You can try wider intervals with a larger step between
-        # each value and then narrow it down. Here after several
-        # iteration I found that the optimal value was in the
-        # following ranges.
-        
-        gridsearch_params = [
-                (subsample, colsample)
-                for subsample in [i/10. for i in range(7,11)]
-                for colsample in [i/10. for i in range(7,11)]
-                ]
-        
-        min_mae = float("Inf")
-        best_params = None# We start by the largest values and go down to the smallest
-        for subsample, colsample in reversed(gridsearch_params):
-            print("CV with subsample={}, colsample={}".format(
-                                     subsample,
-                                     colsample))    # We update our parameters
-            xgb_params['subsample'] = subsample
-            xgb_params['colsample_bytree'] = colsample    # Run CV
-            cv_results = xgb.cv(
-                xgb_params,
-                dtrain,
-                num_boost_round=4000,
-                seed=42,
-                nfold=5,
-                metrics={'mae'},
-                early_stopping_rounds=10
-            )    # Update best score
-            mean_mae = cv_results['test-mae-mean'].min()
-            boost_rounds = cv_results['test-mae-mean'].argmin()
-            print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
-            if mean_mae < min_mae:
-                min_mae = mean_mae
-                best_params = (subsample,colsample)
-                print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
-                
-        xgb_params['subsample'] = .8
-        xgb_params['colsample_bytree'] = 1.
-
-
-
-
-
         #x_prediction = tournament[features] 
         x_prediction = xgb.DMatrix(tournament[features], feature_names = features) 
   
@@ -241,6 +145,7 @@ def main(contest):
         print(f"On training the correlation has mean {train_correlations.mean()} and std {train_correlations.std()}")
         print(f"On training the average per-era payout is {payout(train_correlations).mean()}")
         
+
         # Check the per-era correlations on the validation set
         validation_data = tournament[tournament.data_type == "validation"]
         validation_correlations = validation_data.groupby("era").apply(score)

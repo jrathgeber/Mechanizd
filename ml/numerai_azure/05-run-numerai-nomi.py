@@ -17,11 +17,11 @@ if __name__ == "__main__":
     datastore = ws.get_default_datastore()
     dataset = Dataset.File.from_files(path=(datastore, 'datasets/numerai'))
 
-    experiment = Experiment(workspace=ws, name='day8-experiment-nomi')
+    experiment = Experiment(workspace=ws, name='day12-experiment-nomi-2')
 
     config = ScriptRunConfig(
         source_directory='./src',
-        script='train_nomi_1.py',
+        script='train_nomi_2.py',
         compute_target='cpu-cluster3',
         arguments=[
             '--data_path', dataset.as_named_input('input').as_mount(),
