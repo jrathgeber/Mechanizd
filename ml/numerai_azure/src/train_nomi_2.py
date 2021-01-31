@@ -132,7 +132,7 @@ def main(contest):
             'max_depth': 9, 
             'learning_rate':0.01, 
             'eval_metric':'rmse',
-            'subsample': 1,
+            #'subsample': 1,
             'colsample_bytree': 0.1,
             'objective':'reg:squarederror',
             #'seed' : 0
@@ -144,7 +144,7 @@ def main(contest):
         
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
-                      num_boost_round = 5000,  #2000
+                      num_boost_round = 6000,  #2000
                       verbose_eval=200, 
                       #early_stopping_rounds = 1000,
                       evals=evals,
