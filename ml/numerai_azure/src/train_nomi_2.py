@@ -130,7 +130,7 @@ def main(contest):
         xgb_params = {
             'nthread': 2, 
             'max_depth': 5, 
-            'learning_rate':0.02, 
+            'learning_rate':0.03, 
             'eval_metric':'rmse',
             #'subsample': 1,
             'colsample_bytree': 0.1,

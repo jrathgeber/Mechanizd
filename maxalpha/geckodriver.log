@@ -96,3 +96,14 @@ JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1612534209782	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Jason\\AppData\\Local\\Temp\\rust_mozprofile.veYajBUhX4KZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1612534217437	Marionette	INFO	Listening on port 64332
+1612534217632	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612534217740	Marionette	ERROR	[18] No reply from Marionette:Register
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxKernelOs.js, line 47: ReferenceError: stxLineColor is not defined
+JavaScript error: https://secure.trade-ideas.com/cms_static/kathy_test/tivision/js/stxAdvanced.js, line 15: TypeError: STX.Comparison is undefined
+1612534227430	Marionette	INFO	Stopped listening on port 64332
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
