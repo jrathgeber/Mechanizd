@@ -31,8 +31,14 @@ def run_numerai_batch():
     secret = config['numerai']['secret']
         
     # compute the tournament numer
+    # week = time.strftime("%U")
+    # contest = str(int(week) + 245)
+    
     week = time.strftime("%U")
-    contest = str(int(week) + 245)
+    day = int(time.strftime("%u"))
+    contest = int(week) + 245
+    if day == 7: # Sunday
+        contest = int(week) + 244
 
     print("\n Numerai Contest..." + contest)
 
@@ -81,7 +87,10 @@ def run_numerai_batch():
 if __name__ == '__main__':
     
     week = time.strftime("%U")
+    day = int(time.strftime("%u"))
     contest = int(week) + 245
+    if day == 7: # On sunday add a day
+        contest = int(week) + 244
     print(str(contest))
     run_numerai_batch()
 
