@@ -36,9 +36,9 @@ def run_numerai_batch():
     
     week = time.strftime("%U")
     day = int(time.strftime("%u"))
-    contest = int(week) + 245
+    contest = str(int(week) + 245)
     if day == 7: # Sunday
-        contest = int(week) + 244
+        contest = str(int(week) + 244)
 
     print("\n Numerai Contest..." + contest)
 
