@@ -60,6 +60,7 @@ def getSymbolConfig(tickers, todaydate, maxdata):
     
     f = open(r"C:\Users\Jason\AppData\Roaming\Yye Software\RightEdge\2010.1.0.0\SymbolConfig.xml", "r")
     #f = open(r"SymbolConfigStart.xml", "r")
+    
     copy = open("SymbolConfig.xml", "w")
     
     x=0
@@ -73,12 +74,14 @@ def getSymbolConfig(tickers, todaydate, maxdata):
         
         
         
-    #    print(line)
+    # print(line)
     f.close()
     copy.close()
     
+    # Give it some time
     time.sleep(3)
     
+    # Put the file in the right place
     copyfile('SymbolConfig.xml', 'C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml') 
     
     #Backup
