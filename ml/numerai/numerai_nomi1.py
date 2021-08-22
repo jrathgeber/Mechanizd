@@ -115,7 +115,7 @@ def main(contest):
         xgb_model = xgb.train (params = xgb_params,
                       dtrain = dtrain,
                       num_boost_round = 5000,  #2000
-                      verbose_eval=200, 
+                      verbose_eval=100, 
                       #early_stopping_rounds = 1000,
                       evals=evals,
                       #feval = f1_score_cust,
