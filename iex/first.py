@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jun  1 20:17:42 2020
-
 @author: Jason
+
+Updated on Mon Nov 29th, 2021. 
+Could this work for Crypto ? 
+
 """
 
 from iexfinance.stocks import Stock
@@ -16,7 +19,7 @@ key = config['iex']['iex.secretkey']
 
 
 
-a = Stock("APRN", token=key)
+a = Stock("NVDA", token=key)
 
 print(a.get_quote())
 #print(a.get_balance_sheet())
