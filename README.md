@@ -6,7 +6,7 @@ The code automates the running of the Zorro and RightEdge Algorithmic trading pl
 
 Work in progress includes machine learning tutorials with xgboost and Azure. There is also a connection to the twitter API for tweeting results on my favorite social media platform. 
 
-Most recently I have been submitting entries to the numer.ai machine learning competition at https://numer.ai/mechanizd where currently mechanizd is closing in on a top 100 placing though it has slipped a little recently.
+Most recently I have been submitting entries to the numer.ai machine learning competition at https://numer.ai/mechanizd where currently mechanizd is closing in on a top 100 placing though it has slipped a lot recently.
  
 
 ## Table of Contents
