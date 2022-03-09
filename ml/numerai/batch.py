@@ -36,9 +36,9 @@ def run_numerai_batch():
     
     week = time.strftime("%U")
     day = int(time.strftime("%u"))
-    contest = str(int(week) + 245)
+    contest = str(int(week) + 297)
     if day == 7: # Sunday
-        contest = str(int(week) + 244)
+        contest = str(int(week) + 296)
 
     print("\n Numerai Contest..." + contest)
 
@@ -73,7 +73,8 @@ def run_numerai_batch():
 
         # Tweet
         print("Tweeting ..")
-        Tweet.tweetSomething('I am uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
+        # Tweet.tweetSomething('I am uploading submission for numer.ai [' + contest + '] with correlation [' + rvalue + '] ')
+        Tweet.tweetSomething('Happy saturday twitter followers. How are you ? ')
     
         # Upload to numerai
         print("Uploading")
@@ -88,9 +89,9 @@ if __name__ == '__main__':
     
     week = time.strftime("%U")
     day = int(time.strftime("%u"))
-    contest = int(week) + 245
+    contest = int(week) + 297
     if day == 7: # On sunday add a day
-        contest = int(week) + 244
+        contest = int(week) + 296
     print(str(contest))
     run_numerai_batch()
 

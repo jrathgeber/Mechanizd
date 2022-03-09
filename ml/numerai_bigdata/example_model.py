@@ -6,6 +6,8 @@ from lightgbm import LGBMRegressor
 import gc
 import json
 
+# We need to install Light GBM and change the path to the real data
+
 from numerapi import NumerAPI
 from halo import Halo
 from utils import (
