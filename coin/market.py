@@ -11,6 +11,8 @@ import configparser
 import json
 import time
 
+import pandas as pd
+
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
