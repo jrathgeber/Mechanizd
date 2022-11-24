@@ -41,7 +41,7 @@ def run_numerai_batch():
     #     contest = str(int(week) + 296)
 
     day = int(time.strftime("%j"))  # 324
-    contest = day + 36
+    contest = str(day + 36)
     #print(str(contest))
     #run_numerai_batch()
 
