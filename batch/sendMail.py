@@ -5,10 +5,11 @@ from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
 
+
 def send_mail( send_from, send_to, subject, text, files, server, port, username, password, isTls=True):
     msg = MIMEMultipart()
     msg['From'] = send_from
-    msg['To'] = COMMASPACE.join(send_to)
+    msg['To'] = send_to
     msg['Date'] = formatdate(localtime = True)
     msg['Subject'] = subject
 	
