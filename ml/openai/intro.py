@@ -5,7 +5,6 @@ Created on Sat May 20 15:24:03 2023
 @author: Jason
 """
 
-import os
 import openai
 
 import configparser
@@ -18,7 +17,7 @@ config.read('C:\etc\properties.ini')
 # Numerai credentials for submission
 openai.api_key = config['numerai']['secret']
 
-openai.organization = "org-aoyNnQ1dPcIRRhnCVU3Lcc95"
+openai.organization = config['openai']['api_org']
 openai.api_key = config['openai']['api_key']
 openai.Model.list()
 
