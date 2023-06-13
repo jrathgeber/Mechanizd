@@ -40,16 +40,16 @@ def generate_clickable_title(title):
  
 # Function to generate blog post using GPT-4
 def generate_blog_post(row):
-    print("Generating blog post...")
-    original_title = row['youtube video title']
-    body = row['body description']
+    print("Generating blog post for me...")
+    original_title = row['title']
+    body = row['details']
     asin = row['ASIN']
  
     # Generate a clickable title
     title = generate_clickable_title(original_title)
  
     # Prepare a prompt for GPT-4.
-    prompt = f'Write 1200 words of content, without considering the links, Write ONLY in HTML. Consider SEO ranking factors, so use as much HTML as possible. Unordered lists, ordered lists, bold, italiacs, quotes, underlines. Do not include links to the amazon products unless its a referral link. Never mention the ASIN except in the links. This is a blog post about a YouTube video originally titled "{original_title}" do not mention the YouTube video, or the host of the video, just use the information, with the following description: "{body}". The associated products ASIN is "{asin}". Please write a blog post about this. When you mention a brand, please add the following link <center><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=incomestre0d3-20&language=en_US&marketplace=amazon&region=US&placement={asin}&asins={asin}&linkId=ea5840420af22ff2e663be3eee42c688&show_border=true&link_opens_in_new_window=true"></iframe></center>Replace B07S9H1VRC with the ASIN of the product associated with that {asin}'
+    prompt = f'Write 200 words of content, without considering the links, Write ONLY in HTML. Consider SEO ranking factors, so use as much HTML as possible. Unordered lists, ordered lists, bold, italiacs, quotes, underlines. Do not include links to the amazon products unless its a referral link. Never mention the ASIN except in the links. This is a blog post about a YouTube video originally titled "{original_title}" do not mention the YouTube video, or the host of the video, just use the information, with the following description: "{body}". The associated products ASIN is "{asin}". Please write a blog post about this. When you mention a brand, please add the following link <center><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=incomestre0d3-20&language=en_US&marketplace=amazon&region=US&placement={asin}&asins={asin}&linkId=ea5840420af22ff2e663be3eee42c688&show_border=true&link_opens_in_new_window=true"></iframe></center>Replace B07S9H1VRC with the ASIN of the product associated with that {asin}'
  
     # Generate the blog post using GPT-4.
     response = openai.ChatCompletion.create(
@@ -67,7 +67,7 @@ def generate_blog_post(row):
 # Function to upload post to Wordpress
 def upload_to_wordpress(title, content):
     print("Uploading post to WordPress...")
-    url = "https://yourwordpresswebsite.com/wp-json/wp/v2/posts"
+    url = "https://trifindr.com/wp-json/wp/v2/posts"
     headers = {
         "Authorization": "Bearer your_auth_code",
     }
@@ -115,8 +115,10 @@ def upload_image_to_wordpress(filename):
  
 # Load CSV
 print("Loading CSV...")
-df = pd.read_csv('file.csv')
+df = pd.read_csv('Book1.csv')
  
+display(df)
+
 # Select the first row
 first_row = df.iloc[0]
  
