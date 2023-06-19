@@ -53,10 +53,21 @@ def read_csv(file_path):
 
 def main():
     print("Loading data...")
+
+    contest = str(573)
+
     # The training data is used to train your model how to predict the targets.
-    training_data = read_csv("numerai_training_data.csv")
+    # training_data = read_csv("numerai_training_data.csv")
     # The tournament data is the data that Numerai uses to evaluate your model.
-    tournament_data = read_csv("numerai_tournament_data.csv")
+    # tournament_data = read_csv("numerai_tournament_data.csv")
+
+    # The training data is used to train your model how to predict the targets.
+    training_data = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_training_data.csv', header=0)
+
+    # The tournament data is the data that Numerai uses to evaluate your model.
+    tournament_data = pd.read_csv('F:\\Numerai\\numerai' + contest + '\\numerai_tournament_data.csv', header=0)
+
+
 
     feature_names = [
         f for f in training_data.columns if f.startswith("feature")
