@@ -7,8 +7,9 @@ napi = NumerAPI()
 contest = str(501)
 directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
-napi.download_dataset("v4.1/train.parquet", "train.parquet")
-
+#napi.download_dataset("v4.1/live.csv", "live.csv")
+napi.download_dataset("v4.1/live.parquet", "live.parquet")
+#napi.download_dataset("v4.1/train.parquet", "train.parquet")
 #napi.download_dataset(directory + "v4.1\\validation.parquet", "validation.parquet")
 #napi.download_dataset(directory + "v4.1\\live.parquet", "live.parquet")
 #napi.download_current_dataset(directory + "v4.1\\live_example_preds.parquet", "live_example_preds.parquet")

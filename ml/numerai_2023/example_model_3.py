@@ -29,7 +29,7 @@ current_round = napi.get_current_round()
 # Tournament data changes every week so we specify the round in their name. Training
 # and validation data only change periodically, so no need to download them every time.
 print("Downloading dataset files...")
-dataset_name = "F:/Numerai/numerai502/v4.1"
+dataset_name = "v4.1"
 feature_set_name = "medium"
 
 Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)
@@ -56,7 +56,7 @@ Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)
 print("Reading minimal training data")
 # read the feature metadata and get a feature set (or all the features)
 
-
+print("Open json file")
 with open(f"{dataset_name}/features.json", "r") as f:
     feature_metadata = json.load(f)
 
@@ -69,14 +69,19 @@ target_cols = feature_metadata["targets"]
 # read in just those features along with era and target columns
 read_columns = features + target_cols + [ERA_COL, DATA_TYPE_COL]
 
+print("Set training data")
 # note: sometimes when trying to read the downloaded data you get an error about invalid magic parquet bytes...
 # if so, delete the file and rerun the napi.download_dataset to fix the corrupted file
 training_data = pd.read_parquet(
     f"{dataset_name}/train_int8.parquet", columns=read_columns
 )
+
+print("Set validation data")
 validation_data = pd.read_parquet(
     f"{dataset_name}/validation_int8.parquet", columns=read_columns
 )
+
+print("Set live data")
 live_data = pd.read_parquet(f"{dataset_name}/live_int8_{current_round}.parquet", columns=read_columns)
 
 # reduce the number of eras to every 4th era to speed things up... uncomment these lines to speed things up.
@@ -85,7 +90,7 @@ live_data = pd.read_parquet(f"{dataset_name}/live_int8_{current_round}.parquet",
 # every_4th_era = validation_data[ERA_COL].unique()[::4]
 # validation_data = validation_data[validation_data[ERA_COL].isin(every_4th_era)]
 
-
+print("Set all data")
 # get all the data to possibly use for training
 all_data = pd.concat([training_data, validation_data])
 
@@ -94,6 +99,7 @@ training_index = training_data.index
 validation_index = validation_data.index
 all_index = all_data.index
 
+print("Delete Data")
 # delete training and validation data to save space
 del training_data
 del validation_data
@@ -109,6 +115,7 @@ live_data[features] = live_data[features].fillna(
 live_data[features] = live_data[features].astype("int8")  # make sure change to float32 if using the non int8 data!
 # Alternatively could convert nan columns to be floats and replace pd.NA with np.nan
 
+print("Set Light GBM  Params")
 
 # small fast params
 params_name = "sm_lgbm"
