@@ -241,7 +241,7 @@ all_data.loc[validation_index, "prediction"] = all_data.loc[
 ].rank(pct=True)
 live_data["prediction"] = live_data[model_to_submit].rank(pct=True)
 all_data.loc[validation_index, "prediction"].to_csv(
-    f"validation_predictions_{current_round}.csv"
+    f"{directory + dataset_name}/validation_predictions_{current_round}.csv"
 )
 live_data["prediction"].to_csv(f"{directory + dataset_name}/live_predictions_{current_round}.csv")
 
