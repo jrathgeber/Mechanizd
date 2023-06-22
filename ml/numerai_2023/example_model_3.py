@@ -26,13 +26,19 @@ napi = NumerAPI()
 
 current_round = napi.get_current_round()
 
+#
+
 # Tournament data changes every week so we specify the round in their name. Training
 # and validation data only change periodically, so no need to download them every time.
-print("Downloading dataset files...")
+# print("Downloading dataset files...")
+
+contest = str(503)
+directory = 'F:/Numerai/numerai' + contest + '/'
+
 dataset_name = "v4.1"
 feature_set_name = "medium"
 
-Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)
+# Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)
 
 # we'll use the int8 in this example in order to save RAM.
 # if you remove the int8 suffix for each of these files, you'll get features between 0 and 1 as floats.
@@ -41,7 +47,7 @@ Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)
 
 # napi.download_dataset(f"{dataset_name}/train.parquet")
 # napi.download_dataset(f"{dataset_name}/validation.parquet")
-# napi.download_dataset(f"{dataset_name}/live.parquet", f"{dataset_name}/live_{current_round}.parquet")
+napi.download_dataset(f"{dataset_name}/live_int8.parquet", f"{directory + dataset_name}/live_int8_{current_round}.parquet")
 
 # napi.download_dataset(f"{dataset_name}/train_int8.parquet")
 # napi.download_dataset(f"{dataset_name}/validation_int8.parquet")
@@ -57,7 +63,7 @@ print("Reading minimal training data")
 # read the feature metadata and get a feature set (or all the features)
 
 print("Open json file")
-with open(f"{dataset_name}/features.json", "r") as f:
+with open(f"{directory + dataset_name}/features.json", "r") as f:
     feature_metadata = json.load(f)
 
 # features = list(feature_metadata["feature_stats"].keys()) # get all the features
@@ -73,16 +79,16 @@ print("Set training data")
 # note: sometimes when trying to read the downloaded data you get an error about invalid magic parquet bytes...
 # if so, delete the file and rerun the napi.download_dataset to fix the corrupted file
 training_data = pd.read_parquet(
-    f"{dataset_name}/train_int8.parquet", columns=read_columns
+    f"{directory + dataset_name}/train_int8.parquet", columns=read_columns
 )
 
 print("Set validation data")
 validation_data = pd.read_parquet(
-    f"{dataset_name}/validation_int8.parquet", columns=read_columns
+    f"{directory + dataset_name}/validation_int8.parquet", columns=read_columns
 )
 
 print("Set live data")
-live_data = pd.read_parquet(f"{dataset_name}/live_int8_{current_round}.parquet", columns=read_columns)
+live_data = pd.read_parquet(f"{directory + dataset_name}/live_int8_{current_round}.parquet", columns=read_columns)
 
 # reduce the number of eras to every 4th era to speed things up... uncomment these lines to speed things up.
 # every_4th_era = training_data[ERA_COL].unique()[::4]
@@ -237,10 +243,10 @@ live_data["prediction"] = live_data[model_to_submit].rank(pct=True)
 all_data.loc[validation_index, "prediction"].to_csv(
     f"validation_predictions_{current_round}.csv"
 )
-live_data["prediction"].to_csv(f"live_predictions_{current_round}.csv")
+live_data["prediction"].to_csv(f"{directory + dataset_name}/live_predictions_{current_round}.csv")
 
 validation_example_preds = pd.read_parquet(
-    f"{dataset_name}/validation_example_preds.parquet"
+    f"{directory + dataset_name}/validation_example_preds.parquet"
 )
 all_data.loc[validation_index, EXAMPLE_PREDS_COL] = validation_example_preds[
     "prediction"

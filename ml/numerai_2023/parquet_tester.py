@@ -15,7 +15,6 @@ from utils_old import (
     EXAMPLE_PREDS_COL,
 )
 
-
 print("Loading data")
 
 print("Open json file")
