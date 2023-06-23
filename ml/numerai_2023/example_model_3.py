@@ -1,13 +1,11 @@
 from lightgbm import LGBMRegressor
 import gc
 import json
-from pathlib import Path
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
 
 from numerapi import NumerAPI
-
 
 from utils_old import (
     save_model,
@@ -27,7 +25,6 @@ napi = NumerAPI()
 current_round = napi.get_current_round()
 
 #
-
 # Tournament data changes every week so we specify the round in their name. Training
 # and validation data only change periodically, so no need to download them every time.
 # print("Downloading dataset files...")
@@ -45,19 +42,19 @@ feature_set_name = "medium"
 # int_8 files are much smaller...
 # but are harder to work with because some packages don't like ints and the way NAs are encoded.
 
-# napi.download_dataset(f"{dataset_name}/train.parquet")
-# napi.download_dataset(f"{dataset_name}/validation.parquet")
-napi.download_dataset(f"{dataset_name}/live_int8.parquet", f"{directory + dataset_name}/live_int8_{current_round}.parquet")
+# napi.download_dataset(f"{dataset_name}/train.parquet", f"{directory + dataset_name}/train.parquet")
+# napi.download_dataset(f"{dataset_name}/validation.parquet", f"{directory + dataset_name}/validation.parquet")
+# napi.download_dataset(f"{dataset_name}/live_int8.parquet", f"{directory + dataset_name}/live_int8_{current_round}.parquet")
 
-# napi.download_dataset(f"{dataset_name}/train_int8.parquet")
-# napi.download_dataset(f"{dataset_name}/validation_int8.parquet")
-# napi.download_dataset(
-#    f"{dataset_name}/live_int8.parquet",
-#    f"{dataset_name}/live_int8_{current_round}.parquet",
-# )
+napi.download_dataset(f"{dataset_name}/train_int8.parquet", f"{directory + dataset_name}/train_int8.parquet")
+napi.download_dataset(f"{dataset_name}/validation_int8.parquet", f"{directory + dataset_name}/validation_int8.parquet")
+napi.download_dataset(
+    f"{dataset_name}/live_int8.parquet",
+    f"{directory + dataset_name}/live_int8_{current_round}.parquet",
+ )
 
-# napi.download_dataset(f"{dataset_name}/validation_example_preds.parquet")
-# napi.download_dataset(f"{dataset_name}/features.json")
+# napi.download_dataset(f"{dataset_name}/validation_example_preds.parquet", f"{directory + dataset_name}/validation_example_preds.parquet")
+# napi.download_dataset(f"{dataset_name}/features.json", f"{directory + dataset_name}/features.json")
 
 print("Reading minimal training data")
 # read the feature metadata and get a feature set (or all the features)
