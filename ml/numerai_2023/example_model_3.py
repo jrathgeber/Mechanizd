@@ -31,7 +31,7 @@ def main(contest):
     # and validation data only change periodically, so no need to download them every time.
     # print("Downloading dataset files...")
 
-    # contest = str(503)
+    contest = str(503)
     directory = 'F:/Numerai/numerai' + contest + '/'
 
     dataset_name = "v4.1"
