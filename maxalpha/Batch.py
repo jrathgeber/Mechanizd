@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os;
+import os
 import RightEdge as RE;
 import MaxAlpha as MA;
 import time;

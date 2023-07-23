@@ -14,25 +14,23 @@ config.read('C:\etc\properties.ini')
    
 def tweetSomething(something):
 
-    #tickerList = ['ZSAN', 'VIPS']          
-      
-    # personal details 
+    # personal details
     consumer_key=config['twitter']['consumer_key']
     consumer_secret=config['twitter']['consumer_secret']
-    
     access_token=config['twitter']['access_token']
-    access_token_secret=config['twitter']['access_token_secret']
-      
-    # authentication of consumer key and secret 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret) 
-      
-    # authentication of access token and secret 
-    auth.set_access_token(access_token, access_token_secret) 
-    api = tweepy.API(auth) 
-      
-    # update the status 
-    #api.update_status(status ="Penny Stock Watchlist for today : $TMSR $AMRS $CRON") 
-    #api.update_status(status = something)
-    api.update_status(status = something)
+    access_token_secret = config['twitter']['access_token_secret']
+    bearer_token = config['twitter']['bearer_token']
+
+
+    client = tweepy.Client(bearer_token=bearer_token,
+                            consumer_key=consumer_key,
+                           consumer_secret=consumer_secret,
+                           access_token=access_token,
+                           access_token_secret=access_token_secret)
+
+    # Replace the text with whatever you want to Tweet about
+    response = client.create_tweet(text=something)
+
+    print(response)
     
 #tweetSomething('Hi')
