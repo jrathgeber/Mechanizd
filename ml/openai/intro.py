@@ -14,9 +14,6 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
     
-# Numerai credentials for submission
-openai.api_key = config['numerai']['secret']
-
 openai.organization = config['openai']['api_org']
 openai.api_key = config['openai']['api_key']
 openai.Model.list()
@@ -24,7 +21,7 @@ openai.Model.list()
 completion = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
-    {"role": "user", "content": "Write me a short punchy inspirational tweet"}
+    {"role": "user", "content": "Write me a really short inspirational tweet"}
   ]
 )
 
