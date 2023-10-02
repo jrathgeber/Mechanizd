@@ -21,3 +21,7 @@ if n>6:
 elif n == 19:
     print("volia")
 
+
+# multi line needs 
+if((n>2 and n !=m ) or n ==m):
+    n+=1
