@@ -13,7 +13,7 @@ Working on it today on Sunday December 27th 2020
 
 import configparser
 
-import example_model_3 as mechXg
+import example_model_4_1 as mechXg
 
 import os
 import time
@@ -79,8 +79,8 @@ def run_numerai_batch():
         # Unzip it
         # with ZipFile(directory + 'numerai_dataset.zip', 'r') as zipObj:
             
-            #Extract all the contents of zip file in current directory
-        #    zipObj.extractall(directory)
+        # Extract all the contents of zip file in current directory
+        # zipObj.extractall(directory)
 
     # Run my xg boost algo on it
     rvalue = str(mechXg.main(contest))

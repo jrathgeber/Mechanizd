@@ -1,10 +1,13 @@
 import numerapi
 # some API calls do not require logging in
 napi = numerapi.NumerAPI(verbosity="info")
+
 # download current dataset => also check `https://numer.ai/data/v4`
 napi.download_dataset("v4/train.parquet", "train.parquet")
+
 # get current leaderboard
 leaderboard = napi.get_leaderboard()
+
 # check if a new round has started
 if napi.check_new_round():
     print("new round has started within the last 12hours!")
