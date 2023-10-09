@@ -33,8 +33,8 @@ def main(contest):
 
     contest = str(503)
     directory = 'F:/Numerai/numerai' + contest + '/'
-
     dataset_name = "v4.1"
+
     feature_set_name = "medium"
 
     # Path(f"./{dataset_name}").mkdir(parents=False, exist_ok=True)

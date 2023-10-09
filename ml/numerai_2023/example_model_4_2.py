@@ -1,24 +1,35 @@
-
-
 from numerapi import NumerAPI
 import pandas as pd
 import json
+
+print("Starting up : connecting to NumerAI")
+
 napi = NumerAPI()
 
 # Download data
-napi.download_dataset("v4.2/train_int8.parquet");
-napi.download_dataset("v4.2/features.json");
+#napi.download_dataset("v4.2/train_int8.parquet");
+#napi.download_dataset("v4.2/features.json");
+
+contest = str(503)
+directory = 'F:/Numerai/numerai' + contest + '/'
+dataset_name = "v4.1"
+
+print("Reading feature metadata")
 
 # Load data
-feature_metadata = json.load(open("v4.2/features.json"))
+# feature_metadata = json.load(open("v4.2/features.json"))
+feature_metadata = json.load(open(f"{directory + dataset_name}/features.json"))
+
 features = feature_metadata["feature_sets"]["medium"] # use "all" for better performance. Requires more RAM.
-train = pd.read_parquet("v4.2/train_int8.parquet", columns=["era"]+features+["target"])
+train = pd.read_parquet(f"{directory + dataset_name}/train_int8.parquet", columns=["era"]+features+["target"])
 
 # For better models, join train and validation data and train on all of it
 # napi.download_dataset("v4.2/validation_int8.parquet");
 # validation = pd.read_parquet("v4.2/validation_int8.parquet", columns=["era"]+features+["target"])
 # validation = validation[validation["data_type"] == "validation"] # drop rows which don't have targets yet
 # train = pd.concat([train, validation])
+
+print("Training the model I think ")
 
 # Downsample for speed
 train = train[train["era"].isin(train["era"].unique()[::4])]  # skip this step for better performance
@@ -53,9 +64,9 @@ with open("predict_barebones.pkl", "wb") as f:
     f.write(p)
 
 # Download file if running in Google Colab
-try:
-    from google.colab import files
-    files.download('predict_barebones.pkl')
-except:
-    pass
+#try:
+#    from google.colab import files
+#    files.download('predict_barebones.pkl')
+#except:
+#    pass
 
