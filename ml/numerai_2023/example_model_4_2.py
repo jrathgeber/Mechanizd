@@ -12,7 +12,7 @@ napi = NumerAPI()
 
 contest = str(503)
 directory = 'F:/Numerai/numerai' + contest + '/'
-dataset_name = "v4.1"
+dataset_name = "v4.2"
 
 print("Reading feature metadata")
 
