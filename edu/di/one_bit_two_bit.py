@@ -28,6 +28,7 @@ def isOneBitCharacter(bits: List[int]) -> bool:
             numbits = 1
     return numbits == 1
 
+
 x = isOneBitCharacter([1, 0, 0])
 
 print(x)
