@@ -49,7 +49,7 @@ model.fit(
     train["target"]
 );
 
-
+print("All Done !!")
 
 # Define predict function
 def predict(live_features: pd.DataFrame) -> pd.DataFrame:
