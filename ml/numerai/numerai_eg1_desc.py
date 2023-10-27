@@ -36,7 +36,6 @@ feature_groups = {
 print("feature_groups")
 print(feature_groups)
 
-
 print ("") # There are 120 eras numbered from 1 to 120
 print ("eras.describe()")
 print (eras.describe())
