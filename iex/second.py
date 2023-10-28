@@ -12,10 +12,23 @@ api_key = config['finazon']['key']
 page_no = [0, 1, 2, 3, 4]
 data_dict = []
 
+
+# Get list of data sets
+sets_json = requests.get(f'https://api.finazon.io/latest/datasets?apikey={api_key}').json()
+print(sets_json)
+
+
+
 for i in page_no:
     hist_json = requests.get(
-        #f'https://api.finazon.io/latest/time_series?publisher=sip&ticker=AAPL&interval=1d&page={i}&page_size=1000&order=desc&apikey={api_key}').json()['data']
-        f'https://api.finazon.io/latest/time_series?publisher=sip&ticker=AAPL&interval=1d&page={i}&page_size=1000&order=desc&apikey={api_key}').json()
+
+        f'https://api.finazon.io/latest/time_series?publisher=sip&ticker=AAPL&interval=1d&page={i}&page_size=1000&order=desc&apikey={api_key}').json()['data']
+
+        # f'https://api.finazon.io/latest/time_series?publisher=sip&ticker=AAPL&interval=1d&page={i}&page_size=1000&order=desc&apikey={api_key}').json()
+        # f'https://api.finazon.io/latest/datasets?apikey={api_key}').json()
+
+
+
     print(hist_json)
     #data_dict.append(hist_json)
 
