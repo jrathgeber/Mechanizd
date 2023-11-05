@@ -9,6 +9,4 @@ print(tup)
 # use as key to hashset
 myMap = {(1,2):3}
 
-
-
 # lists not hashable ...
