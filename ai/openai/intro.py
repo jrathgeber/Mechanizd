@@ -9,7 +9,6 @@ import openai
 
 import configparser
 
-
 # Get Reference to Properties
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 

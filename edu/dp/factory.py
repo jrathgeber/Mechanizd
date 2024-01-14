@@ -1,8 +1,6 @@
 import json
 import pandas as pd
 
-
-
 class FileParser:
     def parse(self, file_path):
         pass
