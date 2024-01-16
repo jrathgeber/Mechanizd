@@ -8,7 +8,7 @@ Created on Sunday January 12th 2024
 
 import configparser
 
-import example_model_4_1 as mechXg
+import example_model_4_3 as mechXg
 
 import os
 import time
@@ -52,7 +52,7 @@ def run_numerai_batch():
     #print(str(contest))
     #run_numerai_batch()
 
-    contest = str(503)
+    contest = str(504)
 
     print("\n Numerai Contest..." + contest)
 
@@ -96,9 +96,9 @@ def run_numerai_batch():
         print(model_id)
 
         directory = 'F:/Numerai/numerai' + contest + '/'
-        dataset_name = "v4.1"
+        dataset_name = "v4.3"
 
-        napi.upload_predictions(f"{directory + dataset_name}/live_predictions_{current_round}.csv", model_id=model_id)
+        #napi.upload_predictions(f"{directory + dataset_name}/live_predictions_{current_round}.csv", model_id=model_id)
 
     print("All Done")
   

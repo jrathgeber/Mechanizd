@@ -10,9 +10,9 @@ napi = NumerAPI()
 #napi.download_dataset("v4.2/train_int8.parquet");
 #napi.download_dataset("v4.2/features.json");
 
-contest = str(503)
+contest = str(504)
 directory = 'F:/Numerai/numerai' + contest + '/'
-dataset_name = "v4.2"
+dataset_name = "v4.3"
 
 print("Reading feature metadata")
 
