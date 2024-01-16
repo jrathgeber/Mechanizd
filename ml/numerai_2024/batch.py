@@ -47,8 +47,8 @@ def run_numerai_batch():
     # if day == 7: # Sunday
     #     contest = str(int(week) + 296)
 
-    day = int(time.strftime("%j"))  # 324
-    contest = str(day + 405)
+    #day = int(time.strftime("%j"))  # 324
+    #contest = str(day + 405)
     #print(str(contest))
     #run_numerai_batch()
 
@@ -106,7 +106,7 @@ def run_numerai_batch():
 if __name__ == '__main__':
     
     day = int(time.strftime("%j"))  # 324
-    contest = 503
+    contest = 504
     print(str(contest))
     run_numerai_batch()
 
