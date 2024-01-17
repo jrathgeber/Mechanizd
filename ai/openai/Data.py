@@ -20,3 +20,5 @@ user_msg = 'Create a small dataset about total sales over the last year. The for
 response = openai.ChatCompletion.create(model="gpt-3.5-turbo",
                                         messages=[{"role": "system", "content": system_msg},
                                          {"role": "user", "content": user_msg}])
+
+print(response)

@@ -1,0 +1,10 @@
+status: 200
+date: Wed, 17 Jan 2024 00:34:55 GMT
+content-type: application/json; charset=utf-8
+content-length: 339
+access-control-allow-origin: *
+x-ttl: 60
+x-rl: 44
+content-location: http://ip-api.com/json/
+
+{"status":"success","country":"United States","countryCode":"US","region":"CT","regionName":"Connecticut","city":"Stamford","zip":"06902","lat":41.0641,"lon":-73.548,"timezone":"America/New_York","isp":"Cablevision Systems Corp.","org":"Optimum Online (Cablevision Systems)","as":"AS6128 Cablevision Systems Corp.","query":"173.3.177.173"}
