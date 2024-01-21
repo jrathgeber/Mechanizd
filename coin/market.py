@@ -6,7 +6,8 @@
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 
-from pandas.io.json import json_normalize
+#from pandas.io.json import json_normalize
+import json_normalize
 import configparser
 import json
 import time
