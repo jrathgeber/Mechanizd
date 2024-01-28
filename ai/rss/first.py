@@ -17,10 +17,10 @@ for entry in feed.entries:
     print("\n")
 
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Define the time range (e.g., the last 24 hours)
-now = datetime.now()
+now = datetime.now(timezone.utc)
 time_range = timedelta(days=1)
 # Iterate through entries and filter by the time range
 for entry in feed.entries:

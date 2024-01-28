@@ -3,13 +3,14 @@ import feedparser
 url = "http://triathlonmagazine.ca/feed/"
 feed = feedparser.parse(url)
 
-print(feed)
+#print(feed)
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Define the time range (e.g., the last 24 hours)
-now = datetime.now()
-time_range = timedelta(days=1)
+#now = datetime.now()
+now = datetime.now(timezone.utc)
+time_range = timedelta(days=5)
 # Iterate through entries and filter by the time range
 for entry in feed.entries:
     entry_date = datetime.strptime(entry.published, "%a, %d %b %Y %H:%M:%S %z")
