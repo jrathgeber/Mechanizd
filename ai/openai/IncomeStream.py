@@ -19,7 +19,6 @@ openai.api_key = config['numerai']['secret']
 openai.organization = config['openai']['api_org']
 openai.api_key = config['openai']['api_key']
 
- 
 print("OpenAI API key set...")
  
 # Function to generate a clickable title using GPT-4
@@ -117,7 +116,7 @@ def upload_image_to_wordpress(filename):
 print("Loading CSV...")
 df = pd.read_csv('Book1.csv')
  
-display(df)
+print(df)
 
 # Select the first row
 first_row = df.iloc[0]
@@ -134,7 +133,7 @@ image_url = generate_image(image_prompt)
  
 # Save the generated image to your local system
 print("Saving image...")
-filename = "generated_image.jpg"
+filename = "../../ml/openai/generated_image.jpg"
 save_image(image_url, filename)
 print("Image saved...")
  
