@@ -1,9 +1,13 @@
 import feedparser
 
-url = "http://triathlonmagazine.ca/feed/"
+import ssl
+if hasattr(ssl, '_create_unverified_context'):
+    ssl._create_default_https_context = ssl._create_unverified_context
+
+url = "https://triathlonmagazine.ca/feed/"
 feed = feedparser.parse(url)
 
-#print(feed)
+print(feed)
 
 from datetime import datetime, timedelta, timezone
 
