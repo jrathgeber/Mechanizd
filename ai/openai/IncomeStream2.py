@@ -22,7 +22,7 @@ from openai import OpenAI
 
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=config['numerai']['secret'],
+    api_key=config['openai']['api_key'],
 )
 
 # Function to upload a file to OpenAI
@@ -33,7 +33,7 @@ def upload_file(file_path, purpose):
 
 # Upload your files
 internal_links_file_id = upload_file('stuff/internallinks.txt', 'assistants')
-#products_file_id = upload_file('products.txt', 'assistants')
+products_file_id = upload_file('stuff/products.txt', 'assistants')
 content_plan_file_id = upload_file('stuff/triathlon.csv', 'assistants')
 
 # Create an Assistant
@@ -42,8 +42,7 @@ assistant = client.beta.assistants.create(
     model="gpt-4-1106-preview",
     instructions="Every article should have 3 product images minimum. When finding products ensure they are relevant to the specific article you are writing. You must ensure the product image links are written fully and correctly. Every article must have product images. Include at least 3 real product image URLs in the final articles. Choose only relevant product images Do not invent image links. Never invent links or product images Never use sources or footnotes Read internallinks.txt and products.txt - You always choose 5 strictly relevant product images and internal links for the articles. You do not use sources in the outline, you just pick 5 product images that are highly relevant to the article. First you read the attached files and understand them completely, then you create a detailed outline on the blog post topic, including a maximum of 5 HIGHLY relevant internal collection links and product image links. These will finally be used to write an article.",
     tools=[{"type": "retrieval"}],
-    #file_ids=[internal_links_file_id, products_file_id, content_plan_file_id]
-    file_ids=[internal_links_file_id, content_plan_file_id]
+    file_ids=[internal_links_file_id, products_file_id, content_plan_file_id]
 )
 
 def wait_for_run_completion(thread_id, run_id, timeout=300):
