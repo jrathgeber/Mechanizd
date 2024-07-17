@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "/(.*)",
@@ -9,7 +8,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/flask/index"
+      "dest": "/flask/index.py"
     }
   ]
 }
