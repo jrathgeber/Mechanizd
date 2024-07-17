@@ -23,4 +23,6 @@ config.json
 
 *.xml
 
+*.pyc
+
 
