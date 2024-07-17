@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Welcome to Mechanizd Time Series ML.</p>"
+    return "<p>Welcome to Mechanizd Time Series Stuff</p>"
