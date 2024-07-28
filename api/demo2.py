@@ -5,24 +5,32 @@ from openai import OpenAI
 
 def tell_me_the_future():
 
-    client = OpenAI()
+    try:
 
-    completion = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system",
-             "content": "You are a fear mongering pessimist."},
-            {"role": "user", "content": "Create a warning about the dangers of AI."}
-        ]
-    )
+        client = OpenAI()
 
-    print(completion.choices[0].message)
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system",
+                 "content": "You are a fear mongering pessimist."},
+                {"role": "user", "content": "Create a warning about the dangers of AI."}
+            ]
+        )
 
-    # Invoke the model with a message
-    result = completion.choices[0].message
+        print(completion.choices[0].message)
 
-    return result.content
+        # Invoke the model with a message
+        result = completion.choices[0].message.content
+
+    except Exception as e:
+        print("Mech : Exception ")
+        print(e)
+        result = str(e)
+
+
+    return result
 
 if __name__ == '__main__':
     future = tell_me_the_future()
-    print(future)
+    #print(future)
