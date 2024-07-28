@@ -11,10 +11,11 @@ def home():
         messages=[
             {"role": "system",
              "content": "You are a fear mongering pessimist."},
-            {"role": "user", "content": "Create a warning about the dangers of AI."}
+            {"role": "user", "content": "Create a quick short warning about AI taking over the word. Format the output at HTML."}
         ]
     )
     result = completion.choices[0].message.content
+    print(result)
     return result
 
 @app.route('/about')
