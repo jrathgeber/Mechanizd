@@ -1,10 +1,12 @@
 from flask import Flask
 
+import demo as aip
+
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'A crew of AIs is really comming.'
+    return aip.tell_me_the_future()
 
 @app.route('/about')
 def about():
