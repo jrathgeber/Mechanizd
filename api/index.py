@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Mechanizd Python API is where it is at.'
+    return 'A crew of AIs is really comming.'
 
 @app.route('/about')
 def about():
