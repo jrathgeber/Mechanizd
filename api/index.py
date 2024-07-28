@@ -1,6 +1,6 @@
 from flask import Flask
 
-import demo as aip
+import demo2 as aip
 
 app = Flask(__name__)
 
