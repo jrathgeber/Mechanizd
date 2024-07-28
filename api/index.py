@@ -10,9 +10,8 @@ def home():
         model="gpt-4o-mini",
         messages=[
             {"role": "system",
-             "content": "You are a computer journalist."},
-            {"role": "user", "content": "Create a blog post to highlight a known feature of langchain as a post. "
-                                        "Format the output at HTML.(don't suround content with '''html)"}
+             "content": "You are an AI blogger."},
+            {"role": "user", "content": "Create a short blog post to highlight a known feature of langchain as a post. Include one code block. Format the output at HTML. Don't surround content with '''html)"}
         ]
     )
     result = completion.choices[0].message.content
