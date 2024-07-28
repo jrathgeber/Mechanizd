@@ -5,7 +5,15 @@ from openai import OpenAI
 
 def tell_me_the_future():
 
+    result = "hello"
+
+    return result
+
+"""
+
     try:
+        result = "this works"
+
 
         client = OpenAI()
 
@@ -23,13 +31,16 @@ def tell_me_the_future():
         # Invoke the model with a message
         result = completion.choices[0].message.content
 
+       # result = 'this works'
+
     except Exception as e:
         print("Mech : Exception ")
         print(e)
         result = str(e)
+"""
 
 
-    return result
+#    return result
 
 if __name__ == '__main__':
     future = tell_me_the_future()
