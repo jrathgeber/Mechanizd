@@ -14,6 +14,6 @@ api_key = config['medium']['token']
 medium = Medium(api_key)
 
 # Get the "Article" object and print markdown
-article = medium.article(article_id="https://medium.com/@jasonrathgeber/2024-election-and-fintech-89482f8d9c5e")
+article = medium.article(article_id="89482f8d9c5e")
 
 print(article.markdown)
