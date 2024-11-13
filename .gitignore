@@ -23,4 +23,7 @@ config.json
 
 *.xml
 
+*.pyc
 
+
+.aider*
