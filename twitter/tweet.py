@@ -32,4 +32,4 @@ def tweetSomething(something):
 
 
 if __name__ == '__main__':
-    tweetSomething("Hello world v2.")
+    tweetSomething("Going to work with twitter API some more.")
