@@ -2,6 +2,7 @@
 
 """
 Created on Sunday January 12th 2024
+Further Tweaked on January 14th 2025
 @author: Jason Rathgeber
 """
 
@@ -52,7 +53,7 @@ def run_numerai_batch():
     #print(str(contest))
     #run_numerai_batch()
 
-    contest = str(504)
+    contest = str(505)
 
     print("\n Numerai Contest..." + contest)
 
@@ -96,7 +97,7 @@ def run_numerai_batch():
         print(model_id)
 
         directory = 'F:/Numerai/numerai' + contest + '/'
-        dataset_name = "v4.3"
+        dataset_name = "v5.0"
 
         #napi.upload_predictions(f"{directory + dataset_name}/live_predictions_{current_round}.csv", model_id=model_id)
 
@@ -106,7 +107,7 @@ def run_numerai_batch():
 if __name__ == '__main__':
     
     day = int(time.strftime("%j"))  # 324
-    contest = 504
+    contest = 505
     print(str(contest))
     run_numerai_batch()
 

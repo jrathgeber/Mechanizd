@@ -30,17 +30,16 @@ print(var)
 
 # Download the training data
 napi.download_dataset( f"{dataset_name}/features.json", f"{directory + dataset_name}/features.json",)
-napi.download_dataset( f"{dataset_name}/live_int8.parquet", f"{directory + dataset_name}/live_int8.parquet",)
 napi.download_dataset( f"{dataset_name}/live_example_preds.csv", f"{directory + dataset_name}/live_example_preds.csv",)
 napi.download_dataset( f"{dataset_name}/live_example_preds.parquet", f"{directory + dataset_name}/live_example_preds.parquet",)
 napi.download_dataset( f"{dataset_name}/meta_model.parquet", f"{directory + dataset_name}/meta_model.parquet",)
-napi.download_dataset( f"{dataset_name}/train_int8.parquet", f"{directory + dataset_name}/train_int8.parquet",)
 napi.download_dataset( f"{dataset_name}/validation_example_preds.parquet", f"{directory + dataset_name}/validation_example_preds.parquet",)
-napi.download_dataset( f"{dataset_name}/validation_int8.parquet", f"{directory + dataset_name}/validation_int8.parquet",)
-
 napi.download_dataset(f"{dataset_name}/live_benchmark_models.parquet", f"{directory + dataset_name}/live_benchmark_models.parquet")
 napi.download_dataset(f"{dataset_name}/validation_benchmark_models.parquet", f"{directory + dataset_name}/validation_benchmark_models.parquet")
 napi.download_dataset(f"{dataset_name}/train_benchmark_models.parquet", f"{directory + dataset_name}/train_benchmark_models.parquet")
+
+napi.download_dataset( f"{dataset_name}/live.parquet", f"{directory + dataset_name}/live_int8.parquet",)
+napi.download_dataset( f"{dataset_name}/train.parquet", f"{directory + dataset_name}/train_int8.parquet",)
 
 #
 #napi.download_dataset("v4.3/features.json", "features.json")
