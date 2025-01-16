@@ -14,7 +14,7 @@ def main(contest):
 
     #contest = str(504)
     directory = 'F:/Numerai/numerai' + contest + '/'
-    dataset_name = "v4.3"
+    dataset_name = "v5.0"
 
     print("Reading feature metadata")
 

@@ -7,11 +7,9 @@ import configparser
 config = configparser.ConfigParser()
 config.read('C:\etc\properties.ini') 
 
-   
 def tweetSomething(something):
 
-
-    # personal details 
+    # personal details
     consumer_key=config['twitter']['consumer_key']
     consumer_secret=config['twitter']['consumer_secret']
     access_token=config['twitter']['access_token']
@@ -30,6 +28,5 @@ def tweetSomething(something):
 
     print(response)
 
-
 if __name__ == '__main__':
-    tweetSomething("Good morning X. Hope 2025 is off to a good start.")
+    tweetSomething("Good morning X. Should be an interesting financial Markets day with CPI at 8am. ")
