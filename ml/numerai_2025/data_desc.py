@@ -6,7 +6,7 @@ def printList1(list, col, STR_FMT='{}', gap=1):
     print(''.join([FMT2 % (v, "" if (i+1) % col else "\n") for i, v in enumerate(list)]))
 
 
-contest = str(504)
+contest = str(505)
 directory = 'F:/Numerai/numerai' + contest + '/'
 dataset_name = "v4.3"
 
