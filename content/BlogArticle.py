@@ -2,7 +2,7 @@
 
 # HTML content you want to save
 
-def new_article(number, slug):
+def new_article(path, number, slug):
 
     html_content = """
     <!DOCTYPE html>
@@ -20,7 +20,7 @@ def new_article(number, slug):
     """
 
     # File path where you want to save the HTML file
-    file_path = "zappy\\article_" + number + "_" + slug + ".html"
+    file_path = path + "article_" + number + "_" + slug + ".html"
 
     # Open the file in write mode and save the HTML content
     with open(file_path, "w") as file:

@@ -2,7 +2,7 @@
 
 # HTML content you want to save
 
-def new_post(number, slug):
+def new_post(path, number, slug):
 
     html_content = """
         
@@ -239,7 +239,7 @@ def new_post(number, slug):
     """
 
     # File path where you want to save the HTML file
-    file_path = "zappy\\blogpost_" + number + "_" + slug + ".html"
+    file_path = path + "blogpost_" + number + "_" + slug + ".html"
 
     # Open the file in write mode and save the HTML content
     with open(file_path, "w") as file:
