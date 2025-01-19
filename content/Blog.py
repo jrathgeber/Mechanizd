@@ -2,8 +2,8 @@
 import BlogArticle as Article
 import BlogPost as Post
 
-article_number = "024"
-key_words = "increase your impact"
+article_number = "028"
+key_words = "What is the biggest thing ever sold on ebay"
 
 slug = key_words.replace(" ", "_")
 

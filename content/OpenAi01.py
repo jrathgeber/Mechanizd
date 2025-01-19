@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Sum Dec 22 2024
+Created on Sum Jan 22 2025
 
 @author: Jason
 """
@@ -22,7 +22,10 @@ client = OpenAI(
 GPT_MODEL = 'gpt-4o-mini'
 O1_MODEL = 'o1-mini'
 
-good_prompt = ("Generate a function that outputs the SMILES IDs for all the molecules involved in insulin.")
+prepend = "Answer should be embedded in html tags."
+prompt = "Write a very short blog post titled : What is the largest item ever sold on ebay?"
+
+good_prompt = ("Write a very short blog post titled : What is the largest item ever sold on ebay?")
 response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": good_prompt}])
 
 print(response.choices)
