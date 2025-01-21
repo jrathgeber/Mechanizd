@@ -2,7 +2,7 @@
 
 # HTML content you want to save
 
-def new_post(path, number, slug):
+def new_post(path, number, slug, key_words):
 
     html_content = """
         
@@ -15,11 +15,14 @@ def new_post(path, number, slug):
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name=viewport content="width=device-width, initial-scale=1">
 
-   <title>Scale your influence 2025</title>
+""" + """
 
-   <meta name="description" content="This Jason Rathgeber vCard is my personal responsive website based on the latest Bootstrap 3">
-   <meta name="keywords" content="Html5, Qlikview, Fintec, Triathlon, Java, Algorithms">
+   <title>""" + key_words + """</title>
+   <meta name="description" content=""" + key_words + """>
+   <meta name="keywords" content=""" + key_words + """>
    <meta name="author" content="Jason Rathgeber">
+
+""" + """
 
    <!-- CSS -->
    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css"        property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
@@ -139,7 +142,7 @@ def new_post(path, number, slug):
             <!-- Post Content -->
            <article class="post wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
 
-               <h1>Scale your influence online in 2025</h1>
+               <h1>""" + key_words + """</h1>
 
                 <div class="article"></div>     
                 <div class="lastly"></div>     
@@ -220,7 +223,7 @@ def new_post(path, number, slug):
 <script>
 
  $(function () {
-    $.get("./Articles/article_024_increase_your_impact.html", function (data) {$(".article").append(data); });
+    $.get("./Articles/article_""" + number + """_""" + slug + """.html", function (data) {$(".article").append(data); });
  });
 
  $(function () {

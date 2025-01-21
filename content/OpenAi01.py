@@ -2,30 +2,35 @@
 
 """
 Created on Sum Jan 22 2025
-
-@author: Jason
+@author: Jason R
 """
 
 import openai
 from openai import OpenAI
 import configparser
 
-# Get Reference to Properties
-config = configparser.ConfigParser()
-config.read('C:\\etc\\properties.ini')
 
-client = OpenAI(
-    # This is the default and can be omitted
-    api_key=config['openai']['api_key'],
-)
+def write_article():
 
-GPT_MODEL = 'gpt-4o-mini'
-O1_MODEL = 'o1-mini'
+    # Get Reference to Properties
+    config = configparser.ConfigParser()
+    config.read('C:\\etc\\properties.ini')
 
-prepend = "Answer should be embedded in html tags."
-prompt = "Write a very short blog post titled : What is the largest item ever sold on ebay?"
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=config['openai']['api_key'],
+    )
 
-good_prompt = ("Write a very short blog post titled : What is the largest item ever sold on ebay?")
-response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": good_prompt}])
+    GPT_MODEL = 'gpt-4o-mini'
+    O1_MODEL = 'o1-mini'
 
-print(response.choices)
+    prepend = "Answer should be embedded in html tags and that's it. Nothing else."
+    instructions = "Write a very short blog post titled:"
+    keywords = " What is the largest item ever sold on ebay?"
+
+    prompt = prepend + instructions + keywords
+    response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": prompt}])
+
+    print(response.choices[0].message.content)
+
+    return response.choices[0].message.content
