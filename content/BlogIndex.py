@@ -4,7 +4,7 @@ import time
 from shutil import copyfile
 
 
-def copywrite(copy, todaydate, symbols, maxdata):
+def copywrite(copy, todaydate, symbols):
 
     copy.write('			  <!-- 024 Personal Branding -->\n')
     copy.write('			  <div class="grid-item branding col-md-4 col-sm-6">\n')
@@ -32,37 +32,25 @@ def copywrite(copy, todaydate, symbols, maxdata):
     copy.write('			</div> \n')
 
 
+def add_blog(file_path_laptop_bp, article_number, slug, key_words, todaydate):
 
-def getSymbolConfig(tickers, todaydate, maxdata):
-
-    #tickers = ['SPI', 'ICON', 'CNET', 'RIOT', 'HMNY']
-    #todaydate = "20180127"
+    f = open(r"D:\\gd23\\vcard\\blog.html", "r")
     
-    f = open(r"C:\Users\Jason\AppData\Roaming\Yye Software\RightEdge\2010.1.0.0\SymbolConfig.xml", "r")
-    #f = open(r"SymbolConfigStart.xml", "r")
-    
-    copy = open("SymbolConfig.xml", "w")
+    copy = open("zappy\\blog.html", "w")
     
     x=0
     for line in f:
         x=x*2
         if x==4:
-            copywrite(copy, todaydate, tickers, maxdata)
+            copywrite(copy, todaydate)
         if 'MaxAlpha' in line:
             x=1     
         copy.write(line)
+
         
-        
-        
-    # print(line)
+    print(line)
     f.close()
     copy.close()
     
     # Give it some time
     time.sleep(3)
-    
-    # Put the file in the right place
-    copyfile('SymbolConfig.xml', 'C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml') 
-    
-    #Backup
-    copyfile('C:\\Users\\Jason\\AppData\\Roaming\\Yye Software\\RightEdge\\2010.1.0.0\\SymbolConfig.xml', 'F:\\RightEdge\\MaxAlpha\\SymbolConfig'+todaydate+'.xml') 
