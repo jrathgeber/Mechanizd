@@ -4,7 +4,7 @@ import BlogPost as Post
 import BlogIndex as IndexPage
 
 article_number = "028"
-key_words = "What is the biggest thing ever sold on ebay"
+key_words = "how to sell your stuff on ebay"
 
 slug = key_words.replace(" ", "_")
 
