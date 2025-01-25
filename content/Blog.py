@@ -2,6 +2,7 @@
 import BlogArticle as Article
 import BlogPost as Post
 import BlogIndex as IndexPage
+import BlogImage as Image
 
 article_number = "028"
 key_words = "how to sell your stuff on ebay"
@@ -16,6 +17,5 @@ file_path_laptop_bp = "D:\\gd23\\vcard\\blogpost\\"
 
 #Article.new_article(file_path_laptop, article_number, slug)
 #Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
-
-IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Jan22")
-
+#IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Jan22")
+Image.new_image(file_path_laptop, article_number, slug, key_words, "Jan22")

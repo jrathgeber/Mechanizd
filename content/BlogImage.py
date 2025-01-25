@@ -1,15 +1,22 @@
-# Path to your image file (can be an image that exists on your computer)
-image_path = 'image.jpeg'
+import OpenDalE as ai
+import requests
 
-# Path to save the image to (output path)
-output_path = 'saved_image.jpeg'
+# HTML content you want to save
 
-# Open and save the image to a new location
-with open(image_path, 'rb') as img_file:
-    image_data = img_file.read()
+def download_image(url, file_name):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(file_name, 'wb') as file:
+            file.write(response.content)
+        print(f"Image successfully downloaded: {file_name}")
+    else:
+        print("Failed to retrieve the image")
 
-# Save the image data to a new file
-with open(output_path, 'wb') as out_file:
-    out_file.write(image_data)
 
-print(f"Image has been saved as {output_path}")
+def new_image(file_path_laptop, article_number, slug, key_words, ddate):
+
+    image_url = ai.create_image(file_path_laptop, article_number, slug, key_words, ddate)
+
+    file_name = 'zappy\\' + article_number + '_' + slug + '.jpg'
+
+    download_image(image_url, file_name)
