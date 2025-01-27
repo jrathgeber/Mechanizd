@@ -10,7 +10,7 @@ from openai import OpenAI
 import configparser
 
 
-def write_article():
+def write_article(key_words, further_info):
 
     # Get Reference to Properties
     config = configparser.ConfigParser()
@@ -25,10 +25,11 @@ def write_article():
     O1_MODEL = 'o1-mini'
 
     prepend = "Answer should be embedded in html tags and that's it. Nothing else."
-    instructions = "Write a very short blog post titled:"
-    keywords = " What is the largest item ever sold on ebay?"
+    instructions = "Create an outline for a blog article titled"
+    keywords = key_words
+    further_info = further_info
 
-    prompt = prepend + instructions + keywords
+    prompt = instructions + keywords + further_info
     response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": prompt}])
 
     print(response.choices[0].message.content)

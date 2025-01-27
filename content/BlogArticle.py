@@ -2,9 +2,9 @@ import OpenAi01 as ai
 
 # HTML content you want to save
 
-def new_article(path, number, slug):
+def new_article(path, number, slug, key_words, further_info):
 
-    html_content_2 = ai.write_article()
+    html_content_2 = ai.write_article(key_words, further_info)
 
     # File path where you want to save the HTML file
     file_path = path + "article_" + number + "_" + slug + ".html"

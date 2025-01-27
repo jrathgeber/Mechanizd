@@ -7,14 +7,14 @@ from shutil import copyfile
 def copywrite(copy, article_number, slug, key_words, todaydate):
 
     copy.write('\n\n')
-    copy.write('    			  <!-- ' + article_number + key_words + ' -->\n')
+    copy.write('    			  <!-- ' + article_number + " " + key_words + ' -->\n')
     copy.write('    			  <div class="grid-item branding col-md-4 col-sm-6">\n')
     copy.write('    			    <div class="item-wrap">\n')
     copy.write('    			       <figure class="">\n')
     copy.write('    			          <div class="popup-call">\n')
-    copy.write('    			             <a href="assets/custom/images/blog/' + article_number + '_' + slug + '.jpeg" class="gallery-item"><i class="flaticon-arrows-4"></i></a>\n')
+    copy.write('    			             <a href="assets/custom/images/blog/' + article_number + '_' + slug + '.jpg" class="gallery-item"><i class="flaticon-arrows-4"></i></a>\n')
     copy.write('    			          </div>\n')
-    copy.write('    			          <img src="assets/custom/images/blog/thumbs/' + article_number + '_' + slug + '.jpeg" class="img-responsive" alt="img03"/>\n')
+    copy.write('    			          <img src="assets/custom/images/blog/thumbs/' + article_number + '_' + slug + '.jpg" class="img-responsive" alt="img03"/>\n')
     copy.write('    			          <figcaption>\n')
     copy.write('    			             <div class="post-meta"><span>by <a href="#!">Jason Rathgeber</a>,</span> <span>' + todaydate + '</span></div>\n')
     copy.write('    			             <div class="post-header">\n')
