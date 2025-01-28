@@ -25,11 +25,11 @@ def write_article(key_words, further_info):
     O1_MODEL = 'o1-mini'
 
     prepend = "Answer should be embedded in html tags and that's it. Nothing else."
-    instructions = "Create an outline for a blog article titled"
+    instructions = "Write a short blog post titled :  "
     keywords = key_words
     further_info = further_info
 
-    prompt = instructions + keywords + further_info
+    prompt = prepend + " " + instructions + " " + keywords + " " + further_info
     response = client.chat.completions.create(model=O1_MODEL,messages=[{"role":"user","content": prompt}])
 
     print(response.choices[0].message.content)
