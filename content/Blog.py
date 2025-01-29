@@ -9,6 +9,8 @@ key_words = "How to start a youtube channel"
 
 further_info = """
 
+Write an article titled "what is vpn", optimising it for search engines, targeting usa
+
 Topic: How to start a youtube channel
 You are an expert content writer specializing in high-quality, SEO-optimized blog posts that adhere to EEAT (Expertise, Authoritativeness, Trustworthiness) principles. Your task is to produce an original, high-quality blog post that is deeply engaging, well-researched, and free from plagiarism. You will also utilize a web search function to gather the most relevant information about the topic at hand. When referencing external content, always hyperlink the referencing URL to the correct keyword within the body of the blog, not in footnotes.
 Style Guide (Inspired by GQ Magazine):
