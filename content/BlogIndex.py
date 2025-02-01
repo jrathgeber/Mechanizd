@@ -53,7 +53,7 @@ def add_blog(file_path_laptop_bp, article_number, slug, key_words, todaydate):
     f.close()
     copy.close()
 
-    copyfile('zappy\\blog.html"',
+    copyfile('C:\\Users\\jrath\\PycharmProjects\\Mechanizd\\content\\zappy\\blog.html',
              'D:\\gd23\\vcard\\blog.html')
 
 

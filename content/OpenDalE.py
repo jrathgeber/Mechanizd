@@ -24,7 +24,7 @@ def create_image(file_path_laptop, article_number, slug, key_words, todaydate):
     response = client.images.generate(
         model="dall-e-3",
         prompt=key_words,
-        size="1024x1024",
+        size="1792x1024",
         quality="standard",
         n=1,
     )

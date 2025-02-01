@@ -240,7 +240,7 @@ file_path_laptop = "D:\\gd23\\vcard\\blogpost\\Articles\\"
 file_path_laptop_bp = "D:\\gd23\\vcard\\blogpost\\"
 
 file_path_laptop_image = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\"
-file_path_laptop_thumb = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\"
+file_path_laptop_thumb = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\thumbs\\"
 
 Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
 Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
