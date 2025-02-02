@@ -31,24 +31,21 @@ def copywrite(copy, article_number, slug, key_words, todaydate):
     copy.write('    			       </figure>\n')
     copy.write('    			    </div>\n')
     copy.write('    			</div> \n')
+    copy.write('\n\n')
 
 
-def add_blog(file_path_laptop_bp, article_number, slug, key_words, todaydate):
+def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
 
     f = open(r"D:\\gd23\\vcard\\blog.html", "r")
-
-    #copy = open("D:\\gd23\\vcard\\blog.html", "w")
-
     copy = open("zappy\\blog.html", "w")
     
     for line in f:
 
         copy.write(line)
-        if '<div id="posts" class="row popup-container">' in line:
 
-            copywrite(copy, article_number, slug, key_words, todaydate)
-        
-    print(line)
+        if '<div id="posts" class="row popup-container">' in line:
+            copywrite(copy, article_number, slug, key_words, today_date)
+
 
     f.close()
     copy.close()
@@ -56,6 +53,31 @@ def add_blog(file_path_laptop_bp, article_number, slug, key_words, todaydate):
     copyfile('C:\\Users\\jrath\\PycharmProjects\\Mechanizd\\content\\zappy\\blog.html',
              'D:\\gd23\\vcard\\blog.html')
 
+    # Give it some time
+    time.sleep(3)
+
+
+def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
+    f = open(r"D:\\gd23\\vcard\\blog.html", "r")
+    copy = open("zappy\\blog.html", "w")
+
+    for line in f:
+
+        if '<!-- 029' in line:
+            for _ in range(24):
+                next(f)
+            copywrite(copy, article_number, slug, key_words, today_date)
+        else:
+            copy.write(line)
+
+        # if '<div id="posts" class="row popup-container">' in line:
+        #    copywrite(copy, article_number, slug, key_words, todaydate)
+
+    f.close()
+    copy.close()
+
+    copyfile('C:\\Users\\jrath\\PycharmProjects\\Mechanizd\\content\\zappy\\blog.html',
+             'D:\\gd23\\vcard\\blog.html')
 
     # Give it some time
     time.sleep(3)
