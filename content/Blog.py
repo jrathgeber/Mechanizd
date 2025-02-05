@@ -5,8 +5,8 @@ import BlogIndex as IndexPage
 import BlogImage as Image
 import BlogArticleStyle as ArticleStyle
 
-article_number = "033"
-key_words = "what is SSO"
+article_number = "030"
+key_words = "what is vpn"
 
 further_info = """
 
