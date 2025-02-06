@@ -5,8 +5,8 @@ import BlogIndex as IndexPage
 import BlogImage as Image
 import BlogArticleStyle as ArticleStyle
 
-article_number = "030"
-key_words = "what is vpn"
+article_number = "029"
+key_words = "how to start a cracking youtube channel"
 
 further_info = """
 
@@ -140,4 +140,4 @@ file_path_laptop_thumb = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\thumbs\
 #Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 02, 2025")
 #IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
 
-ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
+ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 05, 2025")
