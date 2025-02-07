@@ -3,13 +3,13 @@
 import requests
 import json
 import random
-from googletrans import Translator
+#from googletrans import Translator
 from requests.auth import HTTPBasicAuth
 import configparser
 
 # Get Reference to Properties
 config = configparser.ConfigParser()
-config.read('C:\etc\properties.ini')
+config.read('C:\\etc\\properties.ini')
 
 
 wp_user = config['wordpress']['user']
@@ -25,13 +25,13 @@ def post_creator(sourceURL, wpBaseURL, sourceLang, targetLang, postStatus):
     get_article_content = parse_json['body']
     image_list = ["1689", "1594", "1612"]
 
-    translator = Translator()
+    #translator = Translator()
 
-    title_translation = translator.translate(get_article_title, src=sourceLang, dest=targetLang)
-    title_translation_text = title_translation.text
+    #title_translation = translator.translate(get_article_title, src=sourceLang, dest=targetLang)
+    title_translation_text = "title_translation.text"
 
-    content_translation = translator.translate(get_article_content, src=sourceLang, dest=targetLang)
-    content_translation_text = content_translation.text
+    #content_translation = translator.translate(get_article_content, src=sourceLang, dest=targetLang)
+    content_translation_text = "content_translation.text"
 
     random_image_list = random.choice(image_list)
 
@@ -48,7 +48,7 @@ def post_creator(sourceURL, wpBaseURL, sourceLang, targetLang, postStatus):
         "status": postStatus,
         "title": title_translation_text,
         "content": content_translation_text,
-        "featured_media": random_image_list
+     #   "featured_media": random_image_list
     })
 
     response = requests.request(
@@ -63,4 +63,4 @@ def post_creator(sourceURL, wpBaseURL, sourceLang, targetLang, postStatus):
     print(random_image_list)
 
 
-post_creator("https://jsonplaceholder.typicode.com/posts/5", "http://trifindr.com", "la", "en", "publish")
+post_creator("https://jsonplaceholder.typicode.com/posts/5", "https://trifindr.com", "la", "en", "publish")
