@@ -1,39 +1,48 @@
-import requests
-import base64
-import json
+# https://www.freecodecamp.org/news/how-to-generate-wordpress-posts-automatically/
 
+import requests
+import json
+import random
+
+from requests.auth import HTTPBasicAuth
 import configparser
 
 # Get Reference to Properties
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
 
+wp_user = config['wordpress']['user']
+wp_pass = config['wordpress']['pass']
 
-username = config['wordpress']['user']
-password = config['wordpress']['pass']
+print("Wordpress data set...")
 
-creds = username + ':' + password
 
-print(creds)
+def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatus):
 
-cred_token = base64.b64encode(creds.encode())
+    title_translation_text = key_words
+    content_translation_text = source
 
-print(cred_token)
+    WP_url = wpBaseURL + "/wp-json/wp/v2/posts"
 
-header = {'Authorization': 'Basic ' + cred_token.decode('utf-8')}
+    auth = HTTPBasicAuth(wp_user, wp_pass)
 
-print(header)
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    }
 
-url = "https://trifindr.com/wp-json/wp/v2"
+    payload = json.dumps({
+        "status": postStatus,
+        "title": title_translation_text,
+        "content": content_translation_text,
+    })
 
-post = {
- 'title' : 'This is WordPress Python Integration',
+    response = requests.request(
+        "POST",
+        WP_url,
+        data=payload,
+        headers=headers,
+        auth=auth
+    )
 
- 'content' : 'Hello, this content is published using WordPress Python Integration',
- 'status' : 'publish',
- 'categories': 5,
- 'date' : '2025-02-5T11:00:00'
-}
-
-blog = requests.post(url + '/posts' , headers=header , json=post)
-print(blog)
+    print(response)
