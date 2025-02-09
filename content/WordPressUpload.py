@@ -26,6 +26,10 @@ def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatu
 
     auth = HTTPBasicAuth(wp_user, wp_pass)
 
+    image_list = ["1689", "1594", "1612"]
+
+    random_image_list = random.choice(image_list)
+
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json"
@@ -35,6 +39,8 @@ def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatu
         "status": postStatus,
         "title": title_translation_text,
         "content": content_translation_text,
+        "featured_media": random_image_list
+
     })
 
     response = requests.request(
@@ -46,3 +52,27 @@ def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatu
     )
 
     print(response)
+
+
+import requests
+import json
+
+
+def add_a_wordpress_image(img_name):
+    """ Takes an image name, posts to WP, returns image url. """
+
+    auth = HTTPBasicAuth(wp_user, wp_pass)
+    url = "https://trifindr.com/wp-json/wp/v2/media"
+
+    # Define the image
+    media = {
+        "file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
+        "caption": img_name,
+        "description": img_name
+    }
+
+    # Post the image to WP
+    image = requests.post(url, auth=auth, files=media)  # ! files=, not json= !
+
+    # Extract and return the image URL from returned data
+    return str(json.loads(image.content)["source_url"])

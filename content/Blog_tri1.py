@@ -135,6 +135,7 @@ slug = key_words.replace(" ", "_")
 #IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
 #ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 05, 2025")
 
-html_content_2 = ai.write_article(key_words, further_info)
+#html_content_2 = ai.write_article(key_words, further_info)
+#wp.post_creator(key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
 
-wp.post_creator(key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
+wp.add_a_wordpress_image("tri_upload")
