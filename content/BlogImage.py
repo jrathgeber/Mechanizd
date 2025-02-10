@@ -1,5 +1,6 @@
 import OpenDalE as ai
 import requests
+from shutil import copyfile
 
 # HTML content you want to save
 
@@ -20,5 +21,6 @@ def new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, sl
     file_name = file_path_laptop_image + article_number + '_' + slug + '.jpg'
     file_name_thumb = file_path_laptop_thumb  + article_number + '_' + slug + '.jpg'
 
+    ' Download to images and copy to thumbs'
     download_image(image_url, file_name)
-    download_image(image_url, file_name_thumb)
+#    copyfile(file_name, file_name_thumb)
