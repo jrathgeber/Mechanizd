@@ -14,3 +14,5 @@ def new_article(path, number, slug, key_words, further_info):
         file.write(html_content_2)
 
     print(f"HTML file saved as {file_path}")
+
+    return html_content_2

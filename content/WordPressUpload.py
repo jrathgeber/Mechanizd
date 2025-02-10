@@ -17,7 +17,7 @@ wp_pass = config['wordpress']['pass']
 print("Wordpress data set...")
 
 
-def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatus):
+def post_creator(img, key_words, source, wpBaseURL, sourceLang, targetLang, postStatus):
 
     title_translation_text = key_words
     content_translation_text = source
@@ -26,9 +26,6 @@ def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatu
 
     auth = HTTPBasicAuth(wp_user, wp_pass)
 
-    image_list = ["1689", "1594", "1612"]
-
-    random_image_list = random.choice(image_list)
 
     headers = {
         "Accept": "application/json",
@@ -39,7 +36,7 @@ def post_creator(key_words, source, wpBaseURL, sourceLang, targetLang, postStatu
         "status": postStatus,
         "title": title_translation_text,
         "content": content_translation_text,
-        "featured_media": random_image_list
+       # "featured_media": img
 
     })
 

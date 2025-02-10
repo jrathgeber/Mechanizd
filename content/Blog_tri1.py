@@ -4,12 +4,12 @@ import BlogPost as Post
 import BlogIndex as IndexPage
 import BlogImage as Image
 import BlogArticleStyle as ArticleStyle
-
 import OpenAi01 as ai
 import WordPressUpload as wp
 
-article_number = "001"
-key_words = "5 tips to reduce swim anxiety at your next race"
+
+article_number = "002"
+key_words = "The Best Energy Bars for Triathletes, Runners, and Cyclists"
 
 further_info = """
 
@@ -128,6 +128,7 @@ Use Active Voice: Write in an active voice to make sentences more direct and eng
 
 
 slug = key_words.replace(" ", "_")
+slug = slug.replace(",", "_")
 
 #Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
 #Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
@@ -135,7 +136,16 @@ slug = key_words.replace(" ", "_")
 #IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
 #ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 05, 2025")
 
-#html_content_2 = ai.write_article(key_words, further_info)
-#wp.post_creator(key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
+file_path_laptop_image = "zappy\\"
+file_path_laptop_thumb = "zappy\\thumbs\\"
+file_path_laptop = "zappy\\"
 
-wp.add_a_wordpress_image("tri_upload")
+
+Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 09, 2025")
+html_content_2 = Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
+
+#html_content_2 = ai.write_article(key_words, further_info)
+
+img = wp.add_a_wordpress_image(slug)
+wp.post_creator(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
+
