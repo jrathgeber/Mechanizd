@@ -55,15 +55,20 @@ import requests
 import json
 
 
-def add_a_wordpress_image(img_name):
+def add_a_wordpress_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words):
     """ Takes an image name, posts to WP, returns image url. """
 
     auth = HTTPBasicAuth(wp_user, wp_pass)
     url = "https://trifindr.com/wp-json/wp/v2/media"
 
+    file_name = file_path_laptop_image + article_number + '_' + slug + '.jpg'
+
+    img_name = slug
+
     # Define the image
     media = {
-        "file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
+        #"file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
+        "file": open(file_name, "rb"),
         "caption": img_name,
         "description": img_name
     }

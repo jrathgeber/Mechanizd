@@ -141,11 +141,11 @@ file_path_laptop_thumb = "zappy\\thumbs\\"
 file_path_laptop = "zappy\\"
 
 
-Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 09, 2025")
-html_content_2 = Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
+#Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 09, 2025")
+#html_content_2 = Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
 
 #html_content_2 = ai.write_article(key_words, further_info)
 
-img = wp.add_a_wordpress_image(slug)
-wp.post_creator(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
+img = wp.add_a_wordpress_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words)
+#wp.post_creator(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
 
