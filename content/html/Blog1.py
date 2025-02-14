@@ -1,118 +1,13 @@
+from content.html import BlogArticle as Article, BlogPost as Post, BlogIndex as IndexPage, BlogImage as Image
 
-import BlogArticle as Article
-import BlogPost as Post
-import BlogIndex as IndexPage
-import BlogImage as Image
-
-article_number = "030"
-key_words = "What is VPN"
+article_number = "029"
+key_words = "How to start a cracking youtube channel"
 
 further_info = """
 
-write an article titled "what is vpn", optimizing it for search engines, targeting Canada, target word count 3000, and include these words with the following frequency:
-virtual private network: 1-4x
-server: 8-27x
-vpn provider: 2-10x
-vpn service: 2-6x
-vpn connection: 1-7x
-vpn server: 1-7x
-use a vpn: 1-7x
-ip address: 4-9x
-connect to a vpn: 1x
-vpn app: 1-4x
-type of vpn: 1-2x
-vpn work: 1x
-internet service provider: 1-2x
-site-to-site vpn: 1-3x
-internet connection: 1-3x
-private data: 1x
-secure connection: 1-2x
-remote server: 1-3x
-kill switch: 1-2x
-secure vpn: 1x
-service providers: 1x
-vpn stands: 1x
-encrypted connection: 1-2x
-Extended:
-free vpn: 1x
-best vpn: 1x
-remote access vpn: 1-3x
-need a vpn: 1x
-proton vpn: 1x
-vpn protocol: 1-2x
-vpn client: 1x
-mobile vpn: 1x
-ip address of the vpn: 1x
-address of the vpn server: 1x
-vpn encrypts: 1x
-vpn hides: 1x
-connect to the vpn: 1x
-connect to a vpn server: 1x
-premium vpn: 1x
-get a vpn: 1x
-public wi-fi network: 1x
-encrypted tunnel: 1x
-look for in a vpn: 1x
-vpn may: 1x
-choose a vpn: 1x
-vpn also: 1x
-computer and the vpn: 1x
-vpn hides your ip address: 1x
-feature of any vpn: 1x
-want a vpn: 1x
-benefits of using a vpn: 1x
-intranet site-to-site vpn: 1x
-extranet site-to-site vpn: 1x
-vpn solution: 1x
-connect to a virtual private: 1x
-vpn should also: 1x
-vpn can help: 1x
-access to the network: 1x
-use a vpn service: 1x
-vpn tunnel: 1x
-site-to-site vpn links several sites: 1x
-vpn also masks your ip: 1x
-connection to a remote vpn: 1x
-vpn must: 1x
-well worth the cost: 1x
-might use a vpn: 1x
-vpn feature: 1x
-vpn options: 1x
-local network: 1x
-resources over a private connection: 1x
-stay private: 1x
-good vpn provider: 1x
-kind of vpn: 1x
-one of the most widely: 1x
-top vpn: 1x
-using vpn: 1x
-using the vpn: 1x
-implement the vpn: 1x
-vpn provides: 1x
-vpn could: 1x
-find the right vpn: 1x
-side of the vpn: 1x
-many vpn: 1x
-vpn makes: 1x
-vpn disguises: 1x
-vpn is necessary: 1x
-vpn connection disrupts: 1x
-vpn provider must: 1x
-free vpn providers: 1x
-expensive vpn: 1x
-vpn providers offer: 1x
-trusted vpn: 1x
-vpn companies: 1x
-paid vpn service: 1x
-vpn shields: 1x
-remote-access vpn: 1x
-vpn allows: 1x
-vpn access: 1x
-open-source vpn: 1x
-use a vpn connection: 1x
-vpn provider's: 1x
+Write a blog article titled "How to start a youtube channel", optimising it for search engines, targeting usa
 
-Topic:
+Topic: How to start a youtube channel
 You are an expert content writer specializing in high-quality, SEO-optimized blog posts that adhere to EEAT (Expertise, Authoritativeness, Trustworthiness) principles. Your task is to produce an original, high-quality blog post that is deeply engaging, well-researched, and free from plagiarism. You will also utilize a web search function to gather the most relevant information about the topic at hand. When referencing external content, always hyperlink the referencing URL to the correct keyword within the body of the blog, not in footnotes.
 Style Guide (Inspired by GQ Magazine):
 Write in a sophisticated, stylish tone that balances confidence with accessibility. The style should exude authority while remaining conversational and relatable, much like a well-spoken insider. Use dynamic storytelling, vivid imagery, and clever turns of phrase to captivate the reader, incorporating wit and sharp observations where appropriate. Keep the content aspirational yet grounded, ensuring the reader feels informed and empowered.
@@ -125,7 +20,7 @@ Naturally integrate primary and secondary keywords into headings, meta descripti
 Include internal and external links by hyperlinking relevant keywords within the text. All backlinks must be hyperlinked directly in the body of the blog, not in footnotes or a separate references section.
 Link relevant keywords directly in the text .
 Ensure hyperlinks are natural and maintain the flow of the article.
-This is an example of how you should hyperlink a link "DeepSeek’s official website "
+This is an example of how you should hyperlink a link "[DeepSeek’s official website](https://chat.deepseek.com)"
 Do not place the sources at the end of the blog. YOU MUST HYPERLINK TO THE CONTEXTUAL WORD THROUGH OUT THE BLOG
 Add strategic Calls-to-Action (CTAs) to engage readers.
 Ensure all information is well-researched and backed by credible sources to establish trust.
@@ -140,10 +35,9 @@ Ensure proper formatting with SEO-optimized headings. The content should follow 
 Tone of Voice:
 Maintain a confident, engaging tone, balancing style, originality, and practical value to rank competitively while effectively engaging readers. Hyperlink all relevant backlinks within the body of the blog post to seamlessly integrate references.
 ##Additional Instructions##
-
-Ensure to avoide all words and phrases provided in the attached file named 'NEGATIVE KEYWORDS LIST TO AVOID'
-First do reasearch on the subject
-Then write the blog post as instructed above
+- Ensure to avoide all words and phrases provided in the attached file named 'NEGATIVE KEYWORDS LIST TO AVOID'
+- First do reasearch on the subject
+- Then write the blog post as instructed above
 ##Keywords and Phrases to Avoid##
 Complex Words
 Delve
@@ -217,8 +111,7 @@ dive into
 Multifaceted
 Revolutionary
 Testament
-
-These words and phrases tend to create a formal tone that can be perceived as artificial or overly complex, making the content less relatable.
+## These words and phrases tend to create a formal tone that can be perceived as artificial or overly complex, making the content less relatable.
 ##Strategies for More Human-Like Writing##
 Use Simple Synonyms: Replace complex words with simpler alternatives. For instance, use "complex" instead of "multifaceted."
 Vary Sentence Length: Mix short and long sentences to create a more natural flow.
@@ -226,24 +119,22 @@ Add Personal Touches: Incorporate anecdotes or casual language to make the writi
 Avoid Repetition: Be mindful of overusing certain terms or phrases, as this can signal AI authorship.
 Use Active Voice: Write in an active voice to make sentences more direct and engaging.
 
-
-
 """
 
 
 slug = key_words.replace(" ", "_")
 
-file_path_dev = "zappy\\"
+file_path_dev = "../zappy\\"
 file_path_prod = "C:\\dev\\godaddy\\vcard\\blogpost\\Articles\\"
 
 file_path_laptop = "D:\\gd23\\vcard\\blogpost\\Articles\\"
 file_path_laptop_bp = "D:\\gd23\\vcard\\blogpost\\"
 
 file_path_laptop_image = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\"
-file_path_laptop_thumb = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\thumbs\\"
+file_path_laptop_thumb = "D:\\gd23\\vcard\\assets\\custom\\images\\blog\\"
 
-#Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
-#Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
+Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
+Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
 Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Jan22")
-#IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Jan22")
+IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 01, 2025")
 
