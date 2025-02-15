@@ -129,9 +129,9 @@ slug = slug.replace(",", "_")
 #IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
 #ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 05, 2025")
 
-file_path_laptop_image = "../zappy\\"
+file_path_laptop_image = "../temp\\"
 file_path_laptop_thumb = "zappy\\thumbs\\"
-file_path_laptop = "../zappy\\"
+file_path_laptop = "../temp\\"
 
 
 #Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 09, 2025")

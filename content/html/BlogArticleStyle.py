@@ -31,8 +31,8 @@ def replace_stype(file_path_laptop_bp, article_number, slug, key_words, today_da
     f.close()
     copy.close()
 
-    copyfile('C:\\Users\\jrath\\PycharmProjects\\Mechanizd\\content\\zappy\\article.html',
-             'D:\\gd23\\vcard\\blogpost\\articles\\article_'+ article_number + '_' + slug + '.html')
+    copyfile('/content/temp\\article.html',
+             'D:\\gd23\\vcard\\blogpost\\articles\\article_' + article_number + '_' + slug + '.html')
 
     # Give it some time
     time.sleep(3)

@@ -9,11 +9,11 @@ import content.prompts.Jacky1 as j1
 article_number = "029"
 key_words = "how to start a cracking youtube channel"
 
-further_info = j1.get_prompt()
+further_info = j1.get_prompt(key_words)
 
 slug = key_words.replace(" ", "_")
 
-file_path_dev = "../zappy\\"
+file_path_dev = "../temp\\"
 file_path_prod = "C:\\dev\\godaddy\\vcard\\blogpost\\Articles\\"
 
 file_path_laptop = "D:\\gd23\\vcard\\blogpost\\Articles\\"
