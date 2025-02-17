@@ -37,7 +37,7 @@ def copywrite(copy, article_number, slug, key_words, todaydate):
 def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
 
     f = open(r"D:\\gd23\\vcard\\blog.html", "r")
-    copy = open("zappy\\blog.html", "w")
+    copy = open("blog.html", "w")
     
     for line in f:
 
@@ -50,7 +50,7 @@ def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
     f.close()
     copy.close()
 
-    copyfile('/content/temp\\blog.html',
+    copyfile('blog.html',
              'D:\\gd23\\vcard\\blog.html')
 
     # Give it some time

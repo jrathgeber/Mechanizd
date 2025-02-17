@@ -1,4 +1,4 @@
-import OpenAi01 as ai
+import content.ai.OpenAi01 as ai
 
 # HTML content you want to save
 

@@ -1,4 +1,4 @@
-import OpenDalE as ai
+import content.ai.OpenDalE as ai
 import requests
 from shutil import copyfile
 
@@ -23,4 +23,4 @@ def new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, sl
 
     ' Download to images and copy to thumbs'
     download_image(image_url, file_name)
-#    copyfile(file_name, file_name_thumb)
+    copyfile(file_name, file_name_thumb)

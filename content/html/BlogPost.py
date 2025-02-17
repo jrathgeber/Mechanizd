@@ -1,7 +1,5 @@
 
 
-# HTML content you want to save
-
 def new_post(path, number, slug, key_words):
 
     html_content = """

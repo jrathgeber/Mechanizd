@@ -63,7 +63,7 @@ Most recently I have been submitting entries to the numer.ai machine learning co
 * [RightEdgeIBFull](/rightedge/RightEdgeIBFull.py)
 
 ## Twitter
-* [listen](/twitter/tweet.py)
+* [listen](/content/twitter/tweet.py)
 
 ## Zorro
 * [BackTestC](/zorro/BackTestC.py)
