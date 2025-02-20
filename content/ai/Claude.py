@@ -2,10 +2,16 @@ import os
 import anthropic
 import argparse
 from datetime import datetime
+import configparser
 
-def generate_article(topic, length="medium"):
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
+
+api_key=config['claude']['api_key']
+
+def generate_article(topic, length="short"):
     # Initialize the Anthropic client
-    client = anthropic.Client(api_key=os.environ["ANTHROPIC_API_KEY"])
+    client = anthropic.Client(api_key=api_key)
 
     # Define length parameters
     length_params = {
@@ -62,8 +68,8 @@ def main():
 
     try:
         # Check for API key
-        if "ANTHROPIC_API_KEY" not in os.environ:
-            raise ValueError("Please set the ANTHROPIC_API_KEY environment variable")
+        # if "ANTHROPIC_API_KEY" not in os.environ:
+        #    raise ValueError("Please set the ANTHROPIC_API_KEY environment variable")
 
         # Generate article
         article = generate_article(args.topic, args.length)
