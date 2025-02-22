@@ -1,8 +1,5 @@
 import requests
-import json
 from typing import Dict, List, Optional
-from datetime import datetime
-
 import configparser
 
 config = configparser.ConfigParser()
@@ -10,9 +7,18 @@ config.read('C:\\etc\\properties.ini')
 
 token=config['notion']['token']
 
-
 class NotionListExtractor:
+
+
+    def get_suff(self) -> Dict:
+
+        return self.d
+
     def __init__(self, token: str):
+
+        # Make empty list
+        self.d = {}
+
         self.token = token
         self.headers = {
             "Authorization": f"Bearer {token}",
@@ -90,6 +96,7 @@ class NotionListExtractor:
         blocks = self.get_page_blocks(page_id)
 
         current_list_number = 0
+        current_child_number = 0
 
         for block in blocks:
             if block["type"] == "numbered_list_item":
@@ -97,13 +104,22 @@ class NotionListExtractor:
                 content = self.extract_block_content(block)
                 print(f"{current_list_number}. {content}")
 
+                media = content
+
                 # Process children if they exist
                 if block.get("has_children"):
                     try:
                         children = self.get_block_children(block["id"])
                         for child in children:
                             child_content = self.format_block_content(child, indent_level=2)
+
                             print(child_content)
+
+                            current_child_number += 1
+
+                            post = child_content
+
+                            self.d[media+"_"+str(current_child_number)] = post
 
                             # Handle nested children
                             if child.get("has_children"):
@@ -118,10 +134,10 @@ class NotionListExtractor:
                 current_list_number = 0
 
 
-def main():
+def main(PAGE_ID) -> Dict:
 
     NOTION_TOKEN = token
-    PAGE_ID = "1a1e46d2882f807f9ec5ff4514a2e0c1"
+
 
     extractor = NotionListExtractor(NOTION_TOKEN)
 
@@ -129,9 +145,16 @@ def main():
         print("Processing numbered lists and their children...")
         print("--------------------------------------------")
         extractor.process_numbered_lists(PAGE_ID)
+
     except Exception as e:
         print(f"Error: {e}")
 
+    print("--------------------------------------------\n")
+
+    return extractor.get_suff()
+
 
 if __name__ == "__main__":
-    main()
+    PAGE_ID = "1a1e46d2882f807f9ec5ff4514a2e0c1"
+    test = main(PAGE_ID)
+    print(test)
