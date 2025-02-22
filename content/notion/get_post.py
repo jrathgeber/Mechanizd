@@ -3,6 +3,13 @@ import json
 from typing import Dict, List, Optional
 from datetime import datetime
 
+import configparser
+
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
+
+token=config['notion']['token']
+
 
 class NotionListExtractor:
     def __init__(self, token: str):
@@ -113,7 +120,7 @@ class NotionListExtractor:
 
 def main():
 
-    NOTION_TOKEN = "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"
+    NOTION_TOKEN = token
     PAGE_ID = "1a1e46d2882f807f9ec5ff4514a2e0c1"
 
     extractor = NotionListExtractor(NOTION_TOKEN)
