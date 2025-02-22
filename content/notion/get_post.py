@@ -1,12 +1,11 @@
-import os
-import json
 import requests
-import argparse
+import json
+from typing import Dict, List, Optional
 from datetime import datetime
 
 
-class NotionPageDownloader:
-    def __init__(self, token):
+class NotionListExtractor:
+    def __init__(self, token: str):
         self.token = token
         self.headers = {
             "Authorization": f"Bearer {token}",
@@ -15,109 +14,116 @@ class NotionPageDownloader:
         }
         self.base_url = "https://api.notion.com/v1"
 
-    def get_page_content(self, page_id):
-        """Retrieve the content of a Notion page."""
-        blocks_url = f"{self.base_url}/blocks/{page_id}/children"
+    def get_page_blocks(self, page_id: str) -> List[Dict]:
+        """Fetch all blocks from a Notion page."""
+        url = f"{self.base_url}/blocks/{page_id}/children"
+        blocks = []
 
-        response = requests.get(blocks_url, headers=self.headers)
-        if response.status_code != 200:
-            raise Exception(f"Failed to get page content: {response.text}")
+        while True:
+            response = requests.get(url, headers=self.headers)
+            response.raise_for_status()
+            data = response.json()
 
-        return response.json()
+            blocks.extend(data["results"])
 
-    def get_page_title(self, page_id):
-        """Retrieve the title of a Notion page."""
-        page_url = f"{self.base_url}/pages/{page_id}"
+            if not data.get("has_more"):
+                break
 
-        response = requests.get(page_url, headers=self.headers)
-        if response.status_code != 200:
-            raise Exception(f"Failed to get page title: {response.text}")
+            url = f"{self.base_url}/blocks/{page_id}/children?start_cursor={data['next_cursor']}"
 
-        return response.json()
+        return blocks
 
-    def format_block_content(self, block):
-        """Format the content of a block based on its type."""
-        block_type = block['type']
+    def get_block_children(self, block_id: str) -> List[Dict]:
+        """Fetch children of a specific block."""
+        url = f"{self.base_url}/blocks/{block_id}/children"
+        response = requests.get(url, headers=self.headers)
+        response.raise_for_status()
+        return response.json()["results"]
 
-        if block_type not in block:
-            return ""
+    def extract_block_content(self, block: Dict) -> str:
+        """Extract content from various block types."""
+        block_type = block["type"]
 
-        content = block[block_type]
+        # Get the content object for this block type
+        content = block.get(block_type, {})
 
-        if block_type == "paragraph":
-            return self._get_rich_text(content.get('rich_text', []))
-        elif block_type == "heading_1":
-            return f"\n# {self._get_rich_text(content.get('rich_text', []))}\n"
-        elif block_type == "heading_2":
-            return f"\n## {self._get_rich_text(content.get('rich_text', []))}\n"
-        elif block_type == "heading_3":
-            return f"\n### {self._get_rich_text(content.get('rich_text', []))}\n"
-        elif block_type == "bulleted_list_item":
-            return f"• {self._get_rich_text(content.get('rich_text', []))}\n"
-        elif block_type == "numbered_list_item":
-            return f"1. {self._get_rich_text(content.get('rich_text', []))}\n"
+        if "rich_text" in content:
+            return " ".join(
+                text_item["plain_text"]
+                for text_item in content["rich_text"]
+            )
         elif block_type == "to_do":
-            checkbox = "☒" if content.get('checked', False) else "☐"
-            return f"{checkbox} {self._get_rich_text(content.get('rich_text', []))}\n"
+            checked = "☒" if content.get("checked", False) else "☐"
+            return f"{checked} {self.extract_block_content({'type': 'text', 'text': content.get('rich_text', [])})}"
         elif block_type == "code":
-            return f"\n```{content.get('language', '')}\n{self._get_rich_text(content.get('rich_text', []))}\n```\n"
-        elif block_type == "quote":
-            return f"> {self._get_rich_text(content.get('rich_text', []))}\n"
-        elif block_type == "divider":
-            return "\n---\n"
+            return f"Code ({content.get('language', 'text')}): {self.extract_block_content({'type': 'text', 'text': content.get('rich_text', [])})}"
+        elif block_type == "equation":
+            return f"Equation: {content.get('expression', '')}"
+        elif block_type == "image":
+            caption = content.get("caption", [])
+            caption_text = " ".join(item["plain_text"] for item in caption) if caption else "No caption"
+            return f"Image: {caption_text}"
         else:
-            return f"[Unsupported block type: {block_type}]\n"
+            return f"[{block_type} block]"
 
-    def _get_rich_text(self, rich_text):
-        """Extract text from rich_text array."""
-        return "".join(text.get('plain_text', '') for text in rich_text)
+    def format_block_content(self, block: Dict, indent_level: int = 0) -> str:
+        """Format block content with proper indentation and structure."""
+        indent = "  " * indent_level
+        content = self.extract_block_content(block)
+
+        if block["type"] == "numbered_list_item":
+            return f"{indent}{content}"
+        elif block["type"] == "bulleted_list_item":
+            return f"{indent}• {content}"
+        else:
+            return f"{indent}{content}"
+
+    def process_numbered_lists(self, page_id: str):
+        """Process all numbered lists in a page and their children."""
+        blocks = self.get_page_blocks(page_id)
+
+        current_list_number = 0
+
+        for block in blocks:
+            if block["type"] == "numbered_list_item":
+                current_list_number += 1
+                content = self.extract_block_content(block)
+                print(f"{current_list_number}. {content}")
+
+                # Process children if they exist
+                if block.get("has_children"):
+                    try:
+                        children = self.get_block_children(block["id"])
+                        for child in children:
+                            child_content = self.format_block_content(child, indent_level=2)
+                            print(child_content)
+
+                            # Handle nested children
+                            if child.get("has_children"):
+                                nested_children = self.get_block_children(child["id"])
+                                for nested_child in nested_children:
+                                    nested_content = self.format_block_content(nested_child, indent_level=3)
+                                    print(nested_content)
+
+                    except Exception as e:
+                        print(f"Error fetching children for block {block['id']}: {e}")
+            else:
+                current_list_number = 0
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Download and display Notion page content")
-    parser.add_argument("page_id", help="Notion page ID")
-    parser.add_argument("--save", action="store_true", help="Save content to a file")
-    parser.add_argument("--format", choices=["text", "markdown"], default="markdown",
-                        help="Output format (default: markdown)")
 
-    args = parser.parse_args()
+    NOTION_TOKEN = "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"
+    PAGE_ID = "1a1e46d2882f807f9ec5ff4514a2e0c1"
+
+    extractor = NotionListExtractor(NOTION_TOKEN)
 
     try:
-        # Check for token
-        token = os.environ.get("NOTION_TOKEN")
-        if not token:
-            raise ValueError("Please set the NOTION_TOKEN environment variable")
-
-        # Initialize downloader
-        downloader = NotionPageDownloader(token)
-
-        # Get page title and content
-        page_info = downloader.get_page_title(args.page_id)
-        page_content = downloader.get_page_content(args.page_id)
-
-        # Format content
-        formatted_content = []
-        for block in page_content['results']:
-            formatted_block = downloader.format_block_content(block)
-            if formatted_block:
-                formatted_content.append(formatted_block)
-
-        content = "\n".join(formatted_content)
-
-        # Save content if requested
-        if args.save:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"notion_page_{timestamp}.{args.format}"
-            with open(filename, "w", encoding="utf-8") as f:
-                f.write(content)
-            print(f"\nContent saved to: {filename}")
-
-        # Print content
-        print("\nPage Content:\n")
-        print(content)
-
+        print("Processing numbered lists and their children...")
+        print("--------------------------------------------")
+        extractor.process_numbered_lists(PAGE_ID)
     except Exception as e:
-        print(f"Error: {str(e)}")
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
