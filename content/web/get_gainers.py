@@ -4,6 +4,7 @@ import pandas as pd
 
 
 def get_stock_gainers():
+
     # URL for TradingView pre-market gainers
     url = "https://www.tradingview.com/markets/stocks-usa/market-movers-pre-market-gainers/"
 
