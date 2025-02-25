@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-
-import os
 import time
-import content.email.sendMail as sm
-import threading
 import configparser
-import content.twitter.tweet
+import content.email.sendMail as sm
+import content.twitter.tweet as tw
+import content.web.get_gainers as tv
 
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
@@ -21,11 +18,8 @@ server = config['yahoo']['yahoo.server']
 port = config['yahoo']['yahoo.port']
 username = config['yahoo']['yahoo.username']
 
-#os.chdir('C:\\dep\\Mechanizd\\maxalpha\\')
-
 daterun = time.strftime("%Y%m%d")
-
-#print(daterun)
+print(daterun)
 
 closeup = '/E'
 get_prices = '/U'
@@ -33,16 +27,21 @@ get_prices = '/U'
 #mode = '/L'
 mode = ''
 
-#maxdata=["The", "earth", "revolves", "around", "sun"]
-maxdata='hello'
-
-
+# dummy list
 tickerList = ['AXSM', 'VIPS']
-#tickerList = MA.parseWebSite(daterun);
 print(tickerList)
 
-#allpriceslist = IEX.getAllPrices()
-#print(allpriceslist)
+# all gainers
+allpriceslist = tv.get_stock_gainers()
+
+# top 5
+n = 5
+gainers = allpriceslist.get("Ticker")
+tickerList = gainers[:n]
+
+print ("In here")
+for _, row in allpriceslist.iterrows():
+    print(f"{row['Ticker']} ({row['Company']}): {row['Gain']}")
 
 if tickerList[0]=='error':
     sm.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Max List Eorror ' + ''.join(tickerList), ''.join(tickerList), [], server, port, username, password)
@@ -53,6 +52,4 @@ else:
     #sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + '',[], server, port, username, password)
     #Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + '')
 
-    print("we r good")
-
-#    
+    print("We sent and tweeted all we could")

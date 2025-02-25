@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 
-def get_stock_gainers():
+def get_stock_gainers() -> pd.DataFrame:
+
+    df = pd.DataFrame()
 
     # URL for TradingView pre-market gainers
     url = "https://www.tradingview.com/markets/stocks-usa/market-movers-pre-market-gainers/"
@@ -52,10 +54,11 @@ def get_stock_gainers():
 
             # Convert to pandas DataFrame for nice display
             df = pd.DataFrame(stocks)
-            print("\nTop Stock Gainers:")
-            print("==================")
-            for _, row in df.iterrows():
-                print(f"{row['Ticker']} ({row['Company']}): {row['Gain']}")
+
+            #print("\nTop Stock Gainers:")
+            #print("==================")
+            #for _, row in df.iterrows():
+            #    print(f"{row['Ticker']} ({row['Company']}): {row['Gain']}")
 
         else:
             print("Could not find the stock table in the page")
@@ -65,6 +68,8 @@ def get_stock_gainers():
     except Exception as e:
         print(f"Error processing data: {e}")
 
+    return df
 
 if __name__ == "__main__":
-    get_stock_gainers()
+
+    df = get_stock_gainers()
