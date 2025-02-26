@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="add blog or replace">
+    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="pre market. by claude">
+      <change afterPath="$PROJECT_DIR$/content/web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/yahoo/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/Blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Blog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/BlogImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/BlogImage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/Batch_930am.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_930am.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/email/sendMail.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/yahoo/sendMail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,46 +51,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jrath/PycharmProjects/Mechanizd/content",
+    "last_opened_file_path": "C:/dep/Mechanizd/content/web",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dep\Mechanizd\content\web" />
+      <recent name="C:\dep\Mechanizd\content" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\langchaindemo" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai\stuff" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dep\Mechanizd\content\email" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Blog">
-    <configuration name="1_chat_model_basic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Batch_930am">
+    <configuration name="Batch_930am" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ai/langchaindemo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ai/langchaindemo/1_chat_model_basic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Blog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -99,7 +81,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Blog.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Batch_930am.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,9 +90,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Blog2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="batch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -121,7 +102,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Blog2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/batch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,20 +111,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="get_gainers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ai/langchaindemo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/web" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ai/langchaindemo/demo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/web/get_gainers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,20 +132,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="intro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="get_html (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ai/openai" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/notion" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ai/openai/intro.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/notion/get_html.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,13 +153,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="get_post" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/notion" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/notion/get_post.py" />
+      <option name="PARAMETERS" value="1a1e46d2882f80418977d0dc779f370a" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Batch_930am" />
+      <item itemvalue="Python.batch" />
+      <item itemvalue="Python.get_gainers" />
+      <item itemvalue="Python.get_html (1)" />
+      <item itemvalue="Python.get_post" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Blog" />
-        <item itemvalue="Python.Blog2" />
-        <item itemvalue="Python.1_chat_model_basic" />
-        <item itemvalue="Python.demo" />
-        <item itemvalue="Python.intro" />
+        <item itemvalue="Python.Batch_930am" />
+        <item itemvalue="Python.get_gainers" />
+        <item itemvalue="Python.get_html (1)" />
+        <item itemvalue="Python.batch" />
+        <item itemvalue="Python.get_post" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1738519169386</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="pre market. by claude">
+      <created>1740334431126</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740334431126</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,6 +335,7 @@
     <MESSAGE value="new prompt" />
     <MESSAGE value="new prompt version 2" />
     <MESSAGE value="add blog or replace" />
-    <option name="LAST_COMMIT_MESSAGE" value="add blog or replace" />
+    <MESSAGE value="pre market. by claude" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre market. by claude" />
   </component>
 </project>

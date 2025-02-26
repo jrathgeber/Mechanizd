@@ -1,8 +1,8 @@
 import time
 import configparser
-import content.email.sendMail as sm
-import content.twitter.tweet as tw
-import content.web.get_gainers as tv
+import yahoo.sendMail as sm
+import twitter.tweet as tw
+import web.get_gainers as tv
 
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
