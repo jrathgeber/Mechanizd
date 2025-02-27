@@ -21,11 +21,6 @@ username = config['yahoo']['yahoo.username']
 daterun = time.strftime("%Y%m%d")
 print(daterun)
 
-closeup = '/E'
-get_prices = '/U'
-#get_prices = ''
-#mode = '/L'
-mode = ''
 
 # dummy list
 tickerList = ['AXSM', 'VIPS']
@@ -50,6 +45,7 @@ else:
     sm.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com',[], server, port, username, password)
     #Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + ' \n \n Brought to you by https://www.mechanizd.com')
     #sendMail.send_mail(user, user, 'Max ' + ','.join(tickerList), ', $'.join(tickerList) + '',[], server, port, username, password)
-    #Tweet.tweetSomething('Equity day trade algo focus list $' + ', $'.join(tickerList) + '')
+
+    tw.tweetSomething('Equity pre market gainers $' + ', $'.join(tickerList) + '')
 
     print("We sent and tweeted all we could")

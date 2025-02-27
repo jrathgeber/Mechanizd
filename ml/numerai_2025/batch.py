@@ -2,7 +2,7 @@
 
 """
 Created on Sunday January 12th 2024
-Further Tweaked on January 14th 2025
+Further Tweaked on February 26th 2025
 @author: Jason Rathgeber
 """
 
@@ -99,7 +99,7 @@ def run_numerai_batch():
         directory = 'F:/Numerai/numerai' + contest + '/'
         dataset_name = "v5.0"
 
-        #napi.upload_predictions(f"{directory + dataset_name}/live_predictions_{current_round}.csv", model_id=model_id)
+        napi.upload_predictions(f"{directory + dataset_name}/live_predictions_{current_round}.csv", model_id=model_id)
 
     print("All Done")
   
