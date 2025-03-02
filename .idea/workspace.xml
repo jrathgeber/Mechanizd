@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="pre market. by claude">
-      <change afterPath="$PROJECT_DIR$/content/web/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/yahoo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/ai/Perplexity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/ai/Xai.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/Batch_930am.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_930am.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/email/sendMail.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/yahoo/sendMail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ai/Grok2.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/ai/Gemini.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ai/OpenDalE.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/ai/Dalle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,34 +42,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1_chat_model_basic.executor": "Run",
-    "Python.Blog.executor": "Run",
-    "Python.Blog2.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/dep/Mechanizd/content/web",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1_chat_model_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Blog.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Blog2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dep/Mechanizd&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\dep\Mechanizd\content\web" />
+      <recent name="C:\dep\Mechanizd" />
       <recent name="C:\dep\Mechanizd\content" />
+      <recent name="C:\dep\Mechanizd\content\web" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\langchaindemo" />
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai\stuff" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dep\Mechanizd\content" />
       <recent name="C:\dep\Mechanizd\content\email" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Batch_930am">
-    <configuration name="Batch_930am" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Xai">
+    <configuration name="Batch_Sat_Solo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,7 +82,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Batch_930am.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Batch_Sat_Solo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -90,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="batch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Gemini" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,11 +99,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ai" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/batch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ai/Gemini.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_gainers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Perplexity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,11 +120,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/web" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ai" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/web/get_gainers.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ai/Perplexity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_html (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Xai" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,11 +141,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/notion" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ai" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/notion/get_html.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ai/Xai.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +154,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_post" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="upload_video" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -161,12 +162,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/notion" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/youtub" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/notion/get_post.py" />
-      <option name="PARAMETERS" value="1a1e46d2882f80418977d0dc779f370a" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/youtub/upload_video.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -175,19 +176,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Batch_930am" />
-      <item itemvalue="Python.batch" />
-      <item itemvalue="Python.get_gainers" />
-      <item itemvalue="Python.get_html (1)" />
-      <item itemvalue="Python.get_post" />
+      <item itemvalue="Python.Gemini" />
+      <item itemvalue="Python.Perplexity" />
+      <item itemvalue="Python.Xai" />
+      <item itemvalue="Python.Batch_Sat_Solo" />
+      <item itemvalue="Python.upload_video" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Batch_930am" />
-        <item itemvalue="Python.get_gainers" />
-        <item itemvalue="Python.get_html (1)" />
-        <item itemvalue="Python.batch" />
-        <item itemvalue="Python.get_post" />
+        <item itemvalue="Python.Xai" />
+        <item itemvalue="Python.Perplexity" />
+        <item itemvalue="Python.Gemini" />
+        <item itemvalue="Python.upload_video" />
+        <item itemvalue="Python.Batch_Sat_Solo" />
       </list>
     </recent_temporary>
   </component>
