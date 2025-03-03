@@ -2,10 +2,15 @@
 
 import requests
 import json
+import configparser
+
+# Get Reference to Properties
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
 
 # Replace with your actual Medium integration token and user ID
-MEDIUM_TOKEN = 'your_medium_integration_token'
-USER_ID = 'your_user_id'
+MEDIUM_TOKEN = config['medium']['access']
+USER_ID = '@jasonrathgeber'
 
 headers = {
     'Authorization': f'Bearer {MEDIUM_TOKEN}',
@@ -19,7 +24,7 @@ url = f'https://api.medium.com/v1/users/{USER_ID}/posts'
 
 # Article content and metadata
 data = {
-    "title": "Your Article Title",
+    "title": "The Oscars",
     "contentFormat": "markdown",  # Choose 'html', 'markdown', or 'plain'
     "content": "# Hello World!\nThis is my first article using the Medium API.",
     "tags": ["python", "api", "medium"],

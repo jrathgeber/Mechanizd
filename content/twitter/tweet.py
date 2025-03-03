@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
 # https://www.geeksforgeeks.org/tweet-using-python/
 
 import tweepy 
 import configparser
 config = configparser.ConfigParser()
-config.read('C:\etc\properties.ini') 
+config.read('C:\\etc\\properties.ini')
 
 def tweetSomething(something):
 
