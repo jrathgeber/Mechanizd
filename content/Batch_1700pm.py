@@ -1,13 +1,12 @@
 
-import medium.create_article
+import mediun.create_article
 import notion.get_post as notn
 import notion.search as notnsearch
 import twitter.tweet
+
 from datetime import date
 
-
 # Get todays Date
-# formatted_date = "20250301"
 today = date.today()
 formatted_date = today.strftime("%Y%m%d")
 print("Processing " + formatted_date)
@@ -23,9 +22,10 @@ for key, value in daily_dict.items():
     print(f"{key}: {value}")
 
     if str(key).startswith("Twitter") and str(value) != "":
-        twitter.tweet.tweetSomething(value)
+        #twitter.tweet.tweetSomething(value)
+        print("Tweeting ::: " + value)
 
     if str(key).startswith("Medium") and str(value) != "":
-        medium.create_article(value)
+        mediun.create_article.do_it(value)
 
 keyword = "how to get a post from notion via python api"

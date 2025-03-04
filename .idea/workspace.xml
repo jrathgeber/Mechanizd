@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="pre market. by claude">
-      <change afterPath="$PROJECT_DIR$/content/notion/search.py" afterDir="false" />
+    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="batch date parser">
+      <change afterPath="$PROJECT_DIR$/content/mediun/create_article.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/mediun/user_details.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/Batch_1700pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_1700pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/ai/OpenAi01.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/ai/OpenAi01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/medium/create_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/medium/create_article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/twitter/tweet.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/twitter/tweet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/medium/Medium_021.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/mediun/get_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/medium/Medium_022.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/medium/create_article.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +51,10 @@
     "Python.Blog.executor": "Run",
     "Python.Blog2.executor": "Run",
     "Python.create_article.executor": "Run",
+    "Python.details.executor": "Run",
     "Python.get_post.executor": "Run",
     "Python.search.executor": "Run",
+    "Python.user_details (1).executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -74,7 +77,7 @@
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.create_article">
+  <component name="RunManager" selected="Python.Batch_1700pm">
     <configuration name="Batch_1700pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="ENV_FILES" value="" />
@@ -89,28 +92,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Batch_1700pm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Xai" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ai" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ai/Xai.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,28 +122,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_post" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/notion" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/notion/get_post.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="search" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="ENV_FILES" value="" />
@@ -185,20 +144,64 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="user_details (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/mediun" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/mediun/user_details.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="user_details" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/mediun" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\jrath\PycharmProjects\Mechanizd\content\mediun\user_details.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Batch_1700pm" />
       <item itemvalue="Python.create_article" />
-      <item itemvalue="Python.get_post" />
       <item itemvalue="Python.search" />
-      <item itemvalue="Python.Xai" />
+      <item itemvalue="Python.user_details" />
+      <item itemvalue="Python.user_details (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.create_article" />
         <item itemvalue="Python.Batch_1700pm" />
+        <item itemvalue="Python.user_details (1)" />
+        <item itemvalue="Python.user_details" />
+        <item itemvalue="Python.create_article" />
         <item itemvalue="Python.search" />
-        <item itemvalue="Python.get_post" />
-        <item itemvalue="Python.Xai" />
       </list>
     </recent_temporary>
   </component>
@@ -321,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740334431126</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="batch date parser">
+      <option name="closed" value="true" />
+      <created>1740973698402</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740973698402</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +358,7 @@
     <MESSAGE value="new prompt version 2" />
     <MESSAGE value="add blog or replace" />
     <MESSAGE value="pre market. by claude" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre market. by claude" />
+    <MESSAGE value="batch date parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="batch date parser" />
   </component>
 </project>
