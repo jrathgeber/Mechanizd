@@ -1,7 +1,10 @@
+
+import medium.create_article
 import notion.get_post as notn
 import notion.search as notnsearch
 import twitter.tweet
 from datetime import date
+
 
 # Get todays Date
 # formatted_date = "20250301"
@@ -10,7 +13,6 @@ formatted_date = today.strftime("%Y%m%d")
 print("Processing " + formatted_date)
 
 # Get the Notion page ID
-#PAGE_ID_1 = "1a1e46d2882f807f9ec5ff4514a2e0c1"
 url = notnsearch.search_notion_page(formatted_date)
 page_id = url.partition("-")[2]
 
@@ -22,5 +24,8 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Twitter") and str(value) != "":
         twitter.tweet.tweetSomething(value)
+
+    if str(key).startswith("Medium") and str(value) != "":
+        medium.create_article(value)
 
 keyword = "how to get a post from notion via python api"
