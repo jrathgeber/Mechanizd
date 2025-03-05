@@ -1,4 +1,4 @@
-from content.html import BlogArticle as Article, BlogPost as Post, BlogIndex as IndexPage, BlogImage as Image
+from content.blog import BlogArticle as Article, BlogPost as Post, BlogIndex as IndexPage, BlogImage as Image
 import content.prompts.Jacky2 as j2
 
 article_number = "029"

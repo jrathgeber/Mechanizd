@@ -1,4 +1,4 @@
-from content.html import BlogImage as Image
+from content.blog import BlogImage as Image
 import content.prompts.Jacky3 as j3
 
 article_number = "030"

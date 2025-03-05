@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="batch date parser">
-      <change afterPath="$PROJECT_DIR$/content/mediun/create_article.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/mediun/user_details.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/blog/write_blog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/Batch_1700pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_1700pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/medium/Medium_021.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/mediun/get_article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/medium/Medium_022.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/medium/create_article.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/Blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/Blog1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/Blog2.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/BlogArticle.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogArticle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/BlogArticleStyle.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogArticleStyle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/BlogImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogImage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/BlogIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogIndex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/html/BlogPost.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogPost.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jrathgeber"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/jrathgeber/Mechanizd.git",
+    "accountId": "96ff3e9d-e135-4148-8c82-53c1f255dbd6"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -59,17 +75,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/dep/Mechanizd",
+    "last_opened_file_path": "C:/Users/jrath/PycharmProjects/Mechanizd/content/html",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\html" />
       <recent name="C:\dep\Mechanizd" />
       <recent name="C:\dep\Mechanizd\content" />
       <recent name="C:\dep\Mechanizd\content\web" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content" />
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\langchaindemo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dep\Mechanizd\content" />
