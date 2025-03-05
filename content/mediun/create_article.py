@@ -12,7 +12,7 @@ def do_it(title):
 
     # Replace with your actual Medium integration token and user ID
     MEDIUM_TOKEN = config['medium']['access']
-    USER_ID = '136546acefdc9550d58b7de43c6a255dee7a5bf0dd189babb492d356056590e36'
+    USER_ID = config['medium']['user']
 
     headers = {
         'Authorization': f'Bearer {MEDIUM_TOKEN}',

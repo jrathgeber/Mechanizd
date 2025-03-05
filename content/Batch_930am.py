@@ -21,7 +21,6 @@ username = config['yahoo']['yahoo.username']
 daterun = time.strftime("%Y%m%d")
 print(daterun)
 
-
 # dummy list
 tickerList = ['AXSM', 'VIPS']
 print(tickerList)
