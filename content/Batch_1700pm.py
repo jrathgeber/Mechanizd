@@ -1,9 +1,11 @@
 import blog.write_blog
 import mediun.create_article
 import mediun.write_article
-import notion.get_post as notn
 import notion.search as notnsearch
+import notion.get_post as notn
 import twitter.tweet
+import youtub.upload_video
+import wordpress.Blog_tri1
 
 from datetime import date
 
@@ -14,40 +16,58 @@ print("Processing " + formatted_date)
 
 # Get the Notion page ID
 url = notnsearch.search_notion_page(formatted_date)
+print(url)
 page_id = url.partition("-")[2]
 
 # Connect to Notion and get today's Journal
 daily_dict = notn.main(page_id)
 
-#Medium String builder
+# Medium String builder
 med_list = []
 title = ""
 
+# Flags for running it
+blog_flag = False
+medium_flag = False
+trifinder_flag = False
+twitter_flag = False
+youtube_flag = False
+
 for key, value in daily_dict.items():
+
     print(f"{key}: {value}")
 
-    if str(key).startswith("Blog") and str(value) != "":
+    if str(key).startswith("Blog") and str(value) != "" and blog_flag:
         blog.write_blog.write(value)
 
-    if str(key).startswith("Medium") and str(value) != "":
+    if str(key).startswith("Medium") and str(value) != "" and medium_flag:
         if "Article : " in str(value):
             title = value.partition("Article : ")[2]
         med_list.append(value)
 
-    if str(key).startswith("Twitter") and str(value) != "":
-        #twitter.tweet.tweetSomething(value)
+    if str(key).startswith("Triathlon") and str(value) != "" and twitter_flag:
+        wordpress.Blog_tri1.create_blog_post(value)
+
+    if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
+        twitter.tweet.tweetSomething(value)
         print("Tweeting ::: " + value)
 
+    if str(key).startswith("YouTube") and str(value) != "" and youtube_flag:
+        path = "F:\\Photos\\Videos_2024\\20241017_155213.mp4"
+        youtub.upload_video.upload_video_from_batch(path, value)
 
-my_ideas = "".join(med_list)
+if medium_flag:
 
-print("The text : ")
-print (med_list)
+    my_ideas = "".join(med_list)
 
-content = mediun.write_article.new_article(title, my_ideas)
+    print("The text : ")
+    print (med_list)
 
-print("Title : " + title)
-print("Content : " + content)
+    content = mediun.write_article.new_article(title, my_ideas)
 
-mediun.create_article.do_it(title, content)
+    print("Title : " + title)
+    print("Content : " + content)
 
+    mediun.create_article.do_it(title, content)
+
+print("finished batch")
