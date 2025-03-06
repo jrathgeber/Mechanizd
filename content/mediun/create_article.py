@@ -4,8 +4,8 @@ import requests
 import json
 import configparser
 
-def do_it(title):
 
+def do_it(idea, content):
     # Get Reference to Properties
     config = configparser.ConfigParser()
     config.read('C:\\etc\\properties.ini')
@@ -26,9 +26,9 @@ def do_it(title):
 
     # Article content and metadata
     data = {
-        "title": "The Oscars",
+        "title": f'{idea}',
         "contentFormat": "markdown",  # Choose 'html', 'markdown', or 'plain'
-        "content": "# Hello World!\nThis is my first article using the Medium API.",
+        "content": f'{content}',
         "tags": ["python", "api", "medium"],
         "publishStatus": "draft"  # Choose 'public' or 'draft'
     }
@@ -38,3 +38,7 @@ def do_it(title):
 
     print('Status code:', response.status_code)
     print('Response:', response.json())
+
+
+if __name__ == "__main__":
+    do_it('My first day', "It was a great day but it rained")
