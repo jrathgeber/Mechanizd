@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="blog writing">
-      <change afterPath="$PROJECT_DIR$/content/ai/OpenAi013.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/mediun/write_article.py" afterDir="false" />
+    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="medium article">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/Batch_1700pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_1700pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/mediun/create_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/mediun/create_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/wordpress/Blog_tri1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/wordpress/Blog_tri1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/wordpress/WordPressUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/wordpress/WordPressUpload.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,26 +53,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1_chat_model_basic.executor": "Run",
-    "Python.Batch_1700pm.executor": "Run",
-    "Python.Blog.executor": "Run",
-    "Python.Blog2.executor": "Run",
-    "Python.create_article (1).executor": "Run",
-    "Python.create_article.executor": "Run",
-    "Python.details.executor": "Run",
-    "Python.get_post.executor": "Run",
-    "Python.search.executor": "Run",
-    "Python.user_details (1).executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jrath/PycharmProjects/Mechanizd/content/mediun",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1_chat_model_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Batch_1700pm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Blog.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Blog2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_article (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_article.executor&quot;: &quot;Run&quot;,
+    &quot;Python.details.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_post.executor&quot;: &quot;Run&quot;,
+    &quot;Python.search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_details (1).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jrath/PycharmProjects/Mechanizd/content/mediun&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\mediun" />
@@ -351,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741142942718</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="medium article">
+      <option name="closed" value="true" />
+      <created>1741231760573</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741231760574</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,6 +386,7 @@
     <MESSAGE value="pre market. by claude" />
     <MESSAGE value="batch date parser" />
     <MESSAGE value="blog writing" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog writing" />
+    <MESSAGE value="medium article" />
+    <option name="LAST_COMMIT_MESSAGE" value="medium article" />
   </component>
 </project>

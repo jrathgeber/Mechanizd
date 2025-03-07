@@ -67,8 +67,8 @@ def add_a_wordpress_image(file_path_laptop_image, file_path_laptop_thumb, articl
 
     # Define the image
     media = {
-        #"file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
-        "file": open(file_name, "rb"),
+        "file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
+        #"file": open(file_name, "rb"),
         "caption": img_name,
         "description": img_name
     }

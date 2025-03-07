@@ -4,7 +4,7 @@ import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
-import youtub.upload_video
+#import youtub.upload_video
 import wordpress.Blog_tri1
 
 from datetime import date
@@ -29,7 +29,7 @@ title = ""
 # Flags for running it
 blog_flag = False
 medium_flag = False
-trifinder_flag = False
+trifinder_flag = True
 twitter_flag = False
 youtube_flag = False
 
@@ -45,7 +45,7 @@ for key, value in daily_dict.items():
             title = value.partition("Article : ")[2]
         med_list.append(value)
 
-    if str(key).startswith("Triathlon") and str(value) != "" and twitter_flag:
+    if str(key).startswith("Triathlon") and str(value) != "" and trifinder_flag:
         wordpress.Blog_tri1.create_blog_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
@@ -54,7 +54,7 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("YouTube") and str(value) != "" and youtube_flag:
         path = "F:\\Photos\\Videos_2024\\20241017_155213.mp4"
-        youtub.upload_video.upload_video_from_batch(path, value)
+        #youtub.upload_video.upload_video_from_batch(path, value)
 
 if medium_flag:
 

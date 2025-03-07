@@ -1,4 +1,4 @@
-import WordPressUpload as wp
+import content.wordpress.WordPressUpload as wp
 
 import content.ai.OpenAi013 as ai
 
@@ -7,7 +7,8 @@ import content.ai.OpenAi013 as ai
 def create_blog_post(topic):
 
     article_number = "002"
-    key_words = "The Best Energy Bars for Triathletes, Runners, and Cyclists"
+    # key_words = "The Best Energy Bars for Triathletes, Runners, and Cyclists"
+    key_words = topic
 
     further_info = """
     
