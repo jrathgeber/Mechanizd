@@ -29,14 +29,18 @@ daily_dict = notn.main(page_id)
 
 # Medium String builder
 med_list = []
+
 title = ""
+
+yt_title = ""
+yt_path = ""
 
 # Flags for running it. Makes easier to test.
 blog_flag = False
 medium_flag = False
 triathlon_flag = False
 twitter_flag = False
-youtube_flag = False
+youtube_flag = True
 
 #Iterate the list
 for key, value in daily_dict.items():
@@ -59,8 +63,13 @@ for key, value in daily_dict.items():
         print("Tweeting ::: " + value)
 
     if str(key).startswith("YouTube") and str(value) != "" and youtube_flag:
-        path = "F:\\Photos\\Videos_2024\\20241017_155213.mp4"
-        youtube.upload_video.upload_video_from_batch(path, value)
+
+        if "Title:" in str(value):
+            yt_title = value.partition("Title: ")[2]
+
+        if "Path:" in str(value):
+            yt_path = value.partition("Path: ")[2]
+
 
 if medium_flag:
 
@@ -76,4 +85,10 @@ if medium_flag:
 
     mediun.create_article.do_it(title, content)
 
-print("finished batch")
+
+if youtube_flag:
+
+    print(f"\nYouTube upload for {yt_title} and {yt_path} ")
+    youtube.upload_video.upload_video_from_batch(yt_title, yt_path)
+
+print(f"finished batch for {formatted_date}")

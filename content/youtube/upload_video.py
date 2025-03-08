@@ -160,7 +160,7 @@ def resumable_upload(insert_request):
             time.sleep(sleep_seconds)
 
 
-def upload_video_from_batch(path, title):
+def upload_video_from_batch(title, path):
 
     argparser.add_argument("--file", help="Video file to upload")
     argparser.add_argument("--title", help="Video title", default="Test Title")
