@@ -4,12 +4,12 @@ import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
-#import youtub.upload_video
+import youtube.upload_video
 import wordpress.Blog_tri1
 
 from datetime import date
 
-# Get todays Date
+# Get today's Date
 today = date.today()
 formatted_date = today.strftime("%Y%m%d")
 print("Processing " + formatted_date)
@@ -29,8 +29,8 @@ title = ""
 # Flags for running it
 blog_flag = False
 medium_flag = False
-trifinder_flag = True
-twitter_flag = False
+triathlon_flag = False
+twitter_flag = True
 youtube_flag = False
 
 for key, value in daily_dict.items():
@@ -45,7 +45,7 @@ for key, value in daily_dict.items():
             title = value.partition("Article : ")[2]
         med_list.append(value)
 
-    if str(key).startswith("Triathlon") and str(value) != "" and trifinder_flag:
+    if str(key).startswith("Triathlon") and str(value) != "" and triathlon_flag:
         wordpress.Blog_tri1.create_blog_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
@@ -54,14 +54,14 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("YouTube") and str(value) != "" and youtube_flag:
         path = "F:\\Photos\\Videos_2024\\20241017_155213.mp4"
-        #youtub.upload_video.upload_video_from_batch(path, value)
+        youtube.upload_video.upload_video_from_batch(path, value)
 
 if medium_flag:
 
     my_ideas = "".join(med_list)
 
     print("The text : ")
-    print (med_list)
+    print(med_list)
 
     content = mediun.write_article.new_article(title, my_ideas)
 

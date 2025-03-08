@@ -1,7 +1,7 @@
 
 import notion.get_post as notn
 import notion.search as notnsearch
-import youtub.upload_video
+import youtube.upload_video
 
 from datetime import date
 
@@ -24,4 +24,4 @@ for key, value in daily_dict.items():
     if str(key).startswith("YouTube") and str(value) != "":
 
         path = "F:\\Photos\\Videos_2024\\20241017_155213.mp4"
-        youtub.upload_video.upload_video_from_batch(path, value)
+        youtube.upload_video.upload_video_from_batch(path, value)

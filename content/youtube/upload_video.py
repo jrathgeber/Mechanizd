@@ -84,14 +84,14 @@ def get_authenticated_service(args):
                  http=credentials.authorize(httplib2.Http()))
 
 
-def initialize_upload(youtube, options, path):
+def initialize_upload(youtube, options, path, title):
     tags = None
     if options.keywords:
         tags = options.keywords.split(",")
 
     body = dict(
         snippet=dict(
-            title=options.title,
+            title=title,
             description=options.description,
             tags=tags,
             categoryId=options.category
@@ -160,7 +160,7 @@ def resumable_upload(insert_request):
             time.sleep(sleep_seconds)
 
 
-def upload_video_from_batch(path, titile):
+def upload_video_from_batch(path, title):
 
     argparser.add_argument("--file", help="Video file to upload")
     argparser.add_argument("--title", help="Video title", default="Test Title")
@@ -174,7 +174,7 @@ def upload_video_from_batch(path, titile):
     youtube = get_authenticated_service(args)
 
     try:
-        initialize_upload(youtube, args, path)
+        initialize_upload(youtube, args, path, title)
     except HttpError as e:
         print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
 
@@ -189,9 +189,6 @@ if __name__ == '__main__':
     argparser.add_argument("--privacyStatus", choices=VALID_PRIVACY_STATUSES, default=VALID_PRIVACY_STATUSES[0], help="Video privacy status.")
 
     args = argparser.parse_args()
-
-    #if not os.path.exists(args.file):
-    #    exit("Please specify a valid file using the --file= parameter.")
 
     youtube = get_authenticated_service(args)
 
