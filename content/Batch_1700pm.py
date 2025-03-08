@@ -17,6 +17,11 @@ print("Processing " + formatted_date)
 # Get the Notion page ID
 url = notnsearch.search_notion_page(formatted_date)
 print(url)
+
+if url is None:
+    print (f"Date {formatted_date} not in Notion pages. Check connections.")
+    exit()
+
 page_id = url.partition("-")[2]
 
 # Connect to Notion and get today's Journal
@@ -26,13 +31,14 @@ daily_dict = notn.main(page_id)
 med_list = []
 title = ""
 
-# Flags for running it
+# Flags for running it. Makes easier to test.
 blog_flag = False
 medium_flag = False
 triathlon_flag = False
-twitter_flag = True
+twitter_flag = False
 youtube_flag = False
 
+#Iterate the list
 for key, value in daily_dict.items():
 
     print(f"{key}: {value}")
