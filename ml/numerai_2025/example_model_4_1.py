@@ -31,9 +31,9 @@ def main(contest):
     # and validation data only change periodically, so no need to download them every time.
     # print("Downloading dataset files...")
 
-    contest = str(503)
+    contest = str(596)
     directory = 'F:/Numerai/numerai' + contest + '/'
-    dataset_name = "v4.1"
+    dataset_name = "v5.0"
 
     feature_set_name = "medium"
 
@@ -51,8 +51,8 @@ def main(contest):
     # napi.download_dataset(f"{dataset_name}/train_int8.parquet", f"{directory + dataset_name}/train_int8.parquet")
     # napi.download_dataset(f"{dataset_name}/validation_int8.parquet", f"{directory + dataset_name}/validation_int8.parquet")
     napi.download_dataset(
-        f"{dataset_name}/live_int8.parquet",
-        f"{directory + dataset_name}/live_int8_{current_round}.parquet",
+        f"{dataset_name}/live.parquet",
+        f"{directory + dataset_name}/live_{current_round}.parquet",
      )
 
     # napi.download_dataset(f"{dataset_name}/validation_example_preds.parquet", f"{directory + dataset_name}/validation_example_preds.parquet")
@@ -78,16 +78,16 @@ def main(contest):
     # note: sometimes when trying to read the downloaded data you get an error about invalid magic parquet bytes...
     # if so, delete the file and rerun the napi.download_dataset to fix the corrupted file
     training_data = pd.read_parquet(
-        f"{directory + dataset_name}/train_int8.parquet", columns=read_columns
+        f"{directory + dataset_name}/train.parquet", columns=read_columns
     )
 
     print("Set validation data")
     validation_data = pd.read_parquet(
-        f"{directory + dataset_name}/validation_int8.parquet", columns=read_columns
+        f"{directory + dataset_name}/validation.parquet", columns=read_columns
     )
 
     print("Set live data")
-    live_data = pd.read_parquet(f"{directory + dataset_name}/live_int8_{current_round}.parquet", columns=read_columns)
+    live_data = pd.read_parquet(f"{directory + dataset_name}/live_{current_round}.parquet", columns=read_columns)
 
     # reduce the number of eras to every 4th era to speed things up... uncomment these lines to speed things up.
     # every_4th_era = training_data[ERA_COL].unique()[::4]
@@ -140,16 +140,29 @@ def main(contest):
     #     "colsample_bytree": 0.1,
     # }
 
+
+'''
+
+    "targets": ["target_agnes_20", "target_agnes_60", "target_alpha_20", "target_alpha_60", "target_bravo_20",
+                "target_bravo_60", "target_caroline_20", "target_caroline_60", "target_charlie_20", "target_charlie_60",
+                "target_claudia_20", "target_claudia_60", "target_cyrusd_20", "target_cyrusd_60", "target_delta_20",
+                "target_delta_60", "target_echo_20", "target_echo_60", "target_jeremy_20", "target_jeremy_60",
+                "target_ralph_20", "target_ralph_60", "target_rowan_20", "target_rowan_60", "target_sam_20",
+                "target_sam_60", "target_teager2b_20", "target_teager2b_60", "target_tyler_20", "target_tyler_60",
+                "target_victor_20", "target_victor_60", "target_waldo_20", "target_waldo_60", "target_xerxes_20",
+                "target_xerxes_60", "target"]}
+'''
+
     # loop through all of our favorite targets and build models on each of them - one over training data, one over all available data
     # for the train_data models, we'll then predict on validation data
     # for the all_data models, we'll predict on live
     targets = [
-        "target_nomi_v4_20",
-        "target_jerome_v4_60",
-        "target_ralph_v4_20",
-        "target_tyler_v4_20",
-        "target_victor_v4_20",
-        "target_waldo_v4_20",
+
+        "target_jeremy_20",
+        "target_ralph_20",
+        "target_tyler_20",
+        "target_victor_20",
+        "target_waldo_20",
     ]
     prediction_cols = []
     for target in tqdm(targets):

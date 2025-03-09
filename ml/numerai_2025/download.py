@@ -9,7 +9,7 @@ config.read('C:\etc\properties.ini')
 public = config['numerai']['public']
 secret = config['numerai']['secret']
 
-contest = str(505)
+contest = str(596)
 
 directory = 'F:\\Numerai\\numerai' + contest + '\\'
 
@@ -24,9 +24,15 @@ from numerapi import NumerAPI
 napi = NumerAPI()
 
 # Let's see what files are available for download in the latest v4.2 dataset
-var = [f for f in napi.list_datasets() if f.startswith("v4.3")]
+var = [f for f in napi.list_datasets() if f.startswith("v5.0")]
 
 print(var)
+
+
+napi.download_dataset(f"{dataset_name}/validation.parquet", "validation.parquet")
+
+exit()
+
 
 # Download the training data
 napi.download_dataset( f"{dataset_name}/features.json", f"{directory + dataset_name}/features.json",)
@@ -40,6 +46,9 @@ napi.download_dataset(f"{dataset_name}/train_benchmark_models.parquet", f"{direc
 
 napi.download_dataset( f"{dataset_name}/live.parquet", f"{directory + dataset_name}/live_int8.parquet",)
 napi.download_dataset( f"{dataset_name}/train.parquet", f"{directory + dataset_name}/train_int8.parquet",)
+
+
+
 
 #
 #napi.download_dataset("v4.3/features.json", "features.json")

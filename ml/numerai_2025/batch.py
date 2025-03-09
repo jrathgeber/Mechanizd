@@ -108,7 +108,7 @@ def run_numerai_batch():
 if __name__ == '__main__':
     
     day = int(time.strftime("%j"))  # 324
-    contest = 505
+    contest = 596
     print(str(contest))
     run_numerai_batch()
 
