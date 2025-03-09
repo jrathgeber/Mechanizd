@@ -18,7 +18,24 @@ from utils_old import (
     EXAMPLE_PREDS_COL,
 )
 
-# download all the things
+
+
+
+'''
+
+V5 targets
+
+    "targets": ["target_agnes_20", "target_agnes_60", "target_alpha_20", "target_alpha_60", "target_bravo_20",
+                "target_bravo_60", "target_caroline_20", "target_caroline_60", "target_charlie_20", "target_charlie_60",
+                "target_claudia_20", "target_claudia_60", "target_cyrusd_20", "target_cyrusd_60", "target_delta_20",
+                "target_delta_60", "target_echo_20", "target_echo_60", "target_jeremy_20", "target_jeremy_60",
+                "target_ralph_20", "target_ralph_60", "target_rowan_20", "target_rowan_60", "target_sam_20",
+                "target_sam_60", "target_teager2b_20", "target_teager2b_60", "target_tyler_20", "target_tyler_60",
+                "target_victor_20", "target_victor_60", "target_waldo_20", "target_waldo_60", "target_xerxes_20",
+                "target_xerxes_60", "target"]}
+
+'''
+
 
 def main(contest):
 
@@ -140,18 +157,6 @@ def main(contest):
     #     "colsample_bytree": 0.1,
     # }
 
-
-'''
-
-    "targets": ["target_agnes_20", "target_agnes_60", "target_alpha_20", "target_alpha_60", "target_bravo_20",
-                "target_bravo_60", "target_caroline_20", "target_caroline_60", "target_charlie_20", "target_charlie_60",
-                "target_claudia_20", "target_claudia_60", "target_cyrusd_20", "target_cyrusd_60", "target_delta_20",
-                "target_delta_60", "target_echo_20", "target_echo_60", "target_jeremy_20", "target_jeremy_60",
-                "target_ralph_20", "target_ralph_60", "target_rowan_20", "target_rowan_60", "target_sam_20",
-                "target_sam_60", "target_teager2b_20", "target_teager2b_60", "target_tyler_20", "target_tyler_60",
-                "target_victor_20", "target_victor_60", "target_waldo_20", "target_waldo_60", "target_xerxes_20",
-                "target_xerxes_60", "target"]}
-'''
 
     # loop through all of our favorite targets and build models on each of them - one over training data, one over all available data
     # for the train_data models, we'll then predict on validation data
@@ -285,4 +290,4 @@ def main(contest):
 )
 
 if __name__ == '__main__':
-    main(str(503))
+    main(str(596))

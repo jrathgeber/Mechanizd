@@ -4,7 +4,7 @@ import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
-import youtube.upload_video
+import youtubevids.upload_video
 import wordpress.Blog_tri1
 
 from datetime import date
@@ -27,13 +27,18 @@ page_id = url.partition("-")[2]
 # Connect to Notion and get today's Journal
 daily_dict = notn.main(page_id)
 
-# Medium String builder
+# Medium String builder and vars
 med_list = []
+med_title = ""
 
-title = ""
-
+# Yt variables
 yt_title = ""
 yt_path = ""
+yt_desc = ""
+yt_cat = ""
+yt_privy = ""
+yt_key = ""
+
 
 # Flags for running it. Makes easier to test.
 blog_flag = False
@@ -70,6 +75,17 @@ for key, value in daily_dict.items():
         if "Path:" in str(value):
             yt_path = value.partition("Path: ")[2]
 
+        if "Desc:" in str(value):
+            yt_desc = value.partition("Desc: ")[2]
+
+        if "Cat:" in str(value):
+            yt_cat = value.partition("Cat: ")[2]
+
+        if "Privy:" in str(value):
+            yt_privy = value.partition("Privy: ")[2]
+
+        if "Key:" in str(value):
+            yt_key = value.partition("Key: ")[2]
 
 if medium_flag:
 
@@ -78,17 +94,16 @@ if medium_flag:
     print("The text : ")
     print(med_list)
 
-    content = mediun.write_article.new_article(title, my_ideas)
+    content = mediun.write_article.new_article(med_title, my_ideas)
 
     print("Title : " + title)
     print("Content : " + content)
 
     mediun.create_article.do_it(title, content)
 
-
 if youtube_flag:
 
-    print(f"\nYouTube upload for {yt_title} and {yt_path} ")
-    youtube.upload_video.upload_video_from_batch(yt_title, yt_path)
+    print(f"\nYouTube upload for {yt_title} and {yt_path} and {yt_desc} and {yt_cat} and {yt_privy} and {yt_key}")
+    youtubevids.upload_video.upload_video_from_batch(yt_title, yt_path, yt_desc, yt_cat, yt_privy, yt_key)
 
 print(f"finished batch for {formatted_date}")

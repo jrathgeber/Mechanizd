@@ -68,9 +68,8 @@ VALID_PRIVACY_STATUSES = ("public", "private", "unlisted")
 
 
 def get_authenticated_service(args):
-    flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE,
-                                   scope=YOUTUBE_UPLOAD_SCOPE,
-                                   message=MISSING_CLIENT_SECRETS_MESSAGE)
+
+    flow = flow_from_clientsecrets(CLIENT_SECRETS_FILE, scope=YOUTUBE_UPLOAD_SCOPE, message=MISSING_CLIENT_SECRETS_MESSAGE)
 
     storage = Storage("%s-oauth2.json" % sys.argv[0])
     #storage = Storage("%s-oauth2.json")
@@ -79,25 +78,24 @@ def get_authenticated_service(args):
 
     if credentials is None or credentials.invalid:
         credentials = run_flow(flow, storage, args)
+        #credentials = run_flow(flow, storage)
 
-    return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
-                 http=credentials.authorize(httplib2.Http()))
+    return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,http=credentials.authorize(httplib2.Http()))
 
 
-def initialize_upload(youtube, options, path, title):
+def initialize_upload(youtube, title, path, desc, cat, privy, key):
+
     tags = None
-    if options.keywords:
-        tags = options.keywords.split(",")
 
     body = dict(
         snippet=dict(
             title=title,
-            description=options.description,
+            description=desc,
             tags=tags,
-            categoryId=options.category
+            categoryId=cat
         ),
         status=dict(
-            privacyStatus=options.privacyStatus
+            privacyStatus=privy
         )
     )
 
@@ -117,7 +115,6 @@ def initialize_upload(youtube, options, path, title):
         # running on App Engine, you should set the chunksize to something like
         # 1024 * 1024 (1 megabyte).
         media_body=MediaFileUpload(path, chunksize=-1, resumable=True)
-        #media_body = MediaFileUpload(options.file, chunksize=-1, resumable=True)
     )
 
     resumable_upload(insert_request)
@@ -142,11 +139,11 @@ def resumable_upload(insert_request):
                     exit("The upload failed with an unexpected response: %s" % response)
         except HttpError as e:
             if e.resp.status in RETRIABLE_STATUS_CODES:
-                error = "A retriable HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
+                error = "A re-triable HTTP error %d occurred:\n%s" % (e.resp.status, e.content)
             else:
                 raise
         except RETRIABLE_EXCEPTIONS as e:
-            error = "A retriable error occurred: %s" % e
+            error = "A re-triable error occurred: %s" % e
 
         if error is not None:
             print(error)
@@ -160,13 +157,12 @@ def resumable_upload(insert_request):
             time.sleep(sleep_seconds)
 
 
-def upload_video_from_batch(title, path):
+def upload_video_from_batch(title, path, desc, cat, privy, key):
 
-    argparser.add_argument("--file", help="Video file to upload")
-    argparser.add_argument("--title", help="Video title", default="Test Title")
-    argparser.add_argument("--description", help="Video description", default="Test Description")
+    argparser.add_argument("--title", help="Video title", default=title)
+    argparser.add_argument("--description", help="Video description", default=desc)
     argparser.add_argument("--category", default="22", help="Numeric video category. " + "See https://developers.google.com/youtube/v3/docs/videoCategories/list")
-    argparser.add_argument("--keywords", help="Video keywords, comma separated", default="")
+    argparser.add_argument("--keywords", help="Video keywords, comma separated", default=key)
     argparser.add_argument("--privacyStatus", choices=VALID_PRIVACY_STATUSES, default=VALID_PRIVACY_STATUSES[0], help="Video privacy status.")
 
     args = argparser.parse_args()
@@ -174,7 +170,7 @@ def upload_video_from_batch(title, path):
     youtube = get_authenticated_service(args)
 
     try:
-        initialize_upload(youtube, args, path, title)
+        initialize_upload(youtube, title, path, desc, cat, privy, key)
     except HttpError as e:
         print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
 
