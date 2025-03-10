@@ -289,5 +289,6 @@ def main(contest):
     """
 )
 
+
 if __name__ == '__main__':
     main(str(596))

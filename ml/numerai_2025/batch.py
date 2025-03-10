@@ -14,9 +14,7 @@ import example_model_4_1 as mechXg
 
 import os
 import time
-
 import numerapi
-
 
 
 # import Tweet
