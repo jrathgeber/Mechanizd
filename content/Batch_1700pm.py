@@ -19,7 +19,7 @@ url = notnsearch.search_notion_page(formatted_date)
 print(url)
 
 if url is None:
-    print (f"Date {formatted_date} not in Notion pages. Check connections.")
+    print(f"Date {formatted_date} not in Notion pages. Check connections.")
     exit()
 
 page_id = url.partition("-")[2]
@@ -41,13 +41,13 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-blog_flag = False
+blog_flag = True
 medium_flag = False
 triathlon_flag = False
 twitter_flag = False
-youtube_flag = True
+youtube_flag = False
 
-#Iterate the list
+# Iterate the list
 for key, value in daily_dict.items():
 
     print(f"{key}: {value}")
@@ -96,10 +96,10 @@ if medium_flag:
 
     content = mediun.write_article.new_article(med_title, my_ideas)
 
-    print("Title : " + title)
+    print("Title : " + med_title)
     print("Content : " + content)
 
-    mediun.create_article.do_it(title, content)
+    mediun.create_article.do_it(med_title, content)
 
 if youtube_flag:
 

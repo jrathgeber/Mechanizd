@@ -13,6 +13,7 @@ def copywrite(copy, article_number, slug, key_words, todaydate):
 
 
 def replace_stype(file_path_laptop_bp, article_number, slug, key_words, today_date):
+
     f = open(r"D:\\gd23\\vcard\\blogpost\\articles\\article_" + article_number + '_' + slug + ".html", "r")
     copy = open("article.html", "w")
 
@@ -25,14 +26,10 @@ def replace_stype(file_path_laptop_bp, article_number, slug, key_words, today_da
         else:
             copy.write(line)
 
-        # if '<div id="posts" class="row popup-container">' in line:
-        #    copywrite(copy, article_number, slug, key_words, todaydate)
-
     f.close()
     copy.close()
 
-    copyfile('article.html',
-             'D:\\gd23\\vcard\\blogpost\\articles\\article_' + article_number + '_' + slug + '.html')
+    copyfile('article.html', 'D:\\gd23\\vcard\\blogpost\\articles\\article_' + article_number + '_' + slug + '.html')
 
     # Give it some time
     time.sleep(3)

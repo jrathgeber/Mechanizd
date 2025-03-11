@@ -4,7 +4,7 @@ import time
 from shutil import copyfile
 
 
-def copywrite(copy, article_number, slug, key_words, todaydate):
+def copy_write(copy, article_number, slug, key_words, todaydate):
 
     copy.write('\n\n')
     copy.write('    			  <!-- ' + article_number + " " + key_words + ' -->\n')
@@ -44,20 +44,20 @@ def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
         copy.write(line)
 
         if '<div id="posts" class="row popup-container">' in line:
-            copywrite(copy, article_number, slug, key_words, today_date)
+            copy_write(copy, article_number, slug, key_words, today_date)
 
 
     f.close()
     copy.close()
 
-    copyfile('blog.html',
-             'D:\\gd23\\vcard\\blog.html')
+    copyfile('blog.html',  'D:\\gd23\\vcard\\blog.html')
 
     # Give it some time
     time.sleep(3)
 
 
 def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
+
     f = open(r"D:\\gd23\\vcard\\blog.html", "r")
     copy = open("zappy\\blog.html", "w")
 
@@ -66,7 +66,7 @@ def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_dat
         if '<!-- 029' in line:
             for _ in range(24):
                 next(f)
-            copywrite(copy, article_number, slug, key_words, today_date)
+            copy_write(copy, article_number, slug, key_words, today_date)
         else:
             copy.write(line)
 
@@ -76,8 +76,7 @@ def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_dat
     f.close()
     copy.close()
 
-    copyfile('/content/temp\\blog.html',
-             'D:\\gd23\\vcard\\blog.html')
+    copyfile('/content/temp\\blog.html', 'D:\\gd23\\vcard\\blog.html')
 
     # Give it some time
     time.sleep(3)
