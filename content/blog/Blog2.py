@@ -1,5 +1,10 @@
 from content.blog import BlogImage as Image
 import content.prompts.Jacky3 as j3
+import configparser
+
+# Get Reference to Properties
+config = configparser.ConfigParser()
+config.read('C:\\etc\\properties.ini')
 
 article_number = "030"
 key_words = "What is VPN"

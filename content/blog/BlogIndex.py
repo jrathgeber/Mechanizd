@@ -34,9 +34,9 @@ def copy_write(copy, article_number, slug, key_words, todaydate):
     copy.write('\n\n')
 
 
-def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
+def add_blog(blog_path, article_number, slug, key_words, today_date):
 
-    f = open(r"D:\\gd23\\vcard\\blog.html", "r")
+    f = open(blog_path + "\\blog.html", "r")
     copy = open("blog.html", "w")
     
     for line in f:
@@ -50,15 +50,16 @@ def add_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
     f.close()
     copy.close()
 
-    copyfile('blog.html',  'D:\\gd23\\vcard\\blog.html')
+    copyfile('blog.html',  blog_path + "\\blog.html")
 
     # Give it some time
     time.sleep(3)
 
 
-def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_date):
+def replace_blog(blog_path, article_number, slug, key_words, today_date):
 
-    f = open(r"D:\\gd23\\vcard\\blog.html", "r")
+
+    f = open(blog_path + "\\blog.html", "r")
     copy = open("zappy\\blog.html", "w")
 
     for line in f:
@@ -76,7 +77,7 @@ def replace_blog(file_path_laptop_bp, article_number, slug, key_words, today_dat
     f.close()
     copy.close()
 
-    copyfile('/content/temp\\blog.html', 'D:\\gd23\\vcard\\blog.html')
+    copyfile('/content/temp\\blog.html', blog_path + "\\blog.html")
 
     # Give it some time
     time.sleep(3)

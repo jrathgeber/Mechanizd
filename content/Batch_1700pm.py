@@ -44,7 +44,7 @@ yt_key = ""
 blog_flag = True
 medium_flag = False
 triathlon_flag = False
-twitter_flag = False
+twitter_flag = True
 youtube_flag = False
 
 # Iterate the list
@@ -53,7 +53,7 @@ for key, value in daily_dict.items():
     print(f"{key}: {value}")
 
     if str(key).startswith("Blog") and str(value) != "" and blog_flag:
-        blog.write_blog.write(value)
+        blog.write_blog.write(value.lstrip())
 
     if str(key).startswith("Medium") and str(value) != "" and medium_flag:
         if "Article : " in str(value):
