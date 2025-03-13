@@ -12,9 +12,9 @@ def copywrite(copy, article_number, slug, key_words, todaydate):
     copy.write('\n\n')
 
 
-def replace_stype(file_path_laptop_bp, article_number, slug, key_words, today_date):
+def replace_stype(blog_path, article_number, slug, key_words, today_date):
 
-    f = open(r"D:\\gd23\\vcard\\blogpost\\articles\\article_" + article_number + '_' + slug + ".html", "r")
+    f = open(blog_path + "\\articles\\article_" + article_number + '_' + slug + ".html", "r")
     copy = open("article.html", "w")
 
     for line in f:
@@ -29,7 +29,7 @@ def replace_stype(file_path_laptop_bp, article_number, slug, key_words, today_da
     f.close()
     copy.close()
 
-    copyfile('article.html', 'D:\\gd23\\vcard\\blogpost\\articles\\article_' + article_number + '_' + slug + '.html')
+    copyfile('article.html', blog_path + '\\articles\\article_' + article_number + '_' + slug + '.html')
 
     # Give it some time
     time.sleep(3)

@@ -25,21 +25,23 @@ def write(title):
     # blog_path = "D:\\gd23\\vcard"
     blog_path = str(config['blog']['blog_path'])
 
-    article_number = "036"
+    print("BlogPath " + blog_path)
+
+    article_number = "037"
     key_words = title
 
     further_info = j1.get_prompt(key_words)
 
     slug = key_words.replace(" ", "_")
 
-    file_path_laptop = blog_path % "\\blogpost\\Articles\\"
-    file_path_laptop_bp = blog_path % "\\blogpost\\"
-    file_path_laptop_image = blog_path % "\\assets\\custom\\images\\blog\\"
-    file_path_laptop_thumb = blog_path % "\\assets\\custom\\images\\blog\\thumbs\\"
+    file_path_laptop = blog_path + "\\blogpost\\Articles\\"
+    file_path_laptop_bp = blog_path + "\\blogpost\\"
+    file_path_laptop_image = blog_path + "\\assets\\custom\\images\\blog\\"
+    file_path_laptop_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
 
     Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
     Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
     Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, formatted_date)
-    IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, formatted_date)
+    IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)
 
     ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, formatted_date)

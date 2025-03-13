@@ -4,90 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="medium article">
+    <list default="true" id="c45151e3-d30c-412e-9dc6-c9d5d9b15506" name="Changes" comment="wordpress 2">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/Batch_1700pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/Batch_1700pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/wordpress/Blog_tri1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/wordpress/Blog_tri1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/wordpress/WordPressUpload.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/wordpress/WordPressUpload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/Blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/Blog1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/Blog2.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/Blog2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/BlogArticleStyle.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogArticleStyle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/BlogIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/BlogIndex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/write_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/write_blog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/prompts/Jacky1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/prompts/Jacky1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="wordpress" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;jrathgeber&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Batch_1700pm.executor": "Run",
+    "git-widget-placeholder": "master"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/jrathgeber/Mechanizd.git&quot;,
-    &quot;accountId&quot;: &quot;96ff3e9d-e135-4148-8c82-53c1f255dbd6&quot;
-  }
-}</component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2RAjyXiJdU39bJaiZsx1ZsHeBvT" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.1_chat_model_basic.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Batch_1700pm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Blog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Blog2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_article (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_article.executor&quot;: &quot;Run&quot;,
-    &quot;Python.details.executor&quot;: &quot;Run&quot;,
-    &quot;Python.get_post.executor&quot;: &quot;Run&quot;,
-    &quot;Python.search.executor&quot;: &quot;Run&quot;,
-    &quot;Python.user_details (1).executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jrath/PycharmProjects/Mechanizd/content/mediun&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\mediun" />
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\ai" />
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\html" />
-      <recent name="C:\dep\Mechanizd" />
-      <recent name="C:\dep\Mechanizd\content" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dep\Mechanizd\content" />
-      <recent name="C:\dep\Mechanizd\content\email" />
-      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\ai\openai" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.Batch_1700pm">
+}]]></component>
+  <component name="RunManager">
     <configuration name="Batch_1700pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="ENV_FILES" value="" />
@@ -110,283 +50,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_article (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/mediun" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/mediun/create_article.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="create_article" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/medium" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/medium/create_article.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="user_details (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/mediun" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/mediun/user_details.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="user_details" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/mediun" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\jrath\PycharmProjects\Mechanizd\content\mediun\user_details.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.create_article (1)" />
-      <item itemvalue="Python.Batch_1700pm" />
-      <item itemvalue="Python.create_article" />
-      <item itemvalue="Python.user_details" />
-      <item itemvalue="Python.user_details (1)" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Batch_1700pm" />
-        <item itemvalue="Python.create_article (1)" />
-        <item itemvalue="Python.user_details (1)" />
-        <item itemvalue="Python.user_details" />
-        <item itemvalue="Python.create_article" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e5ecd94b-2e7a-4d8e-a1f4-fda56eeec42e" name="Changes" comment="" />
-      <created>1686700035013</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1686700035013</updated>
-    </task>
-    <task id="LOCAL-00001" summary="parquet_tester">
-      <created>1687225461183</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1687225461183</updated>
-    </task>
-    <task id="LOCAL-00002" summary="parquet_tester">
-      <created>1687225494123</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1687225494123</updated>
-    </task>
-    <task id="LOCAL-00003" summary="tweep2">
-      <created>1688605472222</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1688605472222</updated>
-    </task>
-    <task id="LOCAL-00004" summary="code camp">
-      <created>1689032377349</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1689032377349</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fstring">
-      <created>1698717305096</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1698717305096</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fstring part 2">
-      <created>1698890723011</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1698890723011</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fstring part 2">
-      <created>1706483668518</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1706483668518</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fstring part 2">
-      <created>1706575114581</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1706575114581</updated>
-    </task>
-    <task id="LOCAL-00009" summary="image2">
-      <option name="closed" value="true" />
-      <created>1737940992393</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1737940992393</updated>
-    </task>
-    <task id="LOCAL-00010" summary="more changes">
-      <option name="closed" value="true" />
-      <created>1738031017452</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1738031017452</updated>
-    </task>
-    <task id="LOCAL-00011" summary="new prompt">
-      <option name="closed" value="true" />
-      <created>1738117833761</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1738117833761</updated>
-    </task>
-    <task id="LOCAL-00012" summary="new prompt version 2">
-      <option name="closed" value="true" />
-      <created>1738377186593</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1738377186593</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add blog or replace">
-      <option name="closed" value="true" />
-      <created>1738519169386</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1738519169386</updated>
-    </task>
-    <task id="LOCAL-00014" summary="pre market. by claude">
-      <created>1740334431126</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1740334431126</updated>
-    </task>
-    <task id="LOCAL-00015" summary="batch date parser">
-      <option name="closed" value="true" />
-      <created>1740973698402</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1740973698402</updated>
-    </task>
-    <task id="LOCAL-00016" summary="blog writing">
-      <option name="closed" value="true" />
-      <created>1741142942718</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1741142942718</updated>
-    </task>
-    <task id="LOCAL-00017" summary="medium article">
-      <option name="closed" value="true" />
-      <created>1741231760573</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1741231760574</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="parquet_tester" />
-    <MESSAGE value="tweep2" />
-    <MESSAGE value="code camp" />
-    <MESSAGE value="fstring" />
-    <MESSAGE value="fstring part 2" />
-    <MESSAGE value="image2" />
-    <MESSAGE value="more changes" />
-    <MESSAGE value="new prompt" />
-    <MESSAGE value="new prompt version 2" />
-    <MESSAGE value="add blog or replace" />
-    <MESSAGE value="pre market. by claude" />
-    <MESSAGE value="batch date parser" />
-    <MESSAGE value="blog writing" />
-    <MESSAGE value="medium article" />
-    <option name="LAST_COMMIT_MESSAGE" value="medium article" />
+    <MESSAGE value="wordpress 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="wordpress 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/content/blog/write_blog.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

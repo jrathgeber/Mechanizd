@@ -115,6 +115,8 @@ def get_prompt(key_words):
     Avoid Repetition: Be mindful of overusing certain terms or phrases, as this can signal AI authorship.
     Use Active Voice: Write in an active voice to make sentences more direct and engaging.
     
+    Please add this statement to the html head section after the title :   <link rel="stylesheet" href="./medium.css" type="text/css" />
+    
     """
 
     return prompt
