@@ -5,6 +5,7 @@ import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
 import youtubevids.upload_video
+import web.get_amazon_product
 import wordpress.Blog_tri1
 
 from datetime import date
@@ -41,6 +42,7 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
+amzn_flag = True
 blog_flag = True
 medium_flag = False
 triathlon_flag = False
@@ -51,6 +53,10 @@ youtube_flag = False
 for key, value in daily_dict.items():
 
     print(f"{key}: {value}")
+
+    if str(key).startswith("Amazon") and str(value) != "" and amzn_flag:
+        o = web.get_amazon_product.get_product(value)
+        wordpress.Blog_tri1.create_blog_post(o["title"])
 
     if str(key).startswith("Blog") and str(value) != "" and blog_flag:
         blog.write_blog.write(value.lstrip())
