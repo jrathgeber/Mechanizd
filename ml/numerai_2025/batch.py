@@ -3,6 +3,7 @@
 """
 Created on Sunday January 12th 2024
 Further Tweaked on February 26th 2025
+Worked it working on March 11th 2025
 @author: Jason Rathgeber
 """
 
@@ -52,7 +53,7 @@ def run_numerai_batch():
     #print(str(contest))
     #run_numerai_batch()
 
-    contest = str(505)
+    contest = str(596)
 
     print("\n Numerai Contest..." + contest)
 
