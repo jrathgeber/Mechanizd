@@ -9,9 +9,10 @@ import web.get_amazon_product
 import wordpress.Blog_tri1
 
 from datetime import date
+from datetime import timedelta
 
 # Get today's Date
-today = date.today()
+today = date.today() - timedelta(days=0)
 formatted_date = today.strftime("%Y%m%d")
 print("Processing " + formatted_date)
 
@@ -42,11 +43,11 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = True
+amzn_flag = False
 blog_flag = True
-medium_flag = False
+medium_flag = True
 triathlon_flag = False
-twitter_flag = True
+twitter_flag = False
 youtube_flag = False
 
 # Iterate the list
