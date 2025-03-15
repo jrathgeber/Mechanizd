@@ -134,6 +134,7 @@ def main(contest):
     live_data[features] = live_data[features].fillna(
         all_data[features].median(skipna=True)
     )  # since live data is only one era, we need to use the median for all eras
+
     live_data[features] = live_data[features].astype("int8")  # make sure change to float32 if using the non int8 data!
     # Alternatively could convert nan columns to be floats and replace pd.NA with np.nan
 

@@ -2,10 +2,9 @@
 
 import requests
 import json
-import random
-
-from requests.auth import HTTPBasicAuth
 import configparser
+from requests.auth import HTTPBasicAuth
+
 
 # Get Reference to Properties
 config = configparser.ConfigParser()
@@ -25,7 +24,6 @@ def post_creator(img, key_words, source, wpBaseURL, sourceLang, targetLang, post
     WP_url = wpBaseURL + "/wp-json/wp/v2/posts"
 
     auth = HTTPBasicAuth(wp_user, wp_pass)
-
 
     headers = {
         "Accept": "application/json",
@@ -51,30 +49,84 @@ def post_creator(img, key_words, source, wpBaseURL, sourceLang, targetLang, post
     print(response)
 
 
-import requests
-import json
-
-
-def add_a_wordpress_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words):
+def add_a_wordpress_image(file_name, slug):
     """ Takes an image name, posts to WP, returns image url. """
 
     auth = HTTPBasicAuth(wp_user, wp_pass)
     url = "https://trifindr.com/wp-json/wp/v2/media"
 
-    file_name = file_path_laptop_image + article_number + '_' + slug + '.jpg'
+    #file_name = file_path_laptop_image + '_' + slug + '.jpg'
 
     img_name = slug
 
     # Define the image
     media = {
-        "file": open(f"C:\\Users\\jrath\\Downloads\\triathlon-2175845_1280.jpg", "rb"),
-        #"file": open(file_name, "rb"),
+        "file": open(file_name, "rb"),
         "caption": img_name,
         "description": img_name
     }
 
     # Post the image to WP
-    image = requests.post(url, auth=auth, files=media)  # ! files=, not json= !
+    response = requests.post(url, auth=auth, files=media)  # ! files=, not json= !
+
+
+    # Check Response
+    if response.status_code == 201:
+        image_data = response.json()
+        image_id = image_data["id"]
+        image_url = image_data["source_url"]
+        print(f"Image uploaded successfully! ID: {image_id}, URL: {image_url}")
+    else:
+        print("Error uploading image:", response.text)
 
     # Extract and return the image URL from returned data
-    return str(json.loads(image.content)["source_url"])
+    return str(json.loads(response.content)["id"])
+
+
+def product_upload(title, description, price, image_id):
+
+    url = "https://trifindr.com/"
+
+
+    # Product data
+    payload = json.dumps({
+        "title": title,
+        "content": description,
+        "status": "publish",
+        "type": "external",
+        "regular_price": price,
+        "images": [{"id": image_id}]
+    })
+
+    # Authentication
+    auth = HTTPBasicAuth(wp_user, wp_pass)
+
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    }
+
+    # API endpoint
+    endpoint = f"{url}/wp-json/wc/v2/products"
+
+    # Send the request
+    response = requests.request(
+        "POST",
+        endpoint,
+        data=payload,
+        headers=headers,
+        auth=auth
+    )
+
+    # Check the response
+    if response.status_code == 201:
+        print("Product created successfully!")
+        print(response.json())
+    else:
+        print(f"Error creating product: {response.status_code}")
+        print(response.text)
+
+
+if __name__ == "__main__":
+    product_upload()
+    #add_a_wordpress_image("https://m.media-amazon.com/images/I/81FB3Yd2sTL._AC_SL1500_.jpg", "bike")

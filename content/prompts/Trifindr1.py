@@ -1,16 +1,6 @@
-import content.wordpress.WordPressUpload as wp
-
-import content.ai.OpenAi013 as ai
 
 
-
-def create_blog_post(topic):
-
-    article_number = "002"
-    # key_words = "The Best Energy Bars for Triathletes, Runners, and Cyclists"
-    key_words = topic
-
-    further_info = """
+prompt = """
     
     You are an expert content writer specializing in high-quality, SEO-optimized blog posts that adhere to EEAT (Expertise, Authoritativeness, Trustworthiness) principles. Your task is to produce an original, high-quality blog post that is deeply engaging, well-researched, and free from plagiarism. You will also utilize a web search function to gather the most relevant information about the topic at hand. When referencing external content, always hyperlink the referencing URL to the correct keyword within the body of the blog, not in footnotes.
     Style Guide (Inspired by GQ Magazine):
@@ -123,28 +113,4 @@ def create_blog_post(topic):
     Avoid Repetition: Be mindful of overusing certain terms or phrases, as this can signal AI authorship.
     Use Active Voice: Write in an active voice to make sentences more direct and engaging.
     
-    """
-
-
-    slug = key_words.replace(" ", "_")
-    slug = slug.replace(",", "_")
-
-    #Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
-    #Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
-    #Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 02, 2025")
-    #IndexPage.add_blog(file_path_laptop_bp, article_number, slug, key_words, "Feb 02, 2025")
-    #ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, "Feb 05, 2025")
-
-    file_path_laptop_image = "../temp\\"
-    file_path_laptop_thumb = "zappy\\thumbs\\"
-    file_path_laptop = "../temp\\"
-
-
-    #Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, "Feb 09, 2025")
-    #html_content_2 = Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
-
-    html_content_2 = ai.write_article(key_words, further_info)
-
-    img = wp.add_a_wordpress_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words)
-    wp.post_creator(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
-
+"""
