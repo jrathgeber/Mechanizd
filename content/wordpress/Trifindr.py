@@ -29,12 +29,14 @@ def download_image(url, file_name):
         print("Failed to retrieve the image")
 
 
-def create_product(title, description, price, image):
+def create_product(url, title, description, price, images):
 
-    #download_image("https://m.media-amazon.com/images/I/81FB3Yd2sTL._AC_SL1500_.jpg", "bike_image.jpg")
+    slug = title.replace(" ", "_")
 
-    image = wp.add_a_wordpress_image("bike_image.jpg", "bike_image")
+    image = slug + ".jpg"
 
-    file_path_laptop_image = "../temp\\"
+    download_image(images[0], image)
 
-    wp.product_upload(title, description, price, image)
+    image = wp.add_a_wordpress_image(image, slug)
+
+    wp.product_upload(url, slug, title, description, price, image)

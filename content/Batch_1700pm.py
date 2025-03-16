@@ -56,7 +56,9 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Amazon") and str(value) != "" and amzn_flag:
         o = web.get_amazon_product.get_product(value)
-        wordpress.Trifindr.create_product(o["title"], "o[desc]", o["price"], o["images"])
+        name = o["title"].split(",", 1)[0]
+        url = str(value)
+        wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
 
     if str(key).startswith("Blog") and str(value) != "" and blog_flag:
         blog.write_blog.write(value.lstrip())

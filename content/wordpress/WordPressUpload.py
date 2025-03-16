@@ -83,19 +83,23 @@ def add_a_wordpress_image(file_name, slug):
     return str(json.loads(response.content)["id"])
 
 
-def product_upload(title, description, price, image_id):
+def product_upload(url, slug, title, description, price, image_id):
 
     url = "https://trifindr.com/"
 
 
     # Product data
     payload = json.dumps({
-        "title": title,
+        "name": title,
         "content": description,
         "status": "publish",
         "type": "external",
         "regular_price": price,
-        "images": [{"id": image_id}]
+        "images": [{"id": image_id}],
+        "external_url": url,
+        "slug": slug,
+        "button_text" : "Buy On Amazon",
+        "short_description" : description
     })
 
     # Authentication
