@@ -42,10 +42,10 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = True
+amzn_flag = False
 blog_flag = False
 medium_flag = False
-triathlon_flag = False
+triathlon_flag = True
 twitter_flag = False
 youtube_flag = False
 
@@ -69,7 +69,7 @@ for key, value in daily_dict.items():
         med_list.append(value)
 
     if str(key).startswith("Triathlon") and str(value) != "" and triathlon_flag:
-        wordpress.Trifindr.create_blog_post(value)
+        wordpress.Trifindr.create_news_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
         twitter.tweet.tweetSomething(value)

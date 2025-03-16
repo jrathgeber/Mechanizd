@@ -1,7 +1,33 @@
 import content.prompts.Trifindr1
 import content.wordpress.WordPressUpload as wp
 import content.ai.OpenAi013 as ai
+import content.ai.OpenAi01 as news
+import content.ai.Dalle as dale
+
 import requests
+
+
+def create_news_post(key_words):
+
+    # Slugs
+    slug = key_words.replace(" ", "_")
+    name = slug
+
+    # Post
+    prompt = "Create a very short article list some news and events about Triathlon."
+    news_post = news.write_article(key_words, prompt)
+
+    # Image
+    slug = key_words.replace(" ", "_")
+    image = slug + ".jpg"
+    url = dale.create_image("", "", slug, key_words, "")
+    download_image(url, image)
+    img = wp.add_a_wordpress_image(image, name)
+
+    # Upload
+    wp.post_upload(img, key_words, news_post, "https://trifindr.com",  "publish")
+
+
 
 def create_blog_post(key_words):
 
@@ -16,7 +42,7 @@ def create_blog_post(key_words):
 
     img = wp.add_a_wordpress_image(file_path_laptop_image, name)
 
-    wp.post_creator(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
+    wp.post_upload(img, key_words, html_content_2, "https://trifindr.com", "la", "en", "publish")
 
 
 def download_image(url, file_name):

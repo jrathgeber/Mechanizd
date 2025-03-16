@@ -16,7 +16,7 @@ wp_pass = config['wordpress']['pass']
 print("Wordpress data set...")
 
 
-def post_creator(img, key_words, source, wpBaseURL, sourceLang, targetLang, postStatus):
+def post_upload(img, key_words, source, wpBaseURL, postStatus):
 
     title_translation_text = key_words
     content_translation_text = source
@@ -33,8 +33,8 @@ def post_creator(img, key_words, source, wpBaseURL, sourceLang, targetLang, post
     payload = json.dumps({
         "status": postStatus,
         "title": title_translation_text,
-        "content": content_translation_text,
-       # "featured_media": img
+        "content" : content_translation_text,
+        "featured_media": img
 
     })
 
