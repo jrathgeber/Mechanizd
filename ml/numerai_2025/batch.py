@@ -11,7 +11,9 @@ Worked it working on March 11th 2025
 import configparser
 
 #import example_model_5_0 as mechXg
-import example_model_4_1 as mechXg
+#import example_model_4_1 as mechXg
+
+import tournament as mechXg
 
 import os
 import time
