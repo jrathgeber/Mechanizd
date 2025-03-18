@@ -56,7 +56,7 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Amazon") and str(value) != "" and amzn_flag:
         o = web.get_amazon_product.get_product(value)
-        name = o["title"].split(",", 1)[0]
+        name = o["title"].split(",", 1)[0].split("|", 1)[0]
         url = str(value)
         wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
 
