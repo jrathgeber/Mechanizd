@@ -42,10 +42,10 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = False
+amzn_flag = True
 blog_flag = False
 medium_flag = False
-triathlon_flag = True
+triathlon_flag = False
 twitter_flag = False
 youtube_flag = False
 
@@ -56,7 +56,7 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Amazon") and str(value) != "" and amzn_flag:
         o = web.get_amazon_product.get_product(value)
-        name = o["title"].split(",", 1)[0].split("|", 1)[0]
+        name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
         url = str(value)
         wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
 
@@ -69,7 +69,8 @@ for key, value in daily_dict.items():
         med_list.append(value)
 
     if str(key).startswith("Triathlon") and str(value) != "" and triathlon_flag:
-        wordpress.Trifindr.create_news_post(value)
+        wordpress.Trifindr.create_blog_post(value)
+        #wordpress.Trifindr.create_news_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
         twitter.tweet.tweetSomething(value)
