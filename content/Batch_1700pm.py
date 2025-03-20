@@ -42,11 +42,11 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = True
-blog_flag = False
+amzn_flag = False
+blog_flag = True
 medium_flag = False
 triathlon_flag = False
-twitter_flag = False
+twitter_flag = True
 youtube_flag = False
 
 # Iterate the list

@@ -27,7 +27,7 @@ def write(title):
 
     print("BlogPath " + blog_path)
 
-    article_number = "036"
+    article_number = "040"
     key_words = title
 
     further_info = j1.get_prompt(key_words)
