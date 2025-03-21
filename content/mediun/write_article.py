@@ -1,4 +1,4 @@
-import content.ai.OpenAi013 as ai
+import ai.OpenAi013 as ai
 
 def new_article(key_words, further_info):
 

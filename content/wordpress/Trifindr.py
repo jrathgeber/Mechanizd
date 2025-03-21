@@ -1,11 +1,10 @@
-import content.prompts.Trifindr1
-import content.wordpress.WordPressUpload as wp
-import content.ai.OpenAi013 as ai
-import content.ai.OpenAi01 as news
-import content.ai.Dalle as dale
+import prompts.Trifindr1
+import wordpress.WordPressUpload as wp
+import ai.OpenAi013 as ai
+import ai.OpenAi01 as news
+import ai.Dalle as dale
 
 import requests
-
 
 def create_news_post(key_words):
 
@@ -26,7 +25,6 @@ def create_news_post(key_words):
 
     # Upload
     wp.post_upload(img, key_words, news_post, "https://trifindr.com",  "publish")
-
 
 
 def create_blog_post(key_words):

@@ -1,13 +1,12 @@
-import content.blog.BlogArticle as Article
-import content.blog.BlogPost as Post
-import content.blog.BlogIndex as IndexPage
-import content.blog.BlogImage as Image
-import content.blog.BlogArticleStyle as ArticleStyle
-import content.prompts.Jacky1 as j1
+import blog.BlogArticle as Article
+import blog.BlogPost as Post
+import blog.BlogIndex as IndexPage
+import blog.BlogImage as Image
+import blog.BlogArticleStyle as ArticleStyle
+import prompts.Jacky1 as j1
+
 import configparser
 from datetime import date
-
-
 
 def write(title):
 

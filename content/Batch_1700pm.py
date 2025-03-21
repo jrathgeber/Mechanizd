@@ -43,7 +43,7 @@ yt_key = ""
 
 # Flags for running it. Makes easier to test.
 amzn_flag = False
-blog_flag = True
+blog_flag = False
 medium_flag = False
 triathlon_flag = False
 twitter_flag = True
