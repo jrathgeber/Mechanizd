@@ -42,12 +42,13 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = False
-blog_flag = False
-medium_flag = False
+amzn_flag = True
+blog_flag = True
+medium_flag = True
 triathlon_flag = False
 twitter_flag = True
 youtube_flag = False
+youtube_downlaod_flag = False
 
 # Iterate the list
 for key, value in daily_dict.items():

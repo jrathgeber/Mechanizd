@@ -23,10 +23,11 @@ def write(title):
     # blog_path = "C:\\dev\\godaddy\\vcard"
     # blog_path = "D:\\gd23\\vcard"
     blog_path = str(config['blog']['blog_path'])
+    blog_index = str(config['blog']['blog_index'])
 
     print("BlogPath " + blog_path)
 
-    article_number = "040"
+    article_number = blog_index
     key_words = title
 
     further_info = j1.get_prompt(key_words)
