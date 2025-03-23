@@ -1,5 +1,5 @@
-from content.blog import BlogArticle as Article, BlogPost as Post, BlogIndex as IndexPage, BlogImage as Image
-import content.prompts.Jacky2 as j2
+from blog import BlogArticle as Article, BlogPost as Post, BlogIndex as IndexPage, BlogImage as Image
+import prompts.Jacky2 as j2
 import configparser
 
 # Get Reference to Properties

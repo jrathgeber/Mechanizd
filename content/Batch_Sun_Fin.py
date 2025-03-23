@@ -3,7 +3,7 @@ import notion.get_post as notn
 import notion.search as notnsearch
 import youtubevids.upload_video
 import twitter.tweet
-import content.ai.Perplexity as perp
+import ai.Perplexity as perp
 
 from datetime import timedelta
 from datetime import date
@@ -33,6 +33,6 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Twitter") and str(value) != "":
 
-        post = perp.get_latest_info(value)
-        # twitter.tweet.tweetSomething(post)
+        post = perp.get_stock_info(value)
+        twitter.tweet.tweetSomething(post)
         print("Tweeting ::: " + post)

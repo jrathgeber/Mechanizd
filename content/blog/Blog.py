@@ -4,7 +4,7 @@ import BlogPost as Post
 import BlogIndex as IndexPage
 import BlogImage as Image
 import BlogArticleStyle as ArticleStyle
-import content.prompts.Jacky1 as j1
+import prompts.Jacky1 as j1
 import configparser
 from datetime import date
 
