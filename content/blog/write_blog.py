@@ -3,7 +3,9 @@ import blog.BlogPost as Post
 import blog.BlogIndex as IndexPage
 import blog.BlogImage as Image
 import blog.BlogArticleStyle as ArticleStyle
+
 import prompts.Jacky1 as j1
+import prompts.Code_css as code_css
 
 import configparser
 from datetime import date
@@ -30,7 +32,7 @@ def write(title):
     article_number = blog_index
     key_words = title
 
-    further_info = j1.get_prompt(key_words)
+    full_prompt = j1.get_prompt(key_words) + code_css.get_css_prompt("nothing")
 
     slug = key_words.replace(" ", "_")
 
@@ -39,7 +41,7 @@ def write(title):
     file_path_laptop_image = blog_path + "\\assets\\custom\\images\\blog\\"
     file_path_laptop_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
 
-    Article.new_article(file_path_laptop, article_number, slug, key_words, further_info)
+    Article.new_article(file_path_laptop, article_number, slug, key_words, full_prompt)
     Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
     Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, formatted_date)
     IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)

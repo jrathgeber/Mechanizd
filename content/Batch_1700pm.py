@@ -4,9 +4,10 @@ import mediun.write_article
 import notion.search as notnsearch
 import notion.get_post as notn
 import twitter.tweet
-import youtubevids.upload_video
 import web.get_amazon_product
 import wordpress.Trifindr
+import youtubevids.upload_video
+import youtubevids.download_transcript
 
 from datetime import date
 
@@ -45,39 +46,46 @@ yt_key = ""
 amzn_flag = True
 blog_flag = True
 medium_flag = True
-triathlon_flag = False
+triathlon_flag = True
 twitter_flag = True
 youtube_flag = False
-youtube_downlaod_flag = False
+youtube_downlaod_flag = True
+
+medium_set = False
+youtube_set = False
 
 # Iterate the list
 for key, value in daily_dict.items():
 
     print(f"{key}: {value}")
 
-    if str(key).startswith("Amazon") and str(value) != "" and amzn_flag:
+    if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
+        print("[" + str(value) + "]")
         o = web.get_amazon_product.get_product(value)
         name = o["title"].split(",", 1)[0].split("|", 1)[0].split("-", 1)[0]
         url = str(value)
         wordpress.Trifindr.create_product(url, name, str(o["title"]), o["price"], o["images"])
 
-    if str(key).startswith("Blog") and str(value) != "" and blog_flag:
+    if str(key).startswith("Blog") and str(value) != "    " and blog_flag:
         blog.write_blog.write(value.lstrip())
 
-    if str(key).startswith("Medium") and str(value) != "" and medium_flag:
+    if str(key).startswith("Medium") and str(value) != "    " and medium_flag:
         if "Article : " in str(value):
             title = value.partition("Article : ")[2]
         med_list.append(value)
+        medium_set = True
 
-    if str(key).startswith("Triathlon") and str(value) != "" and triathlon_flag:
+    if str(key).startswith("Triathlon") and str(value) != "    " and triathlon_flag:
         wordpress.Trifindr.create_blog_post(value)
         #wordpress.Trifindr.create_news_post(value)
 
-    if str(key).startswith("Twitter") and str(value) != "" and twitter_flag:
+    if str(key).startswith("Twitter") and str(value) != "    " and twitter_flag:
         twitter.tweet.tweetSomething(value)
         print("Tweeting ::: " + value)
 
-    if str(key).startswith("YouTube") and str(value) != "" and youtube_flag:
+    if str(key).startswith("YouTube Upload") and str(value) != "    " and youtube_flag:
+
+        youtube_set = True
 
         if "Title:" in str(value):
             yt_title = value.partition("Title: ")[2]
@@ -97,7 +105,11 @@ for key, value in daily_dict.items():
         if "Key:" in str(value):
             yt_key = value.partition("Key: ")[2]
 
-if medium_flag:
+    if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_downlaod_flag:
+        youtubevids.download_transcript(str(value))
+        print("Downloading ::: " + value)
+
+if medium_flag and medium_set:
 
     my_ideas = "".join(med_list)
 
@@ -111,7 +123,7 @@ if medium_flag:
 
     mediun.create_article.do_it(med_title, content)
 
-if youtube_flag:
+if youtube_flag and youtube_set:
 
     print(f"\nYouTube upload for {yt_title} and {yt_path} and {yt_desc} and {yt_cat} and {yt_privy} and {yt_key}")
     youtubevids.upload_video.upload_video_from_batch(yt_title, yt_path, yt_desc, yt_cat, yt_privy, yt_key)
