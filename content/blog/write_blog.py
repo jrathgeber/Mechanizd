@@ -3,6 +3,7 @@ import blog.BlogPost as Post
 import blog.BlogIndex as IndexPage
 import blog.BlogImage as Image
 import blog.BlogArticleStyle as ArticleStyle
+import blog.update_index as Uidx
 
 import prompts.Jacky1 as j1
 import prompts.Code_css as code_css
@@ -28,8 +29,9 @@ def write(title):
     blog_index = str(config['blog']['blog_index'])
 
     print("BlogPath " + blog_path)
+    print("BlogIndex " + str(int(blog_index)+1))
 
-    article_number = blog_index
+    article_number = Uidx.convert_to_three_digit_string(int(blog_index)+1)
     key_words = title
 
     full_prompt = j1.get_prompt(key_words) + code_css.get_css_prompt("nothing")
@@ -47,3 +49,6 @@ def write(title):
     IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)
 
     ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, formatted_date)
+
+    Uidx.update_config_index(int(blog_index))
+

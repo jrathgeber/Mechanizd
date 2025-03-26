@@ -43,13 +43,13 @@ yt_key = ""
 
 
 # Flags for running it. Makes easier to test.
-amzn_flag = True
+amzn_flag = False
 blog_flag = True
-medium_flag = True
-triathlon_flag = True
-twitter_flag = True
+medium_flag = False
+triathlon_flag = False
+twitter_flag = False
 youtube_flag = False
-youtube_downlaod_flag = True
+youtube_download_flag = False
 
 medium_set = False
 youtube_set = False
@@ -105,8 +105,8 @@ for key, value in daily_dict.items():
         if "Key:" in str(value):
             yt_key = value.partition("Key: ")[2]
 
-    if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_downlaod_flag:
-        youtubevids.download_transcript(str(value))
+    if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
+        youtubevids.download_transcript.fetch_it(value.partition("v=")[2])
         print("Downloading ::: " + value)
 
 if medium_flag and medium_set:

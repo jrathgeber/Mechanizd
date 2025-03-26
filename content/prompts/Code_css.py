@@ -67,3 +67,5 @@ Last edited 2 months ago
        
     
     """
+
+    return prompt
