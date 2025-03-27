@@ -1,6 +1,6 @@
 from openai import OpenAI
 import configparser
-#import prompts.Gainers1 as gain_prompt
+import prompts.Gainers1 as gain_prompt
 
 
 def get_latest_info(prompt):
@@ -41,9 +41,11 @@ def get_gainers_info(tick_list):
 
     print(tick_list)
 
-    prompt = "Provide super concise info about these stocks : " + tick_list
+    prompt = gain_prompt.get_prompt(tick_list)
 
-    print("\nFurther details : \n" + prompt)
+    # prompt = "Provide super concise info about the following stocks. If a stock can't be found just ignore it and say nothing. Don't provide citation or citation numbers. Don't introduce the list just get to the stocks : " + tick_list
+
+    print("\n The Gainers prompt : \n" + prompt)
 
     response = client.chat.completions.create(
         model="sonar-pro",

@@ -1,3 +1,4 @@
+import ai.ClaudeCode
 import blog.write_blog
 import mediun.create_article
 import mediun.write_article
@@ -41,23 +42,28 @@ yt_cat = ""
 yt_privy = ""
 yt_key = ""
 
-
 # Flags for running it. Makes easier to test.
-amzn_flag = False
+ai_flag = True
+amzn_flag = True
 blog_flag = True
-medium_flag = False
-triathlon_flag = False
-twitter_flag = False
+medium_flag = True
+triathlon_flag = True
+twitter_flag = True
 youtube_flag = False
-youtube_download_flag = False
+youtube_download_flag = True
 
 medium_set = False
 youtube_set = False
+
+video_text = None
 
 # Iterate the list
 for key, value in daily_dict.items():
 
     print(f"{key}: {value}")
+
+    if str(key).startswith("AI") and str(value) != "    " and ai_flag:
+        ai.ClaudeCode.main(value.lstrip())
 
     if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")
@@ -106,12 +112,15 @@ for key, value in daily_dict.items():
             yt_key = value.partition("Key: ")[2]
 
     if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
-        youtubevids.download_transcript.fetch_it(value.partition("v=")[2])
+        video_text = youtubevids.download_transcript.fetch_it(value.partition("v=")[2])
         print("Downloading ::: " + value)
 
 if medium_flag and medium_set:
 
     my_ideas = "".join(med_list)
+
+    if youtube_download_flag and video_text != None :
+        my_ideas += video_text
 
     print("The text : ")
     print(med_list)

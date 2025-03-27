@@ -1,10 +1,16 @@
 
-
-
-def get_prompt(key_words):
+def get_prompt(ticker_list):
 
     prompt = f"""
     
-    Write a very short research report about each stock in this list : 
+Provide super concise info about the following stocks. 
+
+If a stock can't be found just ignore it and say nothing. 
+
+Don't provide citation numbers. 
+
+Don't introduce the list just get to the stocks. 
         
-    """ + key_words
+    """ + ticker_list
+
+    return prompt

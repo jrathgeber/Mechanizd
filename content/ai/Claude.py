@@ -10,6 +10,7 @@ config.read('C:\\etc\\properties.ini')
 api_key=config['claude']['api_key']
 
 def generate_article(topic, length="short"):
+
     # Initialize the Anthropic client
     client = anthropic.Client(api_key=api_key)
 
