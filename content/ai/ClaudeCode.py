@@ -5,7 +5,6 @@ from pathlib import Path
 import configparser
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
-
 api_key=config['claude']['api_key']
 
 
@@ -45,6 +44,7 @@ def generate_python_code(prompt):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+
 
 def save_python_file(code, filename='generated_code.py'):
     """

@@ -10,6 +10,9 @@ def fetch_it(video_id):
     transcript = ytt_api.fetch(video_id)
 
     transcript_text = ""
+    transcript_path = ""
+    transcript_name = ""
+
 
     with open('transcript.txt', 'w') as file:
         for snippet in transcript:

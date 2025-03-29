@@ -9,6 +9,7 @@ import web.get_amazon_product
 import wordpress.Trifindr
 import youtubevids.upload_video
 import youtubevids.download_transcript
+import email.yahoo_quick_email as yahoo
 
 from datetime import date
 
@@ -51,10 +52,9 @@ triathlon_flag = True
 twitter_flag = True
 youtube_flag = False
 youtube_download_flag = True
-
+send_email = True
 medium_set = False
 youtube_set = False
-
 video_text = None
 
 # Iterate the list
@@ -138,3 +138,6 @@ if youtube_flag and youtube_set:
     youtubevids.upload_video.upload_video_from_batch(yt_title, yt_path, yt_desc, yt_cat, yt_privy, yt_key)
 
 print(f"finished batch for {formatted_date}")
+
+if send_email:
+    yahoo.send_quick_message('Notion Batch has run')

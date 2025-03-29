@@ -2,10 +2,9 @@
 import smtplib, os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-#from email.utils import COMMASPACE, formatdate
 from email.utils import formatdate
 from email import encoders
+
 
 def send_mail( send_from, send_to, subject, text, files, server, port, username, password, isTls=True):
     msg = MIMEMultipart()
@@ -13,7 +12,6 @@ def send_mail( send_from, send_to, subject, text, files, server, port, username,
     msg['To'] = send_to
     msg['Date'] = formatdate(localtime = True)
     msg['Subject'] = subject
-	
     msg.add_header('Content-Type','text/html')
     msg.attach( MIMEText(text, 'html') )
 

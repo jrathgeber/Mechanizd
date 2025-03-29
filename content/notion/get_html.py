@@ -69,7 +69,7 @@ if __name__ == "__main__":
     print(extracted_sections)
 
     # Save extracted sections
-    with open("extracted_sections.txt", "w") as output_file:
+    with open("../zTemp/extracted_sections.txt", "w") as output_file:
         for section, content in extracted_sections.items():
             output_file.write(f"{section}:{content}\n")
 

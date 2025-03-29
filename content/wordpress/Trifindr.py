@@ -32,7 +32,7 @@ def create_blog_post(key_words):
     slug = key_words.replace(" ", "_")
     name = slug
 
-    file_path_laptop_image = "../temp\\"
+    file_path_laptop_image = "../linkedin\\"
 
     prompt = content.prompts.Trifindr1.further_info
 
