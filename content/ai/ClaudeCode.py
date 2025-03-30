@@ -1,11 +1,11 @@
 from anthropic import Anthropic
-import argparse
-from pathlib import Path
 
 import configparser
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
-api_key=config['claude']['api_key']
+
+api_key = config['claude']['api_key']
+code_path = config['blog']['blog_temp']
 
 
 def generate_python_code(prompt):
@@ -28,6 +28,12 @@ def generate_python_code(prompt):
             model="claude-3-5-sonnet-20240620",
             max_tokens=1000,
             messages=[
+
+                {
+                    "role": "user",
+                    "content": "You are an AI that strictly outputs only valid Python code"
+                               " without any explanations, comments, or markdown formatting."},
+
                 {
                     "role": "user",
                     "content": f"Please generate a complete, runnable Python script for the following task: {prompt}. "
@@ -46,14 +52,10 @@ def generate_python_code(prompt):
         return None
 
 
-def save_python_file(code, filename='generated_code.py'):
-    """
-    Save the generated Python code to a file.
-    
-    Args:
-        code (str): Python code to save
-        filename (str, optional): Name of the file to save. Defaults to 'generated_code.py'
-    """
+def save_python_file(slug, code):
+
+    filename = code_path + slug + '.py'
+
     if code:
         with open(filename, 'w') as file:
             file.write(code)
@@ -61,7 +63,10 @@ def save_python_file(code, filename='generated_code.py'):
     else:
         print("No code to save.")
 
-def main(prompt):
+
+def write_code_task(prompt):
+
+    slug = prompt.replace(" ", "_")
 
     # Example usage
     # prompt = "Create a simple web scraper that fetches the titles of top posts from Reddit"
@@ -71,7 +76,8 @@ def main(prompt):
     
     # Save the generated code to a file
     if generated_code:
-        save_python_file(generated_code)
+        save_python_file(slug, generated_code)
+
 
 if __name__ == "__main__":
-    main()
+    write_code_task("Print Hello Temp!")

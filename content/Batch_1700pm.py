@@ -63,7 +63,8 @@ for key, value in daily_dict.items():
     print(f"{key}: {value}")
 
     if str(key).startswith("AI") and str(value) != "    " and ai_flag:
-        ai.ClaudeCode.main(value.lstrip())
+        code_task = value.lstrip()
+        ai.ClaudeCode.write_code_task(code_task)
 
     if str(key).startswith("Amazon") and str(value) != "    " and amzn_flag:
         print("[" + str(value) + "]")

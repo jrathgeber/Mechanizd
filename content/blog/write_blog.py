@@ -4,9 +4,9 @@ import blog.BlogIndex as IndexPage
 import blog.BlogImage as Image
 import blog.BlogArticleStyle as ArticleStyle
 import blog.update_index as BlogIndex
-
 import prompts.Jacky1 as j1
 import prompts.Code_css as code_css
+import godaddy.publish_blog as Gd
 
 import configparser
 from datetime import date
@@ -39,17 +39,20 @@ def write(title):
 
     slug = key_words.replace(" ", "_")
 
-    file_path_laptop = blog_path + "\\blogpost\\Articles\\"
-    file_path_laptop_bp = blog_path + "\\blogpost\\"
-    file_path_laptop_image = blog_path + "\\assets\\custom\\images\\blog\\"
-    file_path_laptop_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
+    file_path = blog_path + "\\blogpost\\Articles\\"
+    file_path_bp = blog_path + "\\blogpost\\"
+    file_path_image = blog_path + "\\assets\\custom\\images\\blog\\"
+    file_path_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
 
-    Article.new_article(file_path_laptop, article_number, slug, key_words, full_prompt)
-    Post.new_post(file_path_laptop_bp, article_number, slug, key_words)
-    Image.new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, slug, key_words, formatted_date)
+    file_path = file_path + "article_" + article_number + "_" + slug + ".html"
+
+    Article.new_article(file_path, article_number, slug, key_words, full_prompt)
+    Post.new_post(file_path_bp, article_number, slug, key_words)
+    Image.new_image(file_path_image, file_path_thumb, article_number, slug, key_words, formatted_date)
     IndexPage.add_blog(blog_path, article_number, slug, key_words, formatted_date)
-
-    ArticleStyle.replace_stype(file_path_laptop_bp, article_number, slug, key_words, formatted_date)
+    ArticleStyle.replace_stype(file_path_bp, article_number, slug, key_words, formatted_date)
 
     BlogIndex.update_config_index(int(blog_index)+1)
+
+    Gd.publish_blog(file_path, "Article")
 

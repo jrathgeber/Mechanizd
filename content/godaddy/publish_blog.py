@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 24 06:52:28 2017
-
-@author: Jason
-"""
-
-import sendMail;
-import os;
 import time
 import ftplib
 import configparser
@@ -19,41 +10,33 @@ gdurl = config['godaddy']['godaddy.url']
 gduser = config['godaddy']['godaddy.user']
 gdpass = config['godaddy']['godaddy.pass']
 
-url = config['yahoo']['yahoo.url']
-user = config['yahoo']['yahoo.user']
-password = config['yahoo']['yahoo.pass']
-server = config['yahoo']['yahoo.server']
-port = config['yahoo']['yahoo.port']
-username = config['yahoo']['yahoo.username']
-
-# cc_list = ('jrathgeber@yahoo.com','rathgeber.webster@gmail.com')
-cc_list = ('jrathgeber@yahoo.com')
-
-model = 'MaxAlphaLive'
-timestr = time.strftime("%d%m%y")
 session = ftplib.FTP(gdurl, gduser, gdpass)
 
-# Backtest Js and download prices
-os.chdir('c:\\dep\\Mechanizd\\rightedge\\')
+def publish_blog(from_file, blog_type):
 
-# send live MaxAlpha Output
-with open('C:\dec\RightEdge\Systems\MaxAlphaLive\output.html', 'r') as f:
-    data = str(f.read())
-    sendMail.send_mail('jrathgeber@yahoo.com', cc_list, 'Max Alpha One Live', data,
-                       ['C:\dec\RightEdge\Systems\MaxAlphaLive\output.txt'], server, port, username, password)
+    if blog_type == "post":
+        post_file = open(from_file, 'rb')
+        session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', post_file)  # send the file
+        post_file.close()
 
-    copyfile("C:\dec\RightEdge\Systems\\" + model + "\output.html",
-             'C:\dev\godaddy\\mech\output\RightEdge\\Live\\' + model + '_' + timestr + '.htm')
+    if blog_type == "article":
+        article_file = open(from_file, 'rb')
+        session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', article_file)  # send the file
+        article_file.close()
 
-    file = open('C:\dec\RightEdge\Systems\MaxAlphaLive\output.html', 'rb')
-    session.storbinary('STOR /mech/output/RightEdge/Live/' + model + '_' + timestr + '.htm', file)  # send the file
-    file.close()
+    if blog_type == "image":
+        image_file = open(from_file, 'rb')
+        session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', image_file)  # send the file
+        image_file.close()
 
-    f.close();
+    if blog_type == "thumb":
+        thumb_file = open(from_file, 'rb')
+        session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', thumb_file)  # send the file
+        thumb_file.close()
 
+    if blog_type == "blog":
+        blog_file = open(from_file, 'rb')
+        session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', blog_file)  # send the file
+        blog_file.close()
 
-fileSummary = open('C:\dev\godaddy\\mech\output\RightEdge\Live\RightEdgeResults.htm', 'rb')
-session.storbinary('STOR /mech/output/RightEdge/Live/RightEdgeResults.htm', fileSummary)  # send the file
-fileSummary.close()
-
-session.quit()
+    session.quit()
