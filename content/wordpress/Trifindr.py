@@ -1,4 +1,4 @@
-import prompts.Trifindr1
+import prompts.aTrifindr
 import wordpress.WordPressUpload as wp
 import ai.OpenAi013 as ai
 import ai.OpenAi01 as news

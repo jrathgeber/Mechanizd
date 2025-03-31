@@ -5,13 +5,14 @@ Created on Sum Jan 22 2025
 @author: Jason R
 """
 
-import openai
+#import openai
 from openai import OpenAI
 import configparser
 
 # Get Reference to Properties
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
+
 
 def write_article(key_words, further_info):
 

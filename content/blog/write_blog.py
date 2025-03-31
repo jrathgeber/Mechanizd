@@ -4,7 +4,8 @@ import blog.BlogIndex as IndexPage
 import blog.BlogImage as Image
 import blog.BlogArticleStyle as ArticleStyle
 import blog.update_index as BlogIndex
-import prompts.Jacky1 as j1
+
+import prompts.aBlog as BlogPrompt
 import prompts.Code_css as code_css
 import godaddy.publish_blog as Gd
 
@@ -35,7 +36,7 @@ def write(title):
     article_number = BlogIndex.convert_to_three_digit_string(int(blog_index)+1)
     key_words = title
 
-    full_prompt = j1.get_prompt(key_words) + code_css.get_css_prompt("nothing")
+    full_prompt = BlogPrompt.get_prompt(key_words) + code_css.get_css_prompt("nothing")
 
     slug = key_words.replace(" ", "_")
 

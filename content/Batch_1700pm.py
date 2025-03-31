@@ -9,7 +9,7 @@ import web.get_amazon_product
 import wordpress.Trifindr
 import youtubevids.upload_video
 import youtubevids.download_transcript
-import email.yahoo_quick_email as yahoo
+import emailxx.yahoo_quick_email as yahoo
 
 from datetime import date
 

@@ -9,15 +9,7 @@ code_path = config['blog']['blog_temp']
 
 
 def generate_python_code(prompt):
-    """
-    Generate Python code using Anthropic's Claude API based on a given prompt.
-    
-    Args:
-        prompt (str): A description of the Python code to generate
-    
-    Returns:
-        str: Generated Python code
-    """
+
     # Initialize the Anthropic client
     # Note: You must set the ANTHROPIC_API_KEY environment variable
     client = Anthropic(api_key=api_key)
@@ -80,4 +72,4 @@ def write_code_task(prompt):
 
 
 if __name__ == "__main__":
-    write_code_task("Print Hello Temp!")
+    write_code_task("Send a message to whatsapp")

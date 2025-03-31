@@ -1,5 +1,5 @@
 import configparser
-import content.email.yahoo_send_mail as yahoo
+import content.emailxx.yahoo_send_mail as yahoo
 
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
@@ -17,4 +17,4 @@ def send_quick_message(message):
         yahoo.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Hello', message, [], server, port, username, password)
 
 
-send_quick_message("Hello!")
+#send_quick_message("Hello!")

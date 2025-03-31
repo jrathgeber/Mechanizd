@@ -1,6 +1,6 @@
 from openai import OpenAI
 import configparser
-import prompts.Gainers1 as gain_prompt
+import prompts.aGainers as gain_prompt
 
 
 def get_latest_info(prompt):
