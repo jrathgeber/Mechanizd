@@ -1,5 +1,5 @@
 import configparser
-import content.emailxx.yahoo_send_mail as yahoo
+import emailxx.yahoo_send_mail as yahoo
 
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')

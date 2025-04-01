@@ -1,6 +1,6 @@
 import time
 import configparser
-import content.emailxx.yahoo_send_mail as yahoo
+import emailxx.yahoo_send_mail as yahoo
 import twitter.tweet as tw
 import web.get_gainers as tv
 import ai.Perplexity as perp
@@ -49,6 +49,6 @@ if tickerList[0]=='error':
 else:
     yahoo.send_mail(user, user, 'Max ' + ','.join(tickerList), '$' + ', $'.join(tickerList) + ' \n \n ' + post, [], server, port, username, password)
 
-  #  tw.tweetSomething('Equity pre market gainers $' + ', $'.join(tickerList) + '\n\n' + post)
+    tw.tweetSomething('Equity pre market gainers $' + ', $'.join(tickerList) + '\n\n' + post)
 
     print("We sent and tweeted all we could.")
