@@ -67,3 +67,5 @@ def get_product(target_url):
 if __name__ == "__main__":
 
     df = get_product("https://amzn.to/4hMSZxf")
+
+    #get_product("https://amzn.to/4hZvKQH")

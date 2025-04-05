@@ -45,7 +45,7 @@ yt_key = ""
 
 # Flags for running it. Makes easier to test.
 ai_flag = False
-amzn_flag = False
+amzn_flag = True
 blog_flag = False
 medium_flag = False
 triathlon_flag = False

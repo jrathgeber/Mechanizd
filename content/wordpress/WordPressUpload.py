@@ -5,7 +5,6 @@ import json
 import configparser
 from requests.auth import HTTPBasicAuth
 
-
 # Get Reference to Properties
 config = configparser.ConfigParser()
 config.read('C:\\etc\\properties.ini')
@@ -55,8 +54,6 @@ def add_a_wordpress_image(file_name, slug):
     auth = HTTPBasicAuth(wp_user, wp_pass)
     url = "https://trifindr.com/wp-json/wp/v2/media"
 
-    #file_name = file_path_laptop_image + '_' + slug + '.jpg'
-
     img_name = slug
 
     # Define the image
@@ -68,7 +65,6 @@ def add_a_wordpress_image(file_name, slug):
 
     # Post the image to WP
     response = requests.post(url, auth=auth, files=media)  # ! files=, not json= !
-
 
     # Check Response
     if response.status_code == 201:
@@ -83,10 +79,9 @@ def add_a_wordpress_image(file_name, slug):
     return str(json.loads(response.content)["id"])
 
 
-def product_upload(url, slug, title, description, price, image_id):
+def product_upload(ext_url, slug, title, description, price, image_id):
 
-    url = "https://trifindr.com/"
-
+    print("URL is :: " + ext_url)
 
     # Product data
     payload = json.dumps({
@@ -96,11 +91,13 @@ def product_upload(url, slug, title, description, price, image_id):
         "type": "external",
         "regular_price": price,
         "images": [{"id": image_id}],
-        "external_url": url,
+        "external_url": ext_url,
         "slug": slug,
         "button_text" : "Buy On Amazon",
         "short_description" : description
     })
+
+    tri_url = "https://trifindr.com/"
 
     # Authentication
     auth = HTTPBasicAuth(wp_user, wp_pass)
@@ -111,7 +108,7 @@ def product_upload(url, slug, title, description, price, image_id):
     }
 
     # API endpoint
-    endpoint = f"{url}/wp-json/wc/v2/products"
+    endpoint = f"{tri_url}/wp-json/wc/v2/products"
 
     # Send the request
     response = requests.request(
