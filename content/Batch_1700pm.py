@@ -44,12 +44,12 @@ yt_privy = ""
 yt_key = ""
 
 # Flags for running it. Makes easier to test.
-ai_flag = True
-amzn_flag = True
-blog_flag = True
-medium_flag = True
-triathlon_flag = True
-twitter_flag = True
+ai_flag = False
+amzn_flag = False
+blog_flag = False
+medium_flag = False
+triathlon_flag = False
+twitter_flag = False
 youtube_flag = False
 youtube_download_flag = True
 send_email = True
@@ -83,8 +83,8 @@ for key, value in daily_dict.items():
         medium_set = True
 
     if str(key).startswith("Triathlon") and str(value) != "    " and triathlon_flag:
-        wordpress.Trifindr.create_blog_post(value)
-        #wordpress.Trifindr.create_news_post(value)
+        #wordpress.Trifindr.create_blog_post(value)
+        wordpress.Trifindr.create_news_post(value)
 
     if str(key).startswith("Twitter") and str(value) != "    " and twitter_flag:
         twitter.tweet.tweetSomething(value)
@@ -113,7 +113,7 @@ for key, value in daily_dict.items():
             yt_key = value.partition("Key: ")[2]
 
     if str(key).startswith("YouTube Download") and str(value) != "    " and youtube_download_flag:
-        video_text = youtubevids.download_transcript.fetch_it(value.partition("v=")[2])
+        video_text = youtubevids.download_transcript.fetch_it(value.partition("=")[2])
         print("Downloading ::: " + value)
 
 if medium_flag and medium_set:

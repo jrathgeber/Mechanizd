@@ -32,9 +32,9 @@ def create_blog_post(key_words):
     slug = key_words.replace(" ", "_")
     name = slug
 
-    file_path_laptop_image = "../linkedin\\"
+    file_path_laptop_image = "C:\\dep\\Mechanizd\\content\\"
 
-    prompt = content.prompts.Trifindr1.further_info
+    prompt = prompts.aTrifindr.prompt
 
     html_content_2 = ai.write_article(key_words, prompt)
 

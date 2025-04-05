@@ -45,8 +45,6 @@ def write(title):
     file_path_image = blog_path + "\\assets\\custom\\images\\blog\\"
     file_path_thumb = blog_path + "\\assets\\custom\\images\\blog\\thumbs\\"
 
-    file_path = file_path + "article_" + article_number + "_" + slug + ".html"
-
     Article.new_article(file_path, article_number, slug, key_words, full_prompt)
     Post.new_post(file_path_bp, article_number, slug, key_words)
     Image.new_image(file_path_image, file_path_thumb, article_number, slug, key_words, formatted_date)

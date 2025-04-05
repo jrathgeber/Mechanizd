@@ -44,9 +44,21 @@ def generate_python_code(prompt):
         return None
 
 
+
+def hyphen_split(s):
+    pos = s.index('_')
+    try:
+        return s[:s.index('_', pos + 1)]
+    except ValueError:
+        return s[:pos]
+
+
+
 def save_python_file(slug, code):
 
-    filename = code_path + slug + '.py'
+    print(hyphen_split(slug))
+
+    filename = code_path + hyphen_split(slug) + '.py'
 
     if code:
         with open(filename, 'w') as file:
