@@ -1,5 +1,6 @@
-import ai.Dalle as ai
+import content.ai.Dalle as ai
 import requests
+import os
 from PIL import Image
 
 
@@ -41,5 +42,23 @@ def new_image(file_path_laptop_image, file_path_laptop_thumb, article_number, sl
 
 
 if __name__ == "__main__":
+
+    '''
     create_thumbnail("C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\043_how_to_download_a_youtube_video_transcript_with_python.jpg",
-                     "C:\\dev\\godaddy\\vcard\\assets\custom\\images\\blog\\thumbs\\043_how_to_download_a_youtube_video_transcript_with_python.jpg")
+    "C:\\dev\\godaddy\\vcard\\assets\custom\\images\\blog\\thumbs\\043_how_to_download_a_youtube_video_transcript_with_python.jpg")
+
+    if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+
+    '''
+    directory = "C:\\dev\\godaddy\\vcard\\assets\\custom\\images\\blog\\"
+
+    dir_out = "C:\\dev\\godaddy\\vcard\\assets\custom\\images\\blog\\thumbs\\v2\\"
+
+
+
+    for filename in os.listdir(directory):
+        if filename.lower().endswith(('.jpg')):
+            file_path = os.path.join(directory, filename)
+            name = os.path.splitext(filename)[0]
+            print(name)
+            create_thumbnail(file_path,dir_out + name + '.jpg')

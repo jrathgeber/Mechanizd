@@ -44,8 +44,8 @@ yt_privy = ""
 yt_key = ""
 
 # Flags for running it. Makes easier to test.
-ai_flag = False
-amzn_flag = True
+ai_flag = True
+amzn_flag = False
 blog_flag = False
 medium_flag = False
 triathlon_flag = False
