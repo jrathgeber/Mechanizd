@@ -1,4 +1,4 @@
-import content.ai.Dalle as ai
+import ai.Dalle as ai
 import requests
 import os
 from PIL import Image

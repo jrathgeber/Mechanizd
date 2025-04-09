@@ -18,10 +18,11 @@ def fetch_it(video_id):
     transcript_path = code_path
     transcript_name = video_id
 
-    file_to_download =  transcript_path + "youtube_transcript_" + transcript_name + ".txt"
+    file_to_download = transcript_path + "youtube_transcript_" + transcript_name + ".txt"
 
     with open(file_to_download, 'w') as file:
         for snippet in transcript:
+            file.write(f"{snippet.text}\n")
             transcript_text += snippet.text
             print(snippet.text)
 

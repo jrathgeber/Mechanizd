@@ -9,6 +9,7 @@ config.read('C:\\etc\\properties.ini')
 
 api_key=config['claude']['api_key']
 
+
 def read_file(file_path):
     """Read the contents of a file."""
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -83,12 +84,11 @@ def detect_file_type(file_path):
 
 
 def main():
+
     parser = argparse.ArgumentParser(description="Generate documentation for code files using Claude API")
     parser.add_argument("file_path", help="Path to the file to document")
-    parser.add_argument("--no-save", action="store_true",
-                        help="Don't save the documentation to a file")
-    parser.add_argument("--output-format", choices=["text", "markdown"],
-                        default="markdown", help="Output format for documentation")
+    parser.add_argument("--no-save", action="store_true", help="Don't save the documentation to a file")
+    parser.add_argument("--output-format", choices=["text", "markdown"], default="markdown", help="Output format for documentation")
 
     args = parser.parse_args()
 
