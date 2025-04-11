@@ -45,14 +45,14 @@ yt_key = ""
 
 # Flags for running it. Makes easier to test.
 ai_flag = True
-amzn_flag = False
-blog_flag = False
+amzn_flag = True
+blog_flag = True
 medium_flag = True
-triathlon_flag = False
-twitter_flag = False
+triathlon_flag = True
+twitter_flag = True
 youtube_flag = False
 youtube_download_flag = True
-send_email = False
+send_email = True
 medium_set = False
 youtube_set = False
 video_text = None
