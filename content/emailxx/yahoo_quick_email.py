@@ -12,9 +12,9 @@ port = config['yahoo']['yahoo.port']
 username = config['yahoo']['yahoo.username']
 
 
-def send_quick_message(message):
+def send_quick_message(subject, message):
     if message != '':
-        yahoo.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', 'Hello', message, [], server, port, username, password)
+        yahoo.send_mail('jrathgeber@yahoo.com', 'jrathgeber@yahoo.com', subject, message, [], server, port, username, password)
 
 
 #send_quick_message("Hello!")

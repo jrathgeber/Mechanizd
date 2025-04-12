@@ -43,6 +43,10 @@ yt_cat = ""
 yt_privy = ""
 yt_key = ""
 
+#Twitter vars
+tw_tweet = "nothing"
+
+
 # Flags for running it. Makes easier to test.
 ai_flag = True
 amzn_flag = True
@@ -53,6 +57,7 @@ twitter_flag = True
 youtube_flag = False
 youtube_download_flag = True
 send_email = True
+
 medium_set = False
 youtube_set = False
 video_text = None
@@ -88,6 +93,7 @@ for key, value in daily_dict.items():
 
     if str(key).startswith("Twitter") and str(value) != "    " and twitter_flag:
         twitter.tweet.tweetSomething(value)
+        tw_tweet = value
         print("Tweeting ::: " + value)
 
     if str(key).startswith("YouTube Upload") and str(value) != "    " and youtube_flag:
@@ -120,7 +126,7 @@ if medium_flag and medium_set:
 
     my_ideas = "".join(med_list)
 
-    if youtube_download_flag and video_text != None :
+    if youtube_download_flag and video_text is not None:
         my_ideas += video_text
 
     print("The text : ")
@@ -141,4 +147,14 @@ if youtube_flag and youtube_set:
 print(f"finished batch for {formatted_date}")
 
 if send_email:
-    yahoo.send_quick_message('Notion Batch has run')
+    yahoo.send_quick_message('Notion Batch has run :' + tw_tweet,
+                                "ai_flag [" + str(ai_flag) + "]" +
+                                "amzn_flag [" + str(amzn_flag) + "]" +
+                                "blog_flag [" + str(blog_flag) + "]" +
+                                "medium_flag [" + str(medium_flag) + "]" +
+                                "triathlon_flag [" + str(triathlon_flag) + "]" +
+                                "twitter_flag" + str(twitter_flag) + "]" +
+                                "youtube_flag [" + str(youtube_flag) + "]" +
+                                "youtube_download_flag [" + str(youtube_download_flag) + "]" +
+                                "send_email [" + str(send_email)
+                             )
