@@ -43,7 +43,7 @@ yt_cat = ""
 yt_privy = ""
 yt_key = ""
 
-#Twitter vars
+# Twitter vars
 tw_tweet = "nothing"
 
 

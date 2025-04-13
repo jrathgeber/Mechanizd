@@ -1,6 +1,6 @@
 
 
-def new_post(path, number, slug, key_words):
+def new_post(path, number, slug, key_words, formatted_date):
 
     html_content = """
         
@@ -128,7 +128,7 @@ def new_post(path, number, slug, key_words):
 
       <section id="page-title" class="inner-section">
          <div class="container-fluid nopadding wow fadeInRight" data-wow-delay="0.4s" data-wow-offset="10">
-            <div class="post-meta"><span>by <a href="#!">Jason Rathgeber</a>,</span> <span>December 19th, 2024</span></div>
+            <div class="post-meta"><span>by <a href="#!">Jason Rathgeber</a>,</span> <span> """ + formatted_date + """ </span></div>
          </div>
       </section>
 
@@ -139,8 +139,6 @@ def new_post(path, number, slug, key_words):
 
             <!-- Post Content -->
            <article class="post wow fadeInDown" data-wow-delay="0.6s" data-wow-offset="10">
-
-               <h1>""" + key_words + """</h1>
 
                 <div class="article"></div>     
                 <div class="lastly"></div>     

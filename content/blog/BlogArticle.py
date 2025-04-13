@@ -5,7 +5,7 @@ def new_article(path, number, slug, key_words, further_info):
 
     html_content = Ai.write_article(key_words, further_info)
 
-    html_content_2 = html_content.strip("```").replace("python\n", "", 1)
+    html_content_2 = html_content.strip("```").strip("html").replace("python\n", "", 1)
 
     # File path where you want to save the HTML file
     file_path = path + "article_" + number + "_" + slug + ".html"
