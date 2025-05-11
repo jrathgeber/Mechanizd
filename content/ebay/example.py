@@ -3,7 +3,7 @@ from ebaysdk.exception import ConnectionError
 from ebaysdk.finding import Connection
 
 try:
-    api = Connection(appid='YOUR_APPID_HERE', config_file=None)
+    api = Connection(appid='JasonRat-Mechaniz-SBX-3f73964fa-89a456a0', config_file=None)
     response = api.execute('findItemsAdvanced', {'keywords': 'legos'})
 
     assert(response.reply.ack == 'Success')

@@ -3,9 +3,11 @@ import ebaysdk
 
 from ebaysdk import connection, trading
 
+from ebaysdk.finding import Connection
+
 # Initialize connection with your credentials
 
-api = connection(config_file='your_config.yaml')
+api = Connection(config_file='ebay.yaml')
 
 # Create a new listing object
 

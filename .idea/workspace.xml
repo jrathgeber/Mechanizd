@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b6ad4d-ee24-45b2-89a1-e045f83d911f" name="Changes" comment="gains">
-      <change afterPath="$PROJECT_DIR$/content/godaddy/publish_blog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/prompts/1Medium.py" afterDir="false" />
+    <list default="true" id="97b6ad4d-ee24-45b2-89a1-e045f83d911f" name="Changes" comment="ithaca3rd">
+      <change afterPath="$PROJECT_DIR$/edu/pd/excel_open.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/prompts/Jacky1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/prompts/1Blog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/prompts/Transcript1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/prompts/Transcript_Fix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/prompts/Trifindr1.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/prompts/1Trifindr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ebay/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/ebay/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ebay/upload_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/ebay/upload_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,42 +45,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Batch_1700pm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.download_transcript.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Batch_1700pm.executor": "Run",
+    "Python.ClaudeCode.executor": "Run",
+    "Python.OpenAiCode.executor": "Run",
+    "Python.download_transcript.executor": "Run",
+    "Python.example.executor": "Run",
+    "Python.excel_open.executor": "Run",
+    "Python.thumbs.executor": "Run",
+    "Python.upload_product.executor": "Run",
+    "Python.yahoo_quick_email.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/jrath/PycharmProjects/Mechanizd/content/ebay",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\ebay" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\youtubevids" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\email" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\linkedin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\youtubevids" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\youtubevids\thumb_vid" />
+      <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\email" />
       <recent name="C:\Users\jrath\PycharmProjects\Mechanizd\content\zTemp" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.download_transcript">
-    <configuration name="Batch_1700pm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Mechanizd" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/Batch_1700pm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.excel_open">
     <configuration name="download_transcript" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mechanizd" />
       <option name="ENV_FILES" value="" />
@@ -105,10 +100,101 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ebay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ebay/example.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="excel_open" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/edu/pd" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/edu/pd/excel_open.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="thumbs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/youtubevids" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/youtubevids/thumbs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="upload_product" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mechanizd" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/content/ebay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/content/ebay/upload_product.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.excel_open" />
+        <item itemvalue="Python.example" />
+        <item itemvalue="Python.upload_product" />
+        <item itemvalue="Python.thumbs" />
         <item itemvalue="Python.download_transcript" />
-        <item itemvalue="Python.Batch_1700pm" />
       </list>
     </recent_temporary>
   </component>
@@ -136,11 +222,48 @@
       <option name="presentableId" value="Default" />
       <updated>1743039566823</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ithaca1st">
+      <option name="closed" value="true" />
+      <created>1743178068043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743178068043</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ithaca2nd">
+      <option name="closed" value="true" />
+      <created>1743268694761</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743268694761</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ithaca3rd">
+      <option name="closed" value="true" />
+      <created>1743328786246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743328786246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gains" />
-    <option name="LAST_COMMIT_MESSAGE" value="gains" />
+    <MESSAGE value="ithaca1st" />
+    <MESSAGE value="ithaca2nd" />
+    <MESSAGE value="ithaca3rd" />
+    <option name="LAST_COMMIT_MESSAGE" value="ithaca3rd" />
   </component>
 </project>
