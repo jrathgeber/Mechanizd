@@ -12,9 +12,22 @@ sheet2 = pd.read_excel(file,
 
 # concatinating both the sheets
 newData = pd.concat([sheet1, sheet2])
-print(newData)
 
-print(newData.head())
-print(newData.tail())
+#print(newData)
+#print(newData.head())
+#print(newData.tail())
 
-newData.shape
+print(newData.shape)
+sorted_column = newData.sort_values(['English'], ascending=True)
+print(sorted_column.head(5))
+
+#mat = newData['Math'].head()
+#print(mat)
+
+print(newData.describe())
+
+newData['Total Marks'] = newData["English"] + newData["Math"] + newData["Science"]
+
+print(newData['Total Marks'].head())
+
+newData.to_excel('Output File.xlsx')
