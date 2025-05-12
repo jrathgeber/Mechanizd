@@ -1,0 +1,435 @@
+All right, so everyone's been telling
+you that AI is going to kill software
+development jobs, but I think they've
+got it wrong. And I'm throwing my bet in
+with the trends that I'm seeing. So just
+this week, Octa CEO called the idea that
+we need fewer developers in the future
+laughable. And he's not alone. After 25
+years in the industry, I've witnessed
+every developer killer technology come
+and go from no code to low code to web
+3. Like I I've seen it over and over
+again. And development man developer
+demand just keeps only growing higher.
+Now, I know we've seen a rough couple of
+years, but this is more because of
+weirdness in the markets. But over the
+next 5 years, I think we're going to see
+an explosion in software development
+jobs. And today, I'm going to tell you
+exactly why and how you can position
+yourself to ride this next wave. So,
+let's dive in.
+Today, welcome to Startup Pack. I'm
+Spencer Thomasson. here at Startup Pack
+train software developers and our
+licensed coding boot camps as well as
+build custom software solutions for
+companies. With over a decade as exe of
+ex executive leadership as a fractional
+CTO and 25 years in software
+development, I've mastered transforming
+tech teams and products. All right, so
+let's jump over to this article here
+first because I think this is really
+interesting. So, uh, you know, some of
+us in the quieter and the trenches have
+been saying this for a while, but Octa
+CEO says that it's laughable and that AI
+won't replace software engineering
+despite other tech leaders predictions.
+So, Octa CEO Todd McKinnon is confident
+there will be more working software
+engineers working in 5 years than there
+are now. I agree with this
+wholeheartedly. He's the CEO of a 15
+billion identity and access management
+firm, Octa. and other like other tech
+leaders who predict AI will lead to
+fewer software engineers. McKinnon
+thinks the tech will lead to more
+employment instead. Let's go through a
+couple of the pieces here, right? He
+said, "I just laugh every time I hear
+about it." Octa CEO Todd McKinnon told
+Business Insider Tuesday, "This whole
+we're going to have fewer software
+engineers, it's laughable." He says, "In
+5 years, there will be more software
+engineers." He he disputed the idea that
+demand for software engineers will as AI
+coding capabilities grow. He said the
+more software engineers were needed in
+every era of advancement in technology
+industry from the rise of PC to the
+growth of mobile phones and while AI can
+tackle the grunt work engineers will
+level up to designing systems and
+handling more complex problems. Now if
+you don't think this guy knows what he's
+talking about the guy is running like
+the standard what is the standard for uh
+identity service and signins. So if you
+just want to slap a signin onto your
+app, you're going to go use octa, right?
+So Octa knows connectivity of systems.
+So I'm with him here, right? He explains
+that with every technological advance
+from compilers to mobile devices, we've
+seen software engineering engineering
+jobs multiply, not diminish. So this is
+a massive reversal from the doom and
+gloom predictions that we're hearing
+just months ago from these same
+executives. Now Sam Alman has shifted
+from saying AI would replace developers
+to now say he wants to 10x developers.
+And even Bill Gates is now claiming the
+software field is simply too complex for
+AI to handle without human engineers. So
+the irony is that AI is actually making
+it more complex to integrate systems,
+not less. So we're actually needing more
+software developers to implement all
+this AI that everybody said was going to
+implement itself, right? So when
+technologies make developers more
+productive, companies don't hire fewer,
+they build more ambitious projects with
+the same team size. Sam Alman now
+predicts that AI will make coders 10x
+more productive. Right? So this
+productivity boost means that a single
+developer might soon deliver what
+previously required an entire team. But
+that just means they're going to
+continue to accelerate. Right? I know
+every software development team that
+I've worked for, as soon as they get a
+little taste of it, they want more and
+more and more. I've never been in a
+software development project where they
+get into it and they're like, "That's
+great. We're done." Ever. Like 25 years
+of software development. So I've never
+heard a CEO say we have too many
+features. Let's build fewer things next
+year, right? Instead it just becomes,
+you know, software development becomes
+this crack cocaine that just becomes
+this addiction, right? So instead of
+this productivity revolution will
+unleash a torrent of new software
+possibilities that were previously too
+expensive or too timeconuming to pursue.
+So just like previous product
+advancements in software development,
+this will help create a surge in demand
+for engineers who can level leverage
+these new capabilities. Now, if your
+company has systems that aren't
+connected, let us help you out cuz our
+specialty here at StarterPac is
+connecting systems. So, reach out to us
+at
+startupac.com/spensor cuz we'd love to
+help. So, despite the hype, AI coding
+tools aren't replacing developers partly
+because they're they have serious
+reliability issues when used without
+human oversight. So there's a hilarious
+example that went vir viral recently
+about a developer Daniel Nan asked chat
+GBT to create a simple list of numbers
+from 1 to 20 and it confidently skipped
+the number 14 without noticing. Now even
+more telling when pointed out the AI
+insisted 14 was there showcasing the
+fundamental challenge of AI read
+reliability versus capability. So this
+reliability problems becomes
+exponentially worse when dealing with
+complex interconnected systems rather
+than isolated snips. So, could chat GPT
+spin up a a app that sits there by
+itself and is a calculator app? Yeah,
+probably. But now try to get that
+calculator app to connect to your
+servers. Good luck. Companies that rush
+to replace developers with AI have
+painfully discovered that AI generated
+code requires more debugging and
+maintenance than human written code. So,
+my developer team now use AI as a
+powerful assistant rather than
+replacement. Right? So, Todd McK
+McKinnon from Octa made another
+brilliant point. He said, "There's
+infinite demand for automation across
+every industry, far outpacing the
+efficiency gains from AI." So, McKinnon
+predicts companies like Octa, Microsoft,
+Meta, and Salesforce will all have more
+software developers in the near future,
+not fewer. Now, there's a lot of people
+who are also saying that some of the
+comments that we're hearing from
+Salesforce is actually just a smoke
+screen to just go and try to shift their
+sales their uh software developers to
+offshore. So, we're not just building
+the same software faster. We're entering
+an era where in where entire new
+categories of software become possible.
+So I've watched this pattern repeat
+throughout my career. Better tools don't
+reduce jobs. They enable us to solve
+previously impossible problems. So just
+as the iPhone created millions of app
+development jobs that didn't exist
+before, AI tools will spawn entirely new
+uh software ecosystems we just can't
+even imagine yet. Now the most valuable
+skills in software development have
+never been about typing code. And that's
+one of the fundamental things that
+they're getting that these your this
+hype you're get hearing about is getting
+wrong. They're about understanding
+problems and designing solutions.
+Companies are discovering that even if
+AI can generate lines of code, it can't
+replace the critical thinking needed to
+determine what should be built in the
+first place. So I tell my developers all
+the time, the best code they can write
+is often no code at all. Finding
+elegant, simple solutions rather than
+complex ones. AI tools excel at
+generating boilerplate and repetitive
+patterns, but they struggle with higher
+level architecture and design decisions.
+So this creates a perfect partnership
+where AI handles mundane aspects while
+developers focus on creative strategic
+elements. Um so every major
+technological advance in history has
+created more jobs than it eliminated.
+It's a fundamental pattern of
+innovation. When the PC revolution
+happened, pessimists predicted massive
+job loss, but instead we saw an
+explosion of new job category. The same
+happened with the internet, mobile
+devices, and cloud computing. Each wave
+created more tech jobs than before.
+McKinnon points out that tools like
+compilers and debugging tools didn't
+reduce developer jobs. They multiplied
+them by making software development more
+accessible. So when everybody said that
+we were going from C and C++ to these
+higher level languages, they said, "Oh,
+it's going to make programming obsolete
+because everybody will be able to write
+code." Still hasn't happened, right? AI
+is not any different. AI tools are
+following the same pattern. They're
+lowering the barriers to entry while
+simultaneously raising the ceiling of
+what's possible. This dual effect
+creates more entry-level positions while
+also increasing demand for expert
+developers who tackle increasingly
+complex challenge. Now, if your company
+is looking to train new developers or to
+level up your existing team skills,
+reach out to us cuz here at Startupac,
+we are a licensed software coding boot
+camp that we can help and have mentors
+on staff to be able to help train your
+developers faster. Check out startup.com
+and you can get into our coding boot
+camps which were getting most qualified
+by government funding. Now McKinnon
+offered a brilliant brilliant analogy.
+Assuming that AI means fewer developers
+is like assuming that the iPhone meant
+no new communication apps would be
+needed. Instead we got platforms like
+Snapchat which McKinnon point out seemed
+like a random concept that grew into a
+major platform. So throughout my career,
+I've watched supposedly complete
+software categories give birth to
+entirely new product ecosystems. AI will
+similarly spawn new software categories
+we can't yet even understand. So there's
+a fascinating post on less wrong titled
+recent AI model pro uh progress feels
+mostly like crud. So it reveals the gap
+between AI benchmark scores and
+realworld usefulness. Security engineers
+trying to use the a trying to use the
+latest AI models to scan code bases
+found that despite impressive benchmarks
+uh scores, newer models were often worse
+at real world tasks. This exposes a
+critical truth. AI progress is heavily
+optimized for specific benchmarks rather
+than general capability improvements.
+Having built and tested countless
+systems over my career, I can tell you
+that benchmarks never tell the full
+story. The most useful AI tools for
+developers are focused on specific
+tasks, well-defined tasks, rather than
+promising general coding capabilities.
+Now, if your company has systems that
+aren't connected, make sure you reach
+out because here at Startupac, our
+specialty is connecting systems. So,
+reach out because we'd love to help you.
+Check out
+Startupac.com/spensor. Now, despite some
+of the tech layoffs, the underlying
+trajectory for software jobs remain
+strongly positive across industries. The
+Bureau of Labor Labor Statistics still
+projects software developer jobs to grow
+much faster than average over the next
+decade. What we're seeing isn't a
+reduction in developer demand. It's a
+shift in where those jobs are appearing.
+So, I'm sure everybody's seen the Indeed
+chart that shows the drop off from
+software development jobs. What it's not
+showing is the increase in AI
+engineering jobs. And so, there's just a
+shift in some of these software
+development jobs and some of the titles.
+My clients come across healthcare,
+finance, manufacturing and retail. All
+are expanding their development teams,
+not shrinking them. So this diffusion of
+software jobs across the entire economy
+creates tremendous opportunity for
+developers. Now one of the biggest
+limitations of AI coding tools is
+understanding how different systems
+interact and integrate to each other. So
+AI might generate a functional API
+endpoint, but it struggles to understand
+how that endpoint fits into a complex
+complex ecosystem. So the most valuable
+developers are increasingly those who
+can design coherent systems that work
+reliably across multiple boundaries and
+contexts. I I don't know I can't think
+of a single system that I've built over
+the last 10 years that didn't connect to
+something. So learn about
+interconnectability. Now developers who
+embrace AI tools rather than fear them
+are positioning themselves for
+exceptional career growth. I'm seeing a
+growing gap between AI augmented
+developers who can developer a lot more
+value and those who work the old way. So
+learning to effectively prompt, guide,
+and verify AI generated code is becoming
+a critical skill, but you cannot trust
+it. Developers on my team who've
+mastered AI drive a lot faster, but
+they're still at the steering wheel. So
+the early adopters of this augmented
+development approach are already working
+and to command premium salaries. So
+there's never a better time to enter
+software development than today. Despite
+the pessimistic headlines and temporary
+high hiring slowdowns, those hiring
+slowdowns are still from the glut of the
+free money that came in during co
+software development comes when interest
+rates go down. This is simple. It you
+can follow these patterns over and over
+again. So the skill gap in software
+development is widening, not shrinking.
+So traditional coding boot camps that
+teach only syntax aren't going to help.
+You need to be able to get hands-on
+training, which is what's offered here
+at Startupac. So, the next 5 years,
+we'll see an explosion of developer jobs
+that combine human creativity and
+judgment with AI powered productivity in
+a way we're just now beginning to see.
+Now, what are your thoughts? The best
+compliment I can get is when you like
+and subscribe to the channel and when
+you leave me a comment. So, leave me a
+comment down below if nothing else just
+to say hi or you say I'm wrong. Like, I
+love to have a great healthy discussion
+and I answer all the comments
+personally. So, reach out to me here at
+Startupac. We love to train software
+developers in our licensed coding boot
+camps and build custom software
+solutions for companies. We especially
+love to focus on building new AI agents.
+So, make sure you hit some of our
+previous uh some of the previous videos
+because I've given tons of free coding
+samples out there. And check out
+startup.com/spensor. And here's some
+great information about our coding boot
+camps. Want to become a software
+developer but don't want to spend four
+years in college and rack up massive
+student loan debts? Think you need
+technical expertise to get started?
+Welcome to Startup Pack. A better way to
+start your software career without
+student loans and years without income.
+One-on-one tutoring is included so you
+never get stuck and have guidance
+through the whole process. No technical
+experience is necessary. Learn at your
+own pace and in your own space.
+Startupac has worked with local state
+agencies in your area to make it so that
+qualifying students can get the program
+costs covered entirely and students can
+start earning while they learn.
+Startup Hacks.NET Net coding boot camp
+was a gamecher for my career. As someone
+with no prior programming experience, I
+was initially intimidated by the idea of
+learning to code. But the instructors as
+startup pack broke down complex concepts
+into easy to understand lessons and
+provided hands-on projects that really
+cemented my understanding. The
+curriculum was comprehensive and
+upto-date and got me ready for my first
+job. What really set Startup Pack apart
+was to focus on practical realworld
+skills. Thanks to Startupac, I landed my
+dream job as a .NET developer within
+weeks of graduating. I went from knowing
+nothing about code to building
+professional-grade web applications in
+just a few intense months. If you're
+looking to break into .NET development
+or level up your coding skills, I cannot
+recommend Startup Pack enough. Complete
+our 3-month coding boot camp, gain
+hands-on experience, and land a paid
+internship. With two years of
+experience, on average, our graduates
+are making over $80,000 per year. The
+threemonth
+pro program quick path to earning.
